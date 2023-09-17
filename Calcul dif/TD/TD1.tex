@@ -131,26 +131,79 @@
 
 \begin{exo}
     Soient \(n \in\N^*\), pour tout \(x=(x_k)_{1\leq i\leq n} \in \R^n\) on définit:
-    \[\|x\|_1 = \sum_{i=0}^n |x_i| \quad \|x\|_2=\left(\sum_{i=0}^n |x_i|^2\right)^\frac{1}{2} \quad \|x\|_\infty = \sup_{1\leq i \leq n}\left(x_i\right)\]
+    \[\|x\|_1 = \sum_{i=0}^n |x_i| \quad \|x\|_2=\left(\sum_{i=0}^n |x_i|^2\right)^\frac{1}{2} \quad \|x\|_\infty = \sup_{1\leq i \leq n}\left|x_i\right|\]
 
     \begin{q}{1}
         Démontrer que \(\|\cdot\|_1, \|\cdot\|_2, \|\cdot\|_\infty\) sont des normes sur \(\R^n\).
-        \begin{enumerate}[leftmargin=1cm]
-            \item[S]
-            \item[H]
-            \item[IT]
-        \end{enumerate}
+        \boxans{
+            \begin{enumerate}[leftmargin=1cm]
+                \item[S] \begin{enumerate}
+                    \itt Supposons \(\|x\|_1=0\) alors pour tout \(i\) on a \(|x_i|=0\Rightarrow x_i=0\)
+                    \itt Supposons \(\|x\|_2=0\) alors pour tout \(i\) on a \(|x_i|=0\Rightarrow x_i=0\)
+                    \itt Supposons \(\|x\|_\infty=0\) alors pour tout \(i\) on a \(|x_i|=0\Rightarrow x_i=0\)
+                \end{enumerate}
+                \item[H] \begin{enumerate}
+                    \itt \(\|\lambda x\|_1 = \sum \|\lambda x_i\| = |\lambda|\sum\|x_i\| = |\lambda|\|x\|_1\)
+                    \itt \(\|\lambda x\|_2 = \sum \left(\|\lambda x_i\|^2\right)^\frac{1}{2} = |\lambda|\left(\sum\|x_i\|^2\right)^\frac{1}{2} = |\lambda|\|x\|_1\)
+                    \itt \(\|\lambda x\|_\infty =  \sup_{1\leq i \leq n}\left|\lambda x_i\right| = |\lambda|\|x\|\)
+                \end{enumerate}
+                \item[IT] Les inégalités triangulaires s'obtiennent trivialement du fait que \(|\cdot|\) est une norme.
+            \end{enumerate}
+        }
     \end{q}
-
     \begin{q}{2}
         Décrire géométriquement la boule fermée de centre \(0\) et de rayon \(1\) pour chaque norme.
+        \boxans{
+            \begin{enumerate}
+                \itt Pour \(\|\cdot\|_1\) la boule a une forme d'octaèdre.
+                \itt Pour \(\|\cdot\|_2\) la boule a une forme de boule usuelle.
+                \itt Pour \(\|\cdot\|_\infty\) la boule a une forme d'hypercube.
+            \end{enumerate}
+        }
     \end{q}
     \begin{q}{3}
         Soit \(x\in\R^n\), prouver les inégalités :
-    \[\|x\|_2\leq\|x\|_1\leq\sqrt{n}\|x\|_2\quad\|x\|_\infty\leq\|x\|_1\leq n\|x\|_\infty\quad\|x\|_\infty\leq \|x\|_2\leq\sqrt{n}\|x\|\]
+        \[\|x\|_2\leq\|x\|_1\leq\sqrt{n}\|x\|_2\quad\|x\|_\infty\leq\|x\|_1\leq n\|x\|_\infty\quad\|x\|_\infty\leq \|x\|_2\leq\sqrt{n}\|x\|\]
+        \boxans{
+            \begin{enumerate}
+                \itt En regardant les boules, l'inclusions donne l'inégalité de gauche, la plus grande distance entre les boules se situant au milieu des arêtes on a la deuxième inégalité pour \(x=\left(\frac{1}{n}\right)_k\).
+                \itt En regardant encore une fois les boules, l'inégalité de gauche est évidente, celle de droite s'obtient pareillement au milieu des arêtes de la boules incluses pour le vecteur explicité plus haut.
+                \itt Le dernier encadrement provient directement des deux premiers.
+            \end{enumerate}
+        }
     \end{q}
     \begin{q}{4}
         Prouver grâce à des exemples bien choisis que les inégalités ci-dessus sont optimales.
+        \boxans{Déjà repondu à la question précédente.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    TODO
+\end{exo}
+
+\begin{exo}
+    On cherche dans cet exercice à démontrer des résultats classiques sur \(\K^n\)
+    \begin{q}{1}
+        Soit \(\left(p,q\right)\) un couple de réels conjugués positifs.
+        \begin{q}{a}
+            Prouver l'inégalité de \textsc{Young} : \(ab\leq \frac{1}{p}a^p + \frac{1}{q}b^q\)
+            \boxans{\(\ln\left(ab\right)=\frac{1}{p}\ln\left(a^p\right)+\frac{1}{q}\ln\left(b^q\right)\leq\ln\left(\frac{a^p}{p}+\frac{b^q}{q}\right)\)
+            où la concavité du logarithme donne l'inégalité et la croissance donne le résultat souhaité.}
+        \end{q}
+        \begin{q}{b}
+            Soit \(\left(x,y\right)\in\K^n\), démontrer l'inégalité de \textsc{Hölder}.
+            \[\left|\langle x, y\rangle\right| \leq \sum |x_ky_k| \leq \|x\|_p\|y\|_q\]
+            \boxans{On commence à remarquer que si \(\|x\|_p=\|y\|_q=1\) alors \(\langle x,y\rangle \leq 1\) qui provient directement de la question précédente en appliquant l'inégalité à chaque membre de la somme.
+            On obtient alors la partie droite de l'inégalité de \textsc{Hölder} en posant \(x'=\frac{x}{\|x\|_p}\) et \(y'=\frac{y}{\|y\|_q}\). La partie gauche s'obtient de l'inégalité triangulaire sur la valeur absolue.
+            On a ainsi une formule générale qui se ramène à \textsc{Cauchy-Schwarz} pour \(p=2\).}
+        \end{q}
+        \begin{q}{c}
+            Utiliser la question précédente pour démontrer la formule variationelle :
+            \[\forall x \in \K^n \quad \left|x\right|_p=\sup\{|\sum x_iz_i|\ z\in\K^n, \|z\|_q\leq 1\}\]
+            \boxans{Le sup est atteint pour \(z=\frac{x}{\|x\|_p}\) qui rend les deux bornes de l'inégalité
+            de \textsc{Hölder} égales et offre ainsi le résultat.}
+        \end{q}
     \end{q}
 \end{exo}
 
