@@ -3,6 +3,6 @@
 *.fdb_latexmk
 *.synctex.gz
 *.log
-*.pdf
 
 .vscode
+*.pdf
