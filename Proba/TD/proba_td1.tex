@@ -1,0 +1,243 @@
+\documentclass{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\usepackage{accents}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage{bookmark}
+\usepackage{stmaryrd}
+\usepackage{fancyhdr}
+\usepackage[margin=25mm]{geometry}
+\usepackage[french]{babel}
+\usepackage{changepage}
+\usepackage{listings}
+\usepackage[most,breakable,listings]{tcolorbox}
+
+\date{\today}
+\author{Corentin Sallin \thanks{Cours de L3}}
+\title{Calcul Différentiel et topologie}
+
+
+\renewcommand{\theenumi}{\Alph{enumi}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\Diag}{\mathcal{D}}
+\newcommand{\curlyv}{\mathcal{V}}
+
+\newcommand{\esp}{\mathbb{E}}
+\newcommand{\proba}{\mathbb{P}}
+
+
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\Int}{\mathrm{Int}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\mnr}{\mathcal{M}_n(\R)}
+\newcommand{\mnk}{\mathcal{M}_n(\K)}
+\newcommand{\glnr}{\mathrm{GL}_n(\R)}
+\newcommand{\glnk}{\mathrm{GL}_n(\K)}
+
+\newcommand{\D}{\mathop{}\!\mathrm{d}}
+\newcommand{\ds}{\displaystyle}
+\newcommand*{\ensemble}[3][]{#1\{ #2 \mid #3 #1\}}
+\newcommand{\Vvert}{\vert\kern-0.25ex\vert\kern-0.25ex\vert}
+\newcommand{\tnorm}[1]{\Vvert #1 \Vvert}
+
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\Tr}{Tr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Corentin Sallin}
+\fancyhead[R]{}
+\fancyfoot[L]{\leftmark}
+\fancyfoot[R]{Page : \thepage}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\theoremstyle{definition}
+\newtheorem{exo}{Exercice}
+%\newtheorem{q}{\(\quad\)}[exo]
+
+\newtheorem{theorem}{Théorème}[section]
+\newtheorem{lemma}[theorem]{Lemme}
+\newtheorem{definition}[theorem]{Définition}
+\newtheorem{lemme}[theorem]{Lemme}
+\newtheorem*{corollary}{Corollaire}
+
+\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{rk}[proposition]{Remarque}
+\newtheorem*{example}{Exemple}
+
+\definecolor{main1white} {RGB}{121, 129, 134}
+\definecolor{main1white2} {RGB}{204, 204, 204}
+
+\newenvironment{q}[1]{
+    \begin{adjustwidth}{1cm}{}
+    \textbf{#1} : }{
+    \end{adjustwidth}}
+
+\titleformat{\chapter}[display]
+    {\normalfont\bfseries}{}{0pt}{\Huge}
+
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+\newcommand{\boxans}[1]{
+    \begin{tcolorbox}[
+            breakable,
+            enhanced,
+            interior style      = {
+                left color      = main1white2!65!gray!8,
+                middle color    = main1white2!50!gray!7,
+                right color     = main1white2!35!gray!6
+            },
+            %borderline north    = {.3pt}{0pt}{main1white!10},
+            %borderline south    = {.3pt}{0pt}{main1white!10},
+            frame hidden,
+            borderline west     = {2pt}{0pt}{main1white!30},
+            sharp corners       = downhill,
+            arc                 = 0 cm,
+            boxrule             = 0 cm,
+            %nobeforeafter,
+            %before={},
+            %nobeforeSTYLE,
+            %noafterSTYLE,
+            %after=\par\nointerlineskip
+            %source=remy
+        ]
+        #1
+    \end{tcolorbox}
+}
+
+\begin{document}
+
+\begin{center}
+    \Huge{\textbf{PR5-Feuille de TD 1.}}
+\end{center}
+\bigskip
+mails des teachers : daures@lspm.paris et le plus important collin@lspm.paris
+
+\begin{exo}
+    On lance un dé rouge et un dé vert. Donner explicitement un espace probabilisé pour étudier cette experience aléatoire et l'utiliser pour répondre aux questions
+    suivantes :
+    \boxans{On utilisera comme espace probabilisé \(\Z_6 \times \Z_6\) avec chaque élément d'une probabilité répondant à une loi uniforme.}
+    \begin{q}{(1)}
+        Quelle est la probabilité que le nombre sur le dé rouge soit plus strictement plus grand que le nombre sur le dé vert?
+        \boxans{On a 36 tirages possibles, parmi lesquels 6 où les tirage des dés sont égaux. Parmis les 30 tirages restants,
+        pour la moitié d'entre eux le tirage du dé rouge est strictement supérieur au tirage du dé vert, pour l'autre moitié c'est l'inverse, la probabilité
+        recherchée est alors \(\frac{15}{36}\)}
+    \end{q}
+    \begin{q}{(2)}
+        Quelle est la probabilité que les deux nombres diffèrent de au plus 1 ?
+        \boxans{On a 6 tirages possibles avec aucune différence, puis 5 tirages possibles avec le dé rouge supérieur au vert, et 5 dans l'autre sens.
+        Ce qui donne en tout une probabilité de \(\frac{16}{36}\)}
+    \end{q}
+    \begin{q}{(3)}
+        Quelle est la probabilité que le maximum des deux nombres soit supérieur ou égal à 5 ?
+        \boxans{On a \(4^2\) façons distinctes d'avoir un maximum strictement inférieur à 5,
+        ainsi la probabilité d'avoir un maximum supérieur à 5 est \(\frac{20}{36}\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Si on lance une pièce 5 fois, quelle est la probabilité que le nombre de faces
+    soit pair ? On écrira explicitement l'espace probabilisé associé à cette experience.
+
+    \boxans{L'espace probabilisé est défini ici par \(\Omega=\{0,1\}^2\) avec \(\proba=\mathcal{U}(\Omega)\) et la tribu \(\mathcal{F}=\mathcal{P}(\Omega)\).
+    On remarque ensuite que la probabilité d'avoir un nombre pair de face est par définition la même que celle d'avoir un nombre impair de piles, or ces
+    deux évènements sont équiprobables ce qui donne que la probabilité recherchée est \(\frac12\)}
+\end{exo}
+
+\begin{exo}
+    Posons \(\Omega=\{a,b,c\}\) muni de la tribu de l'ensemble de ses parties. On donne \(\proba(\{a,b\}) = 0,7\) et \(\proba(\{b,c\}) = 0,6\). Calculer
+    les probabilités de \(\{a\}, \{b\}\) et \(\{c\}\).
+    \boxans{La relation \(\proba(A)=1-\proba(\bar{A})\) on a \(\proba(\{a\}) = 1-\proba(\{b,c\})= 0,4\) et de la même façon \(\proba(\{c\})=0,3\) finalement
+    le système complet d'évènements permet d'obtenir \(proba(\{b\}) = 1 - \proba(\{a\}) - \proba(\{c\}) = 0,3\).}
+\end{exo}
+
+\begin{exo}
+    Supposons que \(A\) et \(B\) soient deux évènements disjoints avec \(\proba(A)=0,4\) et \(\proba(B)=0,5\) que vaut \(\proba(\bar{A}\cap\bar{B})\) ?
+    \boxans{Les deux évènements étant disjoints on a, en passant au complémentaire, \(\proba(\bar{A}\cap\bar{B}) = 1- \proba(A\cup B)=1-\proba(A)-\proba(B)=0,1\)}
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(\Omega, \mathcal{A}, \proba\right)\) un espace probabilisé. Soit \(A,\ B\) des évènements tels que \(\proba(A)=\frac34\) et \(\proba(B)=\frac13\).
+    \begin{q}{(1)}
+        Montrer que \(\frac{1}{12} \leq \proba(A \cap B) \leq \frac13\)
+        \boxans{On a \(\proba(A)+\proba(B) = 1 + \frac{1}{12}\) or \(\proba(A\cup B)\) doit être au plus \(1\) ce qui force \(\proba(A \cap B) \geq \frac{1}{12}.\)
+        Pour ce qui est de l'autre borne on constate que \((A\cap B) \subset B\) donc \(\proba(A\cap B)\leq \proba(B) \leq \frac13\)}
+    \end{q}
+    \begin{q}{(2)}
+        Soit \(\Omega = {1,...,12}\) muni de la tribu de l'ensemble de ses parties et de la probabilité uniforme. Donner des exemples de tels \(A\) et \(B\)
+        et tels que les bornes ci-dessus soient atteintes.
+        \boxans{
+            Dans les deux cas l'expérience consiste à tirer un élément au hasard.
+            \begin{enumerate}
+                \item[Borne inf] \(A\) : "L'élément vaut au plus 9" et \(B\) : "L'élément vaut au moins 9"
+                \item[Borne sup] \(A\) : "L'élément vaut au plus 9" et \(B\) : "L'élément vaut au plus 4"
+            \end{enumerate}
+        }
+    \end{q}
+    \begin{q}{(3)}
+        Donner les bornes correspondantes pour \(\proba(A\cup B)\)
+        \boxans{En utilisant l'exemple au dessus, ou un raisonnement semblable à celui de la première question, on trouve \(\frac34\leq\proba(A\cup B)\leq 1\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(\Omega = \{1,2,3,4,5,6\}\) on définit des ensembles de parties
+    \begin{enumerate}
+        \item[(1)] : \(\mathcal{A}_1 = \{\{1,2\}, \{3,4,5,6\}, \{3,4\}, \{1,2,5,6\}, \Omega, \emptyset\}\)
+        \item[(2)] : \(\mathcal{A}_2 = \{\{1,2,3\}, \{4,5,6\}, \Omega, \emptyset\}\)
+    \end{enumerate}
+    \begin{q}{(1)}
+        \(\mathcal{A}_1\) et \(\mathcal{A}_2\) sont-elles des tribus ? Justifier votre réponse.
+        \boxans{\(\mathcal{A}_1\) n'est pas stable par union finie, en effet \(\{3,4\}\cup\{1,2\} = \{1,2,3,4\}\not\in\mathcal{A_1}\).
+        D'autre part on a bien \(\emptyset\in \mathcal{A}_2\) ainsi que la stabilité évidente par réunion et passage au complémentaire, on a ainsi une tribu.}
+    \end{q}
+    \begin{q}{(2)}
+        On définit l'application \(\proba:\mathcal{A}_2\rightarrow [0,1]\) par \(\proba(\{1,2,3\})=\frac14\), \(\proba(\{4,5,6\})=\frac23\),
+        \(\proba(\emptyset)=0\) et \(\proba(\Omega)=1\). L'application \(\proba\) est elle une probabilité ?
+        \boxans{La \(\sigma\)-additivité voudrait \(\proba(\{1,2,3\})+\proba(\{4,5,6\})=1\) ce qui n'est pas le cas, \(\proba\) n'est donc pas une probabilité.}
+    \end{q}
+    \begin{q}{(3)}
+        Donner un ensemble de parties différent de l'ensemble des parties de \(\Omega\) et des exemples ci-dessus et qui soit une tribu de \(\Omega\).
+        Définir ensuite une probabilité sur la tribu.
+        \boxans{On pose par exemple \(\mathcal{A}_3 = \mathcal{A}_1 \cup \{1,2,3,4\} \cup \{5,6\}\) avec
+        \(\proba : A \mapsto \frac{|A|}{6}\) pour \(A\in\mathcal{A}_3\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    TODO
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(\mathcal{F}_\alpha\right)_{\alpha\in A}\) une famille quelconque de tribus sur un ensemble \(\Omega\).
+    Montrer que \(\mathcal{H}=\cap_{\alpha\in A}\mathcal{F}_\alpha\) est aussi une tribu.
+    \boxans{
+        \begin{enumerate}
+            \item Les \(\mathcal{F}_\alpha\) étant des tribus on a \(\emptyset\in\mathcal{F}_\alpha\) pour tout \(\alpha\in A\) donc \(\emptyset\in\mathcal{H}\)
+            \item Soit \(H\in\mathcal{H}\) par définition \(H\in\mathcal{F_\alpha}\) pour tout \(\alpha\in A\) donc \(\bar{H}\in \mathcal{F}_\alpha\Rightarrow \bar{H}\in\mathcal{H}\)
+            \item Soit \(\left(H_i\right)_{i\in\N}\) suite d'éléments de \(\mathcal{H}\), ils sont dans tous les \(\mathcal{F}_\alpha\) ainsi leur union aussi et elle est donc dans \(\mathcal{H}\).
+        \end{enumerate}
+    }
+\end{exo}
+
+\end{document}

@@ -1,0 +1,191 @@
+\documentclass{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\usepackage{accents}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage{bookmark}
+\usepackage{stmaryrd}
+\usepackage{fancyhdr}
+\usepackage[margin=25mm]{geometry}
+\usepackage[frenchb]{babel}
+\usepackage{changepage}
+\usepackage{listings}
+\usepackage[most,breakable,listings]{tcolorbox}
+
+\date{\today}
+\author{Corentin Sallin \thanks{Cours de L3}}
+\title{Calcul Différentiel et topologie}
+
+
+\renewcommand{\theenumi}{\Alph{enumi}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\Diag}{\mathcal{D}}
+\newcommand{\curlyv}{\mathcal{V}}
+
+\newcommand{\esp}{\mathbb{E}}
+\newcommand{\proba}{\mathbb{P}}
+
+
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\Int}{\mathrm{Int}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\mnr}{\mathcal{M}_n(\R)}
+\newcommand{\mnk}{\mathcal{M}_n(\K)}
+\newcommand{\glnr}{\mathrm{GL}_n(\R)}
+\newcommand{\glnk}{\mathrm{GL}_n(\K)}
+
+\newcommand{\D}{\mathop{}\!\mathrm{d}}
+\newcommand{\ds}{\displaystyle}
+\newcommand*{\ensemble}[3][]{#1\{ #2 \mid #3 #1\}}
+\newcommand{\Vvert}{\vert\kern-0.25ex\vert\kern-0.25ex\vert}
+\newcommand{\tnorm}[1]{\Vvert #1 \Vvert}
+
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\Tr}{Tr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Corentin Sallin}
+\fancyhead[R]{}
+\fancyfoot[L]{\leftmark}
+\fancyfoot[R]{Page : \thepage}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\theoremstyle{definition}
+\newtheorem{exo}{Exercice}
+%\newtheorem{q}{\(\quad\)}[exo]
+
+\newtheorem{theorem}{Théorème}[section]
+\newtheorem{lemma}[theorem]{Lemme}
+\newtheorem*{definition}{Définition}
+\newtheorem{lemme}[theorem]{Lemme}
+\newtheorem*{corollary}{Corollaire}
+
+\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem*{rk}{Remarque}
+\newtheorem*{example}{Exemple}
+
+\definecolor{main1white} {RGB}{121, 129, 134}
+\definecolor{main1white2} {RGB}{204, 204, 204}
+
+\newenvironment{q}[1]{
+    \begin{adjustwidth}{1cm}{}
+    \textbf{#1} : }{
+    \end{adjustwidth}}
+
+\titleformat{\chapter}[display]
+    {\normalfont\bfseries}{}{0pt}{\Huge}
+
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+\newcommand{\itt}{\item[\(\triangleright\)]}
+
+\newcommand{\boxans}[1]{
+    \begin{tcolorbox}[
+            breakable,
+            enhanced,
+            interior style      = {
+                left color      = main1white2!65!gray!8,
+                middle color    = main1white2!50!gray!7,
+                right color     = main1white2!35!gray!6
+            },
+            %borderline north    = {.3pt}{0pt}{main1white!10},
+            %borderline south    = {.3pt}{0pt}{main1white!10},
+            frame hidden,
+            borderline west     = {2pt}{0pt}{main1white!30},
+            sharp corners       = downhill,
+            arc                 = 0 cm,
+            boxrule             = 0 cm,
+            %nobeforeafter,
+            %before={},
+            %nobeforeSTYLE,
+            %noafterSTYLE,
+            %after=\par\nointerlineskip
+            %source=remy
+        ]
+        #1
+    \end{tcolorbox}
+}
+
+\begin{document}
+
+\begin{center}
+    \Huge{\textbf{Algebre I}}
+\end{center}
+\bigskip
+mails des teachers : riccardo.brasca@gmail.com | gentiana@math.univ-paris-diderot.fr
+
+\section*{Rappels}
+
+\begin{definition}
+    Soit \(E\) un ensemble, une relation \(\mathcal{R}\) sur \(E\) est un sous
+    ensemble \(\mathcal{R}\subseteq E\times E\). On écrit \(x\mathcal{R}y\) si \((x,y)\in\mathcal{R}\).
+    Si la relation est reflexive, symétrique et transitive elle est dite \textbf{d'équivalence}.
+\end{definition}
+
+\begin{example}
+    Soit \(f:E_1\to E_2\) telle que \(\forall x,y\in E_1,\ x\mathcal{R}y \Leftrightarrow f(x)=f(y)\)
+\end{example}
+
+\begin{definition}
+    Soit \(E\) un ensemble, \(\mathcal{R}\) une relation d'équivalence, \(x\in E\), la \textbf{classe d'équivalence} de \(x\) est cl\((x)\)=\(\{y\in E | x\mathcal{R}y\}\).
+    L'ensemble \textbf{quotient} \(E/\mathcal{R}\) de \(\mathcal{R}\) est l'ensemble des classes d'équivalences de \(\mathcal{R}\).
+\end{definition}
+
+\begin{definition}
+    On appelle \(\pi : x \mapsto \text{cl}(x)\) l'application cannonique vers \(E/\mathcal{R}\), elle est surjective.
+\end{definition}
+
+\begin{definition}
+    Soit \(\omega\in E/\mathcal{R}\), chacun de ses éléments peut être appelé \textbf{représentant}.
+    Un système de représentants est un sous ensemble \(M\subseteq E\) formé d'un représentant par classe. (\(\forall \omega\in E, \exists !m\in M, \pi(m)=w\))
+\end{definition}
+
+\begin{rk}
+    \(E/=\ = \{\{x\}|x\in E\} \neq E\)
+\end{rk}
+
+\begin{definition}
+    On peut définir les opérations usuelles sur les classes d'équivalences
+    Soient \(\omega_1, \omega_2 \in \Z\)
+    \begin{enumerate}
+        \itt \(\omega_1+\omega_2=\text{cl}(x_1+x_2, y_1+y_2)\)
+        \itt \(\omega_1\times\omega_2=\text{cl}(x_1x_2+y_1y_2, x_1y_2+x_2y_1)\)
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+    Il n'y a jamais d'intersection entre des classes non égales.
+\end{lemma}
+
+\begin{theorem}
+    Soit \(f : E\to F\) telle que \(x\mathcal{R}y \Leftrightarrow f(x)=f(y)\) alors
+    \(\exists ! \tilde{f} : E/\mathcal{R} \to F\) telle que \(\tilde{f}\circ \pi = f\).
+    \textit{(les petits triangles commutatifs)}
+\end{theorem}
+
+\begin{rk}
+    Soit \(E\) un ensemble et \(\mathcal{R}\) une relation, il
+    existe \(M\subseteq E\) un système de représentants \textit{(axiome du choix ?)}
+\end{rk}
+
+\end{document}
