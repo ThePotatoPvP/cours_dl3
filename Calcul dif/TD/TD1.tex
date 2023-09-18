@@ -200,11 +200,83 @@
         \end{q}
         \begin{q}{c}
             Utiliser la question précédente pour démontrer la formule variationelle :
-            \[\forall x \in \K^n \quad \left|x\right|_p=\sup\{|\sum x_iz_i|\ z\in\K^n, \|z\|_q\leq 1\}\]
+            \[\forall x \in \K^n \quad \|x\|_p=\sup\{|\sum x_iz_i|\ z\in\K^n, \|z\|_q\leq 1\}\]
             \boxans{Le sup est atteint pour \(z=\frac{x}{\|x\|_p}\) qui rend les deux bornes de l'inégalité
             de \textsc{Hölder} égales et offre ainsi le résultat.}
         \end{q}
+        \begin{q}{d}
+            Démontrer que \(\|\cdot\|_p\) vérifie l'inégalité triangulaire (inégalité de \textsc{Minkowski})
+            \boxans{Ce résultat s'obtient à l'aide de l'inégalité triangulaire sur la valeur absolue sur chaque terme de la suite.}
+        \end{q}
+        \begin{q}{e}
+            Démontrer alors que l'application \(\|\cdot\|_p\) est une norme pour \(p\geq 1\).
+            \boxans{La séparation et la positivité sont triviales, l'homogénéité provient de la linéarité de la somme et l'inégalité triangulaire de la question précédente.}
+        \end{q}
     \end{q}
+    \begin{q}{2}
+        Démontrer que pour \(p\in ]0,1[\) l'application \(\|\cdot\|_p\) n'est pas une norme.
+        \boxans{L'application \(t\mapsto t^p\) est maintenant concave et plus
+        convexe, elle est donc au dessus de ses cordes et ainsi ne vérifie pas
+        l'inégalité triangulaire.}
+    \end{q}
+    \begin{q}{3}
+        On rappelle que \(\|\cdot\|_\infty\) est une norme sur \(\K^n\)
+        \begin{q}{a}
+            Justifier que la formule variationelle est encore vraie si \(p=1\) ou \(p=+\infty\).
+            \boxans{On commence par remarquer l'inégalité de \textsc{Young} est vérifier pour \(p=1, q=+\infty\) ce qui, de par la suite de questions, donne le résultat souhaité.}
+        \end{q}
+        \begin{q}{b}
+            Montrer que, pour tout \(p\in [1,+\infty]\) et \(x\in\K^n\) : \(\|x\|_\infty\|\leq\|x\|_p\leq n^\frac{1}{p}\|x\|_\infty\)
+            \boxans{Le plus grand écart entre les boules se situe aux coins
+            de la boule de \(\|\cdot\|_\infty\) donc pour \(x=(1,1,\dots)\)
+            or pour ce \(x\) on a \(\|x\|_p=n^\frac{1}{p}\) ce qui livre
+            l'inégalité de droite, celle de gauche s'obtenant par inclusion
+            de boule.}
+        \end{q}
+        \begin{q}{c}
+            Soit \(x\in\K^n\) montrer que l'application \(p\mapsto \|x\|_p\) admet une limite en \(+\infty\) égale à \(\|x\|_\infty\)
+            \boxans{Ce résultat s'obtient en appliquant le théorème des gendarmes au résultat précédent.}
+        \end{q}
+        \begin{q}{d}
+            Prouver que les normes \(\left(\|\cdot\|_p\right)_{p\geq 1}\) sont deux à deux équivalentes.
+            \boxans{Les normes sont équivalentes car on est en dimension finie.}
+        \end{q}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(n\in\N^*\) et \(\mnr\) le \(\R\)-ev des matrices de taille \(n\times n\)
+    \begin{q}{1}
+        On note \(\left\langle\cdot,\cdot\right\rangle\) l'application de \(\mnr^2\)
+        dans \(\R\) telle que \(\langle A,B\rangle=\Tr(^tAB)\). Démontrer que l'application
+        ainsi définie est un produit scalaire sur \(\mnr\) de norme associée \(\|\cdot\|\).
+    \end{q}
+    \begin{q}{2}
+        Démontrer que l'application \(\|\cdot\|_\infty : A \mapsto \sup |a_{i,j}|\)
+        est une norme sur \(\mnr\).
+    \end{q}
+    \begin{q}{3}
+        Montrer que les normes sont équivalentes et trouver les meilleures constantes pour l'encadrement.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(V\) un \(\K\)-ev et une application \(N\) de \(V\) dans \(\R_+\) telle que :
+    \begin{enumerate}
+        \itt Pour tout \(\left(t,v\right)\in\K\times V, N(tv)=|t|N(v)\)
+        \itt Pour tout \(v\in V, N(v)=0 \Leftrightarrow v = 0_V\)
+    \end{enumerate}
+    On note \(B_N = \{v\in V\mid N(v)\leq 1\}\). Prouver que \(N\) est une norme si et seulement si \(B_N\) est convexe.
+    \boxans{
+        \begin{enumerate}
+            \itt Supposons \(B_n\) convexe alors soient \(x,y\in B_n\) tels que \(N(x)=N(y)=1\)
+            alors \(\frac{x+y}{2}\in B_n\) par convexité donc \(N(x+y)\leq 2 = N(x)+N(y)\).
+            L'absolue homogénéité de \(N(\cdot)\) assure alors que l'application
+            vérifie l'inégalite triangulaire et est donc une norme
+            \itt La réciproque est évidente, si \(N(\cdot)\) est une norme alors elle vérifie
+            l'inégalité triangulaire et \(B_N\) est alors convexe de par l'argument ci-dessus.
+        \end{enumerate}
+    }
 \end{exo}
 
 \end{document}
