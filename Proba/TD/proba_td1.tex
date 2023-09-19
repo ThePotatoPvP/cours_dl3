@@ -153,18 +153,25 @@ mails des teachers : daures@lspm.paris et le plus important collin@lspm.paris
     Soit \(\left(A_n\right)_{n\geq1}\) une suite de parties qui appartiennent
     à une tribu \(\mathcal{A}\) d'un ensemble \(\Omega\). Montrer que :
     \begin{enumerate}
-        \itt \(\ds \lim\inf A_n := \cup_{n=1}^\infty\cap_{k\geq n} Ak \in \mathcal{A}\)
+        \itt \(\ds \lim\inf A_n := \cup_{n=1}^\infty\cap_{k\geq n} A_k \in \mathcal{A}\)
         et que \(\lim\inf 1_{A_n} = 1_{\lim\inf A_n}\)
-        \itt \(\ds \lim\inf A_n := \cap_{n=1}^\infty\cup_{k\geq n} Ak \in \mathcal{A}\)
+        \itt \(\ds \lim\inf A_n := \cap_{n=1}^\infty\cup_{k\geq n} A_k \in \mathcal{A}\)
         et que \(\lim\sup 1_{A_n} = 1_{\lim\sup A_n}\)
     \end{enumerate}
+    \boxans{\(\mathcal{A}\) est une tribu, c'est donc un ensemble stable par union
+    et intersection dénombrable ainsi les deux limites sont bien dans \(\mathcal{A}\).}
     Montrer aussi que \(\lim\inf A_n\subset\lim\sup A_n\).
+    \boxans{Soit \(x\in\lim\inf A_n\) alors par définition il existe \(n_0\in\N\)
+    tel que pour tout \(n\geq n_0\) on ait \(x\in A_n\) ainsi pour tout
+    \(n\in\N, x\in\cup_{k\geq n} A_k\) et donc \(x\in\lim\sup A_n\).}
 \end{exo}
 
 \begin{exo}
     Soit \(\mathcal{A}\) une tribu sur \(\Omega\) et \(B\subset\Omega\). Montrer que
     \(\mathcal{A}_B=\{A\cap B\mid A\in\mathcal{A}\}\) est une tribu sur
     l'ensemble \(B\). On l'appelle \(\sigma\)-algèbre trace de \(\mathcal{A}\) sur \(B\).
+    \boxans{L'ensemble vide appartient bien à \(\mathcal{A}_B\), la stabilité
+    par complémentaire et union sont triviales et découles de celles dans \(\mathcal{A}\).}
 \end{exo}
 
 \begin{exo}
@@ -177,6 +184,10 @@ mails des teachers : daures@lspm.paris et le plus important collin@lspm.paris
 \begin{exo}
     Soient \(\left(A_i\right)_{i\in\N}\) des évennements d'une tribu montrer:
     \[ \proba(\cup_{i=1}^nA_i)\leq \sum_{i=1}^n\proba(A_i)\]
+    \boxans{Récurrence triviale avec \(\proba(\cup^n A_i) \leq \proba(\cup^{n-1} A_i) + \proba(A_n)\)
+    car \(\proba(\cup A_i \cap A)\geq 0\). Pour faire tendre \(n\) vers l'infini on majore la somme
+    par une série, la proba reste la même (passer par limite de l'union croissante
+    pour le faire proprement.)}
 \end{exo}
 
 \begin{exo}
@@ -188,5 +199,7 @@ mails des teachers : daures@lspm.paris et le plus important collin@lspm.paris
 
 \begin{exo}
     Démontrer l'inégalité suivante : \(\proba\left(\cap A_i\right)\geq\sum\proba(A_i)-n+1\)
+    \boxans{\[\proba (\cap A_i) = 1 - \proba (\overline{\cap A_i}) = 1 - \proba(\cap \bar{A_i})
+    \geq 1 - \sum \proba (\bar{A_i}) = 1 - n + \sum \proba(A_i)\]}
 \end{exo}
 \end{document}
