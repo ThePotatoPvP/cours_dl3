@@ -1,0 +1,166 @@
+\ProvidesPackage{../../exercices}
+
+% Basic packages
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{lmodern}
+\RequirePackage{amsmath,amsthm,amsfonts,amssymb}
+\RequirePackage{graphicx}
+\RequirePackage[shortlabels]{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage{accents}
+\RequirePackage{titlesec}
+\RequirePackage{etoolbox}
+\RequirePackage{bookmark}
+\RequirePackage{stmaryrd}
+\RequirePackage{fancyhdr}
+\RequirePackage[margin=25mm]{geometry}
+\RequirePackage[french]{babel}
+\RequirePackage{changepage}
+\RequirePackage{listings}
+\RequirePackage[most,breakable,listings]{tcolorbox}
+
+
+% Short useful commands
+
+\renewcommand{\theenumi}{\Alph{enumi}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\Diag}{\mathcal{D}}
+\newcommand{\curlyv}{\mathcal{V}}
+
+\newcommand{\esp}{\mathbb{E}}
+\newcommand{\proba}{\mathbb{P}}
+
+
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\Int}{\mathrm{Int}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\mnr}{\mathcal{M}_n(\R)}
+\newcommand{\mnk}{\mathcal{M}_n(\K)}
+\newcommand{\glnr}{\mathrm{GL}_n(\R)}
+\newcommand{\glnk}{\mathrm{GL}_n(\K)}
+
+\newcommand{\D}{\mathop{}\!\mathrm{d}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\Vvert}{\vert\kern-0.25ex\vert\kern-0.25ex\vert}
+\newcommand{\tnorm}[1]{\Vvert #1 \Vvert}
+
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\Tr}{Tr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Corentin Sallin}
+\fancyhead[R]{}
+\fancyfoot[L]{\leftmark}
+\fancyfoot[R]{Page : \thepage}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\theoremstyle{definition}
+\newtheorem{exo}{Exercice}
+%\newtheorem{q}{\(\quad\)}[exo]
+
+\newtheorem{theorem}{Théorème}[section]
+\newtheorem{lemma}[theorem]{Lemme}
+\newtheorem{definition}[theorem]{Définition}
+\newtheorem{lemme}[theorem]{Lemme}
+\newtheorem*{corollary}{Corollaire}
+
+\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{rk}[proposition]{Remarque}
+\newtheorem*{example}{Exemple}
+
+
+% Colors
+
+\definecolor{main1white}{RGB}{121, 129, 134}
+\definecolor{main1white2}{RGB}{204, 204, 204}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+
+\definecolor{backcolour}{rgb}{0.96,0.96,0.94}
+\definecolor{pDGreen}{HTML}{1E5128}
+\definecolor{pGreen}{HTML}{4E9F3D}
+
+
+% envs
+
+\newenvironment{q}[1]{
+    \begin{adjustwidth}{1cm}{}
+    \textbf{#1} : }{
+    \end{adjustwidth}}
+
+\titleformat{\chapter}[display]
+    {\normalfont\bfseries}{}{0pt}{\Huge}
+
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+\newcommand{\boxans}[1]{
+    \begin{tcolorbox}[
+            breakable,
+            enhanced,
+            interior style      = {
+                left color      = main1white2!65!gray!8,
+                middle color    = main1white2!50!gray!7,
+                right color     = main1white2!35!gray!6
+            },
+            %borderline north    = {.3pt}{0pt}{main1white!10},
+            %borderline south    = {.3pt}{0pt}{main1white!10},
+            frame hidden,
+            borderline west     = {2pt}{0pt}{main1white!30},
+            sharp corners       = downhill,
+            arc                 = 0 cm,
+            boxrule             = 0 cm,
+            %nobeforeafter,
+            %before={},
+            %nobeforeSTYLE,
+            %noafterSTYLE,
+            %after=\par\nointerlineskip
+            %source=remy
+        ]
+        #1
+    \end{tcolorbox}
+}
+
+\newcommand{\itt}{\item[\(\triangleright\)]}
+
+
+
+% Listing styles for code
+
+\lstdefinestyle{forest}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{pDGreen},
+    keywordstyle=\color{pGreen},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codegreen},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=forest}

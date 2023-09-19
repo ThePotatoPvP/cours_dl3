@@ -1,129 +1,6 @@
 \documentclass{report}
-\usepackage[T1]{fontenc}
-\usepackage[utf8x]{inputenc}
-\usepackage{lmodern}
-\usepackage{amsmath,amsthm,amsfonts,amssymb}
-\usepackage{graphicx}
-\usepackage[shortlabels]{enumitem}
-\usepackage{xcolor}
-\usepackage{accents}
-\usepackage{titlesec}
-\usepackage{etoolbox}
-\usepackage{bookmark}
-\usepackage{stmaryrd}
-\usepackage{fancyhdr}
-\usepackage[margin=25mm]{geometry}
-\usepackage[french]{babel}
-\usepackage{changepage}
-\usepackage{listings}
-\usepackage[most,breakable,listings]{tcolorbox}
+\usepackage{../../exercices}
 
-\date{\today}
-\author{Corentin Sallin \thanks{Cours de L3}}
-\title{Calcul Différentiel et topologie}
-
-
-\renewcommand{\theenumi}{\Alph{enumi}}
-
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\K}{\mathbb{K}}
-\renewcommand{\L}{\mathcal{L}}
-\newcommand{\M}{\mathcal{M}}
-\newcommand{\T}{\mathcal{T}}
-\newcommand{\Diag}{\mathcal{D}}
-\newcommand{\curlyv}{\mathcal{V}}
-
-\newcommand{\esp}{\mathbb{E}}
-\newcommand{\proba}{\mathbb{P}}
-
-
-\newcommand{\CC}{\mathcal{C}}
-\newcommand{\Int}{\mathrm{Int}}
-\newcommand{\id}{\mathrm{id}}
-\newcommand{\eps}{\varepsilon}
-\newcommand{\mnr}{\mathcal{M}_n(\R)}
-\newcommand{\mnk}{\mathcal{M}_n(\K)}
-\newcommand{\glnr}{\mathrm{GL}_n(\R)}
-\newcommand{\glnk}{\mathrm{GL}_n(\K)}
-
-\newcommand{\D}{\mathop{}\!\mathrm{d}}
-\newcommand{\ds}{\displaystyle}
-\newcommand*{\ensemble}[3][]{#1\{ #2 \mid #3 #1\}}
-\newcommand{\Vvert}{\vert\kern-0.25ex\vert\kern-0.25ex\vert}
-\newcommand{\tnorm}[1]{\Vvert #1 \Vvert}
-
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\Isom}{Isom}
-\DeclareMathOperator{\Tr}{Tr}
-
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{Corentin Sallin}
-\fancyhead[R]{}
-\fancyfoot[L]{\leftmark}
-\fancyfoot[R]{Page : \thepage}
-
-\renewcommand{\headrulewidth}{2pt}
-\renewcommand{\footrulewidth}{1pt}
-
-
-\theoremstyle{definition}
-\newtheorem{exo}{Exercice}
-%\newtheorem{q}{\(\quad\)}[exo]
-
-\newtheorem{theorem}{Théorème}[section]
-\newtheorem{lemma}[theorem]{Lemme}
-\newtheorem{definition}[theorem]{Définition}
-\newtheorem{lemme}[theorem]{Lemme}
-\newtheorem*{corollary}{Corollaire}
-
-\newtheorem{proposition}{Proposition}[theorem]
-\newtheorem{rk}[proposition]{Remarque}
-\newtheorem*{example}{Exemple}
-
-\definecolor{main1white} {RGB}{121, 129, 134}
-\definecolor{main1white2} {RGB}{204, 204, 204}
-
-\newenvironment{q}[1]{
-    \begin{adjustwidth}{1cm}{}
-    \textbf{#1} : }{
-    \end{adjustwidth}}
-
-\titleformat{\chapter}[display]
-    {\normalfont\bfseries}{}{0pt}{\Huge}
-
-\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
-
-\newcommand{\boxans}[1]{
-    \begin{tcolorbox}[
-            breakable,
-            enhanced,
-            interior style      = {
-                left color      = main1white2!65!gray!8,
-                middle color    = main1white2!50!gray!7,
-                right color     = main1white2!35!gray!6
-            },
-            %borderline north    = {.3pt}{0pt}{main1white!10},
-            %borderline south    = {.3pt}{0pt}{main1white!10},
-            frame hidden,
-            borderline west     = {2pt}{0pt}{main1white!30},
-            sharp corners       = downhill,
-            arc                 = 0 cm,
-            boxrule             = 0 cm,
-            %nobeforeafter,
-            %before={},
-            %nobeforeSTYLE,
-            %noafterSTYLE,
-            %after=\par\nointerlineskip
-            %source=remy
-        ]
-        #1
-    \end{tcolorbox}
-}
 
 \begin{document}
 
@@ -225,7 +102,10 @@ mails des teachers : daures@lspm.paris et le plus important collin@lspm.paris
 \end{exo}
 
 \begin{exo}
-    TODO
+    Soit \(\Omega\) un ensemble fini. Montrer que la tribu
+    \(\mathcal{P}(\Omega)=2^\Omega\) de toutes les parties est également finie.
+    Par contre, montrer que si \(\Omega\) n'est pas fini alors \(\mathcal{P}(\Omega)\)
+    n'est pas dénombrable.
 \end{exo}
 
 \begin{exo}
@@ -233,11 +113,50 @@ mails des teachers : daures@lspm.paris et le plus important collin@lspm.paris
     Montrer que \(\mathcal{H}=\cap_{\alpha\in A}\mathcal{F}_\alpha\) est aussi une tribu.
     \boxans{
         \begin{enumerate}
-            \item Les \(\mathcal{F}_\alpha\) étant des tribus on a \(\emptyset\in\mathcal{F}_\alpha\) pour tout \(\alpha\in A\) donc \(\emptyset\in\mathcal{H}\)
-            \item Soit \(H\in\mathcal{H}\) par définition \(H\in\mathcal{F_\alpha}\) pour tout \(\alpha\in A\) donc \(\bar{H}\in \mathcal{F}_\alpha\Rightarrow \bar{H}\in\mathcal{H}\)
-            \item Soit \(\left(H_i\right)_{i\in\N}\) suite d'éléments de \(\mathcal{H}\), ils sont dans tous les \(\mathcal{F}_\alpha\) ainsi leur union aussi et elle est donc dans \(\mathcal{H}\).
+            \itt Les \(\mathcal{F}_\alpha\) étant des tribus on a \(\emptyset\in\mathcal{F}_\alpha\) pour tout \(\alpha\in A\) donc \(\emptyset\in\mathcal{H}\)
+            \itt Soit \(H\in\mathcal{H}\) par définition \(H\in\mathcal{F_\alpha}\) pour tout \(\alpha\in A\) donc \(\bar{H}\in \mathcal{F}_\alpha\Rightarrow \bar{H}\in\mathcal{H}\)
+            \itt Soit \(\left(H_i\right)_{i\in\N}\) suite d'éléments de \(\mathcal{H}\), ils sont dans tous les \(\mathcal{F}_\alpha\) ainsi leur union aussi et elle est donc dans \(\mathcal{H}\).
         \end{enumerate}
     }
+\end{exo}
+
+\begin{exo}
+    Nous rappelons que les ensembles boreliens \(\mathcal{B}(\R)\) est la plus
+    petite tribu contenue dans \(\mathcal{P}(\R)\) qui contient les ouverts de \(\R\).
+    \begin{q}{1}
+        Montrer que \(\mathcal{B}(\R)=\sigma\left( ]a,b[; a,b\in\R, a<b\right)\)
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(\mathcal{B}(\R)=\sigma\left( ]a,b[; a,b\in\Q, a<b\right)\)
+    \end{q}
+    \begin{q}{3}
+        Montrer que \(\mathcal{B}(\R)=\sigma\left( [a,b]; a,b\in\R, a<b\right)\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(A_n\right)_{n\geq1}\) une suite de parties qui appartiennent
+    à une tribu \(\mathcal{A}\) d'un ensemble \(\Omega\). Montrer que :
+    \begin{enumerate}
+        \itt \(\ds \lim\inf A_n := \cup_{n=1}^\infty\cap_{k\geq n} Ak \in \mathcal{A}\)
+        et que \(\lim\inf 1_{A_n} = 1_{\lim\inf A_n}\)
+        \itt \(\ds \lim\inf A_n := \cap_{n=1}^\infty\cup_{k\geq n} Ak \in \mathcal{A}\)
+        et que \(\lim\sup 1_{A_n} = 1_{\lim\sup A_n}\)
+    \end{enumerate}
+    Montrer aussi que \(\lim\inf A_n\subset\lim\sup A_n\).
+\end{exo}
+
+\begin{exo}
+    Soit \(\mathcal{A}\) une tribu sur \(\Omega\) et \(B\subset\Omega\). Montrer que
+    \(\mathcal{A}_B=\{A\cap B\mid A\in\mathcal{A}\}\) est une tribu sur
+    l'ensemble \(B\). On l'appelle \(\sigma\)-algèbre trace de \(\mathcal{A}\) sur \(B\).
+\end{exo}
+
+\begin{exo}
+    Soient \(\left(A_i\right)_{i\in\N}\) des évennements d'une tribu d'un espace
+    probabilisé, démontrer par récurrence la formule de poincarré :
+    \[\proba\left(\cup_{i=1}^nA_i\right)=\sum_i\proba(A_i)-\sum_{i<j}\proba(A_i\cap A_j)
+    + \dots + (-1)^{n+1}\proba(A_1\cap A_2 \cap\dots\cap A_n)\]
 \end{exo}
 
 \end{document}
