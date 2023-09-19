@@ -131,12 +131,21 @@ mails des teachers : daures@lspm.paris et le plus important collin@lspm.paris
     petite tribu contenue dans \(\mathcal{P}(\R)\) qui contient les ouverts de \(\R\).
     \begin{q}{1}
         Montrer que \(\mathcal{B}(\R)=\sigma\left( ]a,b[; a,b\in\R, a<b\right)\)
+        \boxans{Soit \(U\) un ouvert de \(\R\) alors chaque partie connexe de \(U\)
+        est trivialement un intervalle ainsi on a bien l'égalité par axiome d'extensionnalité
+        ainsi que l'axiomatique des tribus. L'inclusion réciproque est triviale.}
     \end{q}
     \begin{q}{2}
-        Montrer que \(\mathcal{B}(\R)=\sigma\left( ]a,b[; a,b\in\Q, a<b\right)\)
+        Montrer que \(\mathcal{B}(\R)=\sigma\left( ]a,b[; a,b\in\Q\cap ]a,b[, a<b\right)\)
+        \boxans{Par densité de \(\Q\) on prend \(a_n, b_n\in\Q\) tels que \(]a_n,b_n[\rightarrow]a,b[\)
+        La tribu étant stable par union dénombrable on a l'inclusion dans la tribu du dessus,
+        la réciproque est triviale, on a donc l'égalité.}
     \end{q}
     \begin{q}{3}
         Montrer que \(\mathcal{B}(\R)=\sigma\left( [a,b]; a,b\in\R, a<b\right)\)
+        \boxans{Soit \([a_n, b_n]\subsetneq[a,b]\) dans la tribu tendant vers \([a,b]\) alors
+        en utilisant la stabilité par union dénombrable \(]a,b[\) est dans la tribu,
+        on se ramène à la question 1.}
     \end{q}
 \end{exo}
 
