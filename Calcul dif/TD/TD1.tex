@@ -201,8 +201,10 @@
         \begin{q}{c}
             Utiliser la question précédente pour démontrer la formule variationelle :
             \[\forall x \in \K^n \quad \|x\|_p=\sup\{|\sum x_iz_i|\ z\in\K^n, \|z\|_q\leq 1\}\]
-            \boxans{Le sup est atteint pour \(z=\frac{x}{\|x\|_p}\) qui rend les deux bornes de l'inégalité
-            de \textsc{Hölder} égales et offre ainsi le résultat.}
+            \boxans{On commence par observer que \(\|\cdot\|\geq \|\cdot\|_p\) pour \(p\geq 1\) ce qui implique \(\|x\|_p\leq\|x\|\)
+            On considère ensuite \(z\) sur la droite \(\lambda x\) tel que \(\|z\|=1\), alors \(|\langle x,z\rangle|= \left|\sum x_iz_i\right|=\|x\|\).
+            On peut prendre \(z'=\frac{z\|x\|_p}{\|x\|}\) qui vérifie bien \(\|z'\|_q\leq 1\) car \(\|\cdot\|_q\leq\|\cdot\|\).
+            \(|\langle x, z'\rangle|=\left|\sum x_i z'_i\right| = \|x\|_p\). L'inégalité de \textsc{Hölder} nous assure que cette valeur est le sup.}
         \end{q}
         \begin{q}{d}
             Démontrer que \(\|\cdot\|_p\) vérifie l'inégalité triangulaire (inégalité de \textsc{Minkowski})
