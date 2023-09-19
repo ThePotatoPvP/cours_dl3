@@ -106,6 +106,12 @@ mails des teachers : daures@lspm.paris et le plus important collin@lspm.paris
     \(\mathcal{P}(\Omega)=2^\Omega\) de toutes les parties est également finie.
     Par contre, montrer que si \(\Omega\) n'est pas fini alors \(\mathcal{P}(\Omega)\)
     n'est pas dénombrable.
+    \boxans{Par combinatoire, chaque élément peut ou non être dans chaque ensemble. Pour la seconde
+    partie Cantor nous assure qu'un ensemble n'admet de bijection avec ses parties, voici une
+    courte démonstration : on suppose \(f\) une surjection de \(E\) dans \(\mathcal{P}(E)\)
+    on considère \(V = {x\mid x\not\in f(x)}\) une partie de \(E\), si \(x\in V\)
+    alors \(f(x)\neq V\) et si \(x\not\in V\) alors \(f(x)\neq V\) sans quoi \(x\in V\) bref ça colle pas.
+    On a créé un ensemble qui n'a pas d'image, ça contredit la surjectivité de \(f\) donc pas de bijection.}
 \end{exo}
 
 \begin{exo}
@@ -159,4 +165,19 @@ mails des teachers : daures@lspm.paris et le plus important collin@lspm.paris
     + \dots + (-1)^{n+1}\proba(A_1\cap A_2 \cap\dots\cap A_n)\]
 \end{exo}
 
+\begin{exo}
+    Soient \(\left(A_i\right)_{i\in\N}\) des évennements d'une tribu montrer:
+    \[ \proba(\cup_{i=1}^nA_i)\leq \sum_{i=1}^n\proba(A_i)\]
+\end{exo}
+
+\begin{exo}
+    Démontrer les inégalités de \textsc{Bonferroni} suivantes.
+    \[\proba(\cup A_i)\geq \sum_i \proba(A_i)-\sum_{i<j}\proba(A_i\cap A_j)\quad
+    \proba(\cup A_i)\leq\sum_i \proba(A_i)-\sum_{i<j}\proba(A_i\cap A_j)+
+    \sum_{i<j<k}\proba(A_i\cap A_j\cap A_k)\]
+\end{exo}
+
+\begin{exo}
+    Démontrer l'inégalité suivante : \(\proba\left(\cap A_i\right)\geq\sum\proba(A_i)-n+1\)
+\end{exo}
 \end{document}
