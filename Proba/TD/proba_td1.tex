@@ -109,7 +109,7 @@ mails des teachers : daures@lspm.paris et le plus important collin@lspm.paris
     \boxans{Par combinatoire, chaque élément peut ou non être dans chaque ensemble. Pour la seconde
     partie Cantor nous assure qu'un ensemble n'admet de bijection avec ses parties, voici une
     courte démonstration : on suppose \(f\) une surjection de \(E\) dans \(\mathcal{P}(E)\)
-    on considère \(V = {x\mid x\not\in f(x)}\) une partie de \(E\), si \(x\in V\)
+    on considère \(V = \{x\mid x\not\in f(x)\}\) une partie de \(E\), si \(x\in V\)
     alors \(f(x)\neq V\) et si \(x\not\in V\) alors \(f(x)\neq V\) sans quoi \(x\in V\) bref ça colle pas.
     On a créé un ensemble qui n'a pas d'image, ça contredit la surjectivité de \(f\) donc pas de bijection.}
 \end{exo}
@@ -159,7 +159,10 @@ mails des teachers : daures@lspm.paris et le plus important collin@lspm.paris
         et que \(\lim\sup 1_{A_n} = 1_{\lim\sup A_n}\)
     \end{enumerate}
     \boxans{\(\mathcal{A}\) est une tribu, c'est donc un ensemble stable par union
-    et intersection dénombrable ainsi les deux limites sont bien dans \(\mathcal{A}\).}
+    et intersection dénombrable ainsi les deux limites sont bien dans \(\mathcal{A}\).
+    La limite supérieure d'une suite dans \(\{0,1\}^\N\) ne peut être 1 que si
+    la suite contient une infinité de \(1\) (de même pour la limite inférieure et 0
+    ) on a donc le résultat espéré sur les limites.}
     Montrer aussi que \(\lim\inf A_n\subset\lim\sup A_n\).
     \boxans{Soit \(x\in\lim\inf A_n\) alors par définition il existe \(n_0\in\N\)
     tel que pour tout \(n\geq n_0\) on ait \(x\in A_n\) ainsi pour tout
@@ -171,7 +174,7 @@ mails des teachers : daures@lspm.paris et le plus important collin@lspm.paris
     \(\mathcal{A}_B=\{A\cap B\mid A\in\mathcal{A}\}\) est une tribu sur
     l'ensemble \(B\). On l'appelle \(\sigma\)-algèbre trace de \(\mathcal{A}\) sur \(B\).
     \boxans{L'ensemble vide appartient bien à \(\mathcal{A}_B\), la stabilité
-    par complémentaire et union sont triviales et découles de celles dans \(\mathcal{A}\).}
+    par complémentaire et union sont triviales et découlent de celles dans \(\mathcal{A}\).}
 \end{exo}
 
 \begin{exo}
