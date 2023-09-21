@@ -1,131 +1,5 @@
 \documentclass{report}
-\usepackage[T1]{fontenc}
-\usepackage[utf8x]{inputenc}
-\usepackage{lmodern}
-\usepackage{amsmath,amsthm,amsfonts,amssymb}
-\usepackage{graphicx}
-\usepackage[shortlabels]{enumitem}
-\usepackage{xcolor}
-\usepackage{accents}
-\usepackage{titlesec}
-\usepackage{etoolbox}
-\usepackage{bookmark}
-\usepackage{stmaryrd}
-\usepackage{fancyhdr}
-\usepackage[margin=25mm]{geometry}
-\usepackage[frenchb]{babel}
-\usepackage{changepage}
-\usepackage{listings}
-\usepackage[most,breakable,listings]{tcolorbox}
-
-\date{\today}
-\author{Corentin Sallin \thanks{Cours de L3}}
-\title{Calcul Différentiel et topologie}
-
-
-\renewcommand{\theenumi}{\Alph{enumi}}
-
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\K}{\mathbb{K}}
-\renewcommand{\L}{\mathcal{L}}
-\newcommand{\M}{\mathcal{M}}
-\newcommand{\T}{\mathcal{T}}
-\newcommand{\Diag}{\mathcal{D}}
-\newcommand{\curlyv}{\mathcal{V}}
-
-\newcommand{\esp}{\mathbb{E}}
-\newcommand{\proba}{\mathbb{P}}
-
-
-\newcommand{\CC}{\mathcal{C}}
-\newcommand{\Int}{\mathrm{Int}}
-\newcommand{\id}{\mathrm{id}}
-\newcommand{\eps}{\varepsilon}
-\newcommand{\mnr}{\mathcal{M}_n(\R)}
-\newcommand{\mnk}{\mathcal{M}_n(\K)}
-\newcommand{\glnr}{\mathrm{GL}_n(\R)}
-\newcommand{\glnk}{\mathrm{GL}_n(\K)}
-
-\newcommand{\D}{\mathop{}\!\mathrm{d}}
-\newcommand{\ds}{\displaystyle}
-\newcommand*{\ensemble}[3][]{#1\{ #2 \mid #3 #1\}}
-\newcommand{\Vvert}{\vert\kern-0.25ex\vert\kern-0.25ex\vert}
-\newcommand{\tnorm}[1]{\Vvert #1 \Vvert}
-
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\Isom}{Isom}
-\DeclareMathOperator{\Tr}{Tr}
-
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{Corentin Sallin}
-\fancyhead[R]{}
-\fancyfoot[L]{\leftmark}
-\fancyfoot[R]{Page : \thepage}
-
-\renewcommand{\headrulewidth}{2pt}
-\renewcommand{\footrulewidth}{1pt}
-
-
-\theoremstyle{definition}
-\newtheorem{exo}{Exercice}
-%\newtheorem{q}{\(\quad\)}[exo]
-
-\newtheorem{theorem}{Théorème}[section]
-\newtheorem{lemma}[theorem]{Lemme}
-\newtheorem{definition}[theorem]{Définition}
-\newtheorem{lemme}[theorem]{Lemme}
-\newtheorem*{corollary}{Corollaire}
-
-\newtheorem{proposition}{Proposition}[theorem]
-\newtheorem{rk}[proposition]{Remarque}
-\newtheorem*{example}{Exemple}
-
-\definecolor{main1white} {RGB}{121, 129, 134}
-\definecolor{main1white2} {RGB}{204, 204, 204}
-
-\newenvironment{q}[1]{
-    \begin{adjustwidth}{1cm}{}
-    \textbf{#1} : }{
-    \end{adjustwidth}}
-
-\titleformat{\chapter}[display]
-    {\normalfont\bfseries}{}{0pt}{\Huge}
-
-\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
-
-\newcommand{\boxans}[1]{
-    \begin{tcolorbox}[
-            breakable,
-            enhanced,
-            interior style      = {
-                left color      = main1white2!65!gray!8,
-                middle color    = main1white2!50!gray!7,
-                right color     = main1white2!35!gray!6
-            },
-            %borderline north    = {.3pt}{0pt}{main1white!10},
-            %borderline south    = {.3pt}{0pt}{main1white!10},
-            frame hidden,
-            borderline west     = {2pt}{0pt}{main1white!30},
-            sharp corners       = downhill,
-            arc                 = 0 cm,
-            boxrule             = 0 cm,
-            %nobeforeafter,
-            %before={},
-            %nobeforeSTYLE,
-            %noafterSTYLE,
-            %after=\par\nointerlineskip
-            %source=remy
-        ]
-        #1
-    \end{tcolorbox}
-}
-
-\newcommand{\itt}{\item[\(\triangleright\)]}
+\usepackage{../../exercices}
 
 \begin{document}
 
@@ -202,15 +76,22 @@ mails des teachers :
     \[P\mathcal{R}Q \Leftrightarrow B\mid\left(P-Q\right)\]
     \begin{q}{1}
         Montrer que \(\mathcal{R}\) est une relation d'équivalence.
+        \boxans{Deux polynômes sont en relation si le reste de leur division euclidienne
+        par \(B\) est le même, l'égalité étant une relation d'équivalence, \(\mathcal{R}\)
+        l'est aussi.}
     \end{q}
     \begin{q}{2}
         On suppose \(B\) non nul. Démontrer qu'il existe une application
         de \(\R[X]/\mathcal{R}\) dans \(\R_{\deg(B)-1}[X]\) telle que, pour tout
         \(A\in\R[X]\), l'image de la classe d'équivalence de \(A\) par cette application
         soit le reste de la division euclidienne de \(A\) par \(B\).
+        \boxans{Deux polynômes en relation ayant le même reste, une telle application
+        est bien définie.}
     \end{q}
     \begin{q}{3}
         Démontrer que l'application obtenue à la question précédente est bijective.
+        \boxans{Pour démontrer la bijectivité on construit une réciproque \(\varphi : \R[X]/\mathcal{R} \to \R[X] :
+        P \mapsto P + B\R[X]\).}
     \end{q}
 \end{exo}
 
@@ -225,22 +106,39 @@ mails des teachers :
         On note \(\mathcal{R}\) la relation binaire sur \(\R\) définie par \(x\mathcal{R}y\Leftrightarrow x-y\in\Z\).
         Démontrer que \(\mathcal{R}\) est une relation d'équivalence et que
         \(\varphi\) induit une application bijective de \(\R/\mathcal{R}\) sur \(\mathbb{U}\).
+        \boxans{\(\left(\Z,-\right)\) étant trivialement un monoïde, \(\mathcal{R}\) est
+        une relation d'équivalence. Des représentants de \(\R/\mathcal{R}\) sont par exemple \([0,1[\)
+        ce qui donne bien que \(\varphi\) induit une application bijective comme demandé.}
     \end{q}
     \begin{q}{2}
         On note \(\equiv\) la relation binaire sur \(\CC\) telle que pour tout \(g_0, g_1\in\CC\) on a \(g_0\equiv g_1\)
         si et seulement si il existe une application continue \(h: [0,1] \times [0,1] \to \R\) telle que
         \(h(s,-)\in\CC\) pour tout \(s\in[0,1]\) et \(h(0,\cdot)=g_0\) et
         \(h(1,\cdot)=g_1\). Démontrer que \(\equiv\) est une relation d'équivalence
+        \boxans{\(\equiv\) est réfléxive en prenant \(h(s,\cdot)=g\) par exemple. Elle est
+        aussi symétrique en effet si \(g_0\mathcal{R}g_1\) avec une fonction \(h\) on pose \(h'\)
+        tel que \(h'(s,\cdot)=h(1-s,\cdot)\) donne bien \(g_1\mathcal{R}g_0\).
+        La transitivité repose sur l'idée de poser \(h''(s,\cdot)=h(2s,\cdot)\) pour \(s\leq \frac12\)
+        et \(h''(s, \cdot) = h(2s, \cdot)\). On connecte les deux chemins, \(g_0\) et \(g_2\) sont dans la
+        même composante connexe, on a le résultat voulu.}
     \end{q}
     \begin{q}{3}
         On note \(\sim\) la relation binaire sur \(\mathcal{L}\) telle que
         pour tout \(f_0,f_1\in\mathcal{L}\) on a \(f_0\sim f_1\) si et seulement si
-        il existe une applciation \(h\) définit de façon semblable à au dessus.
+        il existe une application \(h\) définit de façon semblable à au dessus.
         Démontrer que \(\sim\) est une relation d'équivalence.
+        \boxans{Le raisonnement est exactement le même qu'à la question précédente où
+        on construit des arcs de connexité.}
     \end{q}
-    \begin{q}
+    \begin{q}{4}
         Démontrer que l'application \(g\mapsto \varphi\circ g\) induit
         une application de \(\CC/\equiv\) dans \(\mathcal{L}/\sim\)
+        \boxans{Soient \(g_0, g_1\in\CC\) tel que \(g_0\equiv g_1\) montrons
+        \(\varphi \circ g_0 \sim \varphi \circ g_1\). On sait par hypothèse qu'il
+        existe \(h(s,\cdot)\in\CC\) vérifiant \(h(0,\cdot)=g_0\) et \(h(1,\cdot)=g_1\)
+        On pose alors \(\eta = \varphi \circ h\) qui est continue comme composée de fonction
+        continue et vérifie bien \(\eta(0)=\eta(1)=1\). L'application induite
+        est alors bien défnie.}
     \end{q}
 \end{exo}
 
@@ -249,15 +147,29 @@ mails des teachers :
     la relation d'équivalence sur \(\R\) telle que \(x\mathcal{R}y\Leftrightarrow f(x)=f(y)\).
     \begin{q}{1}
         Pour tout \(x\in\R\). Déterminer le cardinal de la classe d'équivalence de \(x\).
+        \boxans{Soit \(x\in\R\) on a \(|\cl(x)|=3\) pour \(x\in[0,1]\) et \(|\cl(x)|=1\) sinon.}
     \end{q}
     \begin{q}{2}
         Déterminer un système de représentants.
+        \boxans{Un système de représentant pour \(\mathcal{R}\) est \((-\infty,-\frac12) \cup [0, +\infty)\)}
     \end{q}
 \end{exo}
 
 \begin{exo}
     Soit \(E\) un ensemble. Soit \(A\in\mathcal{P}(E)\). On note \(\mathcal{R}\) la relation binaire de \(\mathcal{P}(E)\)
     telle que : \(X\mathcal{R}Y \Leftrightarrow X\cap A = Y\cap A\).
+    \begin{q}{1}
+        Démontrer que \(\mathcal{R}\) est une relation d'équivalence.
+        \boxans{Par symétrie des opérations ensemblistes, \(\mathcal{R}\) est une relation d'équivalence}
+    \end{q}
+    \begin{q}{2}
+        Démontrer que \(\mathcal{P}(A)\) est un sysème de représentants
+        \boxans{On remarque que chaque élément de \(\mathcal{P}(A)\) est dans une classe
+        différente, en effet si \(X\mathcal{R}Y\) alors les deux on la même partie de \(A\) en commun.
+        Supposons maintenant un élément \(X\) de \(\mathcal{P}(E)\) montrons qu'il est dans la même
+        classe qu'un représentant de \(\mathcal{P}(A)\), on pose \(Y = X\cap A\) mézalor
+        \(Y\in \mathcal{P}(A)\) donc on a directement \(X\mathcal{R}Y\) ce qui livre le résultat escompté.}
+    \end{q}
 \end{exo}
 
 \end{document}
