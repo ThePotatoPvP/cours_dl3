@@ -1,0 +1,146 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{Groupes, sous-groupes}}
+\end{center}
+
+\begin{exo}
+    Parmi les couples suivants, lesqules sont des groupes ?
+    \begin{q}{1}
+        \(\left(\N, \max\right)\)
+        \boxans{Ce n'est pas un groupe, en effet le neutre est \(0\) mais il
+        n'y a pas d'inverse pour les autres entiers naturels.}
+    \end{q}
+    \begin{q}{2}
+        \(\left(\R\backslash\{-1\},\star\right)\) où \(x\star y = xy+x+y\).
+        \boxans{On remarque que \(0\) est l'élément neutre, aussi l'ensemble
+        est stable par l'opération \(\star\) et chaque \(x\in\R\backslash\{-1\}\)
+        admet \(\frac{1}{x+1}-1\) comme inverse, on a bien un groupe. L'associativité
+        se vérifie aussi au brouillon.}
+    \end{q}
+    \begin{q}{3}
+        \textit{tableau à recopier}
+        \boxans{On observe que \(d\) est le neutre et que \(c\) n'a pas d'inverse,
+        l'ensemble n'est donc pas un groupe.}
+    \end{q}
+    \begin{q}{4}
+        \(\left(\R, \star\right)\) où \(x\star y=x+y-2\) pour tous \(x,y\in\R\).
+        \boxans{Ici \(2\) est l'élément neutre, chaque réel \(x\) admet \(2-x\)
+        comme inverse, l'associativité provient directement de celle sur l'addition.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit un groupe \(\left(G, \times\right)\). Pour tous \(g, x \in G\) on note
+    \(^gx = g\times x\times g^{-1}\). Soient \(g,x,y\in G\) démontrer que
+    \(^g(x\times y) = (^gx)\times(^gy)\) et \(^g(x^{-1})=(^gx)^{-1}\).
+    \boxans{\((^gx)\times(^gy)=g\times x\times g^{-1}\times g\times y\times g^{-1}
+    =g\times x\times y\times g^{-1}=^g(x\times y)\)\newline
+    \(\left(^gx\right)^{-1}= \left(g\times x\times g^{-1}\right)^{-1}=g \times (g\times x)^{-1}
+    =g\times x^{-1}\times g^{-1}=^g(x^{-1})\)}
+\end{exo}
+
+\begin{exo}
+    Soit un groupe \(\left(G,\times\right)\).
+    \begin{q}{1}
+        Démontrer que si \(g^2\times h^2=(g\times h)^2\) pour tout \(g,h\in G G\)
+        alors \(G\) est abélien.
+        \boxans{On a l'égalité entre \((g\times h)^2 = g\times h\times g\times h\)
+        et \(g\times g\times h\times h\). En composant à gauche par \(g^{-1}\) et
+        à droite par \(h^{-1}\) on a la commutativité.}
+    \end{q}
+    \begin{q}{2}
+        Démontrer que si \(g^2=e\) pour tout \(g\in G\) alors \(G\) est abélien.
+        \boxans{Soient \(g,h\in G\) on sait que \(\left(gh\right)^{-1}=h^{-1}g^{-1}\)
+        or par hypothèse \((gh)^2=e\) donc en composant par \((gh)^{-1}\) à gauche
+        on a \(gh = hg\) car \(h^{_1}=h\) et \(g^{-1}=g\), on a la commutativité.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit un groupe \(\left(G,\times\right), s,t\in G\) on suppose que \(s^2=t^2=2\)
+    et \(s\times t\times s = t\times s \times t\). Soit \(n\in\N^*\) et
+    \(a_1\dots a_n\in\{s,t\}\). Démontrer que \(\prod a_k \in
+    \{e,s,t,s\times t\times s, s\times t, t\times s\}\)
+\end{exo}
+
+\begin{exo}
+    Dans quel(s) cas \(H\) est-il un sous groupe de \(\left(G,\times\right)\)
+    \begin{q}{1}
+        \(G=\textrm{GL}_2(\R)\) et \(H = \left\{
+            \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix},
+            \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix},
+            \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix},
+            \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}\right\}\)
+        \boxans{On a ici un cas d'école, \(H\) est le sous groupe des quaternions.}
+    \end{q}
+    \begin{q}{2}
+        \(G=\Q\) et étant donné \(a\in\Z^*, H=\left\{ x\in\Q\mid\exists n\in\N,a^nx\in\Z \right\}\)
+    \end{q}
+    \begin{q}{3}
+        \(G=\glnr\) et \(H=\glnr\cap M_n(\Z)\)
+        \boxans{Ce n'est pas un groupe, en effet \(\det(A^{-1})=\det(A)^{-1}\) donc toute
+        matrice inversible à coefficients dans \(\Z\) et à déterminant non unitaire
+        n'aura pas son inverse dans \(H\).}
+    \end{q}
+    \begin{q}{4}
+        \(G=\textrm{GL}_2(\R)\) et \(H=O_2(\Z)\)
+        \boxans{On a bien \(I_2\in H\), l'inverse est bien dans \(H\) d'après
+        la question précédente et l'associativité provient de celle dans \(G\),
+        on a donc bien un sous groupe.}
+    \end{q}
+    \begin{q}{5}
+        \(G=\Z\) et \(H=\cup_{n=1}^100 2^n\Z\) et.
+        \boxans{Chaque groupe est inclus dans le précédent ainsi \(H=2\Z\)
+        qui est bien un sous groupe de \(\Z\).}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    \begin{q}{1}
+        Justifier que \(2\Z\cap3\Z\) est un sous groupe de \(\Z\). Faire de même
+        pour \(4\Z\cap6\Z\cap8\Z\).
+    \end{q}
+    \begin{q}{2}
+        Soient \(a,b\in\Z\) on note \(a\Z+b\Z\) l'ensemble \(\left\{ au+bv
+        | u,v\in\Z \right\}\).
+        \begin{q}{a}
+            Démontrer que \(a\Z+b\Z=\langle a,b\rangle\).
+        \end{q}
+        \begin{q}{b}
+            Démontrer que \(\langle a,b\rangle=\gcd(a,b)\Z\).
+        \end{q}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On note \(\U_n\) l'ensemble des racines \(n\)-ièmes de l'unité, et \(\U\) le cercle unité.
+    \begin{q}{1}
+        Démontrer que \(\U\) est un sous groupe de \(\left(C,\times\right)\)
+    \end{q}
+    \begin{q}{2}
+        Soit \(n\in\N^*\) décrire \(\U_n\) à l'aide de l'écriture exponentielle
+        des nombres complexes et démontrer que c'est un sous groupe de
+        \(\left(C,\times\right)\).
+    \end{q}
+    \begin{q}{3}
+        Décrire \(\U_6\), quels sont ses sous groupes ?
+    \end{q}
+    \begin{q}{4}
+        Soit \(n\in\N_0\) démontrer que \(U_n\) est monogène.
+    \end{q}
+    \begin{q}{5}
+        Démontrer que \(\cup_{n\in\N^*}\U_n\) est un sous groupe de \(\C^*\).
+    \end{q}
+    \begin{q}{6}
+        Démontrer que \(\cup_{n\in\N^*}\U_n\) est infini et que tous ses sous groupes
+        monogènes sont finis.
+    \end{q}
+\end{exo}
+
+
+
+\end{document}
