@@ -85,7 +85,7 @@
         \end{q}
         \begin{q}{d}
             Démontrer que \(\|\cdot\|_p\) vérifie l'inégalité triangulaire (inégalité de \textsc{Minkowski})
-            \boxans{Ce résultat s'obtient à l'aide de l'inégalité triangulaire sur la valeur absolue sur chaque terme de la suite.}
+            \boxans{Ce résultat s'obtient à l'aide de l'inégalité triangulaire sur la valeur absolue dans la formule variationelle.}
         \end{q}
         \begin{q}{e}
             Démontrer alors que l'application \(\|\cdot\|_p\) est une norme pour \(p\geq 1\).
@@ -159,7 +159,7 @@
             \itt Supposons \(B_n\) convexe alors soient \(x,y\in B_n\) tels que \(N(x)=N(y)=1\)
             alors \(\frac{x+y}{2}\in B_n\) par convexité donc \(N(x+y)\leq 2 = N(x)+N(y)\).
             L'absolue homogénéité de \(N(\cdot)\) assure alors que l'application
-            vérifie l'inégalite triangulaire et est donc une norme
+            vérifie l'inégalité triangulaire et est donc une norme
             \itt La réciproque est évidente, si \(N(\cdot)\) est une norme alors elle vérifie
             l'inégalité triangulaire et \(B_N\) est alors convexe de par l'argument ci-dessus.
         \end{enumerate}
@@ -167,7 +167,7 @@
 \end{exo}
 
 \begin{exo}
-    \boxans{Flemme de recopier c'est que du bon sens.}
+    \boxans{Cet exercice étant majoritairement graphique, aucune correction ne sera proposée ici}
 \end{exo}
 
 \begin{exo}
@@ -211,9 +211,64 @@
     dans \(\R\).
     \begin{q}{1}
         Prouver que \(l^\infty(X,\R)\) est un sev de \(\R^X\)
+        \boxans{L'espace étudié contient bien la fonction nulle et est stable par combinaison
+        linéaire sans le moindre problème, c'est donc bien un sev.}
     \end{q}
     \begin{q}{2}
         Démontrer que \(\|\cdot\|_\infty\) est une norme sur \(l^\infty(X,\R)\).
+        \boxans{L'homogénéité et la positivité étant évidentes on commence la séparation,
+        supposons \(\|f(x)\|=0\) alors \(f(x)=0\) pour tout \(x\in X\) ainsi \(f\) est nulle.
+        Pour ce qui est de l'inégalité triangulaire elle est une conséquance immédiate
+        de celle sur la valeur absolue en chaque \(x\).}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(n\in\N^*\), on pose \(\|\cdot\|_\infty : \mnk \to \K\colon
+    A \mapsto \sup_{k\leq n}\sum_{l\leq n} |a_{k,l}|\) la plus grande somme
+    sur une colonne.
+    \begin{q}{1}
+        Prouver que \(\|\cdot\|_\infty\) est une norme d'algèbre sur \(\mnk\).
+        \boxans{Si \(\|A\|_\infty=0\) alors chaque colonne est pleine de \(0\) donc la matrice est nulle.
+        L'application est trivialement positive et homogène. L'inégalité triangulaire
+        provient encore une fois de celle de la valeur absolue. L'application est donc bien une norme.
+        \[\|AB\|_\infty=\sup_k\sum_l[AB]_{k,l}=\sup_k\sum_l\sum_i[A]_{k,i}[B]_{i,l}
+        =\sup_k\sum_i[A]_{k,i}\sum_l[B]_{i,l}=\|A\|_\infty\sum_l [B]_{i,l}\]
+        or on a \(\sum_l [B]_{i,l}\leq\|B\|_\infty\) par définition de l'application.
+        Mézalor \(\|\cdot\|_\infty\) est bien une norme d'algèbre.
+        \textit{(on a pu intervertir les sommes car elles sont finies)}}
+    \end{q}
+    \begin{q}{2}
+        Soit \(A\in\mnk\), démontrer que pour \(\lambda\) valeur propre de \(A\)
+        on a \(|\lambda|\leq\|A\|_\infty\).
+        \boxans{Si \(\lambda=0\) alors l'inégalité est évidente, sinon on peut écrire
+        \(A = \begin{pmatrix}B&0\\0&0\end{pmatrix}\) avec \(B\) inversible.
+        On a donc que l'image et le noyau de \(A\) sont en somme directe, ce qui
+        permet de diagonaliser \(A\) de sorte que \(B\) soit une diagonale de valeurs propres.
+        ainsi on trouve \(\|A\|_\infty\) est le sup des valeurs propres.
+        On a bien l'inégalité souhaitée.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Étudier sur des exemples si toute norme \(N\) sur le \(\R\)-ev \(\R^2\)
+    vérifie la propriété suivante : \(\left(|x_1|\leq|x_2|\right)\land
+    \left(|y_1|\leq|y_2|\right)\Rightarrow N\left(x_1,y_1\right)\leq N\left(x_2,y_2\right)\)
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(a,b\right)\in\R^2\) tel que \(a<b\). On note \(J=[a,b]\).
+    \begin{q}{1}
+        Justifier que \(\CC(J,\K)\) est un sev de \(l^\infty(J,K)\)
+        \boxans{On est sur un fermé, ainsi d'après \textsc{Bolzano-Weiestrass} toute
+        fonction continue est fermée et atteint ses bornes. On a donc l'inclusion,
+        la stabilité par combinaison linéaire est évidente.}
+    \end{q}
+    \begin{q}{2}
+        Prouver que \(\|\cdot\|_{l^1}\) est une norme sur \(\CC(J,\K)\)
+    \end{q}
+    \begin{q}{3}
+        Comparer la norme \(l^1\) et la norme infinie.
     \end{q}
 \end{exo}
 
