@@ -129,13 +129,21 @@
         On note \(\left\langle\cdot,\cdot\right\rangle\) l'application de \(\mnr^2\)
         dans \(\R\) telle que \(\langle A,B\rangle=\Tr(^tAB)\). Démontrer que l'application
         ainsi définie est un produit scalaire sur \(\mnr\) de norme associée \(\|\cdot\|\).
+        \boxans{L'application est bien multilinéaire et définie positive comme somme de
+        carrés de réels, on a donc bien un produit scalaire auquel on peut associer une norme
+        à l'aide des formules de polarisation usuelle.}
     \end{q}
     \begin{q}{2}
         Démontrer que l'application \(\|\cdot\|_\infty : A \mapsto \sup |a_{i,j}|\)
         est une norme sur \(\mnr\).
+        \boxans{L'application est trivialement homogène et séparée, l'inégalité triangulaire
+        provient directement de celle sur la valeur absolue.}
     \end{q}
     \begin{q}{3}
         Montrer que les normes sont équivalentes et trouver les meilleures constantes pour l'encadrement.
+        \boxans{Les normes sont équivalentes avec \(\|\cdot\|_\infty\leq\|\cdot\|\leq n^2\|\cdot\|\infty\)
+        cer bornes sont atteintes à gauche avec les \(E_{i,j}\) et à droite avec \(J_n\) la matrice
+        ne contenant que des \(1\).}
     \end{q}
 \end{exo}
 
@@ -156,6 +164,57 @@
             l'inégalité triangulaire et \(B_N\) est alors convexe de par l'argument ci-dessus.
         \end{enumerate}
     }
+\end{exo}
+
+\begin{exo}
+    \boxans{Flemme de recopier c'est que du bon sens.}
+\end{exo}
+
+\begin{exo}
+    Soit \(E\) un \(\K\)-ev normé et \(u\in\mathcal{L}(E)\).
+    \begin{q}{1}
+        L'application \(\|\cdot\|\circ u\) est-elle une norme sur \(E\) ?
+        \boxans{On remarque que la seule propriété qui pourrait poser problème est la séparation,
+        il faut donc que \(u\) soit injective afin d'avoir une norme. La linéarité permet de
+        s'assurer que l'inégalité triangulaire ne pose pas problème si \(u\) est in isomorphisme.}
+    \end{q}
+    \begin{q}{2}
+        On choisit par exemple \(E=\left(\R^2,\|\cdot\|_1\right)\) et \(u\) la rotation
+        d'angle \(\frac\pi4\). Expliciter la norme sur \(\R^2\) ainsi obtenue.
+        \boxans{La norme obtenue est \(\|\cdot\|_\star : \left(x,y\right) \mapsto
+        |\arctan\left(\frac{y}{x}+\frac\pi4\right)|\|(x,y)\|_1\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(n\in\N^*\) et \(\left(a_i\right)_{k\leq n} \in\R_+^n\) on note \(M_1\) et \(M_\infty\)
+    les applications de \(\R^n\) dans \(\R\) telles que:
+    \[ M_1\left(x\right)=\sum_k a_k\left|x_k\right|\quad\text{et}\quad M_\infty\left(x\right)
+    =\sup a_k\left|x_k\right|\]
+    \begin{q}{1}
+        Les applications définies sont elles des normes ? Si non, sous quelles conditions le deviennent-elles ?
+        \boxans{On commence par remarquer que si l'un des \(a_k\) est nul on peut créer un \(x\) tel que \(M\)
+        ne vérifie pas la séparation. Si tous sont non nuls, on a bien la séparétion, l'homogénéité
+        provient de la linéarité de la somme et su passage au sup et l'inégalité triangulaire de celle
+        sur la valeur absolue.}
+    \end{q}
+    \begin{q}{2}
+        Soit \(C:\R^2\to\R\) telle que \(C(x)=|x_1|\mathbb{I}_{x_1\neq 0}+|x_2|\mathbb{I}_{x_2\neq 0}\)
+        \boxans{Si \(x_1\neq 0\) et \(x_2 \neq 0\) alors \(C(x)=\|x\|_1\), les deux applications
+        coincident aussi lorsqu'au moins une des deux variable est nulle, on a donc \(C(\cdot)=\|\cdot\|_1\).}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(X\) un ensemble non vide. On note \(\R^X\) le \(R\)-ev des applications de
+    \(X\) dans \(\R\) et \(l^\infty(X,\R)\) l'ensemble des applications bornée de \(X\)
+    dans \(\R\).
+    \begin{q}{1}
+        Prouver que \(l^\infty(X,\R)\) est un sev de \(\R^X\)
+    \end{q}
+    \begin{q}{2}
+        Démontrer que \(\|\cdot\|_\infty\) est une norme sur \(l^\infty(X,\R)\).
+    \end{q}
 \end{exo}
 
 \end{document}
