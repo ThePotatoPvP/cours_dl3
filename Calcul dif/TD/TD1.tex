@@ -261,14 +261,43 @@
     \begin{q}{1}
         Justifier que \(\CC(J,\K)\) est un sev de \(l^\infty(J,K)\)
         \boxans{On est sur un fermé, ainsi d'après \textsc{Bolzano-Weiestrass} toute
-        fonction continue est fermée et atteint ses bornes. On a donc l'inclusion,
+        fonction continue est bornée et atteint ses bornes. On a donc l'inclusion,
         la stabilité par combinaison linéaire est évidente.}
     \end{q}
     \begin{q}{2}
         Prouver que \(\|\cdot\|_{l^1}\) est une norme sur \(\CC(J,\K)\)
+        \boxans{La continuité et la positivité de \(|f(t)|\) donnent là séparation,
+        l'homogénéité provient de la linéarité de l'intégrale, l'inégalité triangulaire
+        s'obtient en poussant la craie avec celle de la valeur absolue.}
     \end{q}
     \begin{q}{3}
         Comparer la norme \(l^1\) et la norme infinie.
+        \boxans{\[\|f\|_{l^1}\leq\int_J |f(t)| \leq \int_J \sup_J|f| \leq (b-a)\|f\|_\infty\]
+        On ne peut cependant avoir d'inégalité dans l'autre sens, les deux normes ne sont pas équivalentes,
+        en effet la suite de fonctions \(g_n: x\mapsto \left(x-a-\frac{1}{n}\right)^{-n}\)
+        vérifie \(\lim_{n\to\infty} \frac{\|g_n\|_\infty}{\|g_n\|_{l^1}}=+\infty\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Dans cet exercice on étudiera le lien entre des normes et leur boule unité.
+    \begin{q}{1}
+        Soit \(E\) un \(\K\)-ev, on note \(B(N)=\left\{ x\in E\mid N(x)<1 \right\}\)
+        la boule unité ouverte associée à \(N\). Soient \(N_1\) et \(N_2\) des normes sur \(E\),
+        montrer que \(N_1\leq N_2\) si et seulement si \(B(N_2)\subseteq B(N_1)\).
+    \end{q}
+    Pour toit \(p\in[1,+\infty)\) on note \(B_n^p=\left\{ v\in\R^n\mid \|v\|_p<1 \right\}\)
+    c'est à dire la boule ouverte de centre \(0\) et rayon \(1\) pour chaque norme \(p\).
+    \begin{q}{2}
+        Dessiner sur le plan euclidien les ensembles \(B_2^p\) pour \(p\in\{1,2,\infty\}\).
+        Décrire au mieux l'évolution de \(B_2^p\) lorsque \(p\) croît.
+    \end{q}
+    \begin{q}{3}
+        Soient \(\left(p,p'\right)\in[1,+\infty]^2\) prouver l'équivalence
+        \(B_n^p\subseteq B_n^{p'} \Leftrightarrow p\leq p'\)
+    \end{q}
+    \begin{q}{4}
+        Soit \(v\in B_n^\infty\backslash B_n^1\) montrer qu'il existe \(p\in(1,+\infty)\) tel que \(\|v\|_p\)
     \end{q}
 \end{exo}
 
