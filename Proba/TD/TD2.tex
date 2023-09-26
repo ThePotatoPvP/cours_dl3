@@ -1,0 +1,132 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+\begin{center}
+    \Huge{\textbf{PR5-L3 Maths - TD 2}}
+\end{center}
+\bigskip
+
+\begin{exo}
+    \(\left(\Omega, \mathcal{F},P\right)\) est un espace probabilisé et on choisit
+    \(B\in\mathcal{F}\) tel que \(P(B)>0\). Montrer que l'application \(A\mapsto
+    P(A\mid B)\) est aussi une probabilité sur l'espace mesurable \(\left(\Omega,
+    \mathcal{F}\right)\)
+    \boxans{L'application est évidemment positive et \(\sigma\)-additive, d'autre
+    par \(B\subset\Omega\) donc par croissance de \(P\), \(P(\Omega\mid B)=1\).
+    L'application définie est finalement bien une probabilité.}
+\end{exo}
+
+\begin{exo}
+    Montrer que \(P(A\mid B)= \frac{P(B\mid A)P(A)}{P(B)}\) si \(P(A)P(B)>0\).
+    \boxans{Utilisons un raisonnement combinatoire, pour piocher un élément dans
+    \(A\cap B\) on peut d'abord vérifier si l'élément piocher est dans \(A\),
+    ce qui donne une probabilité de \(P(A)P(B\mid A)\), ou bien l'inverse qui
+    donne la probabilité \(P(B)P(A\mid B)\). L'évènement étant le même, la probabilité
+    doit l'être aussi, donc \(P(B)P(A\mid B)=P(A)P(B\mid A)\)}
+\end{exo}
+
+\begin{exo}
+    Montrer que si on a des évènements \(\left(A_i\right)_{i\in\leq n}\) tels
+    que \(P(A_1\cap...\cap A_{n-1})>0\) on a aussi :
+    \[P\left(\cap^n A_i\right) = P(A_1)P(A_2\mid A_1)\dots
+    P(A_n \mid A_1\cap\dots\cap A_{n-1})\]
+    \boxans{On utilise ici encore un raisonnement combinatoire, la probabilité qu'un
+    élément tiré au hasard soit dans l'intersection des \(A_n\) est la même que celle qu'il soit
+    dans chacun des \(A_n\) par défintion de l'intersection, en les vérifiant
+    dans l'ordre on a la formule de l'énoncé.}
+\end{exo}
+
+\begin{exo}
+    \textit{Deux exercices de base sur l'indépendance}
+    \begin{q}{1}
+        Nous lançons deux pièces équilibrées : \(A\) = \{première pièce est pile\},
+        \(B\) = \{deuxième pièce est pile\},\(C\)= \{les deux pièces ont donné le même
+        issu\}. Montrer que \(A\) et \(B\) sont indépendants. Pareil pour \(A\) et
+        \(C\), et pour \(B\) et \(C\). Peut on dire que A, B et \(C\) sont
+        indépendants ? Et si les deux pièces sont indentiques mais biaisées ?
+    \end{q}
+    \begin{q}{2}
+        Nous lançons deux dés équilibrés. Montrer que les événements \{la somme
+        des dés vaut 7\} et \{l'issu du premier dé est j\} sont indépendants.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    \textit{Deux questions sur l'indépendance}
+    \begin{q}{1}
+        Soit \(A\) un évènement indépendant de lui même, que vaut \(P(A)\) ?
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(A_1,A_2,A_3\) sont indépendants si et seulement si
+        \(\sigma(A_1), \sigma(A_2)\) et \(\sigma(A_3)\) le sont. Nous rappelons
+        que les tribus \(\mathcal{F}_1,\dots,\mathcal{F}_n\) sont indépendantes si
+        pour tout choix de \(A_j\) dans \(\mathcal{F}_j\) on a \(P(\cap A_j)=
+        \prod P(A_j)\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(A_n\right)_{n\in\N}\) une suite d'évènements de probabilité
+    nulle sur un espace de probabilités. Soit \(A\) un évènement de probabilité
+    \(\frac13\) sur le même espace. Montrer que \(A\cup (\cup A_i)\) est un évènement
+    et calculer sa probabilité.
+\end{exo}
+
+\begin{exo}
+    Soit \(F\) une fonction de répartition. Montrer que \(F\) peut avoir une infinité
+    de points de discontinuité mais que le nombre de ces points est au plus dénombrable.
+\end{exo}
+
+\begin{exo}
+    Soit \(F\) la fonction de répartition d'une loi sur \(\R\) donnée par
+    \[F(x)=\frac14\mathds{1}_{\R^+}(x)+
+            \frac12\mathds{1}_{[1,+\infty)}(x)+
+            \frac14\mathds{1}_{[2,+\infty)}\]
+    Trouver la probabilité des ensembles suivants:
+    \begin{enumerate}
+        \itt \( (-\frac12,\frac12)\)
+        \itt \( (-2,\frac32)\)
+        \itt \((\frac23,\frac52)\)
+        \itt \([0,2)\)
+        \itt \((3,+\infty)\)
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+    Soit \(F\) la fonction définie pour tout \(x\in\R\) par
+    \[F(x)=\sum_{i=1}^\infty \frac{1}{2^i}\mathds{1}_{[\frac{1}{i},+\infty)}(x)\]
+    Montrer qu'il s'agit d'une fonction de répartition d'une loi sur \(\R\) puis
+    trouver la probabilité des ensembles suivants :
+    \begin{enumerate}
+        \itt \([1,+\infty)\)
+        \itt \([\frac{1}{10},+\infty)\)
+        \itt \(\left\{ 0 \right\}\)
+        \itt \([0,\frac12)\)
+        \itt \(\R_-^*\)
+        \itt \(\R_+^*\)
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+    Soit \(F\) la fonction définie pour tout \(x\in\R\) par
+    \[F(x)=\frac{\min(x,1)}{3}\mathds{1}_{\R_+}
+    + \sum_{i=0}^\infty \frac{1}{3*2^i}\mathds{1}_{[i,+\infty)}(x)\]
+    \begin{q}{1}
+        Montrer qu'il s'agit de la fonction de répartition d'une probabilité.
+    \end{q}
+    \begin{q}{2}
+        Trouver la probabilité des évènements suivants :
+        \begin{enumerate}
+            \itt \([1,+\infty)\)
+            \itt \((0,1)\)
+            \itt \(\{0\}\)
+            \itt \(\{1,2,3\}\)
+            \itt \([n,+\infty)\) pour \(n=0,1,2\dots\)
+            \itt \(\R_-^*\)
+            \itt \(\{1,\dots,n\}\) pour \(n=1,2,\dots\)
+            \itt \(\N\)
+        \end{enumerate}
+    \end{q}
+\end{exo}
+\end{document}

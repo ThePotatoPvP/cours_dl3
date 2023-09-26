@@ -1,0 +1,58 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+\begin{exo}
+    Vrai- Vrai - Vrai - Faux - Vrai - Vrai - Faux - Vrai
+    Vrai - Vrai - Faux - Faux - Vrai(sterling) - Faux - Vrai
+\end{exo}
+
+\begin{exo}
+    Analyse de complexité.
+    \(nlog(n) - nlog(n) - n^2 - log^2(n)\)
+\end{exo}
+
+\begin{exo}
+    Algorithmes de graphes.
+    Algo1 est en \(\Theta(n^2)\) le nombre de sommets si représenté par une matrice
+    d'ajacence et en \(\Theta(n)\) le nombre d'arrêtes si en liste d'adjacence. \\
+    Algo2 associe à chaque sommet le poids de son arrête incidente la plus légère.
+    sa complexité est en \(\Theta(|V|)\) avec constante 3. Pour le rendre plus
+    efficace on peut établir un ordre de parcours du graphe afin de ne pas vérifier
+    plusieurs fois le poids d'une arrête, on abaisse ainsi la constante
+    multiplicative.
+\end{exo}
+
+\begin{exo}
+    Problème du voyageur de commerce
+    \begin{q}{1}
+        Il suffit pour cela de faire un graphe complet où chaque ville de France
+        est représentée par un sommet et chaque arrête a pour poids la distance entre deux villes.
+    \end{q}
+    \begin{q}{2}
+        On peut calculer le poids de chaque chemin hamiltonien du graphe dans un tableau
+        puis le trier pour récupérer le plus court.
+    \end{q}
+    \begin{q}{3}
+        Grâce à un raisonnement combinatoire on obtient que cet algorithme
+        a une complexité en \(O(n!)\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Échange de cavaliers.
+    \begin{q}{1}
+        Si on modélise l'échiquier par un graphe avec une arrête entre deux cases
+        si et seulement si le passage de l'une à l'autre est possible on a un graphe pertinent.
+    \end{q}
+    \begin{q}{2}
+        Le début ressemble à 1. N4c3 Na4 2. Nb1 Ndb2 3. Na3 Nc3 4. Nc2 Nba4 5. Na1 Nb1 6. Nb3 Nac3 7. Na1 Na3
+        8. Nb3 Ncb1 9. Nc3 Nc2 10. Na4 Nca3 11. Nb2 Nc2 12. Nd3 Nc3 13. Na1 Na3 14. Nc2
+        Nab1 15. Na3 Na2 16. Nc2 Nbc3 17. Na3 Na4 18. Nb1 Nb2 19. Nc3S
+    \end{q}
+    \begin{q}{3}
+        Les cases 3 et 9 sont pas utilisées.
+    \end{q}
+\end{exo}
+
+\end{document}
