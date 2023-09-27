@@ -43,12 +43,26 @@
         Nous lançons deux pièces équilibrées : \(A\) = \{première pièce est pile\},
         \(B\) = \{deuxième pièce est pile\},\(C\)= \{les deux pièces ont donné le même
         issu\}. Montrer que \(A\) et \(B\) sont indépendants. Pareil pour \(A\) et
-        \(C\), et pour \(B\) et \(C\). Peut on dire que A, B et \(C\) sont
+        \(C\), et pour \(B\) et \(C\). Peut on dire que \(A\), \(B\) et \(C\) sont
         indépendants ? Et si les deux pièces sont indentiques mais biaisées ?
+        \boxans{On se convainc à l'aide d'un arbre de probabilités par exemple que
+        \(P(A)=\frac12=P(B)\) et que \(P(A\cap B)=\frac14\) ce qui donne bien l'indépendance
+        des deux évènements. Aussi \(P(C)=\frac12\) en regardant la liste des issues possibles
+        et en constatant qu'elles sont équiprobables.
+        On a alors \(P(A\cap C)=P(A)\times P(C)\) et avec un raisonnement similaire
+        l'indépendance entre \(B\) et \(C\). On ne peut par contre pas dire que les
+        trois évènements sont indépendants pour autant car toute pair d'évènement
+        implique le troisième. Les raisonnement se faisant uniquement avec la probabilité
+        de faire pile, si les deux pièces sont identiques mais biaisées on obtient le même résultat.}
     \end{q}
     \begin{q}{2}
-        Nous lançons deux dés équilibrés. Montrer que les événements \{la somme
+        Nous lançons deux dés équilibrés. Montrer que les évènements \{la somme
         des dés vaut 7\} et \{l'issu du premier dé est j\} sont indépendants.
+        \boxans{Il y a \(36\) issus possibles parmi lesquelles \(6\) donnent une somme
+        égale à \(7\), ainsi \(P(A)=\frac16\). Les dés étant équilibrés,
+        \(P(\delta_1=j)=\frac16\). Les deux dés étant indépendants, on a
+        \(P(A\cap \delta_1=j)=P(\delta_1=j\cap \delta_2=7-j)=P(\delta_1=j)P(\delta_2=7-j)=\frac{1}{36}\)
+        les deux évènements sont donc bien indépendants.}
     \end{q}
 \end{exo}
 
@@ -56,6 +70,8 @@
     \textit{Deux questions sur l'indépendance}
     \begin{q}{1}
         Soit \(A\) un évènement indépendant de lui même, que vaut \(P(A)\) ?
+        \boxans{Soit \(A\) indépendant de lui même \(P(A)=P(A\cap A)=P(A)^2\) donc
+        \(P(A)\in\{0,1\}\)}
     \end{q}
     \begin{q}{2}
         Montrer que \(A_1,A_2,A_3\) sont indépendants si et seulement si
@@ -71,11 +87,19 @@
     nulle sur un espace de probabilités. Soit \(A\) un évènement de probabilité
     \(\frac13\) sur le même espace. Montrer que \(A\cup (\cup A_i)\) est un évènement
     et calculer sa probabilité.
+    \boxans{Les \(A_i\) étant tous de probabilité nulle on a d'après la formule de \textsc{Poincarré} \(P(A\cup (\cup A_i))
+    =P(A)+0-0=\frac13\)}
 \end{exo}
 
 \begin{exo}
     Soit \(F\) une fonction de répartition. Montrer que \(F\) peut avoir une infinité
     de points de discontinuité mais que le nombre de ces points est au plus dénombrable.
+    \boxans{La fonction de répartition d'une loi discrète a des discontinuités en chaque
+    évènement, ainsi la loi de répartition d'une loi de \textsc{Poisson} par exemple
+    possède une infinité de points de discontinuité. Cependant une fonction de répartition
+    a au plus un nombre dénombrable de discontinuités, n effet supposons \(f\) ayant
+    un intervalle de discontinuité, alors \(f\) n'est pas continue à droite sur cet
+    intervalle et n'est donc pas une fonction de répartition.}
 \end{exo}
 
 \begin{exo}
@@ -85,11 +109,11 @@
             \frac14\mathds{1}_{[2,+\infty)}\]
     Trouver la probabilité des ensembles suivants:
     \begin{enumerate}
-        \itt \( (-\frac12,\frac12)\)
-        \itt \( (-2,\frac32)\)
-        \itt \((\frac23,\frac52)\)
-        \itt \([0,2)\)
-        \itt \((3,+\infty)\)
+        \itt \( (-\frac12,\frac12) \rightarrow F(\frac12-)-F(-\frac12) = F(\frac12-) = \frac14\)
+        \itt \( (-2,\frac32) \rightarrow F(\frac32-) - F(-2) = F(\frac32-) = \frac34\)
+        \itt \((\frac23,\frac52) \rightarrow F(\frac52-)-F(\frac23)= 1 - \frac14 = \frac34\)
+        \itt \([0,2) \rightarrow F(2-)-F(0) = \frac34 - 0 = \frac34\)
+        \itt \((3,+\infty) \rightarrow 1 - F(3) = 1-1=0\)
     \end{enumerate}
 \end{exo}
 
@@ -98,13 +122,16 @@
     \[F(x)=\sum_{i=1}^\infty \frac{1}{2^i}\mathds{1}_{[\frac{1}{i},+\infty)}(x)\]
     Montrer qu'il s'agit d'une fonction de répartition d'une loi sur \(\R\) puis
     trouver la probabilité des ensembles suivants :
+    \boxans{La fonction est trivialement croissante, continue par morceaux, admet
+    une limite nulle en \(-\infty\) et \(1\) en \(+\infty\) c'est donc bien une
+    fonction de répartition.}
     \begin{enumerate}
-        \itt \([1,+\infty)\)
-        \itt \([\frac{1}{10},+\infty)\)
-        \itt \(\left\{ 0 \right\}\)
-        \itt \([0,\frac12)\)
-        \itt \(\R_-^*\)
-        \itt \(\R_+^*\)
+        \itt \([1,+\infty) \rightarrow 1-F(1-) = \frac12\)
+        \itt \([\frac{1}{10},+\infty)\rightarrow 1 - F(\frac{1}{10}-)= 1- \frac{1}{2^{10}}\)
+        \itt \(\left\{ 0 \right\}\rightarrow F(0)-F(0-)=0-0=0\)
+        \itt \([0,\frac12)\rightarrow F(\frac12-) - F(0-)= \frac14 - 0 = \frac14\)
+        \itt \(\R_-^*\rightarrow 1\)
+        \itt \(\R_+^*\rightarrow 0\)
     \end{enumerate}
 \end{exo}
 
@@ -114,18 +141,24 @@
     + \sum_{i=0}^\infty \frac{1}{3*2^i}\mathds{1}_{[i,+\infty)}(x)\]
     \begin{q}{1}
         Montrer qu'il s'agit de la fonction de répartition d'une probabilité.
+        \boxans{On commence par observer que \(F(x)=0\) pour \(x\in\R_-\) donc
+        \(\lim_{-\infty}F(x)=0\). D'autre part la somme tend vers \(\frac23\) pour \(x\to\infty\)
+        ce qui donne \(\lim_{+\infty}=1\). La fraction est croissante sur \([0,1]\) puis
+        constante. La somme est croissante sur \(\R\) ainsi \(F\) est bien croissante.
+        La continuité par morceaux s'obtient que la somme  d'indicatrice est dénombrable.}
     \end{q}
     \begin{q}{2}
         Trouver la probabilité des évènements suivants :
         \begin{enumerate}
-            \itt \([1,+\infty)\)
-            \itt \((0,1)\)
-            \itt \(\{0\}\)
-            \itt \(\{1,2,3\}\)
+            \itt \([1,+\infty)\rightarrow1-F(1-)=1-\frac23=\frac13\)
+            \itt \((0,1)\rightarrow F(1-)-F(0)=\frac23-\frac13=\frac13\)
+            \itt \(\{0\}\rightarrow F(0)-F(0-)=\frac13-0=\frac13\)
+            \itt \(\{1,2,3\}\rightarrow F(3)-F(3-)+F(2)-F(2-)+F(1)-F(1-)=
+            F(3)-F(1-)=\frac{11}{12} - \frac23 =\frac{1}{4}\)
             \itt \([n,+\infty)\) pour \(n=0,1,2\dots\)
-            \itt \(\R_-^*\)
+            \itt \(\R_-^*\rightarrow 0\) car \(F\) est nulle.
             \itt \(\{1,\dots,n\}\) pour \(n=1,2,\dots\)
-            \itt \(\N\)
+            \itt \(\N\rightarrow 1\)
         \end{enumerate}
     \end{q}
 \end{exo}
