@@ -28,7 +28,7 @@
     \end{q}
     \begin{q}{4}
         \(\left(\R, \star\right)\) où \(x\star y=x+y-2\) pour tous \(x,y\in\R\).
-        \boxans{Ici \(2\) est l'élément neutre, chaque réel \(x\) admet \(2-x\)
+        \boxans{Ici \(2\) est l'élément neutre, chaque réel \(x\) admet \(4-x\)
         comme inverse, l'associativité provient directement de celle sur l'addition.}
     \end{q}
 \end{exo}
@@ -46,7 +46,7 @@
 \begin{exo}
     Soit un groupe \(\left(G,\times\right)\).
     \begin{q}{1}
-        Démontrer que si \(g^2\times h^2=(g\times h)^2\) pour tout \(g,h\in G G\)
+        Démontrer que si \(g^2\times h^2=(g\times h)^2\) pour tout \(g,h\in G\)
         alors \(G\) est abélien.
         \boxans{On a l'égalité entre \((g\times h)^2 = g\times h\times g\times h\)
         et \(g\times g\times h\times h\). En composant à gauche par \(g^{-1}\) et
@@ -61,10 +61,18 @@
 \end{exo}
 
 \begin{exo}
-    Soit un groupe \(\left(G,\times\right), s,t\in G\) on suppose que \(s^2=t^2=2\)
+    Soit un groupe \(\left(G,\times\right), s,t\in G\) on suppose que \(s^2=t^2=e\)
     et \(s\times t\times s = t\times s \times t\). Soit \(n\in\N^*\) et
     \(a_1\dots a_n\in\{s,t\}\). Démontrer que \(\prod a_k \in
     \{e,s,t,s\times t\times s, s\times t, t\times s\}\)
+    \boxans{Montrons que tout produit de \(s\) et \(t\) de \(4\) éléments peut
+    s'écrire comme un produit d'au plus trois élément. On commence par remarquer
+    que si \(s\) ou \(t\) est présent deux fois d'affilé, on obtient un \(e\) ce
+    qui donne bien un produit de \(3\) termes ou moins. Sinon, on a un produit de
+    la forme \(s\times t\times s\times t\) or la deuxième égalité de l'énoncé donne
+    que le produit vaut \(s\times s\times t\times s\) et on retombe sur le cas précédent.
+    Alors par récurrence, tout produit de \(s\) et \(t\) peut s'écrire
+    comme produit d'au plus trois termes.}
 \end{exo}
 
 \begin{exo}
@@ -79,6 +87,8 @@
     \end{q}
     \begin{q}{2}
         \(G=\Q\) et étant donné \(a\in\Z^*, H=\left\{ x\in\Q\mid\exists n\in\N,a^nx\in\Z \right\}\)
+        \boxans{\(H\) n'est pas un sous groupe de \(\Q\) en effet \(a+1\)
+        ne possède pas d'inverse dans \(H\) car \(a\land a+1=1\).}
     \end{q}
     \begin{q}{3}
         \(G=\glnr\) et \(H=\glnr\cap M_n(\Z)\)
@@ -93,25 +103,34 @@
         on a donc bien un sous groupe.}
     \end{q}
     \begin{q}{5}
-        \(G=\Z\) et \(H=\cup_{n=1}^100 2^n\Z\) et.
+        \(G=\Z\) et \(H=\cup_{n=1}^{100} 2^n\Z\) et.
         \boxans{Chaque groupe est inclus dans le précédent ainsi \(H=2\Z\)
         qui est bien un sous groupe de \(\Z\).}
     \end{q}
 \end{exo}
 
-\begin{exo}
+\begin{exo} On se propose de s'échauffer avec des sous-groupes de \(\Z\).
     \begin{q}{1}
         Justifier que \(2\Z\cap3\Z\) est un sous groupe de \(\Z\). Faire de même
         pour \(4\Z\cap6\Z\cap8\Z\).
+        \boxans{L'intersection de sous-groupes étant un sous groupes, on a le résultat
+        souhaité pour les deux groupes qui sont respectivement \(6\Z\) et \(24\Z\).}
     \end{q}
     \begin{q}{2}
         Soient \(a,b\in\Z\) on note \(a\Z+b\Z\) l'ensemble \(\left\{ au+bv
         | u,v\in\Z \right\}\).
         \begin{q}{a}
             Démontrer que \(a\Z+b\Z=\langle a,b\rangle\).
+            \boxans{\(\langle a,b\rangle\) est le groupe généré par \(a\)
+            et \(b\) qui est donc inclus dans \(a\Z+b\Z\). Or la stabilité du groupe
+            impose l'inclusion réciproque et donc l'égalité.}
         \end{q}
         \begin{q}{b}
             Démontrer que \(\langle a,b\rangle=\gcd(a,b)\Z\).
+            \boxans{D'après le théorème de \textsc{Bézout} le minimum non nul de
+            l'ensemble \(a\Z+b\Z\) est le pgcd de \(a\) et \(b\). Ainsi
+            \(\langle a,b\rangle\) est un sous groupe de \(\Z\) d'élément minimal
+            \(\gcd(a,b)\) donc on a \(\langle a,b\rangle=\gcd(a,b)\Z\)}
         \end{q}
     \end{q}
 \end{exo}
@@ -120,6 +139,9 @@
     On note \(\U_n\) l'ensemble des racines \(n\)-ièmes de l'unité, et \(\U\) le cercle unité.
     \begin{q}{1}
         Démontrer que \(\U\) est un sous groupe de \(\left(C,\times\right)\)
+        \boxans{On a bien \(1\in\U\), montrons ensuite la stabilité par opération
+        interne et passage à l'inverse. Soit \(z,z'\in\U\) on a \(|zz'|=|z||z'|=1\)
+        donc \(zz'\in\U\)}
     \end{q}
     \begin{q}{2}
         Soit \(n\in\N^*\) décrire \(\U_n\) à l'aide de l'écriture exponentielle
@@ -141,6 +163,97 @@
     \end{q}
 \end{exo}
 
+\begin{exo} \textit{(Initiation au groupe dihédral)}
+    Soit \(n\) un entier tel que \(\geq 2\). On note \(R\) et \(S\) les matrices
+    respectives \(\begin{pmatrix}
+        \cos(\frac{2\pi}{n}) & -\sin(\frac{2\pi}{n}) \\
+        \sin(\frac{2\pi}{n}) & \cos(\frac{2\pi}{n})
+    \end{pmatrix}\) et \(\begin{pmatrix}1 & 0 \\ 0 & -1\end{pmatrix}\)
+    du groupe \(\left(O_2(\R), \times\right)\)
+    \begin{q}{1}
+        Démontrer que \(S^2=R^n=I_2\) et que \(RS=SR^{-1}\)
+    \end{q}
+    \begin{q}{2}
+        Décrire \(\langle R,S\rangle\) et démontrer que \(|\langle R,S\rangle|=2n\)
+    \end{q}
+\end{exo}
 
+\begin{exo}
+    Soit \(V\) un \(\R\)-ev, les sous-espaces vectoriels de \(V\) sont ils tous des
+    sous-groupes de \(\left(V,+\right)\) ? Les sous groupes de \(\left(V,+\right)\)
+    sont ils tous des sous-espaces vectoriels de \(V\)?
+\end{exo}
+
+\begin{exo}
+    Soient \(H\) et \(K\) deux sous-groupes d'un groupe \(\left(G,\star\right)\).
+    Démontrer \(H\cup K<G\Leftrightarrow (H\subset K \lor K\subset H)\).
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(G,\star\right)\) un groupe, on note \(Z(G)\) son centre
+    \(\{z\in G\mid \forall g\in G : z\star g = g\star z\}\).
+    \begin{q}{1}
+        Démontrer que \(Z(G)\) est un sous-groupe abélien.
+    \end{q}
+    \begin{q}{2}
+        Déterminer \(Z(\textrm{GL}_2(\R))\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(G,\star\right)\) un groupe fini.
+    \begin{q}{1}
+        On suppose que \(G\) est d'ordre pair. Démontrer que le cardinal
+        de l'ensemble \(\{g\in G\mid g=g^{-1}\}\) est pair et non nul.
+    \end{q}
+    \begin{q}{2}
+        On suppose que \(g\mapsto g^2\) est un isomorphisme de groupe. Démontrer que
+        \(G\) est d'ordre impair.
+        \boxans{Si l'application est bijective alors en particulier elle est injective
+        ainsi \(1_G\) possède un unique antécédent, donc par contraposée de la question
+        précédente, \(G\) est d'ordre impair.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(H\) un sous-groupe de \(\left(\R,+\right)\). On suppose que \(H\) n'est pas dense.
+    \begin{q}{1}
+        Démontrer que \(H\) possède un plus petit élément strictement positif \(x_0\).
+    \end{q}
+    \begin{q}{2}
+        Démontrer que \(H=x_0\Z\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    \textbf{(IL FAUDRA PASSER AU TABLEAU)}
+    Soient \(a,b\in\R^\times\).
+    \begin{q}{1}
+        Démontrer que \(H=a\Z+b\Z\) est un sous-groupe de \(\left(\R,+\right)\)
+        \boxans{On a bien la présence de l'élément neutre \(0\) dans \(H\). On
+        s'assure ensuite de la stabilité. Soient \(x=an+bm\) et \(x'=an'+bm'\)
+        avec \((n,n',m,m')\in\Z\) alors par commutativité de l'addition dans \(\R\)
+        et stabilité de \(\Z\) par l'addition, \(x+x'=a(n+n')+b(m+m')\in H\).
+        Aussi tout élément \(x\) admet \(-x\) comme inverse trivial.}
+    \end{q}
+    \begin{q}{2}
+        Démontrer que \(H\) est dense dans \(\R\) si et seulement si
+        \(\frac{a}{b}\not\in\Q\)
+        \boxans{\begin{enumerate}
+            \itt Supposons par contraposée que \(\frac{a}{b}\in\Q\) alors il existe
+            \(\left(p,q\right)\in\Z\times\N^*\) tel que \(\frac{a}{b}=\frac{p}{q}\)
+            ce qui implique \(aq=pb\) et donc \(aq-pb=0\), le groupe est cyclique
+            et isomorphe à \(Z/p\Z\times \Z/q\Z\) il n'est donc pas dense dans \(\R\).
+            \itt Supposons que \(\frac{a}{b}\not\in\Q\) alors par densité de \(\Q\)
+            dans \(\R\) on exhibe une suite \(\left(\frac{\alpha_n}{\beta_n}\right)_{n\in\N}\)
+            de rationnels telle que \(\frac{\beta_n}{\alpha_n}\to \frac{a}{b}\).
+            Alors \(\beta_n b - \alpha_n a\to 0\) et on a la densité de \(H\).
+        \end{enumerate}}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    TODO
+\end{exo}
 
 \end{document}
