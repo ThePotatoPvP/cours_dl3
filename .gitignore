@@ -4,7 +4,8 @@
 *.synctex.gz
 *.log
 
-.vscode
+
 *.pdf
 
+.vscode
 .sy5-2023-2024
