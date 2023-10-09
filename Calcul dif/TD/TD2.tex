@@ -1,0 +1,100 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+\begin{center}
+    \Huge{\textbf{TD 2. Normes et Boules}}
+\end{center}
+\bigskip
+
+\begin{exo}
+    Soit \(E\) un evn et \(a\in E\).
+    \begin{q}{1}
+        Montrer que le singleton \(\{a\}\) est un fermé de \(E\)
+        \boxans{Il existe une unique suite dans \(\{a\}^\N\) qui est
+        constante et de limite \(a\), ainsi par caractérisation
+        séquencielle on a bien un fermé de \(E\).}
+    \end{q}
+    \begin{q}{2}
+        Montrer que, pour toit \(r>0\), la sphère \(S_r(a)=
+        \{x\in E\mid \|x-a\|=r\}\) est un fermé de \(E\).
+        \boxans{Il s'agit de l'image réciproque du singleton
+        \(\{r\}\) de \(R\) par l'application continue qu'est la norme,
+        c'est donc un fermé.}
+    \end{q}
+    \begin{q}{3}
+        Montrer que pour tour \(0<r<R\), l'ensemble \(C_r=
+        \{x\in E\mid r<\|x-a\|<R\}\) est un ouvert de \(E\). Quelle
+        est son adhérence ?
+        \boxans{C'est un ouvert comme \(N^{-1}((r,R))\), son adhérence
+        est l'ensemble avec des inégalités larges.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(E,\|\cdot\|\right)\) un env, montrer que la norme est
+    une application continue.
+    \boxans{Par linéarité, la norme est continue en \(0\), la linéarité
+    encore permet alors d'affirmer que la norme est continue sur \(E\).}
+\end{exo}
+
+\begin{exo}
+    Pour chacun des ensembles suivants, déterminer s'il est ouvert ou fermé
+    au aucun des deux.
+    \begin{enumerate}
+        \itt \(A=\{(x,y)\in\R^2\mid y\geq x^2, 0\leq y\leq1\}\)
+        \boxans{C'est un fermé car toutes les inégalités sont larges.}
+        \itt \(B=\{(x,y)\in\R^2\mid y\geq x^2, 0\leq y<1\}\)
+        \boxans{Ouvert d'un côté et fermé de l'autre donc aucun des deux.}
+        \itt \(C=\{(x,y)\in\R^2\mid x^2-2x+y^2=0\}\cup\{(x,0);x\in[2;3]\}\)
+        \boxans{C'est un fermé comme union de deux fermés (des variétés de dim 1)}
+        \itt \(D=\{(x,y)\in\R^2\mid x^2-y^2<1, -1<y<1\}\)
+        \boxans{C'est un ouvert comme intersection finie d'ouverts car les
+        inégalités sont strictes.}
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+    Soit \(f:\R\to\R\) une application continue. Montrer que le graphe
+    \(\{(t,f(t))\mid t\in\R\}\) de \(f\) est un fermé de \(\R^2\). Quel
+    est son intérieur ?
+    \boxans{La continuité indique que le graphe est une variété de dimension
+    1 qui a donc un intérieur nulle car l'espace ambient est de dimension 2.}
+\end{exo}
+
+\begin{exo}
+    TODO
+\end{exo}
+
+\begin{exo}
+    Étudier la limite en \((0,0)\) des fonction suivantes :
+    \begin{align*}
+        f_1(x,y)=\frac{xy}{x^2+y^2} \quad
+        f_2(x,y)=\frac{xy^2}{x^2+y^2} \\
+        f_3(x,y)=\frac{x^2y}{x^4+y^2} \quad
+        f_4(x,y)=\frac{x^3y}{x^4+y^2}
+    \end{align*}
+    \boxans{
+        \begin{enumerate}
+            \itt \(f_1\) n'admet pas de limite en \((0,0)\) car la limite selon
+            la droite \(x=0\) et celle selon \(x=y\) sont distinctes.
+            \itt TODO
+            \itt TODO
+            \itt TODO
+        \end{enumerate}
+    }
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(E,\|\cdot\|\right)\) un espace vectoriel normé.
+    \begin{enumerate}
+        \itt Montrer que l'intérieur de tout sphère est vide.
+        \boxans{Toute sphére peut s'écrire \(N^{-1}(r)\) avec un certain \(r\)
+        et \(N\colon e \mapsto \|e-a\|\) avec un certain \(a\). Ce qui fournit le
+        résultat de part les résultats de l'exercice 2.}
+        \itt Montrer que l'intérieur de tout sous espace vectoriel
+        propre de \(E\) est vide.
+    \end{enumerate}
+\end{exo}
+
+\end{document}

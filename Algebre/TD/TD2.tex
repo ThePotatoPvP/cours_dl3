@@ -88,7 +88,9 @@
     \begin{q}{2}
         \(G=\Q\) et étant donné \(a\in\Z^*, H=\left\{ x\in\Q\mid\exists n\in\N,a^nx\in\Z \right\}\)
         \boxans{\(H\) n'est pas un sous groupe de \(\Q\) en effet \(a+1\)
-        ne possède pas d'inverse dans \(H\) car \(a\land a+1=1\).}
+        ne possède pas d'inverse dans \(H\) car \(a\land a+1=1\). On a ici traité le cas
+        où l'on considére le groupe multiplicatif, en voyant \(G\) comme un
+        groupe additif \(H\) est bien un sous groupe.}
     \end{q}
     \begin{q}{3}
         \(G=\glnr\) et \(H=\glnr\cap M_n(\Z)\)
@@ -242,8 +244,8 @@
         \boxans{\begin{enumerate}
             \itt Supposons par contraposée que \(\frac{a}{b}\in\Q\) alors il existe
             \(\left(p,q\right)\in\Z\times\N^*\) tel que \(\frac{a}{b}=\frac{p}{q}\)
-            ce qui implique \(aq=pb\) et donc \(aq-pb=0\), le groupe est cyclique
-            et isomorphe à \(Z/p\Z\times \Z/q\Z\) il n'est donc pas dense dans \(\R\).
+            et \(a\land q=1\). Soit \(u=an+bm\in a\Z+b\Z, u= b(\frac{p}{q}n + m) = \frac{b}{q}(pn+qm)\)
+            ainsi \(a\Z+b\Z\subset \frac{b}{q}\Z\) donc \(H\) n'est pas dense.
             \itt Supposons que \(\frac{a}{b}\not\in\Q\) alors par densité de \(\Q\)
             dans \(\R\) on exhibe une suite \(\left(\frac{\alpha_n}{\beta_n}\right)_{n\in\N}\)
             de rationnels telle que \(\frac{\beta_n}{\alpha_n}\to \frac{a}{b}\).
@@ -253,7 +255,25 @@
 \end{exo}
 
 \begin{exo}
-    TODO
+    Soit un groupe \(\left(G,\star\right)\). On suppose qu'il existe
+    des éléments de \(G\) notés \(s,i,j\) et \(k\) tels que \(G=\langle
+    i,j,k\rangle\) et tels que \(i^2=j^2=k^2=i\star j\star k=s, s^2=e,
+    s\neq e\) et \(s\in Z(G)\).
+    \begin{q}{1}
+        Démontrer que \(|G|=8\). Décrire \(G\) et la table de \(\star\)
+    \end{q}
+    \begin{q}{2}
+        \(G\) est-il abélien ?
+    \end{q}
+    \begin{q}{3}
+        Quels sont ses sous-groupes ?
+    \end{q}
+    \begin{q}{4}
+        Démontrer que le sous-groupe de \(\mathrm{GL}_2(\C)\) engendré
+        par les matrices \(\begin{pmatrix} i&0\\0&-i\end{pmatrix}\begin{pmatrix}
+        0&1\\-1&0\end{pmatrix}\begin{matrix} 0&i\\i&0\end{matrix}\) vérifie
+        les hypothèses de l'énoncé.
+    \end{q}
 \end{exo}
 
 \end{document}

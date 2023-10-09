@@ -1,0 +1,74 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+\begin{center}
+    \Huge{\textbf{PR5-L3 Maths - TD 3}}
+\end{center}
+\bigskip
+
+\textbf{Rappel} : on dit que \(\left( \Omega,\mathcal{F}, P\right)\) est
+canonique si \(\Omega=(0,1),\mathcal{F}=\{B\cap\Omega;B\in\mathcal{B}(\R)\}
+\) et \(P(A)=\lambda_1(A)\) pour tout \(A\in\mathcal{F}\) et \(\lambda_1\)
+est la mesure de \textsc{Lebesgue} sur \(\left(\R,\mathcal{B}(\R)\right)\)
+
+\begin{exo}
+    Soit \(X\) une variable aléatoire discrète dont la loi \(P_X\) est
+    donnée par \[P_X=\frac14\delta_{-1}+\frac18\delta_0+\frac18\delta1
+    +\frac12\delta_2\]
+    \begin{q}{1}
+        Dessiner la fonction de répartition de \(X\).
+    \end{q}
+    \begin{q}{2}
+        Soit \(Y\) la variable aléatoire définie par \(Y=X^2\). Donner
+        la distribution de \(Y\) et sa fonction de répartition.
+        \boxans{On trouve la distribution suivante en mettant les indices de \textsc{Dirac}
+        au carré : \[P_Y=\frac18\delta_0+\frac38\delta1
+        +\frac12\delta_2\]}
+    \end{q}
+    \begin{q}{3}
+        Si \(\left(\Omega, \mathcal{F},P\right)\) est canonique, trouver
+        \(A_1, A_2\) et \(A_3\in\mathcal{F}\) tel qu'en posant \(X_1(\omega)
+        =-\mathds{1}_{A_1}(\omega)+\mathds{1}_{A_2}(\omega)+ 2\mathds{1}_{A_3}
+        (\omega)\) on ait \(X_1\sim X\).
+        \boxans{On choisit par exemple \(A_1=(0,\frac14], A_2=(\frac38,\frac12]\)
+        et \(A_3=(\frac12, 1)\) donnant bien \(X_1\sim X\)}
+    \end{q}
+    \begin{q}{4}
+        Vérifier que l'on a bien \(X_1^2\sim Y\).
+    \end{q}
+    \begin{q}{5}
+        On considère maintenant \(\Omega=\{1,2,3,4\}\), \(\FF=\PP(\Omega)\)
+        et \(P\) une probabilité telle que \(P(\{1\})=\frac14\) et
+        \(P({2})=P({3})= \frac18\). Montrer que si on pose \(X_2(\omega)=\omega - 2\)
+        on a \(X_2\sim X\).
+    \end{q}
+    \begin{q}{6}
+        Peut on calculer \(P(X=X_1)\) ? et \(P(X=X_2)\) et \(P(X=Y)\) ?
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(\Omega,\FF, P\right)\) l'espace cannonique. Nous considérons
+    les variables aléatoires \[X=\ind_{(\frac12, 1)}\quad\text{ et }\quad
+    Y=\ind_{(\frac14,\frac12)} + \ind_{(\frac34, 1)}\] Montrer que \(X\sim Y
+    \sim B(\frac12)\) et qu'elles sont indépendantes.
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(\Omega,\FF, P\right)\) l'espace cannonique. Nous considérons
+    les variables aléatoires \[X(\omega):=\omega\quad Y(\omega)=
+    \omega\ind_{(0,\frac12]}(\omega)+\left(\frac32-\omega\right)
+    \ind_{(\frac12, 1)}(\omega)\]
+    \begin{q}{1}
+        Montrer que \(X\sim Y\).
+    \end{q}
+    \begin{q}{2}
+        Calculer \(P(X=Y)\)
+    \end{q}
+    \begin{q}{3}
+        \(X\) et \(Y\) sont elles indépendantes ?
+    \end{q}
+\end{exo}
+
+\end{document}
