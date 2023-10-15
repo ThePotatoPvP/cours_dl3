@@ -1,0 +1,87 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+\begin{center}
+    \Huge{\textbf{TD 2. App. Linéaires et Matrices}}
+\end{center}
+\bigskip
+
+\begin{exo}
+    Soit \(T\) une forme linéaire sur \(R^n\).
+    \begin{q}{1}
+        Montrer qu'il existe un unique vecteur \((a_i)\) de \(\R^n\) tel que
+        \[\forall x\in\R^n, T(x)=\sum a_ix_i\]
+    \end{q}
+    \begin{q}{2}
+        Justifier que \(T\) est conitnue puis déterminer en fonction des \(a_i\)
+        la norme d'opérateur \(\tnorm{T}_p\) de \(T\) subornnée à
+        la norme \(\|\cdot\|_p\) : \[\tnorm{T}_p=\sup_{x\in R^n
+        ,\|x\|_p=1}|T(x)|\].
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(n\in\N^*\). On munit \(\mnr\) de la norme subordonnée à la norme
+    \(\|\cdot\|_p\) sur \(\R^n\) :
+    \[\forall A\in\mnr, \tnorm{A}_p := \sup{x\in R^n,\|x\|_p=1} \|Ax\|_p\].
+    \begin{q}{1}
+        Montrer que \(\tnorm{A}_1=\max_{1\leq j\leq n} \sum |a_{i,j}|\)
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(\tnorm{A}_\infty=\max_{1\leq i\leq n} \sum |a_{i,j}|\)
+    \end{q}
+    \begin{q}{3}
+        On rappelle que la matrice symétrique \(^tAA\) est diagonalisable
+        sur \(\R\) de valeurs propres positives, on note \(\lambda_A\) sa
+        plus grande valeur propre.
+        \begin{q}{a}
+            Montrer que \(\tnorm{A}_2=\sqrt{\lambda_A}\).
+        \end{q}
+        \begin{q}{b}
+            Exprimer \(\tnorm{A}_2\) en fonction des valeurs propres de
+            \(A\) dans le cas où celle-ci est symétrique.
+        \end{q}
+    \end{q}
+    \begin{q}{4}
+        \textit{Application :} Soit \(A=\begin{pmatrix}0&1\\0&0\end{pmatrix}\)
+        . Calculer \(\tnorm{A}_2\) puis \(\max_{\sigma(A)}|\lambda|\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(n\geq 2\).
+    \begin{q}{1}
+        Vérifier que \(\|\cdot\|_1\) et \(\|\cdot\|_\infty\) sont des normes
+        sur \(\mnr\). Sont-elles des normes d'algèbre ?
+    \end{q}
+    \begin{q}{2}
+        Montrer que pour tout norme \(N\) sur \(\mnr\) il existe une
+        constante \(k>0\) telle que \(kN\) soit une norme d'algèbre.
+    \end{q}
+    \begin{q}{3}
+        Toute norme d'algèbre sur \(\mnr\) est-elle une norme subordonnée ?
+        \boxans{Toute norme sur \(\mnr\) est une norme sur \(E=R^n\) qui est
+        subordonnée d'une norme sur le dual donc oui.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Étudier la continuité et, lorsque c'est le cas, déterminer la norme des
+    applications linéaires suivantes : \textit{(elles sont linéaire en dimension finie donc continues)}
+    \begin{enumerate}
+        \itt \(X\mapsto X^2\)
+        \itt \(X \mapsto AX\)
+        \itt \(X\mapsto X^2\)
+        \itt \((X,Y)\mapsto XY\)
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+    On munit \(E=\C[X]\) de la norme \(\|P\|_1 = \sum |a_k|\). Étudier la continuité
+    et si possible la norme des application linéaires suivantes :
+    \[ \varphi_1\colon P \mapsto P(x_0) \quad \varphi_2\colon P \mapsto \int_0^1 P
+    \quad \varphi_3\colon P \mapsto P'\]
+\end{exo}
+
+\end{document}

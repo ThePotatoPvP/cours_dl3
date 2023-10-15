@@ -1,0 +1,86 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{Morphismes de groupes}}
+\end{center}
+
+\begin{exo}
+    On considère les sous-groupes de \(\text{GL}_2(\R)\) suivants :
+    \[ G=\left\{ \begin{pmatrix}1&a\\0&b\end{pmatrix}
+        \mid b\neq 0 \right\} \quad
+       H=\left\{ \begin{pmatrix}1&0\\0&b\end{pmatrix}
+       \mid b \neq 0 \right\} \quad
+       K=\left\{ \begin{pmatrix}1&a\\0&1\end{pmatrix}
+       \mid a \in \R \right\}
+    \] Montrer que :
+    \begin{q}{1}
+        \(f : A\in G \mapsto b\) est un morphisme et que \(K=\Ker(f)\).
+    \end{q}
+    \begin{q}{2}
+        \(g : A\in G \mapsto a\) n'est pas un morphisme.
+    \end{q}
+    \begin{q}{3}
+        \(h: \R^*\to H\colon b \to B\in H\) est un isomorphisme.
+    \end{q}
+    \begin{q}{4}
+        \(\varphi: \R\to K\colon a \to A\in K\) est un isomorphisme.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(G\) un groupe. Montrer que \(x\mapsto x^{-1}\) est un morphisme
+    ssi \(G\) est un groupe abélien.
+\end{exo}
+
+\begin{exo}
+    Soit \(G, H\) des groupes et \(f\) un morphisme de \(G\) dans \(H\).
+    \begin{q}{1}
+        Si \(G\) est abélien a-t-on \(f(G)\) abélien ?
+        \boxans{\(\forall x,y\in f(G), f(x)f(y) = f(xy) = f(yx) = f(y)f(x)\)}
+    \end{q}
+    \begin{q}{2}
+        Si \(H\) est abélien a-t-on \(f^{-1}(H)\) abélien ?
+        \boxans{\(\forall x,y\in f^{-1}(H), xy = f^{-1}(x'y') =
+        f^{-1}(y'x') = f^{-1}(y')f^{-1}(x')=yx\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(G,\star\right)\) un groupe. Montrer l'équivalence des propriétés :
+    \begin{enumerate}
+        \item[(i)] \(G\) est abélien
+        \item[(ii)] \(\forall a,b\in G, (a\star b)^2 = a^2\star b^2\)
+        \item[(iii)] \(\forall a,b\in G, (a\star b)^{-1} = a^{-1}\star b^{-1}\)
+        \item[(iv)] \(x\mapsto x^{-1}\) est un automorphisme.
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+    Montrer qu'on a un morphisme \(\R\to\text{GL}_2(\R)\) donné par
+    \[\theta \mapsto \begin{pmatrix} \cos(\theta)&\sin(\theta)\\
+        -\sin(\theta)&\cos(\theta)\end{pmatrix}\]
+    \boxans{On remarque que le noyau de ce morphisme est \(2\pi\Z\)}
+\end{exo}
+
+\begin{exo}
+    Soit \(n\in\N\)
+    \begin{q}{1}
+        Montrer que l'application \(\det\) est un morphisme surjectif sur \(\R^\times\),
+        quel est son noyau ?
+        \boxans{Son noyau est le groupe simple linéaire.}
+    \end{q}
+    \begin{q}{2}
+        Les applications qui à \(M\in \glnr\) associent respectivement
+        \(^tM, M^{-1}, ^tM^{-1}\) sont-elles des morphismes ?
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que \(H=\left\{ (x,y)\in\Z^2\mid x+y\in 2\Z \right\}\)
+    est un sous-groupe de \(\Z^2\) et qu'il est isomorphe à \(\Z^2\)
+\end{exo}
+
+\end{document}

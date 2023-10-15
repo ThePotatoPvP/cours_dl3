@@ -184,11 +184,19 @@
     Soit \(V\) un \(\R\)-ev, les sous-espaces vectoriels de \(V\) sont ils tous des
     sous-groupes de \(\left(V,+\right)\) ? Les sous groupes de \(\left(V,+\right)\)
     sont ils tous des sous-espaces vectoriels de \(V\)?
+    \boxans{Oui, un sev est un groupe, par définition. Tout groupe de \((V,+)\) non nul
+    est soit un réseau soit un sev.}
 \end{exo}
 
 \begin{exo}
     Soient \(H\) et \(K\) deux sous-groupes d'un groupe \(\left(G,\star\right)\).
     Démontrer \(H\cup K<G\Leftrightarrow (H\subset K \lor K\subset H)\).
+    \boxans{Supposons que \(H \cup K\) est un sous groupe de \(G\) et que
+    \(H\not\subseteq K\). Alors on exhibe \(h\in H\backslash K\). Alors pour tout
+    \(k\in K, h\star k\in H \cup K\) par stabilité, or ces éléments ne sont pas
+    dans \(K\) sans quoi \(h\in K\) s'obtient de la stabilité par passage
+    à l'inverse, ce qui donne que tous les \(hk\) sont dans \(H\) et donc \(K\subseteq H\).
+    Ce qui donne le résultat voulu avec un raisonnement par symétrie.}
 \end{exo}
 
 \begin{exo}
@@ -196,9 +204,14 @@
     \(\{z\in G\mid \forall g\in G : z\star g = g\star z\}\).
     \begin{q}{1}
         Démontrer que \(Z(G)\) est un sous-groupe abélien.
+        \boxans{Si \(g\) commute alors \(g^{-1}\) commute (ce qu'on peut remarquer
+        avec des choses de la forme \((gh)^{-1}\)), c'est aussi stable par \(\star\)
+        c'est juste du poussage de craie, enfin l'élément neutre commute par définition,
+        ce qui donne bien que \(Z(G)\) est un sous groupe abélien.}
     \end{q}
     \begin{q}{2}
         Déterminer \(Z(\textrm{GL}_2(\R))\)
+        \boxans{Ce sont les homothéties.}
     \end{q}
 \end{exo}
 
@@ -221,9 +234,13 @@
     Soit \(H\) un sous-groupe de \(\left(\R,+\right)\). On suppose que \(H\) n'est pas dense.
     \begin{q}{1}
         Démontrer que \(H\) possède un plus petit élément strictement positif \(x_0\).
+        \boxans{Si \(H\) n'est pas dense alors tous ses éléments sont au plus à une distance \(\mu\)
+        non nulle les uns des autres donc on a une bijection avec \(\N\) pour
+        les positifs, donc on peut distinguer un minium \(x_0\)}
     \end{q}
     \begin{q}{2}
         Démontrer que \(H=x_0\Z\)
+        \boxans{Par division euclidienne on a \(H \subset x_0\Z\) l'autre sens est immédiat.}
     \end{q}
 \end{exo}
 
