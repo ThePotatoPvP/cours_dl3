@@ -48,3 +48,55 @@ let is_consequence f g = List.for_all (fun l -> (eval_formula g l))
     (List.filter (fun l -> (eval_formula f l)) (interpretations (Or(g, f))));;
 
 let are_equivalent f g = (is_consequence f g) && (is_consequence g f) ;;
+
+(* Forme normale conjonctive *)
+
+let rec desc_neg f = match f with
+  | Prop(a) -> Prop(a)
+  | Neg(Prop(a)) -> Neg(Prop(a))
+  | Neg(Neg(g)) -> desc_neg g
+  | Neg(Or(a,b)) -> And((desc_neg (Neg(a))), (desc_neg (Neg(b))))
+  | Neg(And(a,b)) -> Or((desc_neg (Neg(a))), (desc_neg (Neg(b))))
+  | Or(a,b) -> Or((desc_neg a), (desc_neg b))
+  | And(a,b) -> And((desc_neg a), (desc_neg b))
+;;
+
+let rec is_curated f = match f with
+  | Or(_,And(_,_)) | Or(And(_,_),_) -> false
+  | And(a,b)| Or(a,b) -> (is_curated a) && (is_curated b)
+  | _ -> true
+;;
+
+let rec contains_and f = match f with
+  | And _ -> true
+  | Or (a, b) -> contains_and a || contains_and b
+  | Neg a -> contains_and a
+  | Prop _ -> false
+
+
+let rec distribute_or_over_and f = match f with
+  | And (a, b) ->
+      let dist_a = distribute_or_over_and a in
+      let dist_b = distribute_or_over_and b in
+      And (dist_a, dist_b)
+  | Or (And (a, b), c) ->
+      And (Or (distribute_or_over_and a, distribute_or_over_and c), Or (distribute_or_over_and b, distribute_or_over_and c))
+  | Or (a, And (b, c)) ->
+      And (Or (distribute_or_over_and a, distribute_or_over_and b), Or (distribute_or_over_and a, distribute_or_over_and c))
+  | Or (a, b) when not (contains_and a || contains_and b) ->
+      Or (distribute_or_over_and a, distribute_or_over_and b)
+  | Or (a, b) ->
+      Or (distribute_or_over_and a, distribute_or_over_and b)
+  | Neg a -> Neg (distribute_or_over_and a)
+  | Prop a -> Prop a
+
+let rec desc_or f =
+  let simplified = distribute_or_over_and f in
+  if simplified = f then
+    f
+  else
+    desc_or simplified
+;;
+
+let cnf f = desc_or (desc_neg f) ;;
+
