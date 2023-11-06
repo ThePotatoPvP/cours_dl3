@@ -1,0 +1,103 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+\begin{center}
+    \Huge{\textbf{TD 3. App. Linéaires et Matrices}}
+\end{center}
+\bigskip
+
+\begin{exo}
+    Pour chacune des applications \(f_i\) de \(\R^2\) dans \(\R\) ci-dessous,
+    montrer que \(f_i\) est différentiable et en calculer la différentielle, le
+    gradient et la jacobienne en tous points.
+    \begin{enumerate}
+        \itt \(f_1(x,y) = xy+2\cos(x)\cos(y)\)
+        \boxans{
+            \(\frac{\partial f}{\partial x}=y-2\sin(x)\cos(y)
+            \quad \frac{\partial f}{\partial y}=x-2\cos(x)\sin(y)\)
+            Ainsi la Jacobienne est \(\left(\frac{\partial f}{\partial x}
+            \ \frac{\partial f}{\partial y}\right)\)
+            Et la différentielle est \(Df(h,k) = Jac_f \cdot (h,k)\)
+        }
+        \itt \(f_2(x,y) = x^2+y^2\)
+        \boxans{La Jacobienne est \(\left(2x\ 2y\right)\)}
+        \itt \(f_3(x,y) = e^x\sin(y)\)
+        \boxans{La Jacobienne est \(\left(e^x\sin(y)\ e^x\cos(y)\right)\)}
+        \itt \(f_4(x,y) = (x^2+y^2)\exp(-xy)\)
+    \end{enumerate}
+    \boxans{Toutes les fonction qui apparaissent étant \(\CC^\infty\) les fonctions
+    de l'exercice sont différentiables.}
+\end{exo}
+
+\begin{exo}
+    Soit \(f\) l'application de \(\R^2\) dans \(\R\) telle que :
+    \[\forall (x,y)\in\R^2, f(x,y)=\mathds{1}_{\R^*}(x^2+y^2)\sin\left(\frac{1}{\sqrt{x^2+y^2}}\right)\]
+    \begin{q}{1}
+        Prouver que \(f\) est différentiable sur \(\R^2\). Exprimer la
+        différentielle de \(f\) en tout point de \(\R^2\)
+        \boxans{En tout point non nul, les dérivées partielles de la fonctions sont
+        \(\CC^1\) comme composition de fonctions \(\CC^1\) usuelles et donc \(f\)
+        est différentiable. Pour l'étude en \((0,0)\) on a
+        \(-x^2-y^2\leq f \leq x^2+y^2\) sur \(\R^2\) ainsi d'après le théorème
+        des gendarmes, \(f\) est de limite nulle en \(0\) et y est donc différentiable,
+        le développement de Taylor donne la différentielle, la fonction nulle.}
+    \end{q}
+    \begin{q}{2}
+        Calculer les dérivées partielles d'ordre 1 de \(f\) et sa jacobienne.
+    \end{q}
+    \begin{q}{3}
+        Montrer que les dérivées partielles sont continues en \((0,0)\), conclure.
+        \boxans{On conclut que \(f\) est \(\CC^1\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(f:\R^2\to\R\) telle que \(f(x,y)=\frac{x^3-y^3}{x^2+y^2}\)
+    \begin{q}{1}
+        Établie que \(f\) possède une dérivée partielle en tout point de \(\R^2\)
+        et selon toute direction.
+    \end{q}
+    \begin{q}{2}
+        \(f\) est elle différentiable sur \(\R^2\) ? On traitera \((0,0)\) à part.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(f\) une application différentiable de \(\R^2\) dans \(\R\).
+    \begin{q}{1}
+        Soient \(\gamma_1\) et \(\gamma_2\) des fonctions dérivables de \(\R\)
+        dans \(\R\). Montrer que l'application \(F\) de \(\R\) dans \(\R\) telle
+        que, pour tout \(t\in\R, F(t)=f(\gamma_1(t), \gamma_2(t))\) est dérivable
+        et que \[\forall t\in\R, F'(t)=
+        \frac{\partial f}{\partial x}(\gamma_1(t), \gamma_2(t))\gamma_1'(t) +
+        \frac{\partial f}{\partial y}(\gamma_1(t), \gamma_2(t))\gamma_2'(t)\]
+    \end{q}
+    \begin{q}{2}
+        Soient \(g_1\) et \(g_2\) deux fonctions de classe \(\CC^1\) de \(\R^2\)
+        dans \(\R\). Montrer que l'application \(\Phi:\R^2\to\R\) définie comme
+        \(\Phi(u,v)=f(g_1(u,v),g_2(u,v))\) est différentiable et que
+        \[\forall (u,v)\in\R^2 \begin{cases}
+        \ds\frac{\partial\Phi}{\partial u}(u,v)=\frac{\partial f}{\partial x}(
+            g_1(u,v),g_2(u,v))\frac{\partial g_1}{\partial u}(u,v)
+            +\frac{\partial f}{\partial y}(
+            g_1(u,v),g_2(u,v))\frac{\partial g_2}{\partial u}(u,v)
+        \\
+        \ds\frac{\partial\Phi}{\partial v}(u,v)=\frac{\partial f}{\partial x}(
+            g_1(u,v),g_2(u,v))\frac{\partial g_1}{\partial v}(u,v)
+            +\frac{\partial f}{\partial y}(
+            g_1(u,v),g_2(u,v))\frac{\partial g_2}{\partial v}(u,v)
+        \end{cases}\]
+    \end{q}
+    \begin{q}{3}
+        En utilisant la question précédente, calculer les dérivées partielles de
+        \(\Phi(x,y)=f(xy, x^2+y^2)\) selon les dérivées partielles de \(f\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On munit \(\R^n\) de la norme euclidienne usuelle. Soit \(f\colon\R^2\to\R\)
+    l'application norme définie par \(f(x)=\|x\|\). Montrer que \(f\)
+    est de classe \(\CC^1\) sur \(\R^n\backslash\{0\}\) mais pas différentiable en 0.
+\end{exo}
+\end{document}
