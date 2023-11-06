@@ -44,10 +44,11 @@
     \end{q}
     \begin{q}{2}
         Calculer les dérivées partielles d'ordre 1 de \(f\) et sa jacobienne.
+        \boxans{Le soin de le faire et de souhaiter mourir est laissé au lecteur.}
     \end{q}
     \begin{q}{3}
-        Montrer que les dérivées partielles sont continues en \((0,0)\), conclure.
-        \boxans{On conclut que \(f\) est \(\CC^1\)}
+        Montrer que les dérivées partielles sont discontinues en \((0,0)\), conclure.
+        \boxans{On conclut que \(f\) est \(\CC^1\) mais pas différentiable.}
     \end{q}
 \end{exo}
 
@@ -56,9 +57,14 @@
     \begin{q}{1}
         Établie que \(f\) possède une dérivée partielle en tout point de \(\R^2\)
         et selon toute direction.
+        \boxans{En tout point non nul, l'énoncé est vrai car \(f\) est \(\CC^\infty\)
+        en \((0,0)\) la dérivée partielle selon la direction \((u,v)\) est \(f(u,v)\)
+        qui n'est pas linéaire en \(t\) donc c'est pas différentiable.}
     \end{q}
     \begin{q}{2}
         \(f\) est elle différentiable sur \(\R^2\) ? On traitera \((0,0)\) à part.
+        \boxans{\(f\) est différentiable en tout point non nul comme composée de fonctions
+        \(\CC^\infty\) et non différentiable en \((0,0)\)}
     \end{q}
 \end{exo}
 
@@ -71,6 +77,13 @@
         et que \[\forall t\in\R, F'(t)=
         \frac{\partial f}{\partial x}(\gamma_1(t), \gamma_2(t))\gamma_1'(t) +
         \frac{\partial f}{\partial y}(\gamma_1(t), \gamma_2(t))\gamma_2'(t)\]
+        \boxans{
+            \[
+                F' = \frac{\partial f}{\partial \gamma_1}+\frac{\partial f}{\partial \gamma_2}
+                = \frac{\partial \gamma_1}{\partial t}\frac{\partial f}{\partial x}
+                + \frac{\partial \gamma_2}{\partial t}\frac{\partial f}{\partial y}
+            \]
+        }
     \end{q}
     \begin{q}{2}
         Soient \(g_1\) et \(g_2\) deux fonctions de classe \(\CC^1\) de \(\R^2\)
@@ -87,10 +100,27 @@
             +\frac{\partial f}{\partial y}(
             g_1(u,v),g_2(u,v))\frac{\partial g_2}{\partial v}(u,v)
         \end{cases}\]
+        \boxans{
+            \[
+                \frac{\partial\Phi}{\partial u}= \frac{\partial f}{\partial g_1|_v}
+                + \frac{\partial f}{\partial g_2|_v} =
+                \frac{\partial g_1}{\partial u}\frac{\partial f}{\partial x}
+                +\frac{\partial g_2}{\partial u}\frac{\partial f}{\partial y}
+            \]
+        }
     \end{q}
     \begin{q}{3}
         En utilisant la question précédente, calculer les dérivées partielles de
         \(\Phi(x,y)=f(xy, x^2+y^2)\) selon les dérivées partielles de \(f\)
+        \boxans{
+            \[
+                \frac{\partial\Phi}{\partial x}(x,y)=
+                y\frac{\partial f}{\partial x}(xy, x^2+y^2) +
+                2x\frac{\partial f}{\partial y}(xy, x^2+y^2)
+                \quad\quad \frac{\partial\Phi}{\partial x}(x,y) =
+                \frac{\partial\Phi}{\partial y}(y,x)
+            \]
+        }
     \end{q}
 \end{exo}
 
