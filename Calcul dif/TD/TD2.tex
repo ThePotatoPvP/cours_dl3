@@ -62,7 +62,21 @@
 \end{exo}
 
 \begin{exo}
-    TODO
+    On munit l'espace vectoriel \(\CC([0,1], \R)\) de deux normes, la
+    norme uniforme \(\|\cdot\|_\infty\) et la norme \(\|\cdot\|_1\) qui
+    sont respectivement définies par.
+    \[\forall f\in\CC([0,1],\R) \quad
+    \|f\|_\infty = \sup_{[0,1]}|f| \quad
+    \|f\|_1 = \int_0^1|f(t)|\D t\]
+    On pose \(F\colon\CC([0,1],\R)\to\CC([0,1],\R)\) l'application définie
+    par \(F(f) = f^2\)
+    \begin{q}{1}
+        Montrer que \(F\) est continue pour la norme \(\|\cdot\|_\infty\)
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(F\) n'est pas continue pour la norme \(\|\cdot\|_1\). On
+        pourra s'intéresser à la suite de fonctions \(f_n(t) = \sqrt{n}e^{-nt}\)  
+    \end{q}
 \end{exo}
 
 \begin{exo}
@@ -86,14 +100,168 @@
 
 \begin{exo}
     Soit \(\left(E,\|\cdot\|\right)\) un espace vectoriel normé.
-    \begin{enumerate}
-        \itt Montrer que l'intérieur de tout sphère est vide.
+    \begin{q}{1}
+        Montrer que l'intérieur de tout sphère est vide.
         \boxans{Toute sphére peut s'écrire \(N^{-1}(r)\) avec un certain \(r\)
         et \(N\colon e \mapsto \|e-a\|\) avec un certain \(a\). Ce qui fournit le
         résultat de part les résultats de l'exercice 2.}
-        \itt Montrer que l'intérieur de tout sous espace vectoriel
+    \end{q}
+    \begin{q}{2}
+        Montrer que l'intérieur de tout sous espace vectoriel
         propre de \(E\) est vide.
-    \end{enumerate}
+    \end{q}
 \end{exo}
 
+\begin{exo}
+    Montrer que le premier quadrant \(Q\) de \(\R^2\) est une partie ouverte de
+    \(\R^2\colon\)\[Q=\left\{ \left(x,y\right)\in\R^2\mid x>0 \land y>0 \right\}\]
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(E, \|\cdot\|\right)\) un espace vectoriel normé et soit \(V\) un
+    sous espace vectoriel de \(E\). Montrer que \(\bar{V}\) est un sous espace vectoriel
+    de \(E\).
+\end{exo}
+
+\begin{exo}
+    Pour chacun des sous-ensembles suivants de \(\R^2\) déterminer s'il est ouvert
+    ou fermé, ou ni ouvert ni fermé.
+    \begin{q}{1}
+        \(A=\left\{ \left(x,y\right)\in\R^2\mid 0<|x-y|<1\right\} \)
+    \end{q}
+    \begin{q}{2}
+        \(B=\left\{ \left(x,y\right)\in\R^2\mid |x|<1\land |y|<1\right\} \)
+    \end{q}
+    \begin{q}{3}
+        \(C=\left\{ \left(x,y\right)\in\R^2\mid 0\leq x\leq y\right\} \)
+    \end{q}
+    \begin{q}{4}
+        \(D=\left\{ \left(x,y\right)\in\R^2\mid x^2+y^2\leq 4\right\} \)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(\left(E,\|\cdot\|\right)\) et \(\left(F,\|\cdot\|\right)\)
+    deux espaces vectoriels normés et \(f,g\colon E\to F\) deux
+    applications continues. Soit \(A\) une partie de \(E\) sur laquelle
+    \(f\) et \(g\) coincident. Montrer qu'elles coincident sur \(\bar{A}\).
+\end{exo}
+
+\begin{exo}
+    On considère l'application \(f:\R^2\to\R\) définie par
+    \[f(x,y)=\frac{x^2y^2}{(x^2+y^2)^\alpha}\quad\text{quand ça a
+    du sens, sinon } 0\] où \(\alpha\in\R\). Pour quelles valeurs de
+    \(\alpha\) a-t-on \(f\) continue ?
+\end{exo}
+
+\begin{exo}
+    On considère l'application \(f\colon\R^2\to\R\) définie par
+    \[f(x,y)=\frac{x^3y}{x^6+(y-x^2)^2}\quad\text{quand ça a du sens,
+    sinon }0\]
+    \begin{q}{1}
+        Montrer que la restriction de \(f\) à toute droite \(D\)
+        passant par \((0,0)\) est continue et bornée.
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(f\) est continue en dehors de \((0,0)\).
+    \end{q}
+    \begin{q}{3}
+        L'application \(f\) est-elle continue en \((0,0)\) ?
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Prolonger par continuité en \((0,0)\), lorsque c'est possible,
+    les fonctions suivantes:
+    \begin{q}{1}
+        \(f_1(x,y)=\frac{|x+y|}{\sqrt{x^2+y^2}}\)
+    \end{q}
+    \begin{q}{2}
+        \(f_2(x,y)=\frac{x^3-y^3}{x^2+y^2}\)
+    \end{q}
+    \begin{q}{3}
+        \(f_3(x,y)=\frac{x^2y}{x^4+y^2}\)
+    \end{q}
+    \begin{q}{4}
+        \(f_4(x,y)=\frac{x^3y}{x^4+y^2}\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Trouver des fonctions continues \(f\colon\R\to\R\) et des parties \(A\) de \(\R\)
+    telles que
+    \begin{q}{1}
+        \(A\) est ouvert et \(f(A)\) n'est pas ouvert.
+    \end{q}
+    \begin{q}{1}
+        \(A\) est fermé et \(f(A)\) n'est pas fermé.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(A,B\) deux parties d'un espace vectoriel normé \(\left(E,\|\cdot\|\right)\)
+    Montrer que
+    \begin{q}{1}
+        Si \(A\subseteq B\) alors \(A^\circ\subseteq B^\circ\)
+    \end{q}
+    \begin{q}{2}
+        \(\left(A\cap B\right)^\circ=A^\circ\cap B^\circ\)
+    \end{q}
+    \begin{q}{3}
+        \(\left(A\cup B\right)^\circ \supseteq A^\circ \cup B^\circ\). Donner un exemple où l'inclusion est stricte.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(A,B\) deux parties d'un espace vectoriel normé \(\left(E,\|\cdot\|\right)\).\\
+    On définit \(A+B=\left\{ z\in E\mid \exists (x,y)\in A\times B, z=x+y \right\}\).
+    \begin{q}{1}
+        Montrer que si \(A\) est ouvert, alors \(A+B\) est ouvert.
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(A=\left\{ \left(x,y\right)\in\R^2\mid xy=1 \right\}\) et
+        \(B=\{0\}\times\R\) sont fermées, mais que \(A+B\)\\ ne l'est pas.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(E, \|\cdot\|\right)\) un espace vectoriel normé et notons \(B(0,1)\)
+    la boule unité ouverte de \(E\). Montrer que l'application \(h\colon x\mapsto \frac{x}{1+\|x\|}\)
+    est un homéomorphisme.
+\end{exo}
+
+\begin{exo}
+    Soit \(C\) une partie convexe d'un espace vectoriel normé \(E\).
+    \begin{q}{1}
+        Montrer que l'adhérence de \(C\) est convexe.
+    \end{q}
+    \begin{q}{2}
+        Montrer que l'intérieur de \(C\) est convexe.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(E=\CC([0,1],\R)\) et \(F=\left\{ f\in E\mid f(0)=0 \right\}\)
+    \begin{q}{1}
+        Montrer que \(F\) est un sous-espace vectoriel de \(E\).
+        \boxans{La fonction nulle est bien dans \(F\), qui est stable par combinaison
+        linéaire, c'est donc bien un sous-espace vectoriel de \(E\).}
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(F\) est fermé dans \(\left(E, \|\cdot\|_\infty\right)\)
+        \boxans{Soit \(g\in E\backslash F\) on note \(\alpha\neq 0\) la valeur de \(g\)
+        en 0, montrons que \(f\) ne peut être limite d'une suis d'éléments de \(F\).
+        Pour toute fonction \(f\in F\), \(\|g-f\|_\infty\geq g(0)-f(0) = \alpha>0\)
+        Ainsi aucune suite de \(F\) ne peut se rapprocher de \(g\) à une distance inférieure
+        à \(\alpha\) et donc \(F\) est fermé.}
+    \end{q}
+    \begin{q}{3}
+        Montrer que \(F\) est dense dans \(\left(E, \|\cdot\|_1\right)\)
+        \boxans{Soit \(g\in E\), construisons une suite d'éléments de \(F\) qui tend
+        vers \(g\) pour la norme \(\|\cdot\|_1\). On pose, pour tout \(n\in\N\) la fonction
+        \(f_n : x \mapsto (1-e^{-nx})g\) qui est bien dans \(F\). On remarque que pour tout
+        \(n\in\N\) on a \(f_n\leq g\) et que \(\lim_{n\to\infty}f_n=g\) ainsi par convergence
+        dominée \(\|f_n\|_1\to\|g\|_1\) ce qui donne la convergence pour la norme \(\|\cdot\|_1\)}
+    \end{q}
+\end{exo}
 \end{document}
