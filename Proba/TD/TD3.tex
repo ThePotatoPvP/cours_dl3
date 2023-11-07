@@ -79,4 +79,10 @@ est la mesure de \textsc{Lebesgue} sur \(\left(\R,\mathcal{B}(\R)\right)\)
     \end{q}
 \end{exo}
 
+
+\begin{proof}[Inégalité de Markov]
+    Soit \(a\in\R^+\), on considère la fonction \(a\mathds{1}_{X\geq a}\)
+    qui est inférieure à \(X\) sur \(\R^+\) ainsi par la croissance de l'espérance :
+    \(E[X]\geq E[a\mathds{1}_{X\geq a}] = a\esp[\mathds{1}_{X\geq a}] = a\proba(X\geq a)\)
+\end{proof}
 \end{document}
