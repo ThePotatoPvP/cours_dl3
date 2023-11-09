@@ -10,6 +10,10 @@
 
 \begin{exo}
     Soit \(p\) un nombre premier et \(G\) un groupe d'ordre \(p\). Montrer que \(G\) est cyclique.
+    \boxans{Soit \(g\in G\) alors d'après le théormème de \textsc{Lagrange} on
+    a \(o(g)\mid p\) donc soit \(o(g)=1\) aucquel cas \(g=e\) soit \(o(g)=p\)
+    aucquel cas \(\langle g\rangle\subset G\) et les deux ensembles sont de
+    même cardinal, donc \(g\) engendre \(G\) qui est donc cyclique.}
 \end{exo}
 
 \begin{exo}
@@ -21,12 +25,17 @@
     \begin{q}{2}
         Montrer que si l'ordre de \(K\) est premier à l'ordre de \(H\) alors
         \(K \subset \Ker(f)\)
+        \boxans{Dans ce cas \(|f(K)|\) divise deux nombres premiers entre eux,
+        donc \(|f(K)|=1\) et \(e\in f(K)\) donc \(f(K)=\{e\}\)}
     \end{q}
 \end{exo}
 
 \begin{exo}
     Soient \(G\) et \(G'\) deux groupes finis. On suppose que les ordres de ces groupes
     sont premiers entre eux. Déterminer tous les morphismes de groupes de \(G\) dans \(G'\)
+    \boxans{Soit \(f\in\textbf{Hom}(G,G')\), \(|f(G)|\) divise \(G'\) or
+    \(|f(G)|=\frac{|G|}{|\Ker(f)|}\) ainsi \(f(G)\) a un cardinal qui divise deux
+    nombres premiers entre eux et donc \(f(G)=e\). La synthèse est immédiate.
 \end{exo}
 
 \begin{exo}
