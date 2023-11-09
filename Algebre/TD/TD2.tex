@@ -278,18 +278,70 @@
     s\neq e\) et \(s\in Z(G)\).
     \begin{q}{1}
         Démontrer que \(|G|=8\). Décrire \(G\) et la table de \(\star\)
+        \boxans{Les conditions de l'énoncé nous indiquent que \(s=s^{-1}\)
+        et que les éléments \(i,j\) et \(k\) sont distincts de leur inverse, ainsi.
+        \(H = \left\{ i,i^{-1},j,j^{-1},k,k^{-1},s,e \right\}\subset G\). Montrons maintenant
+        que \(G\) ne contient pas d'autre élément. Pour celà, on montre que tout produit
+        de longueur \(2\) d'éléments générateur est dans \(H\).
+
+        Pour celà on commence par remarquer que \(s^{-1} = k^{-1}\star j^{-1}\star i^{-1} = s = i^{-2}=j^{-2}=k^{-2}\)
+        \begin{enumerate}
+            \itt On détaille l'égalité ci-dessus pour \(i\ \colon i^{2}=s\Leftrightarrow s^{-1}\star i^2=e\Leftrightarrow s=s^{-1}=i^{-2}\).
+            Ce qui suffit à démontrer que \(\cdot\star s\) et \(s\star\cdot\) sont des
+            applications stables de \(G\) dans \(G\).
+            \itt(1) \(i\star j = s\star k^{-1} = k^2\star k^{-1}=k\)
+            \itt(2) \(j\star k = i^{-1}\star s = i^{-1}\star i^2 = i\)
+            \itt(3) \(j\star i =_{(2)} j\star j\star k = s\star k = k^{-2}\star k = k^{-1}\)
+            \itt(4) \(k\star j =_{(1)} i\star j\star j = i\star s=i\star i^{-2}=i^{-1}\)
+            \itt(5) \(k\star i = k^{-1} \star k^2\star i^2\star i^{-1} =k^{-1}\star i^{-1}=_{(3)} j \star i \star i^{-1}=j\)
+            \itt \(i\star k = \left(k^{-1}\star i^{-1}\right)^{-1} =_{(5)} j^{-1}\)
+        \end{enumerate}
+        La stabilité par passage à l'inverse nous assure alors que \(H\) est
+        stable pour la loi \(\star\) et donc \(H=G\) car ils sont les mêmes générateurs.
+        On a alors bien \(|G|=8\) et on peut décrire la table de \(\star\) comme suit:
+        }
     \end{q}
     \begin{q}{2}
         \(G\) est-il abélien ?
+        \boxans{Non, \(G\) n'est pas abélien, en effet \(i\star j \neq j\star i\).}
     \end{q}
     \begin{q}{3}
         Quels sont ses sous-groupes ?
+        \boxans{
+            On s'intéresse d'abord aux ordres des éléments qui sont
+            \(o(i)=o(j)=o(k)=2o(s)=4o(e)=4\) aussi les sous groupes sont
+            \begin{enumerate}
+                \itt \(\left\{ e \right\}\)
+                \itt \(\left\{ e, s \right\}\)
+                \itt \(\left\{ i, i^2, i^3, i^4 \right\} =
+                \left\{i, i^{-1}, s, e\right\}\) où \(i\) peut être remplacé par \(j\) ou \(k\)
+            \end{enumerate}
+            L'équation de \textsc{Lagrange} nous indique qu'on ne peut pas avoir de sous
+            groupe plus grand car tout sous groupe de \(G\) doit avoir un cardinal qui
+            divise celui de \(G\).
+        }
     \end{q}
     \begin{q}{4}
         Démontrer que le sous-groupe de \(\mathrm{GL}_2(\C)\) engendré
         par les matrices \(\begin{pmatrix} i&0\\0&-i\end{pmatrix}\begin{pmatrix}
         0&1\\-1&0\end{pmatrix}\begin{pmatrix} 0&i\\i&0\end{pmatrix}\) vérifie
         les hypothèses de l'énoncé.
+        \boxans{
+            \begin{enumerate}
+                \itt(i) \(\begin{pmatrix}i&0\\0&-i\end{pmatrix}^2=
+                \begin{pmatrix}i^2&0\\0&i^2\end{pmatrix}=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}\)
+                \itt(j) \(\begin{pmatrix}0&1\\-1&0\end{pmatrix}^2=
+                \begin{pmatrix}1\times -1&0\\0&-1\times 1\end{pmatrix}=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}\)
+                \itt(k) \(\begin{pmatrix}0&i\\i&0\end{pmatrix}^2=
+                \begin{pmatrix}i^2&0\\0&i^2\end{pmatrix}=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}\)
+                \itt \(\begin{pmatrix}i&0\\0&-i\end{pmatrix}\times \begin{pmatrix}0&i\\i&0\end{pmatrix}=
+                \begin{pmatrix}0&1\times i\\-1\times -i&0\end{pmatrix}=\begin{pmatrix}0&i\\i&0\end{pmatrix}\)
+            \end{enumerate}
+            Ainsi le sous-groupe engendré par les matrices \(i,j\) et \(k\)
+            vérifie bien \(i^2=j^2=k^2\) et \(i^4=I_2\). Aussi \(i\times j = k\)
+            ce qui donne \(i\times j\times k=k^2\). Finalement, ce groupe vérifie
+            les hypothèses de l'énoncé.
+        }
     \end{q}
 \end{exo}
 
