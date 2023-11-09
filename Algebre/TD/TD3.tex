@@ -58,6 +58,15 @@
         \item[(iii)] \(\forall a,b\in G, (a\star b)^{-1} = a^{-1}\star b^{-1}\)
         \item[(iv)] \(x\mapsto x^{-1}\) est un automorphisme.
     \end{enumerate}
+    \boxans{Procédons par une chaîne d'implications.
+    \begin{enumerate}
+        \itt \((i)\Rightarrow(ii)\) Si \(G\) est abélien alors \(\left(a\star b\right)^2
+        = a\star b\star a\star b = a\star a\star b\star b = a^2\star b^2\)
+        \itt \((ii)\Rightarrow(iii)\)
+        \itt \((iii)\Rightarrow(iv)\) L'application est un morphisme par hypothèse.
+        De plus elle est bijective, deux éléments de même inverse sont égaux.
+        \itt \((iv)\Rightarrow(i)\) Voir exercice 2.
+    \end{enumerate}}
 \end{exo}
 
 \begin{exo}
@@ -85,4 +94,79 @@
     est un sous-groupe de \(\Z^2\) et qu'il est isomorphe à \(\Z^2\)
 \end{exo}
 
+\begin{exo}
+    Soit \(G\) un groupe fini. Déterminer les morphismes de \(G\) dans \(\Z\)
+\end{exo}
+
+\begin{exo}
+    Quelques remarques sur des groups usuels :
+    \begin{q}{1}
+        Le groupe \(\left(\R,\times\right)\)est-il isomorphe à \(\left(\C,\times\right)\) ?
+        \boxans{Démontrons que non par l'absurde, on suppose \(\varphi\colon\C^*\to\R^*\)
+        un isomorphisme, alors \(\varphi(i)^4 = \varphi(i^4)=\varphi(1)=1\) donc \(\varphi(i)^2 = \pm 1\).
+        Si \(\varphi(i^2)=1, \varphi(-1)=\varphi(1)\) et \(\varphi\) n'est pas injective, ce
+        qui est absurde. Sinon \(\varphi(i^2)=-1\) alors \(\varphi(i)^2=-1\) or
+        \(\varphi(i)\in\R\) donc a un carré positif, on a bien une absurdité.}
+    \end{q}
+    \begin{q}{2}
+        Le groupe \(\left(\C,+\right)\) est-il isomorphe au groupe \(\left(\C,\times\right)\) ?
+        \boxans{Tout élément non nul de \(\left(\C,+\right)\) est d'ordre infini, ce qui n'est pas
+        le cas pour \(\left(\C,\times\right)\). Les deux groupes ne sont donc pas isomorphes.}
+    \end{q}
+    \begin{q}{3}
+        Trouver tous les endomorphismes de \(\left(\Q,+\right)\).
+        \boxans{Soit \(\varphi\) un tel endomorphisme, on a \(\varphi
+        \left(\frac{p}{q}\right) = p\varphi\left(\frac{1}{q}\right)\)
+        car c'est un morphisme, ainsi \(\varphi(1)=q\varphi\left(\frac1{q}\right)\Rightarrow
+        \varphi\left(\frac{1}{q}\right)=\frac{\varphi(1)}q\). Donc \(\varphi\left(\frac{p}{q}\right)
+        =\varphi(1)\frac{p}{q}\). Ainsi les endomorphismes sont les multiplications
+        par un rationel, la synthèses est immédiate. Donc
+        \(\left(\textbf{End}(\Q, +),\circ\right)\simeq \left(\Q, +\right)\) et
+        \(\left(\textbf{Aut}(\Q, +),\circ\right)\simeq \left(\Q^*, \times\right)\)
+        }
+    \end{q}
+    \begin{q}{4}
+        Trouver tous les morphismes de \(\Z\) dans \(\Q\).
+        \boxans{Soit \(\varphi\) un tel morphisme, il est entièrement déterminé
+        par \(\varphi(1)\) ainsi les morphismes sont les multiplications par un rationel,
+        la synthèse est immédiate : \(\textbf{Hom}(\Z, \Q)\simeq \Q\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Pour tout couple \(\left(a,b\right)\) de \(\R^2\), on pose la matrice
+    \(\mathcal{M}_{a,b}=\begin{pmatrix}a&-b\\b&a\end{pmatrix}\).\\ Soit \(S=
+    \left\{ \mathcal{M}_{a,b}\colon \left(a,b\right)\in\R^2\backslash(0,0) \right\}\).
+    Soit l'application \(f\colon S\to \R\colon \mathcal{M}_{a,b}\mapsto a^2+b^2\)
+    \begin{q}{1}
+        Montrer que \(S\) est un sous-groupe de \(\text{GL}_2(\R)\)
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(f\) est un morphisme de \(\left(S,\times\right)\) dans \((\R,\times)\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Pour tout couple \(\left(a,b\right)\) de \(\R^2\), on pose \(\mathcal{M}_{a,b}\)
+    comme dans l'exercice précédent mais ici \(S=\left\{ M_{a,b}\mid \left(a,b\right)
+    \in\R^2 \right\}\) et \(S^\star=S\backslash\{\mathcal{M}_{0,0}\}\). Soit l'application
+    \(f\colon S\to\C\colon \mathcal{M}_{a,b}\mapsto a+ib\).
+    \begin{q}{1}
+        Montrer que \(S\) est un sous-groupe de \(\left(\mathcal{M}_2(\R), +\right)\)
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(f\) est un isomorphisme de \(\left(S,+\right)\) dans \(\left(\C,+\right)\)
+    \end{q}
+    \begin{q}{3}
+        On cherche maintenant à travailler, comme dans l'exercice précédent, sur un groupe
+        multiplicatif.
+        \begin{q}{a}
+            Montrer que \(f\) définit un morphisme de \(\left(S,\times\right)\) dans
+            \(\left(\C,\times\right)\)
+        \end{q}
+        \begin{q}{b}
+            Déterminer le noyau et l'image de ce morphisme.
+        \end{q}
+    \end{q}
+\end{exo}
 \end{document}
