@@ -97,7 +97,7 @@ let rec slices_between
 ;;
 
 (*
-  slices_between [1; 1] [1; 2] [1; 1; 1; 1; 2; 1; 3; 1; 2] = [[1]; []; [2; 1; 3]]
+  slices_between [1; 1] [1; 2] [1; 1; 1; 1; 2; 1; 3; 1; 2] = [[1]]
  *)
 
 let cut_genes (dna : dna) : (dna list) =
@@ -116,7 +116,7 @@ type 'a consensus = Full of 'a | Partial of 'a * int | No_consensus
    greatest number of occurrences and this number is equal to n,
    No_consensus otherwise. *)
 
-   let consensus (list : 'a list) : 'a consensus =
+let consensus (list : 'a list) : 'a consensus =
   let rec aux acc l = match l with
     | [] -> acc
     | t::q when (List.mem_assoc t acc) -> aux (List.map (fun (a, b) -> if a = t then (a, b + 1) else (a, b)) acc) q
