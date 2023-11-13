@@ -125,13 +125,114 @@
 \end{exo}
 
 \begin{exo}
-    On munit \(\R^n\) de la norme euclidienne usuelle. Soit \(f\colon\R^2\to\R\)
+    On munit \(\R^n\) de la norme euclidienne usuelle. Soit \(f\colon\R^n\to\R\)
     l'application norme définie par \(f(x)=\|x\|\). Montrer que \(f\)
     est de classe \(\CC^1\) sur \(\R^n\backslash\{0\}\) mais pas différentiable en 0.
-    \boxans{\(f\) étant l'idendité à un scalaire près, elle est \(\CC^\infty\) en tout
+    \boxans{\(f\) étant 1-lipchitzienne donc elle est \(\CC^\infty\) en tout
     point qui n'est pas le neutre additif. Soit \(v\) une direction, montrons que \(f\) n'est pas
     différentiable en le neutre pour cette direction.
-    \(\lim_{t\to 0}\frac{\|tv\| - \|0\|}{t} = \|v\|\) qui n'est pas
-    linéaire en \(t\) donc \(f\) n'y est pas différentiable.}
+    \(\lim_{t\to 0}\frac{\|tv\| - \|0\|}{t} = \pm\|v\|\) selon le signe de
+    \(t\) donc \(f\) n'y est pas différentiable.}
+\end{exo}
+
+\begin{exo}
+    Soit \(n\) un entier et \(E=\R_n[X]\).
+    \begin{q}{1}
+        Montrer que \(f_m:E\to\R\colon P\mapsto \int_0^1 P^m\) est différentiable
+        et déterminer sa différentielle pour tout \(P\) et pour tout \(m\).
+        \boxans{L'application \(\varphi\colon t\mapsto t\int_0^1 X^m\) est linéaire donc
+        différentiable, ainsi par linéarité de l'intégrale, \(f\) est différentiable, sa
+        différentielle est \(\sum \frac{1}{k}N^k\cdot\nabla\) où \(N\) est la nilpotente cyclique
+        usuelle.}
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(g\colon P\mapsto P'\) est différentiable et donner sa différentielle.
+        \boxans{L'application est linéaire en dimension finie, elle est donc continue.
+        Elle est différentiable car différentiable sur sa base canonique comme polynôme.
+        Sa différentielle est \(\sum kN^k\cdot\nabla\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On fixe \(n\in\N^*\) et on munit \(\mathcal{M}_n(\R)\) de la norme subordonnée
+    associée à la norme euclidienne sur \(\R^n\).
+    \begin{q}{1}
+        Montrer que pour tout \(p\in\N, f_p\colon \mathcal{M}_n(\R)\ni
+        A\mapsto f_p(A)=A^p\) est différentiable et calculer sa différentielle
+        \(Df_p(A)\) ainsi que sa norme \(\Vvert Df_p(A)\Vvert\). Prouver que
+        la série \(\sum \frac{1}{k!}D_{f_k}(A)\) est normalement convergente.
+    \end{q}
+    \begin{q}{2}
+        En déduire que l'exponentielle est différentiable.
+    \end{q}
+    \begin{q}{3}
+        Calculer \(D(\exp)(A)\)
+        \begin{q}{a}
+            lorsque \(A=0\)
+        \end{q}
+        \begin{q}{b}
+            lorsque \(A=I_n\)
+        \end{q}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    TODO
+\end{exo}
+
+\begin{exo}
+    Soient \(\left(E_1,\|\cdot\|_1\right), \left(E_2,\|\cdot\|_2\right),
+    \left(F,\|\cdot\|_F\right)\) des \(\R\)-evn et \(E=E_1\times E_2\) le
+    \(\R\)-ev muni de la norme \(\|\cdot\|_E\colon(x_1,x_2)\mapsto\|x_1\|_1+
+    \|x_2\|_2\). On considère une application bilinéaire \(B\) de \(E\) dans \(F\).
+    \begin{q}{1}
+        Montrer que \(B\) est continue ssi il existe \(C\in\R^+\) telle que
+        \(\|B(x_1,x_2)\|_F\leq C\|(x_1,x_2)\|_E\) pour tout couple d'éléments.
+    \end{q}
+    On suppose maintenant \(B\) continue.
+    \begin{q}{2}
+        Montrer que \(B\) est \(\CC^1\) et que pour tout \(x,y\in E\)
+        \[DB(x)(y)=B(y_1,x_2)+B(x_1,y_2)\]
+    \end{q}
+    \begin{q}{3}
+        En déduire que \(B\) est \(\CC^2\), de différentielle seconde
+        constante. Justifier alors que \(B\) est \(\CC^\infty\).
+    \end{q}
+    \begin{q}{4}
+        Montrer que le produit de matrices dans \(\mnr\) est une application
+        différentiable, calculer sa différentielle et sa différentielle seconde.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(n\in\N^*, U\) un ouvert borné non vide de \(\R^n,\ f\) une application
+    de \(\bar{U}\) dans \(\R\), continue sur \(U\) et différentiable sur \(U\).
+    On suppose \(f\) constante sur la frontière de \(U\). Montrer qu'il existe \(a\in U\)
+    tel que la différentielle de \(f\) en \(a\) est identiquement nulle.
+    \boxans{Si \(f\) est constante alors tout point de \(U\) convient, sinon
+    la différentielle change de signe selon au moins une direction, on réitère
+    la recherche sur son orthogonale, éventuellement en dimension \(1\) on a une différentielle
+    nulle selon toutes les directions, et donc on a notre point \(a\)}
+\end{exo}
+
+\begin{exo}
+    Cet exercice propose une meilleure visualisation des concepts en travaillant
+    la différentiabilité en dimension 1.
+    \begin{q}{1}
+        Soient \(I\) un intervalle ouvert non vide de \(\R\) et \(f\) une application
+        de \(I\) dans \(\R\). Montrer que \(f\) est dérivable sur \(a\in I\) ssi
+        \(f\) est différentiable en \(a\). Si tel est le cas, préciser le lien entre
+        le nombre dérivé \(f'(a)\) et la différentielle \(df(a)\).
+    \end{q}
+    \begin{q}{2}
+        On considère l'application valeur absolue sous le nom \(g\colon\R\to\R\).
+        \begin{q}{a}
+            Montrer que \(g\) est dérivable sur \(R_+^*\) et \(R_-^*\).
+        \end{q}
+        \begin{q}{b}
+            Montrer que \(g\) n'est pas dérivable en \(0\).
+            \boxans{Cf. exercice 5}
+        \end{q}
+    \end{q}
 \end{exo}
 \end{document}
