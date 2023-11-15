@@ -1,0 +1,56 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{Ordre d'un élément, groupes cycliques}}
+\end{center}
+
+\begin{exo}
+    Soient \(m,n\in\N\backslash\{0\}\).
+    \begin{q}{1}
+        Démontrer l'équivalence \(\U_m\subseteq \U_n \Leftrightarrow m\mid n\).
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(\U_n\) est cyclique.
+    \end{q}
+    \begin{q}{3}
+        Décrire les sous groupes de \(\U_n\).
+    \end{q}
+    \begin{q}{4}
+        Donner l'ordre des éléments de \(\U_n\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Démontrer que des éléments conjugués d'un groupe sont de même ordre. La réciproque
+    est-elle vraie ?
+    \boxans{La réciproque est fausse, dans \(\U_3\) par exemple tous les éléments ont le même ordre.}
+\end{exo}
+
+\begin{exo}
+    Soit \(G\) un groupe et \(x\in G\) un élément d'ordre \(n\). Démontrer
+    que \(x^m\) est d'ordre \(\frac{n}{\gcd(m,n)}\).
+\end{exo}
+
+\begin{exo}
+    Soit \(f\colon G\to H\) un homomorphisme de groupes. Soit \(x\in G\) d'ordre
+    fini noté \(n\).
+    \begin{q}{1}
+        Démontrer que \(f(x)\) est d'ordre fini, et que son ordre divise \(n\).
+        \boxans{Notons \(m=o(f(x))\), on a \(f(x)^m = 1 = f(x^n) = f(x)^n\). On peut ensuite
+        effectuer la division euclidienne de \(n\) par \(m\) pour obtenir \(n=mq+r\), montrons
+        que \(r=0\). On suppose par l'absurde \(r>0\) alors \(f(x)^n = f(x)^r\) or \(f(x)^n=1\) et \(r<m\)
+        implique \(f(x)^r\neq 1\) ce qui est absurde, ainsi \(r=0\) et \(m\mid n\).}
+    \end{q}
+    \begin{q}{2}
+        Démontrer que \(f(x)\) est d'ordre exactement \(n\) si \(\Ker(f)\) est
+        d'ordre premier à \(n\).
+        \boxans{On note \(k\) l'ordre de \(\Ker(f)\) et \(m\mid n\) l'ordre de \(f(x)\), on note
+        \(d = \frac nm\in\N\). On sait que \(f(x)^m = (f(x)^m)^d=1\) ainsi \(\langle x^m\rangle \subseteq \Ker(f)\).
+        La théorème de \textsc{Langrange} affirme alors que \(d \mid k\) or \(d\mid n\) et
+        \(k\land n = 1\) donc \(d= 1\) et finalement \(m=n\)}
+    \end{q}
+\end{exo}
+\end{document}
