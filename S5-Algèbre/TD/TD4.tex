@@ -21,6 +21,10 @@
     de \(G\)
     \begin{q}{1}
         Montrer que l'ordre de \(f(K)\) divise les ordres de \(K\) et de \(H\)
+        \boxans{D'après le premier théorème d'isomorphisme, pour un groupe \(K\) fini
+        on a \(|K|=|\Ker(f)|\times|\Im(f)|\) ce qui donne la permière partie de la réponse.
+        Enfin on montre que l'ordre de \(f(K)\) divise celui de \(H\) par le théorème de
+        \textsc{Lagrange} car c'est un sous-groupe.}
     \end{q}
     \begin{q}{2}
         Montrer que si l'ordre de \(K\) est premier à l'ordre de \(H\) alors
@@ -35,22 +39,30 @@
     sont premiers entre eux. Déterminer tous les morphismes de groupes de \(G\) dans \(G'\)
     \boxans{Soit \(f\in\textbf{Hom}(G,G')\), \(|f(G)|\) divise \(G'\) or
     \(|f(G)|=\frac{|G|}{|\Ker(f)|}\) ainsi \(f(G)\) a un cardinal qui divise deux
-    nombres premiers entre eux et donc \(f(G)=e\). La synthèse est immédiate.
+    nombres premiers entre eux et donc \(f(G)=e\). La synthèse est immédiate.}
 \end{exo}
 
 \begin{exo}
     Montrer que si \(H\) et \(K\) sont deux sous-groupes distinguées d'un groupe \(G\)
     alors leur intersection est distinguée.
+    \boxans{On se passera de démontrer que \(H\cap K\) est bien un groupe, montrons qu'il est
+    normal. Soient \(x\in\G\) et \(h\in H\cap K\) alors en particulier \(h\in H\) donc
+    \(x=hxh^{-1}\). On a ainsi bien que \(H\cap K\) est un sous groupe normal de \(G\).}
 \end{exo}
 
 \begin{exo}
     Montrer que si \(N\) est distingué dans \(G\) et \(H\) un sous groupe quelconque de
     \(G\) alors \(N\cap H\) est distingué dans \(H\).
+    \boxans{L'énoncé nous indique que \(\forall x\in G, \forall n\in n, nxn^{-1} \in G\), ce qui
+    reste vrai si on réduit les ensembles car les quantificateurs sont universels, ainsi on a bien
+    \(\forall h\in H, \forall y\in H\cap N, yhy^{-1}\in H\) par stabilité de \(H\).}
 \end{exo}
 
 \begin{exo}
     Soient deux sous-groupes distingués \(H\) et \(K\) de \(G\) tels que \(H\cap K=\{e\}\)
-    Montrer que \(\forall x\in H,\forall y\in K, xy=yx\)
+    Montrer que \(\forall x\in H,\forall y\in K, xy=yx\).
+    \boxans{Soit \(h\in H\) on a par hypothèse de l'énoncé
+    \(\forall k\in K, khk^{-1}=h\) ainsi en multipliant à droite par \(k\) on a \(kh=hk\).}
 \end{exo}
 
 \begin{exo}
