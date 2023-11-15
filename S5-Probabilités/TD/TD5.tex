@@ -1,0 +1,73 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+\begin{center}
+    \Huge{\textbf{PR5-L3 Maths - TD 5}}
+\end{center}
+\bigskip
+
+\begin{exo}
+    Déterminer la loi des variables aléatoires suivantes en utilisant
+    la formule de transfert.
+    \begin{q}{1}
+        Si \(X\sim\)Cauchy, déterminer la loi de \(Y=1/X\).
+        \boxans{\(X\) est de densité \(f_X(x)=\frac{1}{\pi (1+x^2)}\).
+        Soit \(h\) continue bornée, on souhaite calculer \(\esp(h(Y))=\esp(h(1/X))\)
+        Soit \(g\colon x\mapsto h(\frac{1}{x})\) lorsque celà a du sens.
+        \[\esp[h(Y)]=\int_\R g(x)f_X(x) = \int_{\R_-} h\left(\frac{1}{x}\right)f_X(x)
+        +\int_{\R_+}h\left(\frac{1}{x}\right)f_X(x)=\int_{\R}h(x)\frac{1}{x^2}f_X\left(\frac{1}{x}\right)\]
+        On pose maintenant \(f_Z\colon x\mapsto \frac{1}{x^2}f_X\left(\frac{1}{x}\right)\)
+        qui est bien une densité car elle est à valeurs positives et d'intégrale neutre multiplicativement.
+        Considérons une variable continue \(Z\) de densité \(f_Z\) on a pour tout fonction
+        continue bornée \(\esp[h(Y)]=\esp[h(Z)]\) donc \(Y\) est continue de densité \(f_Z\), par
+        analyse synthèse. Dans notre cas précis, les deux variables ont la même loi.}
+    \end{q}
+    \begin{q}{2}
+        Si \(X\sim\mathcal{N}(0,1)\), déterminer la loi de \(Y=e^X\).
+        \boxans{\(X\) est de densité \(f_X(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2}\)
+        Soit \(h\) continue bornée, on souhaite calculer \(\esp([h(Y)])=\)
+        \[\int_\R h(e^x)f_X(x)\D x=\int_{\R_+} h(t)f_X(\ln(t))\frac{\D t}{t}\]
+        On pose maintenant \(f_Y\colon t\mapsto\frac{f_X(\ln(t))}{t}\) pour \(t>0\),
+        la fonction est bien positive, d'intégrale neutre multiplicativement, c'est
+        donc une densité. Ainsi \(Y\) est de densité \(f_Y\).}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On définit la loi de \textsc{Laplace} de paramètres \(\mu \in\R, b>0\) comme la loi
+    correspondant àa la densité \[f(x)\colon=\frac{1}{2b}\exp\left(-\frac{|x-\mu|}{b}\right)\]
+    On pensera à observer que si \(X\sim\LL(\mu,b)\) et \(Y\sim\LL(0,1)\) alors
+    \(X/b\) suit la loi de \(Y+\mu\), on se contentera donc de travailler avec \(X\sim\LL(0,1)\)
+    \begin{q}{1}
+        Calculer \(\esp[X]\).
+        \boxans{\(f_X = \frac{1}{2}\exp(-|x|)\).
+        La densité étant paire, l'espérance est \(0\). \(\esp[\LL(b(Y+\mu))]=b\mu\)}
+    \end{q}
+    \begin{q}{2}
+        Calculer var\((X)\).
+        \boxans{On utilise la formule \(\var(X) = E[X^2]-E[X]^2 = \int_\R x^2e^{-|x|} - 0 = 4\).
+        \(\var(\LL(b(Y+\mu)))=4b^2\) }
+    \end{q}
+    \begin{q}{3}
+        Calculer \(\esp[e^{tX}]\) pour tout \(t\in\R\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    La loi du vecteur aléatoire \(X=\left(X_1,X_2\right)\) est uniforme
+    sur le disque unité, \(f_X = \frac{1}{\pi}\mathds{1}_{B(0,1)}\)
+    \begin{q}{1}
+        Expliciter la loi de \(X_1\) et celle de \(X_2\).
+        \boxans{Soit \(x\in\R\) calculons \(F_{X_1}=\proba(X_1\leq x)=\proba(X\in
+        (-\infty, x]\times\R)\), ainsi \(F_{X-1}\) a une allure exponentielle
+        entre \(-1\) et \(0\) puis \(1-\exp\) entre \(0\) et \(-1\)}
+    \end{q}
+    \begin{q}{2}
+        Calculer \(\cov(X_1, X_2)\).
+    \end{q}
+    \begin{q}{3}
+        Montrer que \(X_1\) et \(X_2\) ne sont pas indépendantes.
+    \end{q}
+\end{exo}
+\end{document}
