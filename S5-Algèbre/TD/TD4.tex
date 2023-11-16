@@ -5,7 +5,7 @@
 
 \begin{center}
     \huge{\textbf{Théorème de Lagrange, sous-groupes distingués,
-    groupe quotien}}
+    groupe quotient}}
 \end{center}
 
 \begin{exo}
@@ -61,8 +61,6 @@
 \begin{exo}
     Soient deux sous-groupes distingués \(H\) et \(K\) de \(G\) tels que \(H\cap K=\{e\}\)
     Montrer que \(\forall x\in H,\forall y\in K, xy=yx\).
-    \boxans{Soit \(h\in H\) on a par hypothèse de l'énoncé
-    \(\forall k\in K, khk^{-1}=h\) ainsi en multipliant à droite par \(k\) on a \(kh=hk\).}
 \end{exo}
 
 \begin{exo}
@@ -71,5 +69,85 @@
     \(H=\langle b,a^2\rangle\) et \(K=\langle b\rangle\). Montrer que \(H\) est un sous-groupe
     distingué dans \(G\), que \(K\) est un sous groupe distingué dans \(H\), mais que
     \(K\) n'est pas un sous-groupe distingué dans \(G\).
+\end{exo}
+
+\begin{exo}
+    Soit \(G=\left\{\begin{pmatrix}a&b\\0&d\end{pmatrix}\mid a,d\in\R^*, b\in\R
+    \right\}\subset \text{GL}_2(\R)\)
+    \begin{q}{1}
+        Montrer que \(G\) est un sous-groupes de GL\(_2(\R)\)
+    \end{q}
+    \begin{q}{2}
+        Dans chacun des cas suivants décider si \(H\subset G\) est un sous-groupe
+        normal ou non.
+        \begin{q}{a}
+            \(H=\{M \in G \mid a = 1\}\)
+        \end{q}
+        \begin{q}{b}
+            \(H=\{M \in G \mid b = 0\}\)
+        \end{q}
+        \begin{q}{c}
+            \(H=\{M \in G \mid d = a\}\)
+        \end{q}
+    \end{q}
+    \begin{q}{3}
+        Dans la question précédents, si \(H\triangleleft G\) est normal, déterminer
+        le quotient \(G/H\) à isomorphisme près.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On considère le groupe \(\mathfrak{S}_3\) des permutations de 3 éléments.
+    \begin{q}{1}
+        Déterminer les sous-groupes de \(\mathfrak{S}_3\).
+        \boxans{D'après le théorème de \textsc{Lagrange}, un sous groupe de
+        \(\mathfrak{S}_3\) est de cardinal \(1, 2, 3\) ou \(6\)
+        \begin{enumerate}
+            \itt 1 : \(\{\id\}\)
+            \itt 2 : \(\langle (1\ 2)\rangle,\langle (1\ 3)\rangle,\langle (2\ 3)\rangle\) sont les seuls car \(H\)
+            est cyclique et n'a que \(3\) éléments d'ordre \(2\).
+            \itt 3 : \(\langle (1\ 2\ 3)\rangle=\langle(1\ 3\ 2)\rangle=\mathfrak{A}_3\)
+            \itt 6 : \(\mathfrak{S}_3\)
+        \end{enumerate}}
+    \end{q}
+    \begin{q}{2}
+        Parmi ces sous-groupes, lesquels sont distingués ?
+        \boxans{Le groupe de cardinal \(1\) et le groupe entier sont trivialement
+        distingués. Pour montrer que \(\mathfrak{A}_3\) l'est montrons un lemme :
+        \medskip
+        \begin{lemma}
+            Soit \(G\) un groupe, si \(H\vartriangleleft G\) vérifie \(|G/H|=2\)
+            alors \(H\) est distingué dans \(G\).
+            \begin{proof}
+                Soit \(x\in G\) on veut \(xH=Hx\). Si \(x\in H\) le résultat est immédiat,
+                sinon \(G/H\) est une partition de \(G\) ainsi \(G=H\sqcup xH = H \sqcup Hx\)
+                et on a bien l'égalité souhaitée.
+            \end{proof}
+        \end{lemma}
+        Ainsi comme \(|\mathfrak{S}_n/\mathfrak{A}_n|=2\) alors \(\mathfrak{A}_3\) est normal.
+        Les autre sous groupes ne sont pas distingués, ce qui se vérifie de façon bourrine.}
+    \end{q}
+    \begin{q}{3}
+        Donner la liste des groupes quotients de \(\mathfrak{S}_3\).
+        \boxans{Les groupes quotients obtenus sont \(\mathfrak{S}_3, \{\id\}\) et \(\{id, (1\ 2)\}\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On considère le groupe quotient \(\left(\Q/\Z,+\right)\).
+    \begin{q}{1}
+        Montrer que l'application \(\varphi : \left(\R,+\right)\to\left(\C,\times\right)\)
+        définie par \(\varphi(x)=e^{2i\pi x}\) est un morphisme de groupes.
+    \end{q}
+    \begin{q}{2}
+        Calculer son noyau et son image, et en déduire que \(\R/\Z\simeq \U\).
+    \end{q}
+    \begin{q}{3}
+        On note \(\phi\) la restriction de \(\varphi\) à \(\Q\). Montrer que l'image
+        de \(\phi\) est égale à \(\cup_{n\in\N} \U_n = \U_\N\).
+    \end{q}
+    \begin{q}{4}
+        En déduire que \(\Q/\Z\simeq \U_\N\).
+    \end{q}
 \end{exo}
 \end{document}
