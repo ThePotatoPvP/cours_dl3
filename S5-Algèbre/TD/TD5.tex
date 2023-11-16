@@ -26,12 +26,20 @@
 \begin{exo}
     Démontrer que des éléments conjugués d'un groupe sont de même ordre. La réciproque
     est-elle vraie ?
-    \boxans{La réciproque est fausse, dans \(\U_3\) par exemple tous les éléments ont le même ordre.}
+    \boxans{Soit \(G\) un groupe, on pose \(a\) et \(b\) conjugués, il existe
+    \(g\in G\) tel que \(a=gbg^{-1}\) alors si \(b\) est d'ordre \(n\in N\) on a
+    \(a^n = g\star e\star g^{-1}=e\) donc \(o(a)\mid o(b)\). Aussi en écrivant \(b=g^{-1}ag^{-1}\) on a
+    \(o(b)\mid o(a)\) donc \(o(b)=o(a)\). La réciproque est fausse car \(\Z_3\) est
+    abélien et compte \(3\) éléments d'ordre \(3\).}
 \end{exo}
 
 \begin{exo}
     Soit \(G\) un groupe et \(x\in G\) un élément d'ordre \(n\). Démontrer
     que \(x^m\) est d'ordre \(\frac{n}{\gcd(m,n)}\).
+    \boxans{Soit \(G\) un groupe et \(x\in G\) d'ordre \(n\in\N\). Soit \(m\in \N\) on considère
+    \(d = n \land m\) alors \((x^m)^{n/d} = (x^n)^{m/d} = e\) donc \(o(x^m) \mid \frac nd\).
+    Soit \(p\in\N\) tel que \((x^m)^p=e\) alors \(n\mid np\) donc \(\frac nd \mid \frac md \times p\)
+    donc d'après le lemme de \textsc{Gauss} \(\frac nd\mid p\) et donc \(o(x^m)=\frac nd\).}
 \end{exo}
 
 \begin{exo}
@@ -52,5 +60,96 @@
         La théorème de \textsc{Langrange} affirme alors que \(d \mid k\) or \(d\mid n\) et
         \(k\land n = 1\) donc \(d= 1\) et finalement \(m=n\)}
     \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que les groupes suivants ne sont pas isomorphes.
+    \begin{q}{1}
+        \(\left(\Z/3\Z\times\Z/3\Z,+\right)\) et \(\left(\Z/9\Z,+\right)\).
+    \end{q}
+    \begin{q}{2}
+        \(\left(\Z/3\Z\times\Z/8\Z,+\right)\) et \(\left(\Z/4\Z\times\Z/6\Z,+\right)\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(a\) et \(b\) deux entiers naturels strictement plus grands que \(1\).
+    Montrer que le nombre de morphisme de groupes de \(\Z/a\Z\) vers \(\Z/b\Z\)
+    est \(\gcd(a,b)\).
+\end{exo}
+
+\begin{exo}
+    Travail non pertinent sur de la multiplication par 3.
+    \begin{q}{1}
+        Montrer que les groupes \(\left(3\Z/18\Z,+\right)\) et \(\left(\Z/6\Z,+\right)\)
+        sont isomorphes.
+    \end{q}
+    \begin{q}{2}
+        Décrire les sous-groupes, l'ordre des éléments et les générateurs de
+        \(\left(3\Z/18\Z,+\right)\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(G\) = \(\langle(1\ 2\ \dots\ 11\ 12)\rangle\subseteq\mathfrak{S}_{12}\).
+    Déterminer les générateurs et les sous-groupes de \(G\).
+\end{exo}
+
+\begin{exo}
+    Soient \(x,y\) deux éléments d'ordre fini d'un groupe tels que \(xy=yx\). On note
+    \(n\) et \(m\) leurs ordres respectifs.
+    \begin{q}{1}
+        Démontrer que si \(n\land m = 1\) alors \(xy\) est d'ordre \(mn\).
+        \boxans{On commence par remarquer que \((xy)^{nm}=(x^n)^m(y^m)^n=e\) donc
+        \(o(xy) \mid mn\). On note maintenant \(k=o(xy)\) alors \(((xy)^k)^m=(x^m)^k=e\)
+        donc \(n\mid mk\) ainsi par le lemme de \textsc{Gauss} \(n\mid k\) et par symétrie
+        du raisonnement \(m \mid k\) ainsi \(k = mn\).}
+    \end{q}
+    \begin{q}{2}
+        Démontrer que \(xy\) est d'ordre fini et que \(\frac{mn}{d^2} \mid k \mid \frac{mn}{d}\)
+        en notant \(k\) l'ordre de \(xy\) et \(d=n\land m\).
+        \boxans{D'après la question précédente \(k\) est fini et divise \(nm\).
+        \begin{enumerate}
+            \itt \((xy)^{mn/d}= (x^n)^{m/d}(y^m)^{n/d} = e\) donc \(k \mid \frac{nm}{d}\).
+            \itt \(o((xy)^d) \mid k\) donc \(\frac{nm}{d^2}\mid k\).
+        \end{enumerate}}
+    \end{q}
+    \begin{q}{3}
+        On suppose que \(m=24\) et \(n=18\). Démontrer que \(G\) contient un
+        élément d'ordre \(72\)
+        \boxans{Si \(x\) est d'ordre \(24\) et \(y\) est d'ordre \(18\) on a alors
+        \(x^3\) est d'ordre \(8\) et \(y^2\) est d'ordre \(9\) ce qui d'après la question
+        \(1\) donne que l'ordre de \(x^3y^2\) est \(72\).}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Retour rapide sur les matrices.
+    \begin{q}{1}
+        Exhiber un élément d'ordre \(3\) dans \(\glnr\).
+    \end{q}
+    \begin{q}{2}
+        Démontrer qu'un tel élément est toujours dans \(\text{SL}_n(R)\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(G\) un groupe fini d'ordre noté \(n\) et \(m\) un entier premier à \(n\).
+    Démontrer que pour tout \(a\in G\) l'équation \(x^m=a\) admet une unique solution.
+\end{exo}
+
+\begin{exo}
+    Soit \(n\in\N^*\)
+    \begin{q}{1}
+        Quels sont les générateurs de \(\Z/n\Z\) ? On note \(\varphi(n)\) ce nombre.
+    \end{q}
+    \begin{q}{1}
+        Démontrer l'égalité \(\ds\sum_{d\mid n} \varphi(d) = n\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que \(\textbf{Aut}\left(\Z/7\Z\right)\) est cyclique et déterminer
+    les morphismes de groupes de \(\left(\Z/4\Z,+\right)\) dans \(\textbf{Aut}\left(\Z/7\Z\right)\).
 \end{exo}
 \end{document}
