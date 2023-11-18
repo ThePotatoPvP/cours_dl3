@@ -61,8 +61,10 @@
 \begin{exo}
     Soient deux sous-groupes distingués \(H\) et \(K\) de \(G\) tels que \(H\cap K=\{e\}\)
     Montrer que \(\forall x\in H,\forall y\in K, xy=yx\).
-    \boxans{Soit \(h\in H, k\in K\) on a \(hkhk^{-1}h{-1}\in H\) et
-    \(hkk^{-1}k^{-1}h^{-1}=hk^{-1}h\in K\)}
+    \boxans{Soit \(h\in H, k\in K\) on a pour tout \(x\in G\colon xhx^{-1}\in H,
+    xkx^{-1}\in K\), ainsi \(kh^{-1}k^{-1}\in H\) et donc \(hkh^{-1}k^{-1}\in H\) par stabilité,
+    de la même façon \(hkh^{-1}\in K\) et donc \(hkh^{-1}k^{-1} \in K\) finalement
+    \(hkh^{-1}k^{-1}\in K\cap H = \{e\}\) donc \(hk = kh\).}
 \end{exo}
 
 \begin{exo}
@@ -150,6 +152,46 @@
     \end{q}
     \begin{q}{4}
         En déduire que \(\Q/\Z\simeq \U_\N\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    TODO
+\end{exo}
+
+\begin{exo}
+    Soit \(G\) un groupe et \(Z(G)\) son centre.
+    \begin{q}{1}
+        Montrer que tout sous-groupe de \(Z(G)\) est un sous groupe distingué
+        de \(G\).
+    \end{q}
+    \begin{q}{2}
+        Soit \(H\) un sous-groupe de \(Z(G)\). On suppose que \(G/H\)
+        est cyclique. Montrer que \(G\) est abélien.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(G\) un groupe et \(H\) un sous-groupe normal d'indice \(n\in\N\).
+    \begin{q}{1}
+        Montrer que pour tout \(a\in G\) on a \(a^n\in H\).
+    \end{q}
+    \begin{q}{1}
+        Donner un contre-exemple avec un \(H\) non distingué.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(G\) un groupe fini et \(H\triangleleft G\) d'ordre \(n\)
+    et d'indice \(m\). On suppose que \(n\) et \(m\) sont premiers entre
+    eux. Montrer que \(H\) est l'unique sous-groupe de \(G\) d'ordre \(n\).
+\end{exo}
+
+\begin{exo}
+    Soit \(G\) un groupe. On apelle groupe dérivé de \(G\) et on note \(D(G)\)
+    le sous-groupe de \(G\) engendré par \(\left\{ xyx^{-1}y^{-1}\mid x,y\in G \right\}\)
+    \begin{q}{1}
+        Montrer que \(D(G)\) est disintgué dans \(G\) et que \(G/D(G)\) est abélien.
     \end{q}
 \end{exo}
 \end{document}
