@@ -65,7 +65,7 @@
         Montrer que \(\Q+\Q\sqrt{2}\colon=\{x+y\sqrt{2}\mid x,y\in\Q\}\) est un
         sous-anneau de \(\R\)
         \boxans{On a bien \(1=1+0\sqrt{2}\in\Q+\Q\sqrt{2}\) et c'est trivialement
-        strable par multiplication et somme.}
+        stable par multiplication et somme.}
     \end{q}
     \begin{q}{2}
         Donner une condition nécessaire et suffisante sur le réel \(\alpha\) pour que
@@ -135,9 +135,18 @@
     \begin{q}{1}
         Montrer que l'application \(\phi\colon A\to A\) définit par \(\phi(a)=ax\)
         est un morphisme de groupe injectif.
+        \boxans{Soient \(a,b\in A\) tels que \(\phi(a)=\phi(b) \Rightarrow ax = bx
+        \Rightarrow ax-bx=0\Rightarrow (a-b)x=0\). Ainsi comme \(x\neq 0\) et que \(A\)
+        est intègre \(a-b=0\) et donc \(a=b\).}
     \end{q}
     \begin{q}{2}
         En déduire que si \(A\) est fini alors \(A\) est un corps
+        \boxans{Soit \(a\in A\) non neutre, par finitude de \(A\) il existe \(n\in\N^*\)
+        tel que la famille \(a,a^2,\dots,a^n\) contient des répétitions, ainsi il existe \(m\in\N^*\)
+        minimal tel que \(a^m=a\) alors comme \(a^m=a^{m-1}\cdot a = a\). Montrons
+        \(a^{m-1}=1\). On sait que \(a^m-a = 0\) donc \((a^{m-1} - 1)\cdot a = 0\) et donc
+        comme \(A\) est intègre et que \(a\) est non neutre, \(a^{m-1}-1=0\) et finalement
+        \(a^{m-1}=1\).}
     \end{q}
 \end{exo}
 \end{document}
