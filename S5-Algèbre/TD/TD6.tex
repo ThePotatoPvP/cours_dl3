@@ -1,0 +1,143 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{Anneaux et morphismes d'anneaux}}
+\end{center}
+
+\begin{exo}
+    Familiarisation avec le concept d'anneau.
+    \begin{q}{1}
+        Quels sont les sous-anneaux de \(\Z\) ?
+        \boxans{Soit \(\left(A,+,\times\right)\) un sous-anneau de \(\Z\), alors
+        en particulier \(\left(A,+\right)\) est un sous groupe de \(\Z\) donc \(A\)
+        est de la forme \(n\Z\). Or pour que ce soit un anneau il faut \(1\in A\) donc
+        \(A=\Z\). L'anneau trivial \(A=\{0\}\) mérite aussi d'être mentionné.}
+    \end{q}
+    \begin{q}{2}
+        Quels sont les sous-anneaux de \(\Z/26\Z\) ?
+        \boxans{Comme au dessus, en dehors de l'anneau trivial, la classe de \(1\)
+        est dans le sous-anneaux et génère ainsi l'anneau entier.}
+    \end{q}
+    \begin{q}{3}
+        Déterminer tous les sous-anneaux de \(Z/4\Z\times \Z/4\Z\).
+        \boxans{Soit \(A\) un sous-anneau non trivial, \((1,1)\) est dans \(A\)
+        et donc \(\{(x,x)\mid x \in\llbracket 0,4\rrbracket\}\) est un sous-anneau
+        recherché. On peut étendre en donnant un ecart de deux entre las deux côtés pour
+        avoir un autre sous-anneaux de cardinal \(8\). Enfin on a l'anneau entier.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    \begin{q}{1}
+        Quels sont les morphismes d'anneaux ...
+        \begin{enumerate}
+            \itt ... de \(\Z\) dans \(\Z/3\Z\) ?
+            \boxans{Le morphisme doit vérifier \(\varphi(1)=\cl(1)\) or c'est un
+            morphisme additif donc finalement \(x\mapsto \cl(x)\) est le seul.}
+            \itt ... de \(\Z/5\Z\) dans \(\Z/3\Z\) ?
+            \boxans{Un tel morphisme doit vérifier \(\varphi(1)=\cl(1)\), or cet élément est d'ordre
+            \(3\) d'un côté et \(5\) de l'autre, on a donc pas un morphisme. Il n'y a
+            pas de morphisme entre ces deux anneaux.}
+            \itt ... de \(\Z/12\Z\) dans \(\Z/3\Z\) ?
+            \boxans{Un tel morphisme doit vérifier \(\varphi(1)=\cl(1)\) ainsi la structure
+            de groupe additif donne que le seul morphisme possible est \(x\mapsto \cl(x)\)
+            qui est bien défini.}
+        \end{enumerate}
+    \end{q}
+    \begin{q}{2}
+        Donner une condition nécessaire et suffisante pour qu'il existe un morphisme
+        de \(\Z/a\Z\) dans \(\Z/b\Z\) (avec \(a,b\in\N^*\)).
+        \boxans{Montrons qu'un tel morphisme existe ssi \(b\mid a\)
+        \begin{enumerate}
+            \item[\(\Rightarrow\)] Le morphisme \(\cl_a(n) \mapsto \cl_b(n)\) est bien défini.
+            \item[\(\Leftarrow\)] L'ordre de \(\varphi(n)\) doit diviser l'ordre de \(n\)
+            pour que le morphisme soit bien défini, donc \(b\mid a\).
+        \end{enumerate}}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Sous-anneaux de \(\R\).
+    \begin{q}{1}
+        Montrer que \(\Q+\Q\sqrt{2}\colon=\{x+y\sqrt{2}\mid x,y\in\Q\}\) est un
+        sous-anneau de \(\R\)
+        \boxans{On a bien \(1=1+0\sqrt{2}\in\Q+\Q\sqrt{2}\) et c'est trivialement
+        strable par multiplication et somme.}
+    \end{q}
+    \begin{q}{2}
+        Donner une condition nécessaire et suffisante sur le réel \(\alpha\) pour que
+        \(\Q+\Q\alpha\) soit un sous-anneau de \(\R\).
+        \boxans{Il faut \(\alpha^2\in \Q+\Q\alpha\) et donc \(\alpha^2 = \xi\alpha + \chi\),
+        c'est un nombre algébrique de dimension 2.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On définit \(A=Z[j]=\{a+jb\mid a,b\in\Z\}\) où \(j=\exp\left(\frac{2i\pi}{3}\right)\).
+    \begin{q}{1}
+        Montrer que \(A\) est un sous-anneau de \(\C\).
+    \end{q}
+    On désigne par \(\mathcal{U}(A)\) le groupe des éléments inversibles de \(A\)
+    et on pose, pour tout \(z\in\C\), \(N(z)=z\bar{z}\).
+    \begin{q}{2}
+        \begin{q}{a}
+            Montrer que si \(z\in A\) alors \(N(z)\in\N\).
+        \end{q}
+        \begin{q}{b}
+            Soit \(z\in A\). Montrer que \(z\in\mathcal{U}(A)\) ssi \(N(z)=1\).
+        \end{q}
+        \begin{q}{c}
+            Soient \(a,b\in\Z\). Montrer que si \(N(a+jb)=1\) alors
+            \(a,b\in\{-1,0,1\}\).
+        \end{q}
+    \end{q}
+    \begin{q}{3}
+        Décrire le groupe \(\mathcal{U}(A)\) et en déterminer les éléments d'ordre 3.
+    \end{q}
+    \begin{q}{4}
+        Soit \(\Phi\colon\Q[X]\to C,P\mapsto P(j)\).
+        \begin{q}{a}
+            Montrer que \(\Phi\) est un homomorphisme d'anneaux
+        \end{q}
+        \begin{q}{b}
+            Déterminer le noyau de \(\Phi\).
+        \end{q}
+        \begin{q}{c}
+            Montrer que \(\Im(\Phi)=\{a+jb\mid a,b\in\Q\}\) et que c'est un sous-corps
+            de \(\C\).
+        \end{q}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    L'ensemble \(\mathcal{M}_n(A)\) des matrices \(n\times n\) à coefficients dans un anneau abélien \(A\).
+\end{exo}
+
+\begin{exo}
+    Considérons l'ensembke \(A\in\mathcal{M}_2(\R)\) défini par
+    \[ A\colon=\left\{ \begin{pmatrix} a&b\\-b&a \end{pmatrix}\mid a,b\in\R\right\}\]
+    \begin{q}{1}
+        Montrer que \(A\) est un sous-anneau de \(\mathcal{M}_2(\R)\).
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(A\) est abélien.
+    \end{q}
+    \begin{q}{3}
+        Montrer que \(A\) est isomorphe à \(\C\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(A\) un anneau intègre. Soit \(x\in A, x\neq 0\).
+    \begin{q}{1}
+        Montrer que l'application \(\phi\colon A\to A\) définit par \(\phi(a)=ax\)
+        est un morphisme de groupe injectif.
+    \end{q}
+    \begin{q}{2}
+        En déduire que si \(A\) est fini alors \(A\) est un corps
+    \end{q}
+\end{exo}
+\end{document}

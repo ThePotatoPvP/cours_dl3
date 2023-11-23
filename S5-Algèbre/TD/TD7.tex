@@ -1,0 +1,121 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{Idéaux et anneaux quotients}}
+\end{center}
+
+\begin{exo} Familiarisation avec le vocabulaire
+    \begin{q}{1}
+        Quels sont les idéaux premiers de \(\Z\) ?
+    \end{q}
+    \begin{q}{1}
+        Quels sont les idéaux maximaux de \(\Z\) ?
+    \end{q}
+\end{exo}
+
+\begin{exo} Reflexion sur les diviseurs de \(0\)
+    \begin{q}{1}
+        Quels sont les diviseurs de \(0\) de \(\Z\) ? de \(\Z/n\Z\) ?
+    \end{q}
+    \begin{q}{2}
+        Quels sont les diviseurs de \(0\) de l'anneau quotient \(\R[X]/(X^2+1)\) ?
+    \end{q}
+    \begin{q}{3}
+        Soient \(A,B\) deux anneaux. Quels sont les diviseurs de zéros de l'anneau
+        produit \(A\times B\) ?
+    \end{q}
+    \begin{q}{4}
+        En déduire qu'un produit de deux anneaux unitaires n'est jamais intègre
+        \textit{(et a fortiori n'est jamais un corps)}.
+    \end{q}
+\end{exo}
+
+\begin{exo} Approche par les polynômes
+    \begin{q}{1}
+        Soit \(D=\{P\in\R[X]\mid P'(0)=0\}\). Montrer que \(D\) n'est pas un idéal de
+        \(\R[x]\) mais que c'est un sous-anneau de \(\R[X]\).
+    \end{q}
+    \begin{q}{2}
+        Soit \(E=\{P\in\R[X]\mid P'(0)=P(0)=0\}\). Montrer que \(E\) n'est pas un
+        sous-anneau de \(\R[X]\) et que c'est un idéal de \(\R[X]\) dont on
+        donnera un générateur.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Notons \(\Z[i]\) l'ensemble des entiers de \textsc{Gauss}
+    \begin{q}{1}
+        \begin{q}{a}
+            Monrer que \(\Z[i]\) est un sous-anneau de \(\C\).
+        \end{q}
+        \begin{q}{b}
+            Est-ce que \(\Z[i]\) est un idéal de \(\C\) ?
+        \end{q}
+        \begin{q}{c}
+            Notons \(I=\{a+ib\in\Z[i]\mid a+b\in2\Z\}\). Est-ce un idél de \(\Z[i]\) ?
+        \end{q}
+    \end{q}
+    \begin{q}{2}
+        Considérons maintenant l'anneau \(\Z[X]\).
+        \begin{q}{a}
+            Est-ce que \(Z\) est un sous-anneau unitaire de \(\Z[X]\) ?
+            un idéal de \(\Z[X]\)
+        \end{q}
+        \begin{q}{b}
+            Considérons l'application \(f\colon \Z[X]\to\C\) donnée par \(P\mapsto P(i)\).
+            \begin{q}{i}
+                Montrer que \(f\) est un morphisme d'anneaux unitaires.
+            \end{q}
+            \begin{q}{ii}
+                Déterminer \(\Ker(f)\) et \(\Im(f)\).
+            \end{q}
+            \begin{q}{iii}
+                Déduire de la question précédente l'existence d'un isomorphisme d'anneaux
+                \[\quotient{\Z[X]}{(X^2+1)\Z[X]}\cong Z[i]\]
+            \end{q}
+        \end{q}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Parmi les anneaux suivants, lesquels sont intègres ?
+    \begin{enumerate}
+        \itt \(\Z[i]\)
+        \itt \(\mathcal{M}_n(\R)\)
+        \itt \(\CC^0(I, \R)\) avec \(I\) un intervalle réel.
+        \itt \(\R[X]/X\)
+        \itt \(\R[X]/(X^2)\)
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+    Soit \(A\) un anneau isomorphe à \(\Z/n\Z\) comme groupe additif. Montrer que
+    \(A\) est isomorphe à \(\Z/n\Z\) en tant qu'anneau.
+    \boxans{Soient, \(a,b\in A\) on définit \(a\times b = f^{-1}(f(a)\times f(b))\)
+    qui donne la bonne structure d'anneau à \(A\).}
+\end{exo}
+
+\begin{exo}
+    Soit \(K\) un corps et \(P\in K[X]\) un polynôme de degré \(d\in\N\).
+    \begin{q}{1}
+        Montrer que \(A=K[X]/P\) est un \(K\)-ev de dimension \(d\).
+    \end{q}
+    \begin{q}{2}
+        Soit \(K\) un corps et \(P\) un polynôme irréductible, montrer que \(K[X]/P\)
+        est un corps.
+    \end{q}
+    \begin{q}{3}
+        Si \(K\) est un sous-corps de \(\C\) et \(\alpha\) est une racine de \(P\)
+        dans \(\C\), montrer que \(K[X]/P\) est isomorphe au sous-corps \(K[\alpha]\subset C\).
+        le plus petit sous-anneau de \(\C\) qui contient \(K\) et \(\alpha\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que le groupe additif \(\left(\Q/\Z,+\right)\) ne peut pas être
+    adjoint d'une loi multiplicative afin de former une structure d'anneau.
+\end{exo}
+\end{document}
