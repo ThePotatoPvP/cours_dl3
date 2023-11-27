@@ -79,12 +79,17 @@
     On définit \(A=Z[j]=\{a+jb\mid a,b\in\Z\}\) où \(j=\exp\left(\frac{2i\pi}{3}\right)\).
     \begin{q}{1}
         Montrer que \(A\) est un sous-anneau de \(\C\).
+        \boxans{\(0\in A\). Soient \(x = a+jb, y = c+jd \in A\) alors \(x-y=(a-c)+j(b-d)\in A\) car
+        \(\left(\Z,+\right)\) est un groupe, et \(x\times y=ac + j(bc + ad) + j^2(bd)
+        =ac +j(bc +ad) + -(1+j)bd\in A\). L'ensemble est donc bien un sous-anneau de \(\C\).}
     \end{q}
     On désigne par \(\mathcal{U}(A)\) le groupe des éléments inversibles de \(A\)
     et on pose, pour tout \(z\in\C\), \(N(z)=z\bar{z}\).
     \begin{q}{2}
         \begin{q}{a}
             Montrer que si \(z\in A\) alors \(N(z)\in\N\).
+            \boxans{Soit \(z=a+jb\in A\), \(N(z) = (a+jb)(a+\bar{j}b) = a^2 + (j+\bar{j})ab + j\bar{j}b^2
+            = a^2 -2ab + b^2\) car \(\bar{j}=j^2\)}
         \end{q}
         \begin{q}{b}
             Soit \(z\in A\). Montrer que \(z\in\mathcal{U}(A)\) ssi \(N(z)=1\).
