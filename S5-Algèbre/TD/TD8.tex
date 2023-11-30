@@ -1,0 +1,107 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{Anneau \(\Z/n\Z\) et Anneaux de polynômes}}
+\end{center}
+
+\begin{exo}
+    Montrer que les groupes \(\Z/24\Z\times\Z/5\Z\) et \(\Z/8\Z\times\Z/15\Z\)
+    sont isomorphes. Expliciter les isomorphismes inverses l'un de l'autres
+    entre ces deux groupes.
+\end{exo}
+
+\begin{exo}
+    Trouver tous les ordres des éléments des groupes
+    \begin{enumerate}
+        \itt \(\left(\Z/12\Z, +\right)\)
+        \itt \((\left(\Z/12\Z\right)^{\times}, \cdot)\)
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+    \begin{q}{1}
+        Les groupes \((\left(\Z/21\Z\right)^\times,\cdot)\) et
+        \(\left(\Z/12\Z, +\right)\) sont-ils isomorphes ?
+    \end{q}
+    \begin{q}{2}
+        Les groupes \((\left(\Z/13\Z\right)^\times,\cdot)\) et
+        \(\left(\Z/12\Z, +\right)\) sont-ils isomorphes ?
+    \end{q}
+    \begin{q}{3}
+        Montrer que les groupes \((\left(\Z/6\Z\right)^\times,\cdot)\)
+        et \(\left(\Z/12\Z, +\right)\) sont isomorphes.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(n\in\Z\). Montrer que l'application
+    \[\Phi\colon\Z[X]\Longrightarrow\left(\Z/n\Z\right)[X],
+    \sum_{k=0}^da_kX^k\mapsto\sum_{k=0}^d\bar{a_k}X^k\]
+    est un morphisme d'anneau surjectif dont on déterminera le noyau.
+\end{exo}
+
+\begin{exo}
+    Soit \(\alpha\in\C\)
+    \begin{q}{1}
+        Montrer que l'application \(\varphi\colon\Q[X]\to\C,T\mapsto T(\alpha)\)
+        est un morphisme d'anneaux
+    \end{q}
+    \begin{q}{2}
+        On suppose que \(\varphi\) n'est pas injective. Montrer qu'il existe \(P\in\Q[X]\)
+        irréductible sur \(Q\) tel que \(\Ker(\varphi)=(P)\).
+    \end{q}
+    \begin{q}{3}
+        Soit \(Q\in\Q[X]\) un polynôme irréductible sur \(\Q\) tel que \(\alpha\) est
+        racine de \(Q\). Montrer que \(P\) et \(Q\) sont associés.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que l'anneau \(\R[X]/\left(X^2+X+1\right)\R[X]\) est un corps isomorphe à \(\C\).
+\end{exo}
+
+\begin{exo}
+    Montrer que pour tout corps \(K\), l'anneau de polynômes \(K[X]\)
+    a une infinité de polynômes unitaires irréductibles.
+    \boxans{Soit \(\alpha\in K\) la famille \(P_n=(X-\alpha)^n\) est libre
+    et est une famille infinie de polynnômes irréductibles.}
+\end{exo}
+
+\begin{exo}
+    Soit \(K\) un corps.
+    \begin{q}{1}
+        Montrer qu'un polynôme \(P\) de degré 2 ou 3 dans \(K[x]\)
+        est irréductible si et seulement si il n'a pas de zéro dans \(K\).
+    \end{q}
+    \begin{q}{2}
+        En déduire tous les polynômes irréductibles de degré \(2\) dans \(\Z/2\Z\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Déterminer les polynômes irréductibles de
+    \begin{enumerate}
+        \itt \(\C[X]\)
+        \itt \(\R[X]\)
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+    Soient \(f,g\in \Q[X]\). Supposons que \(f\) soit irréductible et qu'il existe
+    \(\alpha\in \C\) tel que \(f(\alpha)=g(\alpha)=0\). Montrer que \(f\) divise \(g\).
+\end{exo}
+
+\begin{exo}
+    Montrer que l'anneau \(\Q[X]/\left(X^3-X+2\right)\Q[X]\) est un corps. On note
+    \(x\) l'image de \(X\) par la surjection canonique.
+    \begin{q}{1}
+        Calculer l'inverse de \(x\).
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(x^2+x+1\) est inversible et déterminer son inverse.
+    \end{q}
+\end{exo}
+\end{document}
