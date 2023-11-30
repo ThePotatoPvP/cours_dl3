@@ -89,7 +89,7 @@
         \begin{q}{a}
             Montrer que si \(z\in A\) alors \(N(z)\in\N\).
             \boxans{Soit \(z=a+jb\in A\), \(N(z) = (a+jb)(a+\bar{j}b) = a^2 + (j+\bar{j})ab + j\bar{j}b^2
-            = a^2 -2ab + b^2\) car \(\bar{j}=j^2\)}
+            = a^2 -ab + b^2\) car \(\bar{j}=j^2\)}
         \end{q}
         \begin{q}{b}
             Soit \(z\in A\). Montrer que \(z\in\mathcal{U}(A)\) ssi \(N(z)=1\).
@@ -129,9 +129,22 @@
     \end{q}
     \begin{q}{2}
         Montrer que \(A\) est abélien.
+        \boxans{Soient \(a,b,x,y\in\R\) on a \begin{enumerate}
+            \itt \(\begin{pmatrix}a&b\\-b&a\end{pmatrix}\times
+            \begin{pmatrix}x&y\\-y&x\end{pmatrix} =
+            \begin{pmatrix}ax+by&ax-by\\-bx-ay&-by+ax\end{pmatrix}\)
+            \itt \(\begin{pmatrix}x&y\\-y&x\end{pmatrix}\times
+            \begin{pmatrix}a&b\\-b&a\end{pmatrix} =
+            \begin{pmatrix}ax+by&ax-by\\-bx-ay&-by+ax\end{pmatrix}\)
+            \end{enumerate}
+            Ainsi \(A\) est abélien.
+        }
     \end{q}
     \begin{q}{3}
         Montrer que \(A\) est isomorphe à \(\C\).
+        \boxans{On pose \(\varphi\begin{pmatrix}1&0\\0&1\end{pmatrix}=1\) et
+        \(\varphi\begin{pmatrix}0&1\\-1&0\end{pmatrix} = i\) on a une application
+        linéaire bien définie qui est clairement un isomophisme d'anneaux.}
     \end{q}
 \end{exo}
 
