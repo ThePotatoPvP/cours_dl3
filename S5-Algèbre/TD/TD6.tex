@@ -93,26 +93,40 @@
         \end{q}
         \begin{q}{b}
             Soit \(z\in A\). Montrer que \(z\in\mathcal{U}(A)\) ssi \(N(z)=1\).
+            \boxans{Soit \(z\in A\) tel que \(N(z)=1\) alors \(a-b-bj\) est l'inverse
+            de \(z=a+bj\) et donc \(z\in \mathcal{U}(A)\). D'autre part si \(z\in\mathcal{U}(A)\)
+            alors \(N(\frac 1z) = \frac{1}{N{z}}\) qui n'appartient à \(\N\) que si \(N(z)=1\)
+            car \(\frac 1z\) est de norme entière car dans \(A\).}
         \end{q}
         \begin{q}{c}
             Soient \(a,b\in\Z\). Montrer que si \(N(a+jb)=1\) alors
             \(a,b\in\{-1,0,1\}\).
+            \boxans{Supposons \(|a|\geq 2\) ou \(|b|\geq2\) on a alors trivialement
+            \(a^2-ab+b^2 \geq |ab| \geq 2\). Ce qui donne le résultat voulu.}
         \end{q}
     \end{q}
     \begin{q}{3}
         Décrire le groupe \(\mathcal{U}(A)\) et en déterminer les éléments d'ordre 3.
+        \boxans{C'est trivialement \(\U_6\) par dessin donc on a \(2\) éléments
+        d'ordre \(3\).}
     \end{q}
     \begin{q}{4}
         Soit \(\Phi\colon\Q[X]\to C,P\mapsto P(j)\).
         \begin{q}{a}
             Montrer que \(\Phi\) est un homomorphisme d'anneaux
+            \boxans{On a bien \(\Phi(1)=1\), la linéarité de la somme et de la multiplication
+            donnent alors que \(\Phi\) est un morphisme d'anneaux.}
         \end{q}
         \begin{q}{b}
             Déterminer le noyau de \(\Phi\).
+            \boxans{Le noyau de \(\Phi\) est \((X^2+X+1)\Q[X]\), l'idéal des polynômes
+            admettant \(j\) comme racine.}
         \end{q}
         \begin{q}{c}
             Montrer que \(\Im(\Phi)=\{a+jb\mid a,b\in\Q\}\) et que c'est un sous-corps
             de \(\C\).
+            \boxans{\(\Im(\Phi) = \text{Vect}(\Phi(X^n)) = \text{Vect}(j^{n\equiv 3})
+            = \left\{a+jb\mid a,b\in\Q\right\}\) qui est trivialement sous-corps de \(\C\).}
         \end{q}
     \end{q}
 \end{exo}
