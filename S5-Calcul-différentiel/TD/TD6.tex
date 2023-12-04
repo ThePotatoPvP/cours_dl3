@@ -1,0 +1,217 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+\begin{center}
+    \Huge{\textbf{TD 6. Inversion locale - Fonctions implicites}}
+\end{center}
+\bigskip
+
+\begin{exo}
+    Soit \(f:\R\to\R\) la fonction définie par
+        \(f(x)=x+x^2\sin\left(\frac{\pi}{x}\right);\ f(0)=0\)
+    \begin{q}{1}
+        Montrer que \(f\) est dérivable sur \(\R\) et que \(f'(0)=1\)
+        \boxans{
+            \[\lim_{h\to0} \frac{f(0)-f(h)}{h}= \lim_{h\to 0} 1+h\sin\frac{\pi}{h} = 1\]
+            car la fonction \(\sin\) est bornée. Finalement la fonction est dérivable en tout point
+            de \(\R^*\) comme composition de fonction dérivables, et dérivable sur \(\R\) entier
+            avec \(f'(0)=1\).
+        }
+    \end{q}
+    \begin{q}{2}
+        Existe-t-il un voisinage de \(0\) sur lequel \(f\) est injective ?
+        \boxans{Non, il n'existe pas de tel voisinage. Supposons par l'absurde
+        qu'un tel voisinage existe, notons \(2\eps\) sa longueur. Alors pour tout
+        \(k\in2\N\) vérifiant \(k^{-1}<\eps\) on a \(f(k^{-1})=0\) et donc une infinité
+        d'annulations, \(f\) n'est pas injective sur l'intervalle, c'est absurde.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On considère \(f\colon\R_2[X]\to\R_1[X]\) définie comme
+    \(a+bX+cX^2\mapsto a+b+(a^2+b^2-c^2)X\)
+    \begin{q}{1}
+        Montrer que \(f\) est \(\CC^1\) et calculer sa différentielle.
+        \boxans{
+            \(f\) est \(\CC^1\) en tant que polynôme des coefficients du polynôme de
+            départ. Maintenant, calculons la différentielle de \(f\). Soit
+            \(h = h_1X^2 + h_2X + h_3 \in \R_2[X]\), alors la différentielle de \(f\)
+            en \(a+bX+cX^2\) appliquée à \(h\) est donnée par :
+            \[
+                df_{a+bX+cX^2}(h) = \frac{\partial f}{\partial a}(a+bX+cX^2)h_1 +
+                \frac{\partial f}{\partial b}(a+bX+cX^2)h_2 + \frac{\partial f}{\partial c}(a+bX+cX^2)h_3.
+            \]
+            En substituant les dérivées partielles, on obtient :
+            \[df_{a+bX+cX^2}(h) = (1 + 2aX)h_1 + (1 + 2bX)h_2 - 2cXh_3.\]
+        }
+    \end{q}
+    \begin{q}{2}
+        L'application \(f\) est-elle un difféomorphisme local ?
+        \boxans{
+            Pour montrer que \(f\) est un difféomorphisme local, nous devons vérifier
+            que sa différentielle est un isomorphisme au voisinage de chaque point
+            de son domaine. Calculons la matrice jacobienne de \(f\):
+            \[
+                J_f(a+bX+cX^2) =
+                \begin{bmatrix}
+                    1 & 2a & 0 \\
+                    0 & 1 & 2b \\
+                    0 & 0 & -2c
+                \end{bmatrix}
+            \]
+            Le déterminant de cette matrice est \(-2c\), qui n'est jamais nul lorsque
+            \(c\) est non nul. Ainsi, la matrice jacobienne est inversible pour tout
+            \(a+bX+cX^2\) avec \(c\neq 0\), ce qui signifie que \(f\) est un
+            difféomorphisme local sur ces points.
+        }
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On considère \(f\colon\R^2\to\R^2\) définie comme \((x,y)\mapsto(x+y,xy)\).
+    \begin{q}{1}
+        Montrer que \(f\) est \(\CC^1\) et calculer sa jacobienne.
+        \boxans{
+            Pour montrer que \(f\) est \(\CC^1\), il suffit de vérifier que ses
+            composantes sont \(\CC^1\). Les composantes de \(f\) sont \(f_1(x, y)
+            = x + y\) et \(f_2(x, y) = xy\), qui sont clairement \(\CC^1\).
+            Calculons maintenant la jacobienne de \(f\):
+            \[
+                J_f(x, y) =
+                \begin{bmatrix}
+                    \frac{\partial f_1}{\partial x} & \frac{\partial f_1}{\partial y} \\
+                    \frac{\partial f_2}{\partial x} & \frac{\partial f_2}{\partial y}
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                    1 & 1 \\
+                    y & x
+                \end{bmatrix}.
+            \]
+        }
+    \end{q}
+    \begin{q}{2}
+        Déterminer l'ensemble \(U\) des points pour lesquels \(df_{(x,y)}\) est inversible.
+        \boxans{
+            La jacobienne \(J_f(x, y)\) est inversible si et seulement si son
+            déterminant est non nul. Ainsi, \(U\) est l'ensemble des points tels que
+            \(1 \cdot x - 1 \cdot y \neq 0\), c'est-à-dire \(x \neq y\).
+        }
+    \end{q}
+    \begin{q}{3}
+        Expliquer à quel titre \(f_{|U}\) n'est pas un difféomorphisme.
+        \boxans{
+            Bien que \(f_{|U}\) soit injective, elle n'est pas surjective. En effet,
+            \(f_{|U}\) n'atteint pas les points de la forme \((a, 0)\) pour tout
+            \(a\in\R\), car \(f_2(x, y) = xy\) ne peut pas être nul pour \(y \neq 0\). Ainsi, \(f_{|U}\) n'est pas un difféomorphisme, car elle ne réalise pas une bijection sur son image.
+        }
+    \end{q}
+    \begin{q}{4}
+        Soit \(U'=\{(x,y)\in\R^2\mid y<x\}\). Montrer que \(f_{|U'}\) est un
+        difféomorphisme.
+        \boxans{
+            La restriction \(f_{|U'}\) est une bijection, car chaque ligne de \(U'\)
+            est envoyée sur une ligne de \(\R^2\) par \(f_{|U'}\). De plus, la
+            jacobienne de \(f_{|U'}\) est inversible sur \(U'\), car \(J_f(x, y)\)
+            est inversible pour \(y < x\). Par conséquent, \(f_{|U'}\) est un
+            difféomorphisme.
+        }
+    \end{q}
+    \begin{q}{5}
+        Déterminer \(V'\colon=f(U')\) et le représenter.
+        \boxans{TODO}
+    \end{q}
+\end{exo}
+
+
+\begin{exo}
+    Soient \(a,b\) deux réels et soit \(f\colon\R^2\to\R^2\) définie comme
+    \((x,y)\mapsto(x+a\sin y, y+ b\sin x)\)
+    \begin{q}{1}
+        Montrer que \(f\) est un difféomorphisme local ssi \(|ab|<1\)
+    \end{q}
+    On suppose dans la suite de l'exercice \(|ab|<1\).
+    \begin{q}{2}
+        Montrer que \(V\colon=f(\R^2)\) est un ouvert de \(\R^2\)
+    \end{q}
+    \begin{q}{3}
+        Montrer que \(f\) est un difféomorphisme de \(\R^2\) sur \(V\).
+    \end{q}
+    \begin{q}{4}
+        Soit \(((x_n,y_n))_n\) une suite de \(\R^2\). Supposons que la suite
+        \((u_n,v_n)=f(x_n,y_n)\) converge vers \((u,v)\) dans \(\R^2\).
+        \begin{q}{a}
+            Montrer que la suite \((x_n,y_n)\) est bornée.
+        \end{q}
+        \begin{q}{b}
+            Montrer que si deux sous-suites extraites de \(((x_n,y_n))_n\) convergent
+            alors elles ont la même limite.
+        \end{q}
+        \begin{q}{c}
+            En déduire que la suite \(((x_n,y_n))_n\) converge.
+        \end{q}
+    \end{q}
+    \begin{q}{5}
+        Montrer que \(f\) est un difféomorphisme de \(\R^2\) sur lui même.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On considère \(f:\mathcal{M}_2(\R)\to\mathcal{M}_2(\R)\) définie par
+    \(A\mapsto A^2\). On admet que \(f\) est \(\CC^1\), on pose \(I=I_2\) et
+    \(J=\begin{pmatrix}1&0\\0&-1\end{pmatrix}\) et on observe \(f(J)=f(I)=I\).
+    \begin{q}{1}
+        Calculer les applications \(df_I\) et \(df_J\). Sont-elle injectives ?
+    \end{q}
+    \begin{q}{2}
+        Montrer qu'il n'existe pas de couple \((U,V)\) d'ouverts et d'application
+        différentiable \(g:U\to V\) tels que \(I\in U\), \(J\in V\), \(g(I)=J\) et \(f\circ g=\id\)
+    \end{q}
+    \begin{q}{3}
+        Montrer que si dans la question précédente avec \(I\in V\) et \(g(I)=I\) en
+        oubliant \(J\)alors on peut trouver le couple d'ouverts et l'application.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On considère le sous-ensemble \(\Gamma\) de \(\R^2\) défini par:
+    \(x^3+y^3-3xy-1=0\).
+    \begin{q}{1}
+        Montrer que \(\Gamma\) est au voisinade de \((x,y)=(1,0)\) le graphe d'une
+        fonction implicite \(y=h(x)\) telle que \(h(1)=0\).
+    \end{q}
+    \begin{q}{2}
+        Montrer que la corbe \(\Gamma\) a une tangente au point \((1,0)\) dont on déterminera
+        l'équation.
+    \end{q}
+    \begin{q}{3}
+        Donner un développement limite à l'ordre \(3\) de \(h\) au voisinage de \(1\).
+        Dessiner \(\Gamma\) au voisinage de \((1,0)\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(f\colon\R^3\to\R^2\) définie par \((x,y,z)\mapsto(x^2-y^2+z^2-1,xyz-1)\).
+    \begin{q}{1}
+        Montrer qu'il existe un intervalle ouvert \(I\) contenant \(x=1\) et une
+        application \(\varphi;I\to\R^2\) de classe \(\CC^k\) pour tout \(k\in\N\) tels
+        que \(\varphi(1)=1\) et \(f(x,\varphi(x))=(0,0)\) pour tout \(x\in I\).
+    \end{q}
+    \begin{q}{2}
+        Plus généralement, soit \((x_0,y_0,z_0)\in\R^3\) un point d'annulation
+        de \(f\). Montrer qu'il existe un intervalle ouvert \(I_{x_0}\) contenant \(x_0\)
+        et une application \(\varphi_{x_0}\colon I_{x_0}\to\R^2\) de classe \(\CC^k\) pour
+        tout \(k\in\N\), tels que \(\varphi(x_0)=(y_0,z_0)\) et \(f(x,\varphi_{x_0}(x)=(0,0))\)
+        pour tout \(x\in I_{x_0}\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    \begin{q}{1}
+        Montrer qu'il existe un ouvert \(\Omega\) de \(\R^2\) contenant \((0,0)\) et
+        des applications \(y_1,y_1\colon \Omega\to\R\) de classe \(\CC^\infty\) vérifiant:
+    \end{q}
+\end{exo}
+
+\end{document}
