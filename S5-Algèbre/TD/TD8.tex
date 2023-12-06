@@ -8,16 +8,39 @@
 \end{center}
 
 \begin{exo}
-    Montrer que les groupes \(\Z/24\Z\times\Z/5\Z\) et \(\Z/8\Z\times\Z/15\Z\)
-    sont isomorphes. Expliciter les isomorphismes inverses l'un de l'autres
+    Montrer que les groupes \(G=\Z/24\Z\times\Z/5\Z\) et \(H=\Z/8\Z\times\Z/15\Z\)
+    sont isomorphes. Expliciter les isomorphismes inverses l'un de l'autre
     entre ces deux groupes.
+    \boxans{
+        Soit \(\phi\colon G\to H\colon (a,b)\mapsto (a \mod 8, b + 5*(a \div 8))\).
+        C'est pas construction un isomorphisme.
+    }
 \end{exo}
 
 \begin{exo}
     Trouver tous les ordres des éléments des groupes
     \begin{enumerate}
         \itt \(\left(\Z/12\Z, +\right)\)
+        \boxans{
+            Les éléments de \(\Z/12\Z\) ont les ordres suivants :
+            \begin{itemize}
+                \item Ordre 1 : \(0\)
+                \item Ordre 2 : \(6\), \(4\), \(8\), \(10\)
+                \item Ordre 3 : \(\text{Aucun}\)
+                \item Ordre 4 : \(3\), \(9\)
+                \item Ordre 6 : \(2\), \(5\), \(7\), \(11\)
+            \end{itemize}
+        }
         \itt \((\left(\Z/12\Z\right)^{\times}, \cdot)\)
+        \boxans{
+            Les éléments inversibles de \(\Z/12\Z\) ont les ordres suivants :
+            \begin{itemize}
+                \item Ordre 1 : \(1\)
+                \item Ordre 2 : \(5\), \(7\), \(11\)
+                \item Ordre 4 : \(\text{Aucun}\)
+                \item Ordre 6 : \(1\), \(5\), \(7\), \(11\)
+            \end{itemize}
+        }
     \end{enumerate}
 \end{exo}
 
@@ -25,14 +48,27 @@
     \begin{q}{1}
         Les groupes \((\left(\Z/21\Z\right)^\times,\cdot)\) et
         \(\left(\Z/12\Z, +\right)\) sont-ils isomorphes ?
+        \boxans{
+            Non, car \((\left(\Z/21\Z\right)^\times,\cdot)\) n'est pas cyclique.
+        }
     \end{q}
     \begin{q}{2}
         Les groupes \((\left(\Z/13\Z\right)^\times,\cdot)\) et
         \(\left(\Z/12\Z, +\right)\) sont-ils isomorphes ?
+        \boxans{
+            Oui, car \((\left(\Z/13\Z\right)^\times,\cdot)\) et \(\left(\Z/12\Z, +\right)\)
+            sont tous deux cycliques d'ordre \(12\).
+        }
     \end{q}
     \begin{q}{3}
-        Montrer que les groupes \((\left(\Z/6\Z\right)^\times,\cdot)\)
+        Montrer que les groupes \((\left(\Z/26\Z\right)^\times,\cdot)\)
         et \(\left(\Z/12\Z, +\right)\) sont isomorphes.
+        \boxans{
+            Oui, car \((\left(\Z/26\Z\right)^\times,\cdot)\) est isomorphe à
+            \((\left(\Z/13\Z\right)^\times,\cdot)\), et par la question précédente,
+            \((\left(\Z/13\Z\right)^\times,\cdot)\) est isomorphe à \(\left(\Z/12\Z,
+            +\right)\).
+        }
     \end{q}
 \end{exo}
 
@@ -41,23 +77,53 @@
     \[\Phi\colon\Z[X]\Longrightarrow\left(\Z/n\Z\right)[X],
     \sum_{k=0}^da_kX^k\mapsto\sum_{k=0}^d\bar{a_k}X^k\]
     est un morphisme d'anneau surjectif dont on déterminera le noyau.
+    \boxans{
+        Pour montrer que \(\Phi\) est un morphisme d'anneau surjectif, il suffit de vérifier
+        que \(\Phi(P+Q) = \Phi(P) + \Phi(Q)\) et \(\Phi(P\cdot Q) = \Phi(P)\cdot \Phi(Q)\) pour
+        tous \(P, Q\in\Z[X]\). Ces propriétés découlent directement des opérations dans \(\Z/n\Z\).
+        Pour le noyau, \(\ker(\Phi) = \{P\in\Z[X] \mid P \equiv 0 \pmod{n}\}\), c'est-à-dire,
+        les polynômes dont tous les coefficients sont multiples de \(n\).
+    }
 \end{exo}
 
 \begin{exo}
-    Soit \(\alpha\in\C\)
+    Soit \(\alpha\in\C\).
     \begin{q}{1}
         Montrer que l'application \(\varphi\colon\Q[X]\to\C,T\mapsto T(\alpha)\)
-        est un morphisme d'anneaux
+        est un morphisme d'anneaux.
+        \boxans{
+            Pour montrer que \(\varphi\) est un morphisme d'anneaux, il faut vérifier
+            que \(\varphi(T_1 + T_2) = \varphi(T_1) + \varphi(T_2)\) et \(\varphi(T_1\cdot T_2) = \varphi(T_1)\cdot \varphi(T_2)\)
+            pour tous \(T_1, T_2\in\Q[X]\). Ces propriétés découlent directement de l'arithmétique
+            dans \(\C\).
+        }
     \end{q}
     \begin{q}{2}
         On suppose que \(\varphi\) n'est pas injective. Montrer qu'il existe \(P\in\Q[X]\)
-        irréductible sur \(Q\) tel que \(\Ker(\varphi)=(P)\).
+        irréductible sur \(\Q\) tel que \(\Ker(\varphi)=(P)\).
+        \boxans{
+            Puisque \(\varphi\) n'est pas injective, \(\Ker(\varphi)\neq\{0\}\). Soit \(P\in\Ker(\varphi)\)
+            un polynôme non nul de degré minimal. Montrons que \(P\) est irréductible sur \(\Q\).
+            Si \(P = QR\) pour certains \(Q, R\in\Q[X]\), alors \(\varphi(Q)\cdot \varphi(R) = 0\),
+            ce qui implique que \(\varphi(Q) = 0\) ou \(\varphi(R) = 0\) (sinon, \(\alpha\) serait une
+            racine commune à \(Q\) et \(R\)). Supposons sans perte de généralité que \(\varphi(Q) = 0\).
+            Puisque \(Q\) est de degré strictement inférieur à \(P\), cela contredit le choix de \(P\)
+            comme étant de degré minimal.
+        }
     \end{q}
     \begin{q}{3}
         Soit \(Q\in\Q[X]\) un polynôme irréductible sur \(\Q\) tel que \(\alpha\) est
         racine de \(Q\). Montrer que \(P\) et \(Q\) sont associés.
+        \boxans{
+            Comme \(\Ker(\varphi) = (P)\), cela signifie que \(\varphi\) est injective sur \(\Q[X]/(P)\),
+            l'anneau quotient par l'idéal engendré par \(P\). En d'autres termes, \(\Q[X]/(P)\) est isomorphe
+            à l'image de \(\varphi\), qui est isomorphe à \(\Q[X]\). Cela implique que \(\Q[X]/(P)\) est
+            isomorphe à \(\Q[X]\), et donc, \(\Q[X]/(P)\) est un corps. Ainsi, \(P\) est irréductible
+            sur \(\Q\) et par conséquent, \(P\) et \(Q\) sont associés et à \(\pi_\alpha\).
+        }
     \end{q}
 \end{exo}
+
 
 \begin{exo}
     Montrer que l'anneau \(\R[X]/(X^2+X+1)\R[X]\) est un corps isomorphe à \(\C\).
