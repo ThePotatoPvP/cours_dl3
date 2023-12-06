@@ -60,48 +60,144 @@
 \end{exo}
 
 \begin{exo}
-    Montrer que l'anneau \(\R[X]/\left(X^2+X+1\right)\R[X]\) est un corps isomorphe à \(\C\).
+    Montrer que l'anneau \(\R[X]/(X^2+X+1)\R[X]\) est un corps isomorphe à \(\C\).
+    \boxans{
+        On pose \(\phi : \R[X]/(X^2+X+1)\R[X] \to \C\) défini par \(\phi([P]) = P(j)\)
+        pour tout \(P \in \R[X]\). Montrons maintenant que \(\phi\) est un isomorphisme.
+
+        \itt Injectivité : Soit \(P \in \R[X]\) tel que \(\phi([P]) = 0\). Cela
+        signifie que \(P\left(j\right) = 0\), et donc \(P\) est divisible par
+        \(X^2+X+1\). Ainsi, \([P] = [0]\), montrant que \(\phi\) est injectif.
+
+        \itt Surjectivité : Soit \(z\in\C\) alors \(Q[X]=\frac{X-X^2}{\sqrt{3}}
+        \Im(z)+\Re(z)\) vérifie \(\phi(Q)=z\).
+
+        Enfin, le polynôme \(\pi_j\) est irréductible sur \(\R[X]\) donc le quotient
+        de départ est un corps. Conséquemment \(\phi\) est un isomorphisme de notre
+        corps de départ vers \(\C\) ce qui conclut la rédaction.
+    }
 \end{exo}
 
 \begin{exo}
     Montrer que pour tout corps \(K\), l'anneau de polynômes \(K[X]\)
     a une infinité de polynômes unitaires irréductibles.
-    \boxans{Soit \(\alpha\in K\) la famille \(P_n=(X-\alpha)^n\) est libre
-    et est une famille infinie de polynnômes irréductibles.}
+    \boxans{
+        Supposons par l'absurde que \(K[X]\) a un nombre fini de polynômes
+        unitaires irréductibles. Considérons le polynôme \(q(X) = (p_1 p_2 \ldots p_n) + 1\),
+        où \(\{p_1, p_2, \ldots, p_n\}\) sont les polynômes irréductibles de \(K[X]\).
+        Ce polynôme est unitaire et irréductible, ce qui contredit notre hypothèse.
+        Ainsi, \(K[X]\) doit avoir une infinité de polynômes unitaires irréductibles.
+    }
 \end{exo}
 
 \begin{exo}
     Soit \(K\) un corps.
     \begin{q}{1}
-        Montrer qu'un polynôme \(P\) de degré 2 ou 3 dans \(K[x]\)
-        est irréductible si et seulement si il n'a pas de zéro dans \(K\).
+        Montrer qu'un polynôme \(P\) de degré 2 ou 3 dans \(K[X]\)
+        est irréductible si et seulement s'il n'a pas de zéro dans \(K\).
+        \boxans{
+            Soit \(P\) un polynôme de degré 2 ou 3 dans \(K[X]\). Supposons
+            que \(P\) est réductible. Cela signifie qu'il peut être factorisé
+            comme \(P = Q \cdot R\) où \(Q\) et \(R\) sont des polynômes non constants
+            de degrés respectifs \(1\) et \(2\) (dans le cas \(P\) de degré \(3\))
+            ou \(1\) et \(1\) (dans le cas \(P\) de degré \(2\)).
+            Si \(P\) a une racine dans \(K\), cette racine est un zéro de \(Q\)
+            ou \(R\), et donc \(P\) a un zéro dans \(K\). Ainsi, si \(P\) est réductible,
+            il a un zéro dans \(K\).
+
+            Réciproquement, supposons que \(P\) n'ait pas de zéro dans \(K\).
+            Dans ce cas, \(P\) n'est pas divisible par un polynôme linéaire,
+            ce qui signifie qu'il est irréductible.
+        }
     \end{q}
     \begin{q}{2}
         En déduire tous les polynômes irréductibles de degré \(2\) dans \(\Z/2\Z\).
+        \boxans{
+            Dans \(\Z/2\Z\), les polynômes de degré 2 sont \(X^2\), \(X^2 + X\),
+            et \(X^2 + 1\). Appliquons la condition de la question 1 :
+            \begin{enumerate}
+                \itt Si \(X^2\) et \(X^2+X\) admettent 0 en racine et sont donc réductibles.
+                \itt \(X^2 + 1\) n'a pas de \(0\) dans \(\Z/2\Z\) et est donc irréductible.
+            \end{enumerate}
+        }
     \end{q}
 \end{exo}
+
+
 
 \begin{exo}
     Déterminer les polynômes irréductibles de
     \begin{enumerate}
         \itt \(\C[X]\)
+        \boxans{
+            Les polynômes irréductibles dans \(\C[X]\) sont les polynômes de degré 1
+            car \(\C\) est algébriquement clos comme le démontre indirectment le théorème
+            de \(\textsc{Liouville}\).
+       }
         \itt \(\R[X]\)
+        \boxans{
+            Les polynômes irréductibles dans \(\R[X]\) sont les polynômes de degré 1 et les polynômes quadratiques irréductibles.
+            \begin{enumerate}
+                \item Les polynômes de degré 1 : Tout polynôme de degré 1 est irréductible dans \(\R[X]\).
+                \item Les polynômes quadratiques irréductibles : Un polynôme quadratique \(ax^2 + bx + c\) est irréductible dans \(\R[X]\) s'il n'a pas de racines réelles.
+                Les polynômes quadratiques irréductibles peuvent être de deux types :
+                \begin{enumerate}
+                    \itt Si \(b^2 - 4ac < 0\), alors le polynôme n'a pas de racines réelles et est irréductible.
+                    \itt Si \(b^2 - 4ac > 0\), alors le polynôme peut être décomposé en \(a(x - x_1)(x - x_2)\), où \(x_1\) et \(x_2\) sont les racines réelles distinctes.
+                \end{enumerate}
+            \end{enumerate}
+        }
     \end{enumerate}
+    On a ici utilisé les résultats de l'exercice précédent afin de gagner un temps précieux.
 \end{exo}
+
 
 \begin{exo}
     Soient \(f,g\in \Q[X]\). Supposons que \(f\) soit irréductible et qu'il existe
     \(\alpha\in \C\) tel que \(f(\alpha)=g(\alpha)=0\). Montrer que \(f\) divise \(g\).
+    \boxans{
+        Puisque \(f\) est irréductible et \(f(\alpha) = 0\), \(f=\pi_\alpha\).
+        Par conséquent, l'idéal \((f)\) n'est autre que \(\pi_\alpha\Q[X]\).
+
+        Puisque \(g(\alpha) = 0\), cela signifie que \(g\in\pi_\alpha\Q[X]\).
+        En d'autres termes, il existe un polynôme \(h\) tel que \(g = hf\),
+        montrant ainsi que \(f\) divise \(g\).
+    }
 \end{exo}
 
-\begin{exo}
-    Montrer que l'anneau \(\Q[X]/\left(X^3-X+2\right)\Q[X]\) est un corps. On note
-    \(x\) l'image de \(X\) par la surjection canonique.
+
+\begin{exo} On dahak avec les polynomes.
     \begin{q}{1}
+        Montrer que l'anneau \(\Q[X]/\left(X^3-X+2\right)\Q[X]\) est un corps.
+    \end{q}
+    On note \(x\) l'image de \(X\) par la surjection canonique.
+    \begin{q}{2}
         Calculer l'inverse de \(x\).
     \end{q}
-    \begin{q}{2}
+    \begin{q}{3}
         Montrer que \(x^2+x+1\) est inversible et déterminer son inverse.
     \end{q}
 \end{exo}
+
+\begin{exo}
+    On dahak avec les polynômes.
+    \begin{q}{1}
+        Montrer que l'anneau \(\Q[X]/\left(X^3-X+2\right)\Q[X]\) est un corps.
+        \boxans{
+            Le polynôme \(X^3-X+2\) est irréductible dans \(\Q[X]\) (source tkt) donc
+            d'après le théorème fondamental l'anneau quotient est bien un corps.
+        }
+    \end{q}
+    On note \(x\) l'image de \(X\) par la surjection canonique.
+    \begin{q}{2}
+        Calculer l'inverse de \(x\).
+        \boxans{On remarque que \(x\times \left(-\frac{1}{2}(X^2-1)\right)=-\frac 12
+        (X^3-X) \equiv 1\) et donc \(x^{-1}= \cl\left(-\frac{1}{2}(X^2-1)\right)\).}
+    \end{q}
+    \begin{q}{3}
+        Montrer que \(x^2+x+1\) est inversible et déterminer son inverse.
+    \end{q}
+\end{exo}
+
+
 \end{document}
