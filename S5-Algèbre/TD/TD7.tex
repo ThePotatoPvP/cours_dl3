@@ -26,75 +26,152 @@
 \begin{exo} Reflexion sur les diviseurs de \(0\)
     \begin{q}{1}
         Quels sont les diviseurs de \(0\) dans \(\Z\) ? dans \(\Z/n\Z\) ?
+        \boxans{\(\Z\) est intègre et ne possède sont pas de diviseurs de \(0\). Les
+        diviseurs de \(0\) dans \(\Z/n\Z\) sont les classe d'équivalences des diviseurs de \(n\).}
     \end{q}
     \begin{q}{2}
         Quels sont les diviseurs de \(0\) de l'anneau quotient \(\R[X]/(X^2+1)\) ?
+        \boxans{L'anneau quotient est intègre car le polynôme est irréductible.}
     \end{q}
     \begin{q}{3}
         Soient \(A,B\) deux anneaux. Quels sont les diviseurs de zéros de l'anneau
         produit \(A\times B\) ?
+        \boxans{Les diviseurs de l'anneau produit sont les produits d'éléments dont
+        les coordonnées ne s'alignent pas.}
     \end{q}
     \begin{q}{4}
         En déduire qu'un produit de deux anneaux unitaires n'est jamais intègre
-        \textit{(et a fortiori n'est jamais un corps)}.
+        \boxans{\((0,1)\times(1,0)=(0,0)\).}
     \end{q}
 \end{exo}
 
 \begin{exo} Approche par les polynômes
     \begin{q}{1}
         Soit \(D=\{P\in\R[X]\mid P'(0)=0\}\). Montrer que \(D\) n'est pas un idéal de
-        \(\R[x]\) mais que c'est un sous-anneau de \(\R[X]\).
+        \(\R[X]\) mais que c'est un sous-anneau de \(\R[X]\).
+        \boxans{
+            Montrons que \(D\) n'est pas un idéal de \(\R[X]\). Soit \(P(X) = 1\)
+            dans \(D\). On a \(XP\notin DX\) qui n'est donc pas un idéal car pas stable
+            par multiplication externe.
+
+            D'autre part, \(D\) est un sous-anneau de \(\R[X]\) car il est stable par addition
+            et multiplication. Si \(P(X)\) et \(Q(X)\) sont dans \(D\), alors \((P+Q)'(0) = P'(0) + Q'(0) = 0\),
+            et donc \(P+Q\) est dans \(D\). De plus, \((P \cdot Q)'(0) = P'(0)Q(0) + P(0)Q'(0) = 0\),
+            donc \(P \cdot Q\) est également dans \(D\).
+        }
     \end{q}
     \begin{q}{2}
         Soit \(E=\{P\in\R[X]\mid P'(0)=P(0)=0\}\). Montrer que \(E\) n'est pas un
         sous-anneau de \(\R[X]\) et que c'est un idéal de \(\R[X]\) dont on
         donnera un générateur.
+        \boxans{
+            \(E\) n'est pas un sous-anneau de \(\R[X]\) car il ne contient pas le
+            neutre multiplicatif.
+
+            En revanche, montrons que \(E\) est un idéal de \(\R[X]\). Soit \(P(X)\) dans \(E\) et \(Q(X)\) dans \(\R[X]\).
+            On a \((P \cdot Q)'(0) = P'(0)Q(0) + P(0)Q'(0) = 0\), donc \(P \cdot Q\) est dans \(E\).
+            De plus, si \(P(X)\) est dans \(E\), alors \((-P)'(0) = -P'(0) = 0\), donc \(-P\) est dans \(E\).
+            Ainsi, \(E\) est un idéal de \(\R[X]\).
+
+            Un générateur de \(E\) est \(X^2\), car tout polynôme \(P(X)\) dans \(E\) peut s'écrire comme \(P(X) = X^2 \cdot Q(X)\)
+            où \(Q(X)\) est un polynôme quelconque de \(\R[X]\).
+        }
     \end{q}
 \end{exo}
 
+
 \begin{exo}
-    Notons \(\Z[i]\) l'ensemble des entiers de \textsc{Gauss}
+    Notons \(\Z[i]\) l'ensemble des entiers de \textsc{Gauss}.
     \begin{q}{1}
         \begin{q}{a}
-            Monrer que \(\Z[i]\) est un sous-anneau de \(\C\).
+            Montrer que \(\Z[i]\) est un sous-anneau de \(\C\).
+            \boxans{
+                Pour montrer que \(\Z[i]\) est un sous-anneau de \(\C\), il suffit de vérifier que
+                \(\Z[i]\) est stable par l'addition et la multiplication. Soient \(a+bi\) et \(c+di\) deux
+                éléments de \(\Z[i]\), alors
+                \begin{align*}
+                    (a+bi) - (c+di) &= (a-c) + (b-d)i \in \Z[i], \\
+                    (a+bi) \cdot (c+di) &= (ac - bd) + (ad + bc)i \in \Z[i],
+                \end{align*}
+                car \(a-c\) et \(b-d\) sont des entiers (et donc dans \(\Z\)).
+            }
         \end{q}
         \begin{q}{b}
             Est-ce que \(\Z[i]\) est un idéal de \(\C\) ?
+            \boxans{
+                Non, \(\Z[i]\) n'est pas un idéal de \(\C\) car il n'est pas stable par multiplication
+                avec les éléments de \(\C\). Par exemple, \(1 \in \Z[i]\), mais \(1 \cdot \frac 12 = \frac 12 \notin \Z[i]\).
+            }
         \end{q}
         \begin{q}{c}
-            Notons \(I=\{a+ib\in\Z[i]\mid a+b\in2\Z\}\). Est-ce un idél de \(\Z[i]\) ?
+            Notons \(I=\{a+ib\in\Z[i]\mid a+b\in2\Z\}\). Est-ce un idéal de \(\Z[i]\) ?
+            \boxans{
+                Oui, \(I\) est un idéal de \(\Z[i]\). Pour le montrer, il suffit de vérifier que
+                \(I\) est stable par multiplication avec les éléments de \(\Z[i]\). Soit \(a+bi \in I\)
+                et \(c+di \in \Z[i]\), alors
+                \begin{align*}
+                    (a+bi) \cdot (c+di) &= (ac - bd) + (ad + bc)i,
+                \end{align*}
+                où \(ac - bd\) et \(ad + bc\) sont des entiers de même parité, car \(a+b\)
+                et \(c+d\) sont dans \(2\Z\). Ainsi, \(I\) est stable par multiplication
+                avec les éléments de \(\Z[i]\), donc c'est un idéal de \(\Z[i]\).
+            }
         \end{q}
     \end{q}
     \begin{q}{2}
         Considérons maintenant l'anneau \(\Z[X]\).
         \begin{q}{a}
-            Est-ce que \(Z\) est un sous-anneau unitaire de \(\Z[X]\) ?
-            un idéal de \(\Z[X]\)
+            Est-ce que \(\Z\) est un sous-anneau unitaire de \(\Z[X]\) ? Est-ce un idéal de \(\Z[X]\) ?
+            \boxans{
+                Oui, \(\Z\) est un sous-anneau unitaire de \(\Z[X]\) car il est stable par l'addition
+                et la multiplication. Par contre ce n'est pas un idéal car \(\Z\) n'est pas
+                stable par multiplication externe.
+            }
         \end{q}
         \begin{q}{b}
             Considérons l'application \(f\colon \Z[X]\to\C\) donnée par \(P\mapsto P(i)\).
             \begin{q}{i}
                 Montrer que \(f\) est un morphisme d'anneaux unitaires.
+                \boxans{
+                    Soient \(P(X), Q(X) \in \Z[X]\). Alors,
+                    \begin{align*}
+                        f(P + Q) &= (P + Q)(i) = P(i) + Q(i) = f(P) + f(Q), \\
+                        f(P \cdot Q) &= (P \cdot Q)(i) = P(i) \cdot Q(i) = f(P) \cdot f(Q),
+                    \end{align*}
+                }
             \end{q}
             \begin{q}{ii}
                 Déterminer \(\Ker(f)\) et \(\Im(f)\).
+                \boxans{
+                    \itt \(\Ker(f)\) est l'ensemble des polynômes \(P(X)\) tels que \(P(i) = 0\). Cela revient
+                    à chercher les polynômes dont \(i\) est une racine. On trouve que \(\Ker(f) = (X^2 + 1)\Z[X]\).
+
+                   \itt\(\Im(f) = \{P(i) \mid P(X) \in \Z[X]\}= \Z[i]\) par induction structurelle.
+                }
             \end{q}
             \begin{q}{iii}
                 Déduire de la question précédente l'existence d'un isomorphisme d'anneaux
                 \[\quotient{\Z[X]}{(X^2+1)\Z[X]}\cong Z[i]\]
+                \boxans{
+                    Par le premier théorème d'isomorphisme, on a
+                    \[\quotient{\Z[X]}{\Ker(f)} \cong \Im(f).\]
+                    En utilisant les résultats de la question précédente, on a
+                    \[\quotient{\Z[X]}{(X^2+1)\Z[X]} \cong \Z[i].\]
+                }
             \end{q}
         \end{q}
     \end{q}
 \end{exo}
 
+
 \begin{exo}
     Parmi les anneaux suivants, lesquels sont intègres ?
     \begin{enumerate}
-        \itt \(\Z[i]\)
-        \itt \(\mathcal{M}_n(\R)\)
-        \itt \(\CC^0(I, \R)\) avec \(I\) un intervalle réel.
-        \itt \(\R[X]/X\)
-        \itt \(\R[X]/(X^2)\)
+        \itt \(\Z[i]\) est intègre (par l'exo au dessus)
+        \itt \(\mathcal{M}_n(\R)\) n'est pas intègre (nilpotents)
+        \itt \(\CC^0(I, \R)\) avec \(I\) un intervalle réel. n'est pas intègre (fonctions nulles sur une partie de \(I\))
+        \itt \(\R[X]/X\) est intègre car isomorphe à un corps
+        \itt \(\R[X]/(X^2)\) n'est pas intègre, en effet \(X\) est diviseur de \(0\).
     \end{enumerate}
 \end{exo}
 
@@ -122,9 +199,60 @@
 \end{exo}
 
 \begin{exo}
+    Soit \(K\) un corps et \(P\in K[X]\) un polynôme de degré \(d\in\N\).
+    \begin{q}{1}
+        Montrer que \(A=K[X]/P\) est un \(K\)-espace vectoriel de dimension \(d\).
+        \boxans{
+            Soit \(P(X) = a_dX^d + a_{d-1}X^{d-1} + \ldots + a_0\).
+            Considérons la classe de \(X\) dans \(A\), notée \(\bar{X}\). On a \(\bar{X}^d = -\frac{1}{a_d}(a_{d-1}\bar{X}^{d-1} + \ldots + a_0)\),
+            où \(\frac{1}{a_d}\) est l'inverse de \(a_d\) dans \(K\) (car \(K\) est un corps). Ainsi, \(\{\bar{X}^0, \bar{X}^1, \ldots, \bar{X}^{d-1}\}\)
+            est une base de \(A\) sur \(K\), et donc \(A\) est un \(K\)-espace vectoriel de dimension \(d\).
+        }
+    \end{q}
+    \begin{q}{2}
+        Soit \(K\) un corps et \(P\) un polynôme irréductible, montrer que \(K[X]/P\) est un corps.
+        \boxans{
+            Considérons un élément non nul
+            \(\bar{f} \in A\), où \(\bar{f}\) est la classe de \(f \in K[X]\) dans \(A\). Puisque \(\bar{f}\) est
+            non nul, le polynôme \(f\) n'est pas divisible par \(P\), c'est-à-dire que \(P\) ne divise pas \(f\).
+            Ainsi, \(\gcd(f, P) = 1\). Par l'identité de Bézout, il existe des polynômes \(g\) et \(h\) tels que
+            \(fg + hP = 1\). En prenant les classes dans \(A\), on a \(\bar{f} \cdot \bar{g} + \bar{h} \cdot \bar{P} = \bar{1}\).
+            Cela montre que \(\bar{f}\) est inversible dans \(A\), et donc \(A\) est un corps.
+        }
+    \end{q}
+    \begin{q}{3}
+        Si \(K\) est un sous-corps de \(\C\) et \(\alpha\) est une racine de \(P\) dans \(\C\), montrer que \(K[X]/P\) est isomorphe au sous-corps \(K[\alpha]\subset \C\),
+        le plus petit sous-anneau de \(\C\) qui contient \(K\) et \(\alpha\).
+        \boxans{
+            Considérons l'application \(\phi : K[X] \to K[\alpha]\) définie par \(\phi(f) = f(\alpha)\) pour tout \(f \in K[X]\).
+            Montrons que \(\phi\) est un morphisme d'anneaux. Soient \(f, g \in K[X]\). Alors,
+            \begin{align*}
+                \phi(f + g) &= (f + g)(\alpha) = f(\alpha) + g(\alpha) = \phi(f) + \phi(g), \\
+                \phi(f \cdot g) &= (f \cdot g)(\alpha) = f(\alpha) \cdot g(\alpha) = \phi(f) \cdot \phi(g).
+            \end{align*}
+            Ainsi, \(\phi\) est un morphisme d'anneaux. De plus, \(\phi\) est surjectif car \(\alpha\) est une racine de \(P\),
+            et donc tout élément de \(K[\alpha]\) est de la forme \(f(\alpha)\) pour un certain \(f \in K[X]\). Le noyau de
+            \(\phi\) est l'ensemble des polynômes \(f \in K[X]\) tels que \(f(\alpha) = 0\), c'est-à-dire l'ensemble
+            des multiples de \(P\). Donc, \(\ker(\phi) = (P)\), et par le premier théorème d'isomorphisme, on a
+            \(K[X]/(P) \cong K[\alpha]\), montrant ainsi que \(K[X]/P\) est isomorphe au sous-corps \(K[\alpha]\).
+        }
+    \end{q}
+\end{exo}
+
+
+\begin{exo}
     Montrer que le groupe additif \(\left(\Q/\Z,+\right)\) ne peut pas être
-    adjoint d'une loi multiplicative afin de former une structure d'anneau.
-    \boxans{Supposons par l'absurde une telle loi, notons \(\alpha\) son neutre qui
-    est dans \(\Q/\Z\) par hypothèse, alors pour tous \(x,y\in\Q/\Z\) on a \(\alpha\times x=x\)}
+    équipé d'une multiplication qui ferait de \(\left(\Q/\Z,+\right)\) un anneau.
+    \boxans{
+        Supposons par l'absurde qu'une telle multiplication existe. Soit \(a\) un élément
+        non nul de \(\left(\Q/\Z,+\right)\), et \(n\) le plus petit entier positif tel
+        que \(na = 0\) dans \(\left(\Q/\Z,+\right)\). Puisque \(\left(\Q/\Z,+\right)\) est
+        un groupe, l'inverse de \(a\) existe, notons-le \(b\). Alors, \(b\) doit également
+        annuler le produit \(na\), c'est-à-dire \(nab = 0\). Cependant, cela signifie
+        que l'élément \(ab\) annule \(n\), et donc \(ab = 0\) dans \(\left(\Q/\Z,+\right)\).
+        Ainsi, \(a\) est absorbant pour la multiplication, ce qui contredit la propriété
+        de groupe commutatif de \(\left(\Q/\Z,+\right)\) (un anneau nécessite un élément neutre
+        distinct de zéro pour la multiplication).
+    }
 \end{exo}
 \end{document}
