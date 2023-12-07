@@ -11,15 +11,35 @@
     Soient \(m,n\in\N\backslash\{0\}\).
     \begin{q}{1}
         Démontrer l'équivalence \(\U_m\subseteq \U_n \Leftrightarrow m\mid n\).
+        \boxans{
+            \(\U_m \subseteq \U_n\) si et seulement si \(e^{2\pi/m}\in\U_n\)
+            or d'après le théorème de \textsc{Lagrange} celà se produit
+            si et seulement si \(m\mid n\).
+        }
     \end{q}
     \begin{q}{2}
         Montrer que \(\U_n\) est cyclique.
+        \boxans{
+            L'élément \(\omega=e^{2\pi/n}\) est clairement générateur.
+        }
     \end{q}
     \begin{q}{3}
-        Décrire les sous groupes de \(\U_n\).
+        Décrire les sous-groupes de \(\U_n\).
+        \boxans{
+            Les sous-groupes de \(\U_n\) correspondent exactement aux \(\U_d\) avec
+            \(d\mid n\) par isomorphisme avec les \(\Z/n\Z\). D'après la question \(1\)
+            ce sont les seuls et ils sont clairement générés par \(\omega\).
+        }
     \end{q}
     \begin{q}{4}
         Donner l'ordre des éléments de \(\U_n\).
+        \boxans{
+            Les éléments de \(\U_n\) sont de la forme \(e^{2k\pi i/n}\), où \(k\) est un entier.
+            L'ordre d'un tel élément est le plus petit entier positif \(m\) tel que \((e^{2k\pi i/n})^m = 1\),
+            c'est-à-dire \(me^{2k\pi i/n} = 2\pi i l\) pour un certain entier \(l\). Cela se produit si et
+            seulement si \(n\) divise \(km\). Ainsi, l'ordre de \(e^{2k\pi i/n}\) dans \(\U_n\) est \(n\) si
+            \(k\land n=1\) et \(\frac nk\) sinon.
+        }
     \end{q}
 \end{exo}
 
@@ -66,16 +86,32 @@
     Montrer que les groupes suivants ne sont pas isomorphes.
     \begin{q}{1}
         \(\left(\Z/3\Z\times\Z/3\Z,+\right)\) et \(\left(\Z/9\Z,+\right)\).
+        \boxans{Le premier n'est pas monogène.}
     \end{q}
     \begin{q}{2}
         \(\left(\Z/3\Z\times\Z/8\Z,+\right)\) et \(\left(\Z/4\Z\times\Z/6\Z,+\right)\).
+        \boxans{
+            Supposons par l'absurde qu'il existe un isomorphisme
+            \(\phi: \Z/3\Z\times\Z/8\Z \to \Z/4\Z\times\Z/6\Z\).
+            Alors, considérons les images de \((1,0)\) et \((0,1)\) par \(\phi\).
+            Ces images doivent générer le groupe \(\Z/4\Z\times\Z/6\Z\), mais
+            c'est impossible car l'ordre du premier générateur divise \(4\) et
+            l'ordre du second divise \(6\), et il n'y a pas d'élément d'ordre commun à \(4\) et \(6\).
+            Ainsi, \(\Z/3\Z\times\Z/8\Z\) et \(\Z/4\Z\times\Z/6\Z\) ne sont pas isomorphes.
+        }
     \end{q}
 \end{exo}
 
 \begin{exo}
     Soient \(a\) et \(b\) deux entiers naturels strictement plus grands que \(1\).
-    Montrer que le nombre de morphisme de groupes de \(\Z/a\Z\) vers \(\Z/b\Z\)
+    Montrer que le nombre de morphismes de groupes de \(\Z/a\Z\) vers \(\Z/b\Z\)
     est \(\gcd(a,b)\).
+    \boxans{
+        Supposons que \(d = \gcd(a, b)\). Considérons
+        l'application \(\phi: \Z/a\Z \to \Z/b\Z\) définie par \(\phi(1) = b/d\).
+        On construit alors \(\Phi\colon \Z/d\Z\to \hom(\Z/a\Z,\Z/b\Z)\) quoi est un
+        clair isomorphisme tel que \(\Phi(k) = k \phi\).
+    }
 \end{exo}
 
 \begin{exo}
@@ -83,16 +119,22 @@
     \begin{q}{1}
         Montrer que les groupes \(\left(3\Z/18\Z,+\right)\) et \(\left(\Z/6\Z,+\right)\)
         sont isomorphes.
+        \boxans{L'isomorphisme \(\phi\colon a\to \frac a3\) suffit à la démonstration.}
     \end{q}
     \begin{q}{2}
         Décrire les sous-groupes, l'ordre des éléments et les générateurs de
         \(\left(3\Z/18\Z,+\right)\).
+        \boxans{
+            Cf. travail sur les \(\Z/n\Z\) dans le TD précédent.
+        }
     \end{q}
 \end{exo}
+
 
 \begin{exo}
     Soit \(G\) = \(\langle(1\ 2\ \dots\ 11\ 12)\rangle\subseteq\mathfrak{S}_{12}\).
     Déterminer les générateurs et les sous-groupes de \(G\).
+    \boxans{Tous les éléments sont générateurs, le groupe est cyclique et isomorphe à \(\Z/12\Z\).}
 \end{exo}
 
 \begin{exo}
@@ -127,29 +169,77 @@
     Retour rapide sur les matrices.
     \begin{q}{1}
         Exhiber un élément d'ordre \(3\) dans \(\glnr\).
+        \boxans{
+            La matrice suivante est d'ordre \(3\) dans \(\glnr\).
+            \[
+                A = \begin{pmatrix}
+                    0 & 1 & 0 \\
+                    0 & 0 & 1 \\
+                    1 & 0 & 0
+                \end{pmatrix}
+            \]
+        }
     \end{q}
     \begin{q}{2}
-        Démontrer qu'un tel élément est toujours dans \(\text{SL}_n(R)\)
+        Démontrer qu'un tel élément est toujours dans \(\text{SL}_n(\R)\).
+        \boxans{
+            On a \(\det(I)=1\) or \(I=A^3\) donc \(\det(A^3)=\det(A)^3=1\)
+            Ainsi \(\det(A)\) est un réél, racine triple de l'unité, donc \(\det(A)=1\).
+            ce qui signifie \(A\in\text{SL}_n(\R)\).
+        }
     \end{q}
 \end{exo}
+
 
 \begin{exo}
     Soient \(G\) un groupe fini d'ordre noté \(n\) et \(m\) un entier premier à \(n\).
     Démontrer que pour tout \(a\in G\) l'équation \(x^m=a\) admet une unique solution.
+    \boxans{
+        Comme \(m\) est premier à \(n\), l'élément \(m\) est inversible modulo \(n\).
+        Soit \(b\) l'inverse de \(m\) modulo \(n\). Ainsi, l'équation \(x^m = a\) peut
+        être écrite comme \(x = a^b\), et cette équation admet une unique solution dans
+        \(G\) puisque l'élément \(b\) est unique dans \(\mathbb{Z}/n\mathbb{Z}\) qui est cyclique.
+    }
 \end{exo}
+
 
 \begin{exo}
     Soit \(n\in\N^*\)
     \begin{q}{1}
         Quels sont les générateurs de \(\Z/n\Z\) ? On note \(\varphi(n)\) ce nombre.
+        \boxans{Ce sont les classes des éléments inférieurs à \(n\) et permier à \(n\).}
     \end{q}
     \begin{q}{1}
         Démontrer l'égalité \(\ds\sum_{d\mid n} \varphi(d) = n\).
+        \boxans{D'après le théorème chinois on a
+        \[(\Z/n\Z)^*\sim \prod_{d\mid n} (\Z/d\Z)^* \]
+        Ce qui donne le résultat attendu sur un plateau d'argent}
     \end{q}
 \end{exo}
 
-\begin{exo}
-    Montrer que \(\textbf{Aut}\left(\Z/7\Z\right)\) est cyclique et déterminer
-    les morphismes de groupes de \(\left(\Z/4\Z,+\right)\) dans \(\textbf{Aut}\left(\Z/7\Z\right)\).
+\begin{exo} Un peu de fun
+    \begin{q}{1}
+        Montrer que \(\textbf{Aut}\left(\Z/7\Z\right)\) est cyclique
+        \boxans{
+            L'automorphisme de \textsc{Frobenius} \(\phi : x \mapsto x^3\) génère \(\textbf{Aut}\left(\Z/7\Z\right)\),
+            car \(\phi\) a un ordre maximal (6) dans le groupe des automorphismes.
+        }
+    \end{q}
+    \begin{q}{2}
+        Déterminer les morphismes de groupes de \(\left(\Z/4\Z,+\right)\) dans \(\textbf{Aut}\left(\Z/7\Z\right)\).
+        \boxans{
+            Pour déterminer les morphismes de groupes de \(\left(\Z/4\Z,+\right)\) dans \(\textbf{Aut}\left(\Z/7\Z\right)\),
+            nous devons trouver les éléments de \(\textbf{Aut}\left(\Z/7\Z\right)\) d'ordre diviseur de 4.
+
+            L'ordre de \(\phi\) est 6, donc les éléments d'ordre 4 sont générés par \(\phi^2\).
+            Ainsi, les morphismes sont donnés par :
+            \[\begin{aligned}
+                \psi_1 : & \quad 0 \mapsto \text{id}, \quad 1 \mapsto \phi^2, \quad 2 \mapsto \phi^4, \quad 3 \mapsto \phi^6 \\
+                \psi_2 : & \quad 0 \mapsto \text{id}, \quad 1 \mapsto \phi^4, \quad 2 \mapsto \phi^1, \quad 3 \mapsto \phi^5 \\
+                \psi_3 : & \quad 0 \mapsto \text{id}, \quad 1 \mapsto \phi^6, \quad 2 \mapsto \phi^5, \quad 3 \mapsto \phi^4 \\
+            \end{aligned}
+            \]
+        }
+    \end{q}
 \end{exo}
 \end{document}
