@@ -149,10 +149,24 @@
     a une infinité de polynômes unitaires irréductibles.
     \boxans{
         Supposons par l'absurde que \(K[X]\) a un nombre fini de polynômes
-        unitaires irréductibles. Considérons le polynôme \(q(X) = (p_1 p_2 \ldots p_n) + 1\),
+        unitaires irréductibles. Considérons le polynôme \(q(X) = (\prod_{k=1}^n p_k) + 1\),
         où \(\{p_1, p_2, \ldots, p_n\}\) sont les polynômes irréductibles de \(K[X]\).
-        Ce polynôme est unitaire et irréductible, ce qui contredit notre hypothèse.
-        Ainsi, \(K[X]\) doit avoir une infinité de polynômes unitaires irréductibles.
+        Ce polynôme est unitaire et irréductible et de degré strictement supérieur à chacun
+        des \(p_k\), ce qui contredit notre hypothèse.
+        Ainsi, \(K[X]\) doit avoir une infinité de polynômes unitaires irréductibles.\bigskip
+
+        Cette démonstration ressemble fortement à celle de l'infinité des nombres premiers, on
+        comprend alors que l'on peut ici appliquer d'autres méthodes de résolution, par similarité
+        entre les problèmes.\bigskip
+
+        Supposons que le nombre de polynômes unitaires irréductibles soit fini, tout
+        polynôme de \(K[X]\) est décrit de façon exacte par une famille de polynôme unitaires
+        irréductible dont il est le produit (\textit{et d'une constante multiplicative}).
+        Alors en utilisant la complexité de \textsc{Kolmogorov} on a que la quantité d'information
+        contenue dans un polynôme peut être compressée comme l'information des puissances des polynômes
+        unitaires irréductibles le divisant. Ainsi l'information contenue dans le polynôme
+        est la même que celle contenue dans une séquence finie d'entiers, qui est majorée par la donnée
+        d'un polynôme de \textsc{Lagrange} et donc finie. Ce qui est une absurdité.
     }
 \end{exo}
 
