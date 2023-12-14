@@ -83,32 +83,65 @@
 \end{exo}
 
 
-
-
 \begin{exo}
     Soit \(G=\left\{\begin{pmatrix}a&b\\0&d\end{pmatrix}\mid a,d\in\R^*, b\in\R
-    \right\}\subset \text{GL}_2(\R)\)
+    \right\}\subset \text{GL}_2(\R)\).
+
     \begin{q}{1}
-        Montrer que \(G\) est un sous-groupes de GL\(_2(\R)\)
+        Montrer que \(G\) est un sous-groupe de GL\(_2(\R)\).
+        \boxans{
+            Soit \(A\) et \(B\) deux matrices dans \(G\), c'est-à-dire
+            \(A=\begin{pmatrix}a&b\\0&d\end{pmatrix}\) et
+            \(B=\begin{pmatrix}a'&b'\\0&d'\end{pmatrix}\) avec \(a,d,a',d'\in\R^*\)
+            et \(b,b'\in\R\). Alors, on a
+            \[
+                AB = \begin{pmatrix}aa'&ab'+bd'\\0&dd'\end{pmatrix},
+            \]
+            et \(AB\) appartient également à \(G\). De plus, l'inverse de \(A\) est
+            \[
+                A^{-1} = \begin{pmatrix}1/a&-b/(ad)\\0&1/d\end{pmatrix},
+            \]
+            ce qui montre que \(A^{-1}\) appartient à \(G\). Ainsi, \(G\) est un
+            sous-groupe de GL\(_2(\R)\).
+        }
     \end{q}
+
     \begin{q}{2}
-        Dans chacun des cas suivants décider si \(H\subset G\) est un sous-groupe
+        Dans chacun des cas suivants, décider si \(H\subset G\) est un sous-groupe
         normal ou non.
         \begin{q}{a}
             \(H=\{M \in G \mid a = 1\}\)
+            \boxans{
+                \(H\) est un sous-groupe normal. Soit \(A\in G\) et \(B\in H\). On a
+                \(ABA^{-1} = \begin{pmatrix}1&\frac{-b+ab'+bd'}{d}\\0&1\end{pmatrix}\in H\).
+            }
         \end{q}
         \begin{q}{b}
             \(H=\{M \in G \mid b = 0\}\)
+            \boxans{
+                \(H\) est un sous-groupe normal. Soit \(A\in G\) et \(B\in H\). On
+                a \(ABA^{-1}=\begin{pmatrix}a&0\\0&d\end{pmatrix}\in H\).
+            }
         \end{q}
         \begin{q}{c}
             \(H=\{M \in G \mid d = a\}\)
+            \boxans{
+                \(H\) est pas un sous-groupe normal. Soit \(A\in G\) et \(B\in H\). On
+                a \(ABA^{-1}=\begin{pmatrix}d'&\frac{ab'}{d}\\0&d'\end{pmatrix}\in H\).
+            }
         \end{q}
     \end{q}
+
     \begin{q}{3}
-        Dans la question précédents, si \(H\triangleleft G\) est normal, déterminer
+        Dans la question précédente, si \(H\triangleleft G\) est normal, déterminer
         le quotient \(G/H\) à isomorphisme près.
+        \boxans{
+            Si \(H\) est normal, alors \(G/H\) est isomorphe à \(\R^*\) sous
+            l'isomorphisme donné par la projection canonique.
+        }
     \end{q}
 \end{exo}
+
 
 \begin{exo}
     On considère le groupe \(\mathfrak{S}_3\) des permutations de 3 éléments.
@@ -152,16 +185,30 @@
     \begin{q}{1}
         Montrer que l'application \(\varphi : \left(\R,+\right)\to\left(\C,\times\right)\)
         définie par \(\varphi(x)=e^{2i\pi x}\) est un morphisme de groupes.
+        \boxans{
+            Soient \(x, y \in \R\). Alors,
+            \[\varphi(x + y) = e^{2i\pi (x + y)} = e^{2i\pi x} \cdot e^{2i\pi y} = \varphi(x) \cdot \varphi(y).\]
+            Donc, \(\varphi\) est un morphisme de groupes.
+        }
     \end{q}
     \begin{q}{2}
         Calculer son noyau et son image, et en déduire que \(\R/\Z\simeq \U\).
+        \boxans{
+            Le noyau de \(\varphi\) est \(\Z\) et son image est \(\U\). Par le premier théorème d'isomorphisme, \(\R/\Z\simeq \U\).
+        }
     \end{q}
     \begin{q}{3}
         On note \(\phi\) la restriction de \(\varphi\) à \(\Q\). Montrer que l'image
         de \(\phi\) est égale à \(\cup_{n\in\N} \U_n = \U_\N\).
+        \boxans{
+            Pour tout \(n \in \N\), \(\phi(\frac{1}{n}) = e^{2i\pi/n}\) et \(\phi(\frac{-1}{n}) = e^{-2i\pi/n}\), donc l'image de \(\phi\) est \(\cup_{n\in\N} \U_n\).
+        }
     \end{q}
     \begin{q}{4}
         En déduire que \(\Q/\Z\simeq \U_\N\).
+        \boxans{
+            Par le premier théorème d'isomorphisme, \(\Q/\Z \simeq \U_\N\).
+        }
     \end{q}
 \end{exo}
 
@@ -172,36 +219,75 @@
 \begin{exo}
     Soit \(G\) un groupe et \(Z(G)\) son centre.
     \begin{q}{1}
-        Montrer que tout sous-groupe de \(Z(G)\) est un sous groupe distingué
+        Montrer que tout sous-groupe de \(Z(G)\) est un sous-groupe distingué
         de \(G\).
+        \boxans{
+            Soit \(H\) un sous-groupe de \(Z(G)\). Soit \(g \in G\) et \(h \in H\).
+            On a \(ghg^{-1} =h\in H\) car \(h\) commute avec \(g\) et donc \(H\) est
+            normal dans \(G\).
+        }
     \end{q}
     \begin{q}{2}
         Soit \(H\) un sous-groupe de \(Z(G)\). On suppose que \(G/H\)
         est cyclique. Montrer que \(G\) est abélien.
+        \boxans{
+            Soit \(xH\) et \(yH\) deux éléments de \(G/H\), où \(x, y \in G\). Puisque
+            \(G/H\) est cyclique, il existe un entier \(n\) tel que \(yH = x^nH\).
+            Ainsi \(G = \{x^nh \mid n\in\Z,h\in H\}\). et donc tout commute bien.
+        }
     \end{q}
 \end{exo}
 
+
 \begin{exo}
-    Soit \(G\) un groupe et \(H\) un sous-groupe normal d'indice \(n\in\N\).
+    Soit \(G\) un groupe et \(H\) un sous-groupe normal d'indice \(n \in \N\).
     \begin{q}{1}
-        Montrer que pour tout \(a\in G\) on a \(a^n\in H\).
+        Montrer que pour tout \(a \in G\), on a \(a^n \in H\).
+        \boxans{
+            Soit \(a \in G\). Puisque \(H\) est d'indice \(n\), le groupe quotient
+            \(G/H\) a ordre \(n\). Par le théorème de Lagrange, l'ordre de \(aH\)
+            dans \(G/H\) divise l'ordre de \(G/H\), c'est-à-dire \(n\). Ainsi,
+            \((aH)^n = a^nH = H\), ce qui implique que \(a^n \in H\).
+        }
     \end{q}
-    \begin{q}{1}
+    \begin{q}{2}
         Donner un contre-exemple avec un \(H\) non distingué.
+        \boxans{
+            Soit \(G = S_3\), le groupe symétrique d'ordre \(3\), et \(H = \langle
+            (1,2) \rangle\), le sous-groupe engendré par la permutation \((1,2)\). On a \(|G : H| = 3\). Cependant, \(H\) n'est pas distingué dans \(G\), car il n'est pas invariant par conjugaison.
+        }
     \end{q}
 \end{exo}
+
 
 \begin{exo}
     Soient \(G\) un groupe fini et \(H\triangleleft G\) d'ordre \(n\)
     et d'indice \(m\). On suppose que \(n\) et \(m\) sont premiers entre
     eux. Montrer que \(H\) est l'unique sous-groupe de \(G\) d'ordre \(n\).
+    \boxans{
+        D'après l'exercice précédent, pour tout \(a\in G\) on a \(a^n\in H\).
+        Soit \(K\) un sous-groupe de \(G\) d'ordre \(n\). Puisque \(H\) est normal
+        dans \(G\), le groupe quotient \(G/H\) est bien défini. On a \(|G/H| = m\) et
+        \(|K| = n\). Comme \(n\) et \(m\) sont premiers entre eux, il existe un unique
+        sous-groupe d'ordre \(n\) dans \(G/H\), qui est \(H/H\). En utilisant le
+        correspondant du troisième théorème d'isomorphisme, on conclut que \(K = H\).
+    }
 \end{exo}
 
 \begin{exo}
-    Soit \(G\) un groupe. On apelle groupe dérivé de \(G\) et on note \(D(G)\)
-    le sous-groupe de \(G\) engendré par \(\left\{ xyx^{-1}y^{-1}\mid x,y\in G \right\}\)
+    Soit \(G\) un groupe. On appelle groupe dérivé de \(G\) et on note \(D(G)\)
+    le sous-groupe de \(G\) engendré par \(\left\{ xyx^{-1}y^{-1} \mid x,y\in G \right\}\).
     \begin{q}{1}
-        Montrer que \(D(G)\) est disintgué dans \(G\) et que \(G/D(G)\) est abélien.
+        Montrer que \(D(G)\) est distingué dans \(G\) et que \(G/D(G)\) est abélien.
+        \boxans{
+            Soit \(g \in G\) et \(h \in D(G)\). On a \(ghg^{-1}h^{-1} = (g^{-1})^{-1}
+            hg^{-1}h^{-1} \in D\), donc \(gHg^{-1} \subseteq H\). Puisque cela est
+            vrai pour tout \(g \in G\), on conclut que \(D(G)\) est distingué dans \(G\).
+            Considérons le groupe quotient \(G/D(G)\). Soit \(gD(G)\) et \(hD(G)\) deux éléments de ce groupe. On a
+            \[(gD(G))(hD(G)) = ghD(G) = (hgD(G))^{-1} = (hD(G))(gD(G))\]
+            ce qui montre que \(G/D(G)\) est abélien.
+        }
     \end{q}
 \end{exo}
+
 \end{document}
