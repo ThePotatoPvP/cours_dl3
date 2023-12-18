@@ -1,0 +1,103 @@
+\documentclass{report}
+\usepackage{../../exercices}
+
+\begin{document}
+\begin{center}
+    \Huge{\textbf{PR5-L3 Maths - TD 6}}
+\end{center}
+\bigskip
+
+\begin{exo}
+    On considère un jeu de pile ou face non biaisé, chaque tirage
+    \(X_n\) suit une loi de bernoulli de paramètre \(1/2\). Et on pose
+    \(S_n=X_1+\dots+X_n\). On considère que l'on a gagné au temps \(n\)
+    s'il on a au moins \(2n/3\) piles.
+
+    \begin{q}{1}
+        Calculer \(\esp[\exp(tS_n)]\) pour \(t\in \R\) et en déduire qu'il existe \(c>0\)
+        tel que \(\proba(S_n\geq 2n/3)\leq \exp(-cn)\).
+    \end{q}
+    \begin{q}{2}
+        Montrer que l'estimation obtenue dans \(1\) implqie que dans ce jeu on ne gagne qu'un
+        nombre fini de fois.
+    \end{q}
+    \begin{q}{3}
+        Montrer que l'on peut obtenir le résultat du point \(2\) en utilisant
+        la loi des grands nombres et sans utiliser le premier résultat.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Dans l'espace canonique nous considérons la suite de variables aléatoires \(X_n\)
+    définies par \(X_n(\omega)=n\mathds{1}_{(0,1/n)}(\omega)\).
+    \begin{q}{1}
+        Montrer qu'on a \(\lim X_n = 0\) en probabilité.
+    \end{q}
+    \begin{q}{2}
+        Montrer qu'on a \(\lim X_n = 0\) preque sûrement.
+    \end{q}
+    \begin{q}{3}
+        Montrer qu'on a \(\lim \esp[X_n]\neq 0\).
+    \end{q}
+    \begin{q}{4}
+        Montrer que \((X_n)\) ne converge pas dans \(\mathbb{L}^1\).
+    \end{q}
+    \begin{q}{5}
+        Montrer que \((\sqrt{X_n})\) converge dans \(\mathbb{L}^1\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \((X_n)\) une suite IID et on suppose que \(X_1\) n'est pas trivial, i.e. \(\proba(X=x)\leq 1\).
+    pour tout \(x\in\R\).
+    \begin{q}{1}
+        La suite \((X_n)\) converge-t-elle en loi ?
+    \end{q}
+    \begin{q}{2}
+        Et presque sûrement ?
+    \end{q}
+    \begin{q}{3}
+        Et en probabilité ?
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    \((X_j)\) est une suite de variables aléatoires (aucune hypothèse d'indépendance).
+    On pose \(Z(\omega)\colon=\sum_{j=1}^\infty 2^{-j}X_j(\omega)\) si cette série converge.
+    \begin{q}{1}
+        Montrer que s'il existe une constante \(C\) telle que \(\proba(|X_j \leq C) = 1\)
+        pour tout \(j\) alors \(Z\) est bien définie presque sûrement.
+        \boxans{On a presque sûrement l'inégalité suivante, assurant que \(Z\) est bien définie.
+        \[ \left|\sum_{j>0} 2^{-j}X_j\right|\leq\sum_{j>0} 2^{-j}|X_j|\leq\sum_{j>0} 2^{-j}C = 2C\]}
+    \end{q}
+    \begin{q}{2}
+        Montrer que si \(X_j\sim \textsc{Cauchy}\) pour tout \(j\) alors \(Z\) est
+        bien définie presque sûrement.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    \((X_j)\) est une suite de variables aléatoires dans \(\mathbb{L}^2\) avec \(\cov(X_j,X_k)=0\) si \(j\neq k\)
+    et on pose \(S_n = X_1+\dots+X_n\). De plus on suppose \(\esp[X_j]=\mu\) et \(\esp[X_j^2]=\sigma^2\) pour tout \(j\).
+    Montrer que \(\lim S_{n^2}/n^2 = \mu\) presque sûrement.
+\end{exo}
+
+\begin{exo}
+    \((X_j)\) est une suis IID avec \(X_1\in\mathbb{L}^1\) et \(S_n=X_1+\dots+X_n\).
+    \begin{q}{1}
+        Sur le même espace de probabilité il y a aussi une autre suite de variables
+        aléatoires \((T_n)\) avec \(\proba(T_n\in\N)=1\) pour tout \(n\) et telle que
+        \(\lim T_n=\infty\) presque sûrement. Calculer, si elle existe, la limite presque
+        sûrement de la suite \((S_{T_n}/T_n)\).
+    \end{q}
+    \begin{q}{2}
+        Calculer, si elle existe, aussi la limite presque sûrement de la suite
+        \[\left(\frac{X_1X_2+X_2X_3+\dots+X_{n-1}X_n}{n}\right)_n\]
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \((U_n)\) une suite IID \(U([0,1])\). On pose \(Z_n=n\min(U_1, \dots U_n)\)
+    pour \(n\in\N\). Montrer que \((Z_n)\) converge en loi vers Exp(\(1\)).
+\end{exo}
+\end{document}
