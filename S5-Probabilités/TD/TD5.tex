@@ -52,6 +52,9 @@
     \begin{q}{3}
         Calculer \(\esp[e^{tX}]\) pour tout \(t\in\R\).
     \end{q}
+    \begin{q}{4}
+        Expliciter la loi de la variable aléatoire \(\sqrt{|X-\mu|b}\).
+    \end{q}
 \end{exo}
 
 \begin{exo}
@@ -69,5 +72,103 @@
     \begin{q}{3}
         Montrer que \(X_1\) et \(X_2\) ne sont pas indépendantes.
     \end{q}
+\end{exo}
+
+\begin{exo}
+    \(X\) et \(Y\) sont deux variables indépendantes \(X\sim\text{Bar}(1/2)\) et
+    \(Y\sim U(0,1)\). Donner la loi de \(X+Y\).
+\end{exo}
+
+\begin{exo}
+    \(X\) et \(Y\) sont deux variables indépendantes et \(X\sim Y\sim \mathcal{N}(0,1)\).
+    Donner la loi de \(X/Y\).
+\end{exo}
+
+\begin{exo}
+    \(X\) et \(Y\) sont deux variables indépendates et \(X\sim Y\sim U(0,a), a>0\).
+    Donner la loi de
+    \begin{enumerate}
+        \itt \(X+Y\)
+        \boxans{
+            On a les densités marginales :
+            \[ f_X(x) = f_Y(x) = \begin{cases}
+                            \frac{1}{a}, & \text{si } 0 \leq x \leq a, \\
+                            0, & \text{sinon.}
+                        \end{cases}
+            \]
+
+            La convolution est donnée par :
+            \[ f_{X+Y}(z) = \int_{-\infty}^{\infty} f_X(x) \cdot f_Y(z-x) \D x \]
+
+            Pour \(0 \leq z \leq a\), l'intervalle d'intégration est \([0, z]\) et
+            \( f_{X+Y}(z) = \frac{1}{a^2} \int_{0}^{z} \D x = \frac{z}{a^2}\)
+
+            Pour \(a \leq z \leq 2a\), l'intervalle d'intégration est \([z-a, a]\) et
+            \( f_{X+Y}(z) = \frac{1}{a^2} \int_{z-a}^{a} \D x = \frac{1}{a^2} \cdot (2a - z) \)
+        }
+        \itt \(X-Y\)
+        \boxans{
+            On se contentera de remarquer que \(X-Y\sim X+Y-a\).
+        }
+        \itt \(XY\)
+        \boxans{
+            La convolution est donnée par :
+            \[f_{XY}(z)=\int_{-\infty}^{\infty} f_X\left(\frac{z}{y}\right)\cdot f_Y(y)\frac{1}{|y|}\D y\]
+        }
+        \itt \(X/Y\)
+        \boxans{
+            La convolution est donnée par :
+            \[f_{X/Y}(z)=\int_{-\infty}^{\infty} f_X(zy) \cdot f_Y(y)|y|\D y\]
+        }
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+    \(X\) et \(Y\) sont deux variables indépendantes et \(X\sim Y\sim \text{Exp}(a), a>0\).
+    Donner la loi de
+    \begin{enumerate}
+        \itt \(X+Y\)
+        \itt \(X-Y\)
+        \itt \(|X-Y|\)
+        \itt \(X/Y\)
+        \itt \(X/(X+Y)\)
+    \end{enumerate}
+    Montrer aussi que \(\max(X,Y)\sim X+ Y/2\).
+\end{exo}
+
+\begin{exo}
+    Soient \(X\) et \(X\) deux variables aléatoires de loi Exp\((1)\) et
+    \(Z = (X-Y)/(X+Y)\).
+    \begin{q}{1}
+        Donner la fonction de répartition de \(Z\) et sa densité si elle existe.
+    \end{q}
+    \begin{q}{2}
+        Donner la loi du vecteur \((X,Z)\). Vérifier ensuite le calcul de la loi
+        de \(Z\) en calculant la densité marginale.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(a>0\) et \(\lambda>0\) on appelle \textit{Loi de Pareto} de paramètres \(a\)
+    et \(\lambda\) la loi de densité donnée par \(f(x)=\frac{a\lambda^a}{x^{a+1}}
+    \mathds{1}_{x\geq\lambda}\) pour \(x\in\R\). Soient \(X\) et \(Y\) deux variables
+    aléatoires indépendantes Pareto(1,1). On pose \(S=XY\) et \(T=X/Y\).
+    \begin{q}{1}
+        Calculer la densité du couple \((S,T)\).
+    \end{q}
+    \begin{q}{2}
+        Calculer les densités de \(S\) et \(T\)
+    \end{q}
+    \begin{q}{3}
+        \(S\) et \(T\) sont-elle indépendantes ?
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(X, Y\) deux variables gaussiennes normales centrées réduites indépendantes.
+    Soit \(\varphi\) la bijection qui à tout point de \(U=\R^2\backslash\{(x,0)\mid x\leq 0\}\)
+    associe ses coordonnées polaires \((r, \theta)\) alors \(\varphi^{-1}\) est
+    continuellement différentiable. On définit le couple aléatoire \((R,\Theta) = \varphi{-1}(X,Y)\).
+    Donner la densité du vecteur aléatoire \((R,\Theta)\).
 \end{exo}
 \end{document}
