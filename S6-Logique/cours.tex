@@ -1,0 +1,133 @@
+\documentclass{report}
+\usepackage{../exercices}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{Cours de Logique}}
+\end{center}
+
+\boxans{
+    \begin{enumerate}
+        \itt Sylvy Anscombe
+        \itt sylvy.anscombe@inij-prog.fr
+    \end{enumerate}
+}
+
+\section*{Sommaire à titre indicatif}
+
+\boxans{
+    \begin{enumerate}
+        \itt Ordres linéaires
+        \itt Bons ordres
+        \itt Définitions inductives
+        \itt Arithmétique de Péano
+        \itt -----
+        \itt Démonstration par récurrence
+        \itt L'ordre sur \(\N\)
+        \itt-----
+        \itt Notion de cardinalité, équipotence
+        \itt Ensemble dénombrables de \textsc{Dedekind}
+        \itt Diagonale de \textsc{Kantor}
+        \itt Théorème de \textsc{Kantor}-\textsc{Burnstein}- ?
+        \itt-----
+        \itt Lemme de \textsc{Zorn} et axiome du choix
+        \itt-----
+        \itt Calcul propositionnel (syntaxe, sémantique, valuations)
+        \itt Formes normales (disjonctive, conjonctive) et systèmes complets
+        \itt Calcul de prédicat (logique du premier ordre)
+    \end{enumerate}
+}
+
+% \tableofcontents
+
+\chapter{Les axiomes des Ordres}
+
+\bdef{Relation d'ordre}{
+    On dit que la relation \(\preceq\) est une relation d'ordre sur un ensemble \(E\) si
+    elle est \begin{enumerate}
+        \itt \textbf{Reflexive} \(\colon \forall x\colon x\preceq x\)
+        \itt \textbf{Antisymmétrique} \(\colon \forall x\forall y\colon (x\preceq y\land y\preceq x) \Rightarrow x=y\)
+        \itt \textbf{Transitive} \(\colon\forall x\forall y\forall z\colon (x\preceq y\land y\preceq z) \Rightarrow x\preceq z\)
+    \end{enumerate}
+}
+\begin{examples}
+    Les relations \(\leq, \geq\) sur les nombres, l'ordre lexicographique ...
+\end{examples}
+
+\bdef{Ensemble ordonné}{
+    Un ensemble ordonné \((E, \preceq)\) est un corps \textsc{Gaussien}
+    munit d'une relation d'ordre.
+}
+\begin{examples}
+    \((\N, \leq)\), \((\Q, \leq)\), \((\R, \leq)\), \((\Z, \leq)\), \((\Sigma^*, \preceq_\alpha)\).
+\end{examples}
+
+\bdef{Ordre total}{
+    Une relation d'ordre est totale (ou linéaire) sur \(E\) si
+    \(\forall x\forall y \colon x\preceq y\lor y\preceq x\).
+}
+\begin{examples}
+    \((\N, \leq)\) est un ordre total, \((\N, \mid)\) non.
+\end{examples}
+
+\bdef{Morphisme d'ordre}{
+    Un morphisme d'ordre \(\varphi\) est une application de \((A,\preceq_A)\) dans
+    \((B,\preceq_B)\) vérifiant \(\forall x\forall y\in A\colon (x\preceq_A y)
+    \Rightarrow(\varphi(x)\preceq_B \varphi(y))\). On peu aussi parler de morphismes
+    d'ordres bijectifs.
+}
+
+\brem{
+    Un isomorphisme d'ordre est une bijection croissante dont la réciproque
+    est croissante.
+}
+
+\bdef{Bon ordre}{
+    Un ordre \(\preceq\) est dit bon si tout sous-ensemble de \((E, \preceq)\)
+    admet un plus petit élément. Un bon ordre est forcément total.
+}
+\begin{examples}
+    \((\N, \leq)\) admet un bon ordre,
+    \((\N, \leq)\) n'admet pas de bon ordre
+\end{examples}
+
+\begin{proposition}
+    Soit \((A, \preceq_A)\) un bon ordre et soit \(B\subseteq A\), \((B, \preceq_{A\mid B})\)
+    est bien ordonné.
+    \begin{proof}
+        Soit \(C\subseteq B\) alors \(C\subseteq A\) donc \(C\) admet un minimum pour
+        \(\preceq_A\), qui est aussi trivialement minimum pour \(\preceq_{A\mid B}\)
+        donc \(B\) est bien ordonné.
+    \end{proof}
+\end{proposition}
+
+\begin{exo}
+    Attention à ne pas confondre isomorphisme et isomorphisme d'ordre.
+    \begin{q}{1}
+        Soit \(A = \{\frac{1}{n} \mid n\in\N\}\) est-il bien ordonné ?
+        \boxans{Non, car \(A\) conttient une suite infinie décroissante.}
+    \end{q}
+    \begin{q}{2}
+        Qu'en est-il de \(B = -A\) ?
+        \boxans{L'ensemble \(B\) est bien ordonné, il admet un morphisme d'ordre trivial vers \(\N\).}
+    \end{q}
+\end{exo}
+
+\begin{proposition}
+    Un ensemble non vide avec un ordre total est bien ordonné si et seulement si il
+    vérifie la propriété de récurrence bien fondée :
+    \(\forall J\subseteq E\forall y(\forall z<y\colon z\in J\Rightarrow y\in J)\Rightarrow J=E\)
+    qui se comprend comme : si tous les prec de y sont dans J, y aussi, c'est le concept
+    de récurrence.
+\end{proposition}
+
+\begin{exo}
+    On suppose \(X\subset \N\) pour lequel \(|\) est un ordre total, \(X\) est-il
+    bien ordonné ?
+    \boxans{\(X\) est alors uniquement constitué de produits de facteurs premiers
+    dont tous les facteur croient de la même façon d'un élément à l'autre, l'ordre
+    lexicographique y est donc total est bon.}
+\end{exo}
+
+\end{document}
