@@ -1,0 +1,109 @@
+\documentclass[french]{report}
+\usepackage{../exercices}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{S6-Algebre - TD1}}
+\end{center}
+
+\subsection*{Anneaux}
+
+\begin{exo}
+    Soit \(A\) un anneau intègre. Posons \(X=A\times (A\backslash {0})\).
+    On définit sur \(X\) la relation \(\sim\) ainsi. Pour tous
+    \((a,b), (c,d)\in X\), on a \((a,b)\sim(c,d)\) ssi \(ad = bc\).
+
+    \begin{q}{1}
+        Montrer que \(\sim\) est une relation d'équivalence.
+        On note \(K=X/\sim\) l'ensemble quotient et on note \(\frac{a}{b}\)
+        classe d'équivalence de \((a, b)\) dans \(K\).
+    \end{q}
+    \begin{q}{2}
+        On définit deux lois + et * de composition interne sur \(K\colon
+        \frac{a}{b}+\frac{c}{d} \colon=\frac{ad+bc}{bd}\) et \(\frac{a}{b}*\frac{c}{d}
+        \colon=\frac{ac}{bd}\). Montrer que ces deux opérations sont bien définies sur
+        \(K\) et que \(\left(K, +, *\right)\) est un anneau commutatif et même un corps.
+    \end{q}
+    \begin{q}{3}
+        Montrer que l'applciation \(\iota\colon A\to K\) qui à \(a\) associe \(\frac{a}{1}\)
+        est un morphisme d'anneaux injectif.
+    \end{q}
+    \begin{q}{4}
+        On se donne \(K'\) un corps et \(\psi\colon A\to K'\) un morphisme d'anneaux
+        injectif.
+        \begin{q}{a}
+            Montrer qu'il existe un unique morphisme de corps \(\alpha\colon:K\to K'\)
+            tel que \(\alpha\iota=\psi\)
+        \end{q}
+        \begin{q}{b}
+            On suppose que \(\eta\colon A\to K'\) est un morphisme d'anneaux injectif qui
+            vérifie la propriété suivante : pour tout morphisme d'anneaux injectif \(\varphi
+            \colon A\to L\) avec \(L\) un corps il existe un unique morphisme de corps
+            \(\beta\colon K'\to L\) tel que \(\beta_\eta=\varphi\).
+            Montrer que \(K\) et \(K'\) sont isomorphes.
+        \end{q}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On considère l'anneau des entiers de \textsc{Gauss} \(\Z[i]\) et l'anneau quotient
+    \(A = \Z[i]/(1+3i)\).
+    \begin{q}{1}
+        Montrer que \(i\equiv 3\) dans \(A\).
+    \end{q}
+    \begin{q}{2}
+        En déduire que le morphisme d'anneau \(\phi\colon \Z\to A\) est surjectif.
+    \end{q}
+    \begin{q}{3}
+        Démontrer l'isomorphisme d'anneau \(A\simeq \Z/10\Z\).
+    \end{q}
+    \begin{q}{4}
+        Quelle est la caractéristique de \(A\) ?
+        \boxans{D'après la question précédente, \(A\) est de caractéristique 10.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On pose \(j=e^{2i\pi/3}\) et on note \(\Z[j]\) le sous anneau de \(C\) pertinent.
+    \begin{q}{1}
+        Montrer que \(2\) n'est pas inversible dans \(\Z[j]\).
+    \end{q}
+    \begin{q}{2}
+        Expliquer pourquoi \(\Z[j]\) est un anneau intègre.
+    \end{q}
+    \begin{q}{3}
+        Justifier que pour tout \(P\in\Z[x]\) il existe deux polynômes uniques \(Q\) et \(R\)
+        de \(\Z[x]\) tels que \(P=(X^2+X+1)Q+R\) et \(R\) est de degré inférieur ou égal à 1.
+    \end{q}
+    \begin{q}{4}
+        Montrer que l'application \(p\colon\Z[x]\to\Z[j]\colon P\mapsto P(j)\) est un
+        morphisme d'anneaux surjectif.
+    \end{q}
+    \begin{q}{5}
+        Montrer que les deux anneaux \(\Z[x]/(X^2+X+1)\) et \(\Z[j]\) sont isomorphes.
+    \end{q}
+    \begin{q}{6}
+        En déduire que l'idéal \((X^2+X+1)\) de \(\Z[X]\) est premier mais pas maximal.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On considère dans l'anneau \(A=\Z[X]\) l'idéal \(I\) engendré par \(2\) et \(X\).
+    \begin{q}{1}
+        Quels sont les irréductibles de \(A\) ?
+    \end{q}
+    \begin{q}{2}
+        L'idéal \(I\) est-il engendré par un unique élément ? Que peut-on en déduire ?
+    \end{q}
+    \begin{q}{3}
+        Les idéaux (2) et \((X)\) sont-ils premiers ? maximaux ?
+    \end{q}
+    \begin{q}{4}
+        Montrer que l'identité de \textsc{Bézout} n'est pas valable dans \(A\).
+    \end{q}
+\end{exo}
+
+\section*{Polynômes}
+
+\end{document}
