@@ -225,7 +225,7 @@
     keywordstyle=\color{pGreen},
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codegreen},
-    basicstyle=\ttfamily\footnotesize,
+    basicstyle=\ttfamily,
     breakatwhitespace=false,
     breaklines=true,
     captionpos=b,
@@ -237,5 +237,11 @@
     showtabs=false,
     tabsize=2
 }
+
+\lstdefinelanguage{OCaml}[]{Caml}{
+    morekeywords={List, Array, String, when, @}
+}
+
+\def\camlline{\lstinline[language=OCaml]}
 
 \lstset{style=forest}

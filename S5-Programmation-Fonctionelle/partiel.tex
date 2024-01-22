@@ -1,0 +1,263 @@
+\documentclass{report}
+\usepackage{../exercices}
+
+\lstset{language=OCaml}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{Examen 11 janvier 2024}}
+\end{center}
+
+Les fonction demandées doivent êtres rédigées en style fonctionnel pur : ni réferences,
+ni tableaux, ni boucles \textbf{for} ou \textbf{while}, ni champs mutables. chaque question
+ci-dessous peut utiliser les fonctions prédéfinies et/ou les fonciton des questions
+précédentes. À titre indicatif, toutes les ofnctions demandées peuvent s'écrire en
+moins de 10 lignes.
+
+\begin{exo}[Expressions, types, valeurs]
+    Pour chacune des expressions suivantes, indiquer si OCaml l'accepte et donnez dans
+    ce cas le \textit{type} et la \textit{valeur} calculés par OCaml. Si une valeur fonctionelle
+    est présente dans le résultat, la noter <fun> sans détailler plus. Si OCaml
+    signale une erreur, la décrire succintement.
+    \begin{q}{1}
+        \camlline{(2, 3, (let x = 2*2 in x), 2+3*4+5*2);;}
+        \boxans{\camlline{> : int * int * int * int = (2, 3, 4, 24)}}
+    \end{q}
+    \begin{q}{2}
+        \camlline{let _ = 3*3 in x;;}
+        \boxans{\camlline{> Error: Unbound value x}}
+    \end{q}
+    \begin{q}{3}
+        \camlline{try String.sub "exam" 0 5 with Not_found -> "pas trouve";;}
+        \boxans{\camlline{> Exception: Invalid_argument "String.sub / Bytes.sub".}}
+    \end{q}
+    \begin{q}{4}
+        \camlline{List.find (fun x -> x mod 3 = 0) [3;33;333;3333];;}
+        \boxans{\camlline{> : int = 3}}
+    \end{q}
+    \begin{q}{5}
+        \camlline{(List.init 6 (fun x -> x * 2))@[12;14];;}
+        \boxans{\camlline{> : int list = [0; 2; 4; 6; 8; 10; 12; 14]}}
+    \end{q}
+    \begin{q}{6}
+        \camlline{List.map (fun x -> not x) [true;false;false;true];;}
+        \boxans{\camlline{> : bool list = [false; true; true; false]}}
+    \end{q}
+    \begin{q}{7}
+        \camlline{List.find (fun x -> if (x mod 3) = 0 then true) [66;666;6];;}
+        \boxans{\camlline{> Error: This variant expression is expected to have type unit
+        because it is in the result of a conditional with no else branch}}
+    \end{q}
+    \begin{q}{8}
+        \camlline{(fun f -> f true false) (fun a b -> not (a && b));;}
+        \boxans{\camlline{> : bool = true}}
+    \end{q}
+    \begin{q}{9}
+        \camlline{(fun f -> f true) (fun a b -> not (a && b)) false;;}
+        \boxans{\camlline{> : bool = true}}
+    \end{q}
+    \begin{q}{10}
+        \camlline{(fun f -> f true) (fun a b -> not (a && b));;}
+        \boxans{\camlline{> : bool -> bool = <fun>}}
+    \end{q}
+\end{exo}
+\clearpage
+
+\begin{exo}[Récursivité terminale]
+    Voici un programme OCaml.
+    \begin{lstlisting}
+type 'a option = None | Some of 'a
+
+let rec max_liste l = match l with
+    | [] -> None
+    | h::r -> match max_liste r with
+            | None -> Some h
+            | Some m -> Some (max h m)
+;;\end{lstlisting}
+
+    \begin{q}{1}
+        Quel est le type de la fonction \camlline{max_liste} ?
+        \boxans{La fonction \camlline{max_liste} est du type : \camlline{int list -> int option}.}
+    \end{q}
+    \begin{q}{2}
+        Donner la résultat obtenu par la fonction \camlline{max_liste} sur la liste [4;2;8;5],
+        puis expliquer en une phrase la procédure générale employée par la fonction
+        \camlline{max\_liste} pour parvenir à son résultat final.
+    \end{q}
+    \begin{q}{3}
+        POurquoi la fonction \camlline{max_liste} n'est pas récursive terminale ? Justifier.
+    \end{q}
+    \begin{q}{4}
+        Écrire une fonction \camlline{max_liste_opt}, fournissant les mêmes résultats que
+        \camlline{max_liste}, tout en étant exclusivement composée d'appels récursifs terminaux.
+    \end{q}
+    \begin{q}{5}
+        Écrire une fonction \camlline{flatten_opt: 'a list list -> 'a list} ayant le
+        même comportement que \camlline{List.flatten} tout en étant exclusivement composée
+        d'appels récursifs terminaux.
+    \end{q}
+\end{exo}
+
+\begin{exo}[Arbres]
+    On considère des arbres binaires non vides dont tous les noeuds portent une
+    étiquette. Les feuilles sont spécifiées par le constructeur \camlline{F} et le
+    noeuds interne sont spécifiés par le constructeur \camlline{I}. Le type Ocaml qu'on
+    utilisera pour spécifier ces arbres est le suivant :
+    \begin{lstlisting}
+type 'a btree =
+    | F of 'a
+    | I of 'a * 'a btree * 'a btree\end{lstlisting}
+    Dans cet exercice nous spécialiserons le type polymorphe au dessus au cas où
+    les étiquettes sont des valeurs de type \camlline{string}. Voici trois arbres
+    différents :
+
+    Et voici leur représentation en Ocaml (de gauche à droite) :
+    \begin{enumerate}
+        \itt \camlline{let ab1 = I ("a", F "a", F"a")}
+        \itt \camlline{let ab2 = I ("", F "0", I ("1", F "01", F "11"))}
+        \itt \camlline{let ab3 = I ("", I ("0", F "00", F "10"), I ("1", F "01", F "11"))}
+    \end{enumerate}
+    \begin{q}{1}
+        Écrire une fonction \camlline{liste_feuilles: 'a btree -> 'a list}, qui renvoie
+        la liste d'étiquettes de toutes les \textit{feuilles} d'un arbre. Par exemple
+        \camlline{liste_feuilles ab2 = ["0"; "01"; "11"]}.
+        \begin{lstlisting}
+let rec liste_feuilles t = match t with
+    | F a -> [a]
+    | I (_, b, c) -> (liste_feuilles b)@(liste_feuilles c)
+;;      \end{lstlisting}
+    \end{q}
+    \begin{q}{2}
+        Un arbre est dit \textbf{parfait} lorsque toutes ses feuilles sont au même
+        niveau. Écrire une fonction \camlline{cons_parfait: int -> 'a -> 'a btree},
+        telle que \camlline{cons_parfait n e} construise un arbre parfait de
+        hateur \camlline{n} où tous les noeuds portent la même étiquette \camlline{e}.
+        Ainsi par exemple \camlline{cons_parfait 1 "a"} renvoie l'arbre \camlline{ab1}.
+        \begin{lstlisting}
+let rec cons_parfait n e = match n with
+    | 0 -> F e
+    | _ -> I(e, cons_parfait (n-1) e, cons_parfait (n-1) e)
+;;      \end{lstlisting}
+    \end{q}
+    \begin{q}{3}
+        Écrire une fonction \camlline{eten: 'a btree -> 'a -> int -> 'a btree} telle
+        qu'un appel à \camlline{eten a e n} étend l'arbre \camlline{a} en remplaçant
+        \textit{chacune de ses feuilles} étiquetées par \camlline{e} par un nouvel
+        arbre parfait de niveau \camlline{n}, dont tous les noeuds auront la même
+        étiquette \camlline{e}.
+        \begin{lstlisting}
+let rec eten a e n = match a with
+    | F m when m = e -> cons_parfait n e
+    | F m -> F m
+    | I(b, c, d) -> I(b, eten c e n, eten d e n)
+;;      \end{lstlisting}
+    \end{q}
+    \begin{q}{4}
+        On s'intéresse maintenant aux arbres dont les étiquettes sont des \textbf{chaînes
+        de caractères} ne contenant que 0 et 1. On veut modéliser un arbre \camlline{a}
+        dont l'étiquette de chaque noeud encode sa \textbf{position relative} dans
+        \camlline{a}, c'est à dire le chemion qu'il faut suivre depuis la racine de \camlline{a}
+        pour atteindre ce noeud, ce chemin étant lu \textit{de la droite vers la gauche}. Ainsi,
+        l'étiquette de chaque noeud est une chaîne de caractères commençant par 0 ou 1,
+        suivi d'une chaîne de caractères représentant l'étiquette de son parent. Par exemple
+        si la racine de l'arbre \camlline{a} est étiquetée "01", alors le noeuds étiqueté
+        "1001", indique que, depuis la racine, il faut d'abord se diriger vers le fils à gauche
+        de la racine, et puis ensuite vers le fils à droite de ce dernier. Plus formellement :
+        \begin{enumerate}
+            \item[(F)] Un arbre \camlline{a} dont sa racine est une feuille vérifie la propriété \textbf{BE}.
+            \item[(N)] Un arbre \camlline{a} dont sa racine est un noeud interne étiqueté par
+            \camlline{e} vérifie la propriété \textbf{BE} si
+            \begin{enumerate}
+                \itt le sous-arbre gauche G de \camlline{a} vérifie la propriété \textbf{BE} et
+                l'étiquette de la racine de G est obtenue en concaténant "0" à gauche de
+                l'étiquette \camlline{e}
+                \itt le sous-arbre droit D de \camlline{a} vérifie la propriété \textbf{BE} et
+                l'étiquette de la racine de D est obtenue en concaténant "1" à gauche de
+                l'étiquette \camlline{e}
+            \end{enumerate}
+        \end{enumerate}
+        \begin{q}{4.1}
+            Écrire une fonction \camlline{verif_arbre: string btree -> bool}, telle que
+            \camlline{verif_tree a} renvoie \camlline{true} si et seulement si l'arbre
+            vérifie la propriété \textbf{BE}. Par exemple \camlline{verif_artbre ab1}
+            renvoie \camlline{false} mais l'appel \camlline{verif_line ab2} renvoie
+            \camlline{true}, ainsi que l'appel de la fonction \camlline{verif_arbre} sur
+            chaque sous-arbre de \camlline{ab2}.
+        \end{q}
+        \begin{q}{4.2}
+            Écrire une fonction \camlline{cons_arbre_be: string -> int -> string btree},
+            telle qu'un appel \camlline{cons_arbre_be e n} construit un arbre parfait
+            vérifiant la propriété \textbf{BE} dont l'étiquette de sa racine est
+            \camlline{e} et sa hauteur est \camlline{n}. Par exemple
+            \camlline{cons_arbre_be "" 2} renvoie l'arbre \camlline{ab3}.
+        \end{q}
+        \begin{q}{4.3}
+            On cherche à écrire \camlline{eten_be_opt: string btree -> string -> int -> string btree}
+            , qui est une variante de la fonction \camlline{eten} de la question
+            \textbf{3}, où maintenant l'arbre passé en argumentainsi que l'arbre résultat
+            véirfieront la propriété \textbf{BE}. En conséquence, les \textit{nouvelles}
+            étiquettes ajutées par la fonction \camlline{eten_be_opt} seront toutes différentes.
+            De plus, on veut que la nouvelle fonction soit optimale, dans le sens qu'elle ne visitera
+            que les noeuds de l'arbre se trouvant entre la racine et la feuille à atteindre.
+            Ainsi par exemple, l'appel \camlline{eten_be_opt ab2 "0" 1} renvoie l'arbre
+            \camlline{ab3} et visite uniquement les noeuds étiquetés par \camlline{""} et
+            \camlline{"0"} tandis que \camlline{eten_be_opt "01" 1} visite uniquement les noeuds
+            étiquetés par \camlline{""}, \camlline{"1"} et \camlline{"01"} et ajoute deux
+            feuilles, étiquetées respectivement par \camlline{"001"} et \camlline{"101"}.
+        \end{q}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On considère à présent des arbres étiquetés \textit{d'arité variable}, dans lesquels
+    chaque noeud peut avoir un nombre quelconque de fils. Ces arbres, ainsi que les
+    ensembles d'arbres - les forêts - seront représentés à l'aide des deux types
+    mutuellement récursifs :
+    \begin{lstlisting}
+type 'a tree =
+    | N of 'a * 'a forest
+and 'a forest =
+    | V
+    | A of 'a tree * 'a forest
+;;  \end{lstlisting}
+    Le constructeur \camlline{N} permet de spécifier l'étiquette d'un noeud ainsi que
+    l'ensemble de ses fils, sous la forme d'une forêt. Le constructeur \camlline{V}
+    représente la forêt vide, le constructeur \camlline{A} permet d'ajouter un nouvel
+    arbre à une forêt d'ajà construite. Voici un exemple où les étiquettes sont de type
+    \camlline{float}:
+    \begin{lstlisting}
+let ar_1 = N(1.2, A(N(3.44,V), A(N(2.15, V), V)));;\end{lstlisting}
+    \begin{q}{1}
+        Appelons \camlline{ar_2} la représentation en OCaml de l'arbre suivant, étiqueté par
+        des valeurs de type \camlline{int list}. À partir de la définition du type
+        \camlline{type 'a tree}, écrire la définition de cet arbre.
+    \end{q}
+    \begin{q}{2}
+        Écrire une fonction \camlline{elem: 'a tree -> ('a -> bool) -> 'a list}, telle
+        que \camlline{elem a prop} renvoie la liste de toutes les étiquettes de l'arbre
+        \camlline{a} vérifiant la propriété \camlline{prop}. Ainsi par exemple, si
+        \camlline{contient_3: int list -> bool} est une fonction qui renvoie \camlline{true}
+        si et seulement si la liste passé en argument contient au moins un \camlline{3},
+        alors \camlline{elem ar_2 contient_3 = [[2;3];[3];[3;3]]}.
+        \begin{lstlisting}
+let rec elem a prop = match a with
+    | N(e, f) when prop e -> [e]@(_elem f prop)
+    | N(_, f) -> (_elem f prop)
+and rec _elem f prop = match f with
+    | V -> []
+    | A(a, f') -> (elem a prop)@(_elem f' prop)
+;;      \end{lstlisting}
+    \end{q}
+    \begin{q}{3}
+        Écrire une fonction \camlline{search: 'a tree -> 'a -> bool}, telle que
+        \camlline{search a p} renvoie \camlline{true} si et seulement si l'arbre
+        \camlline{a} contient un noeur étiqueté par \camlline{p}. Par exemple
+        \camlline{search ar_3 [5;0]} renvoie \camlline{false}, où \camlline{ar_2}
+        est l'arbre construit à la question \textbf{1}.
+        \begin{lstlisting}
+let search a p = (List.length (elem a (fun h -> h == p))) > 0;;\end{lstlisting}
+    \end{q}
+\end{exo}
+
+\end{document}
