@@ -96,27 +96,36 @@
         En déduire que l'idéal \((X^2+X+1)\) de \(\Z[X]\) est premier mais pas maximal.
     \end{q}
 \end{exo}
-
+\clearpage
 \begin{exo}
     On considère dans l'anneau \(A=\Z[X]\), l'idéal \(I\) engendré par \(2\) et \(X\).
     \begin{q}{1}
         Quels sont les irréductibles de \(A\) ?
         \boxans{Les irréductibles de \(A\) sont tous les polynômes
         constant d'image autre que \(1\) et \(-1\). Ainsi que tous les polynômes
-        unitaires n'admettant pas de racine dans \(\Z\).}
+        de contenu unitaires irréductibles sur \(\Q[X]\).}
     \end{q}
     \begin{q}{2}
         L'idéal \(I\) est-il engendré par un unique élément ? Que peut-on en déduire ?
+        \boxans{Non, \(I\) est généré par deux éléments, ce qui veut dire que
+        \(I = \gcd\left(2,X\right)A = A\). On en déduit qu'il n'est pas pertinent.}
     \end{q}
     \begin{q}{3}
         Les idéaux (2) et \((X)\) sont-ils premiers ? maximaux ?
         \boxans{On remarque les isomorphismes d'anneaux suivants:
         \[\Z[X]/2\Z[X]\simeq(\Z/2\Z)[X]\quad\textrm{et}\quad\Z[X]/X\Z[X]\simeq\Z\]
-        qui permettent d'affirmer que l'idéal \((X)\) est premier mais non maximal.
-        L'idéal \((2)\) est }
+        qui permettent d'affirmer que l'idéal \((X)\) est premier mais non maximal
+        car \(\Z\) est un anneau intègre mais pas un corps.
+        L'idéal \((2)\) est lui aussi premier mais non maximal, pour la même raison,
+        et par le degré d'un produit de polynômes.}
     \end{q}
     \begin{q}{4}
         Montrer que l'identité de \textsc{Bézout} n'est pas valable dans \(A\).
+        \boxans{Supposons par l'absure que l'identité de \textsc{Bézout} soit valable
+        dans \(A\), on considère les polynômes \(P_1 = X+1\) et \(P_2 = X-1\). Alors par
+        hypothèse il existe \(P_a\) et \(P_b\) tels que \(P_aP_1 + P_bP_2 = 1\). On doit
+        avoir \(P_a = - P_b\) si on veut espérer que le coefficient \(X\) disparaisse, mais
+        alors \(P_aP_1+P_bP_2\) est divisible par \(2\), ce qui est absurde.}
     \end{q}
 \end{exo}
 
