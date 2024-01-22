@@ -51,12 +51,17 @@
     \(A = \Z[i]/(1+3i)\).
     \begin{q}{1}
         Montrer que \(i\equiv 3\) dans \(A\).
+        \boxans{On remarque que \(i(1+3i) = i-3\) qui est nul dans \(A\), ainsi
+        \(i\equiv 3\) dans \(A\).}
     \end{q}
     \begin{q}{2}
         En déduire que le morphisme d'anneau \(\phi\colon \Z\to A\) est surjectif.
+        \boxans{\(\phi\colon a+3b\mapsto a+ib\) est bien défini comme épimorphisme
+        d'après la question précédente.}
     \end{q}
     \begin{q}{3}
         Démontrer l'isomorphisme d'anneau \(A\simeq \Z/10\Z\).
+        \boxans{Dans \(A\) on a \(0\equiv 1+3i\equiv 10\) ce qui est le résultat recherché.}
     \end{q}
     \begin{q}{4}
         Quelle est la caractéristique de \(A\) ?
@@ -68,9 +73,13 @@
     On pose \(j=e^{2i\pi/3}\) et on note \(\Z[j]\) le sous anneau de \(C\) pertinent.
     \begin{q}{1}
         Montrer que \(2\) n'est pas inversible dans \(\Z[j]\).
+        \boxans{Tous les éléments de \(\Z[j]\) sont de module entier, donc un élément de
+        module non multiplicativement neutre ne peut pas être inversible car le module
+        est multilinéaire.}
     \end{q}
     \begin{q}{2}
         Expliquer pourquoi \(\Z[j]\) est un anneau intègre.
+        \boxans{L'anneau \(\Z[j]\) est intègre comme sous-anneau de \(\C\).}
     \end{q}
     \begin{q}{3}
         Justifier que pour tout \(P\in\Z[x]\) il existe deux polynômes uniques \(Q\) et \(R\)
@@ -89,15 +98,22 @@
 \end{exo}
 
 \begin{exo}
-    On considère dans l'anneau \(A=\Z[X]\) l'idéal \(I\) engendré par \(2\) et \(X\).
+    On considère dans l'anneau \(A=\Z[X]\), l'idéal \(I\) engendré par \(2\) et \(X\).
     \begin{q}{1}
         Quels sont les irréductibles de \(A\) ?
+        \boxans{Les irréductibles de \(A\) sont tous les polynômes
+        constant d'image autre que \(1\) et \(-1\). Ainsi que tous les polynômes
+        unitaires n'admettant pas de racine dans \(\Z\).}
     \end{q}
     \begin{q}{2}
         L'idéal \(I\) est-il engendré par un unique élément ? Que peut-on en déduire ?
     \end{q}
     \begin{q}{3}
         Les idéaux (2) et \((X)\) sont-ils premiers ? maximaux ?
+        \boxans{On remarque les isomorphismes d'anneaux suivants:
+        \[\Z[X]/2\Z[X]\simeq(\Z/2\Z)[X]\quad\textrm{et}\quad\Z[X]/X\Z[X]\simeq\Z\]
+        qui permettent d'affirmer que l'idéal \((X)\) est premier mais non maximal.
+        L'idéal \((2)\) est }
     \end{q}
     \begin{q}{4}
         Montrer que l'identité de \textsc{Bézout} n'est pas valable dans \(A\).
@@ -105,5 +121,135 @@
 \end{exo}
 
 \section*{Polynômes}
+
+\begin{exo}
+    Effectuer les divisions euclidiennes suivantes:
+    \begin{enumerate}
+        \itt \(3X^5+4X^2+1\) par \(X^2+2X+3\).
+        \itt \(3X^5+2X^4-X^2+1\) par \(X^3+X+2\).
+        \itt \(X^4+X^3+X-2\) par \(X^2-2X+4\).
+    \end{enumerate}
+\end{exo}
+
+\begin{exo} Autour de la division euclidienne
+    \begin{q}{1}
+        Énoncer la division euclidienne dans \(\R[X]\). Montrer qu'il y a unicité des
+        polynômes intervenant dans l'écriture de la division euclidienne.
+    \end{q}
+    \begin{q}{2}
+        Soient \(P_1=X^3-2X^2-2X-3\) et \(P_2=X^2-2X-3\) des polynômes de \(\R[X]\).
+        En appliquant l'algorithme d'\textsc{Euclide}, déterminer le pgcd de \(P_1\)
+        et \(P_2\).
+    \end{q}
+    \begin{q}{3}
+        Décomposer en produits d'irréductibles de \(\R[X]\) les polynômes
+        \(P_1\) et \(P_2\). En déduire une autre méthode pour déterminer leur pgcd.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Factoriser sur \(\C\), sur \(\R\)  et sur \(\Q\) les polynômes suivants:
+    \begin{enumerate}
+        \itt \(X^2-2\)
+        \itt \(X^2+2\)
+        \itt \(X^2+X\)
+        \itt \(X^2+X+1\)
+        \itt \(X^4-4\)
+        \itt \(X^4+4\)
+        \itt \(X^4-X^2+1\).
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+    Factoriser sur \(\C\) le polynôme suivant \(X^8+X^4+1\).
+\end{exo}
+
+\begin{exo} Autour de la dérivation
+    \begin{q}{1}
+        Soit \(P\in\C[X]\) un polynôme non-constant. Montrer que \(P\) n'a que des racines
+        simple si et seulement si \(P\) et \(P'\) sont premiers entre eux.
+    \end{q}
+    \begin{q}{2}
+        Trouver tous les polynômes \(P\in \C[x]\) vérifiant \(P'\mid P\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Trouver les polynômes \(P\in\R[X]\) tels que \(\left(X+4\right)P(X)=XP(X+1)\).
+\end{exo}
+
+\begin{exo}
+    Soit \(P\in\C[X]\) vérifiant \(P(X^2) = P(X)P(X+1)\).
+    \begin{q}{1}
+        Montrer que les racines de \(P\) sont toutes égales à \(0\) ou \(1\).
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(P\) est une puissance de \(X(X-1)\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(a\) et \(b\) deux entiers positifs et \(d\) leur pgcd. Montrer que le
+    pgcd de \(X^a-1\) et \(X^b-1\) dans \(\Z[X]\) est \(X^d-1\).
+    \boxans{Le polynômes \(X^a-1\) admet exactement les éléments de \(\U_a\)
+    comme racine, de la même façon \(X^b-1\) admet ceux de \(\U_b\). Ainsi le pgcd
+    de ces polynômes admet comme racines les éléments de \(\U_a \cap \U_b = \U_d\)}
+\end{exo}
+
+\begin{exo}
+    Soit \(K\) un corps
+    \begin{q}{1}
+        Déterminer les couples \(\left(U, V\right)\in K[X]^2\) tels que
+        \(X^nU+\left(1-X\right)V=1\) où \(n\geq 1\).
+    \end{q}
+    \begin{q}{2}
+        Démontrer que \(A(X)=X^{3p+2}+X^{3q+1}+X^{3r}\in\R[X]\) est divisible
+        par \(X^2+X+1\) pour tout \(\left(p,q,r\right)\in\N^3\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(n\in\N\).
+    \begin{q}{1}
+        Montrer qu'il existe un unique polynômes \(P\in\R[X]\) tel que
+        \(P(X+1)+P(X) = 2X^n\).
+    \end{q}
+    \begin{q}{2}
+        On note ce polynôme \(E_n\). Montrer que \(E_n'=nE_{n-1}\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(K\) un corps commutatif. On se donne \(m+1\) éléments distincts de \(K\colon
+    q_0\dots q_m\).
+    \begin{q}{1}
+        Expliciter pour tout \(0\leq j\leq m\) le polynôme \(L_j\in K_m[X]\)
+        satisfaisant \(L_j(q_i) = \delta_{i,j}\).
+        \boxans{On est ici face à un cas d'école, celui de polynômes de \textsc{Lagrange},
+        il suffit de recracher la formule :\[L_j = \prod_{i=0}^m \frac{X-q_i}{q_j-q_i}\]}
+    \end{q}
+    \begin{q}{2}
+        Montrer que la famille des polynômes \(L_j\) forme une base de l'espace vectoriel
+        \(K_m[X]\). Exprimer tout polynôme dans cette base.
+        \boxans{On commence par montrer la liberté de la famille, soient \(P\in K_m[X]=0\)
+        \(\lambda_0\dots \lambda_m\) tels que \(P = \sum_{j=0}^{m} \lambda_j L_j\) alors
+        si un des \(\lambda\) est non nul, \(P\) est non nul sur un \(q\) par linéarité
+        de la somme et définition de \(L_j\), donc pour \(P=0\) tous les \(\lambda\)
+        sont nuls, la famille est libre. C'est donc une base par cardinalité.}
+    \end{q}
+    \begin{q}{3}
+        On note \(\mathcal{P}(\Q, \Q)\) l'ensemble des polynômes à coéfficients rééls prenant des valeurs
+        rationelles sur les rationels. Montrer que \(\mathcal{P}(\Q, \Q)=\Q[X]\).
+    \end{q}
+\end{exo}
+
+\section*{Irréductibilité des polynômes}
+
+\begin{exo}
+    Soit \(A\) un anneau principal, \(P\in A[X]\) et \(a\in A\).
+    \begin{q}{1}
+        Montrer que \(P\) es tirréductible si le poly
+    \end{q}
+\end{exo}
 
 \end{document}
