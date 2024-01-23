@@ -1,0 +1,191 @@
+\documentclass[french]{report}
+\usepackage{../exercices}
+
+\begin{document}
+% augeri@lpsm.paris
+\begin{center}
+    \huge{\textbf{S6-ISF - TD1}}
+\end{center}
+
+\section*{Théorie des ensembles}
+
+\begin{exo}
+    Soit \((A_i)_{i\in I}\) une famille de parties d'un ensemble \(E\). Montrer que
+    \begin{q}{1}
+        \(\left(\cup_{i\in I}A_i\right)^c = \cap_{i\in I} A_i^c\)
+        \boxans{\(x \in \left(\cup A_i\right)^c \Leftrightarrow x \not\in \cup A_i \Leftrightarrow \forall i,x\not\in A_I
+        \Leftrightarrow \forall i, x\in A_i^c \Leftrightarrow x \in \cap A_i^c\)}
+    \end{q}
+    \begin{q}{2}
+        \(\left(\cap_{i\in I}A_i\right)^c = \cup_{i\in I} A_i^c\)
+        \boxans{\(x\in\left(\cap A_i\right)^c \Leftrightarrow x \not\in\cap A_i
+        \Leftrightarrow\exists i, x\not\in A_i \Leftrightarrow \exists i, x\in A_i^c
+        \Leftrightarrow x\in \cup A_i^c\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(X=\{1,2,3,4,5,6\}, A=\{1,2,3,4\}, B=\{2,3,4,5,6\}, C=\{2,4,6\}\)
+    \begin{q}{1}
+        Déterminer \(A\cup B\), \(A\cap B\) et \(\left(A\cap B\right)\cup C\).
+        \boxans{\(A\cup B = X\), \(A\cap B = \{2,3,4\}\),
+        \((A\cap B)\cup C=\{2,3,4,6\}\)}
+    \end{q}
+    \begin{q}{2}
+        On note \(D=\{x\in X\mid 2x\in A\}\). Déterminer \(D\).
+        \boxans{\(D=\{1,2\}\)}
+    \end{q}
+    \begin{q}{3}
+        On note maintenant \(\mathcal{E}=\{A,B\}, \mathcal{F}=\{B,C\}, \mathcal{G}=\{C,D\}.\)
+        Déterminer \(\mathcal{E}\cup\mathcal{G}\) et \(\mathcal{E}\cap\mathcal{G}\)
+        \boxans{\(\mathcal{E}\cup\mathcal{G} = \{A,B,C,D\}\) et
+        \(\mathcal{E}\cap\mathcal{G}=\emptyset\)}
+    \end{q}
+\end{exo}
+
+\section*{Dénombrabilité}
+
+\begin{exo}
+    Soit \(\pow(\N)\) l'ensemble des parties de \(\N\). Le but de cet exercice est de
+    montrer que \(\pow(\N)\) n'est pas dénombrable. Soit \(\varphi\) une application
+    \(\varphi\colon N\to\pow(\N)\) on pose \(U=\{n\in\N\mid n\not\in \varphi(n)\}\)
+    \begin{q}{1}
+        Montrer par l'absurde qu'il n'existe pas d'entier \(k\in\N\) vérifiant \(\varphi(k)=U\).
+        \boxans{On suppose par l'absure qu'il existe un tel entier qu'on appelle \(k\) alors
+        si \(k\in U\Rightarrow k\in \varphi(k)\Rightarrow k\not\in U\) et si
+        \(k\not\in U\Rightarrow k\not\in \varphi(k)\Rightarrow k\in U\) ce qui est absurde.}
+    \end{q}
+    \begin{q}{2}
+        En déduire que \(\pow(\N)\) n'est pas dénombrable.
+        \boxans{On a montré ci-dessus qu'il n'existe pas de bijcetion entre \(\N\)
+        et \(\pow(\N)\), qui n'est donc pas dénombrable. Merci \textsc{Cantor} pour
+        la Sevrannité de ton poulet.}
+    \end{q}
+\end{exo}
+
+\section*{Tribu}
+
+\begin{exo}
+    Soit \(E\) un ensemble.
+    \begin{q}{1}
+        Montrer que l'ensemble des parties finies de \(E\) est une tribu si et seulement
+        si \(E\) est fini.
+        \boxans{Si \(E\) est fini, alors l'ensemble de ses parties est trivialement
+        une tribu. Si \(E\) est infini l'ensemble de ses parties finies n'est pas
+        stable par passage au complémentaire.}
+    \end{q}
+    \begin{q}{2}
+        Montrer que l'ensemble des parties \(A\subseteq E\) telle que \(A\) ou \(A^c\)
+        est au plus dénombrable est une tribu. On la note \(\CC\).
+        \boxans{\(\CC\) est stable par passage au complémentaire, par définition. \(\CC\)
+        contient trivialent \(\emptyset\). Une union dénombrables d'éléments dénombrables est dénombrable,
+        pareil pour une intersection avec au moins 1 élément dénombrable, donc \(\CC\) est bien une tribu.}
+    \end{q}
+    \begin{q}{3}
+        Montrer que \(\CC\) est la tribu engendrée par \(\{\{x\}\mid x\in E\}\)
+        \boxans{Les singletons étant dénombrables ils sont bien danc \(\CC\), montrons qu'ils
+        l'engendre. Chaque élément \(A\in\CC\) vérifie \(A\) ou \(A^c\) dénombrable
+        donc \(A\) ou \(A^c\) s'obtient comme union dénombrable de singleton, et donc
+        \(A\) est bien dans la tribu engendrée par les singletons, ce qui suffit à conclure.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On note \(\bor\) la tribu engendrée par les ouverts de \(\R\). Pour tour réél
+    \(\lambda\) et toute partie \(A\subseteq \R\) on pose
+    \(A+\lambda=\{a+\lambda\mid a\in A\}\) et \(\bor+\lambda=\{A+\lambda\mid A\in\bor\}\).
+    \begin{q}{1}
+        Montrer que pour tout \(\lambda\in\R\) on a \(\bor\subseteq \bor+\lambda\)
+        \boxans{Soit \(A\in\bor\) on note \(I_0\dots I_N\) lune famille dénombrable de segments
+        l'engendrant, la translation ne changeant pas la topologie et \(R\) étant isomorphe
+        à la longue droite, ces même segments sont dans \(\bor+\lambda\) et donc \(A\) aussi.}
+    \end{q}
+    \begin{q}{2}
+        En déduire que pour tout \(\lambda\in\R\) on a \(\bor-\lambda\subseteq\bor\)
+        \boxans{Par \(\alpha\)-renommage et la question précédente c'est vrai.}
+    \end{q}
+    \begin{q}{3}
+        Conclure que \(\bor=\bor+\lambda\) pour tout \(\lambda\in\R\).
+        \boxans{Les deux \(\lambda\) des questions précédentes étant indépendants,
+        on a \(\bor-(-\lambda) \subseteq \bor \subseteq \bor+\lambda\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On note\begin{enumerate}
+        \itt \(\bor\) la tribu engendrée par les ouverts de \(\R\)
+        \itt \(\CC_1\) la tribu engendrée par les fermés de \(\R\).
+        \itt \(\CC_2\) la tribu engendrée par \(\{(a,b)\mid a,b\in\R, a<b\}\)
+        \itt \(\CC_3\) la tribu engendrée par \(\{[a,b]\mid a,b\in\R, a<b\}\)
+        \itt \(\CC_4\) la tribu engendrée par \(\{(a,b]\mid a,b\in\R, a<b\}\)
+        \itt \(\CC_5\) la tribu engendrée par \(\{[a,b)\mid a,b\in\R, a<b\}\)
+    \end{enumerate}
+    \begin{q}{1}
+        Montrer que \(\CC_2\subseteq \bor\) et \(\CC_3\subseteq \CC_1\).
+        \boxans{Les ensembles qui engendrent \(\CC_2\) sont des ouverts, donc en particulier
+        ils sont aussi parmi les ensembles qui engendrent \(\bor\) donc \(\CC_2\subseteq\bor\).
+        On fait un raisonnement similaire avec les fermés pour avoir \(\CC_3\subseteq\CC_1\).}
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(\bor=\CC_1\).
+        \boxans{Une tribu étant stable par passage au complémentaire, \(\bor\) qui est engendré
+        par tous les ouverts l'est aussi par tous les fermés, donc \(\bor=\CC_1\).}
+    \end{q}
+    \begin{q}{3}
+        Soit \(\mathcal{O}\) un ouvert. Montrer que \(\mathcal{O}=\bigcup_{(a,b)\in\Q^2
+        \mid a<b\text{ et } (a,b)\subseteq\mathcal{O}} (a,b)\). En déduire que
+        \(\bor = \CC_2\) puis que \(\bor=\CC_3\).
+    \end{q}
+    \begin{q}{4}
+        Montrer que \(\bigcap_{n\geq1}(a-\frac{1}{n},a+\frac{1}{n}]=\{a\}=
+        \bigcap_{n\geq1}[a-\frac{1}{n},a+\frac{1}{n})\) pour tout \(a\in\R\). En
+        déduire que \(\bor=\CC_4\) et que \(\bor=\CC_5\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(X,Y\) deux ensembles, et \(f\colon X\to Y\) une application.
+    On se donne \(A,B\subseteq X\) et \(E,F\subseteq Y\).
+    \begin{q}{1}
+        Rappeler les définitions de \(f(A)\) et \(f^{-1}(E)\).
+        \boxans{\(f(A)=\{f(a)\mid a\in A\}\) et
+        \(f^{-1}(E) = \{x\in X\mid f(x)\in E\}\)}
+    \end{q}
+    \begin{q}{2}
+        Parmi les propositions suivantes, déterminer celles qui sont vraies et les
+        prouver. Pour celles qui sont fausses, fournir un contre exemple.
+        \begin{q}{a}
+            \(f(A\cap B) = f(A)\cap f(B)\).
+        \end{q}
+        \begin{q}{b}
+            \(f(A\cup B) = f(A)\cup f(B)\).
+        \end{q}
+        \begin{q}{c}
+            \(f^{-1}(E\cap F)=f^{-1}(E)\cap f^{-1}(F)\)
+        \end{q}
+        \begin{q}{d}
+            \(f^{-1}(E\cup F)=f^{-1}(E)\cup f^{-1}(F)\)
+        \end{q}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(E\) un ensemble.
+    \begin{q}{1}
+        Soient \(\left(F, \mathcal{B}\right)\) un espace mesurable et
+        \(f\colon E\to F\) une application. Démontrer que \(f^{-1}(\mathcal{B})
+        \colon\{f^{-1}(B)\mid B\in\mathcal{B}\}\) est une tribu sur \(E\).
+    \end{q}
+    \begin{q}{2}
+        Déterminer toutes les tribus finies sur \(E\). Lesquelles ont
+        \(0,1,2,\dots,8\) éléments ?
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(\mathcal{A}_1\) et \(\mathcal{A}_2\) deux tribus sur un ensemble \(E\).
+    Montrer que la tribu engendrée par \(\mathcal{A}_1\cup\mathcal{A}_2\) coïncide
+    avec la tribu engendrée par \(\{A_1\cap A_2\mid A_1\in\mathcal{A}_1, A_2\in\mathcal{A}_2\}\)
+\end{exo}
+
+\end{document}

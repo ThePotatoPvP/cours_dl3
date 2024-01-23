@@ -159,27 +159,42 @@
 \begin{exo}
     Factoriser sur \(\C\), sur \(\R\)  et sur \(\Q\) les polynômes suivants:
     \begin{enumerate}
-        \itt \(X^2-2\)
-        \itt \(X^2+2\)
-        \itt \(X^2+X\)
-        \itt \(X^2+X+1\)
-        \itt \(X^4-4\)
-        \itt \(X^4+4\)
-        \itt \(X^4-X^2+1\).
+        \itt \(X^2-2\quad\colon\quad(X-\sqrt{2})(X+\sqrt{2})\) et irréductible
+        \itt \(X^2+2\quad\colon\quad(X-i\sqrt{2})(X+i\sqrt{2})\) et irréductible
+        \itt \(X^2+X\quad\colon\quad X(X+1)\)
+        \itt \(X^2+X+1\quad\colon\quad(X-j)(X-j^2)\) et irréductible
+        \itt \(X^4-4\quad\colon\quad(X^2-2)(X^2+2)\) puis voir au dessus
+        \itt \(X^4+4\quad\colon\quad(X-\sqrt{2}e^{i\pi/4})(X-\sqrt{2}e^{3i\pi/4})
+        (X+\sqrt{2}e^{i\pi/4})(X+\sqrt{2}e^{3i\pi/4})\) et \((X^2-2X+2)(X^2+2X+2)\)
+        \itt \(X^4-X^2+1\colon(X-e^{i\pi/6})(X+e^{i\pi/6})(X-e^{5i\pi/6})
+        (X+e^{5i\pi/6})\),\((X^2+\sqrt{3}X+1)(X^2-\sqrt{3}X+1)\) et irr
     \end{enumerate}
 \end{exo}
 
 \begin{exo}
-    Factoriser sur \(\C\) le polynôme suivant \(X^8+X^4+1\).
+    Factoriser sur \(\C\) le polynôme suivant \(P=X^8+X^4+1\).
+    \boxans{On procède par étapes, le polynôme devient en remarquant que
+    \(P[Y:=X^4]\) est trivial et on obtient \(P=(X^4-j)(X^4-j^2)\) ainsi
+    \(P=(X^2-j^2)(X^2+j^2)(X^2-j)(X^2+j)\) ce qui se simplifie en:
+    \((X-j)(X+j)(X+ij)(X-ij)(X-j^2)(X+j^2)(X-ij^2)(X+ij^2)\).}
 \end{exo}
 
 \begin{exo} Autour de la dérivation
     \begin{q}{1}
         Soit \(P\in\C[X]\) un polynôme non-constant. Montrer que \(P\) n'a que des racines
         simple si et seulement si \(P\) et \(P'\) sont premiers entre eux.
+        \boxans{D'après la formule de la chaîne, si \(P\) admet une racine double alors
+        \(P\) et \(P'\) ne sont pas premiers entre eux. Montrons la réciproque, soit \(P\)
+        non premier avec son polynôme dérivé \(P'\) alors ils possèdent un facteur de la
+        forme \((X-\lambda)\) en commun, or \(P= \int P' + O(1)\) donc d'après la formule
+        de la cahîne \(P\) contient de le facteur \((X-\lambda)\) à une puissance plus
+        grande que 1}
     \end{q}
     \begin{q}{2}
         Trouver tous les polynômes \(P\in \C[x]\) vérifiant \(P'\mid P\).
+        \boxans{On procède par analyse synthèse, soit \(P\) un tel polynôme que l'on
+        suppose sous sa forme factorisée. Les racines de \(P'\) sont racines de \(P\)
+        par hypothèse. }
     \end{q}
 \end{exo}
 
