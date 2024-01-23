@@ -1,0 +1,103 @@
+\documentclass[french]{report}
+\usepackage{../exercices}
+
+\usepackage{causets}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{S6- Logique - TD1}}
+\end{center}
+
+\begin{exo}
+    Dans un ensemble ordonné \(\left(A, \leq_A\right)\) on dit que \(y\) est successeur
+    de \(x\) noté \(x\prec y\), quand
+    \[x<y\ \land\ \forall z\in A, (x\leq z\leq y)\Rightarrow(z=x\lor z=y)\]
+    Montrer que si \(\left(A, \leq_A\right)\) est fini alors la relation \(\leq\) est la
+    clôture transitive de la relation successeur. C'est-à-dire qu'étant donné \(x,y\in A\),
+    si \(x\leq y\) alors \(x=y\) ou il existe une suite finie \(x=x_0\prec x_1\prec\dots
+    \prec x_n=y\).
+    \boxans{On suppose \(A\) fini de cardinal au moins \(2\), on se donne deux
+    éléments de \(A\) que l'on suppose distincts. On établit alors une disjonction de cas
+    si \(x\prec y\) on a le résultat voulu, sinon, il existe \(z\) tel que
+    \(x\leq z\leq y\) et on relance recursivement sur \((x,z)\) et \((z,y)\). L'algorithme
+    de création de chaine termine car \(A\) est fini, on obtient le résultat voulu. Le fait
+    que la clôture transitive est la relation \(\leq\) est immédiat.}
+\end{exo}
+
+\begin{exo}
+    Pour représenter un ordre fini, il suffit de représenter le graphe de la relation
+    successeur associée d'après la question précédente. On représente habituellement
+    ces graphes de façon que si \(x<y\), \(y\) soit placé au dessus de \(x\). Un tel
+    graphe est appelé diagramme de \textsc{Hasse}. Décrire à l'aide d'un graphe tous les
+    ordres (à isomorphisme près) à 1, 2, et 3 éléments. En déduire tous les ordres à
+    \(4\) éléments possédant un plus petit élément.
+    \boxans{Les ordres à 1,2,3 éléments sont ci-contre : \causet{1}{} | \causet{1,2}{1/2} | \causet{2,1}{} | \causet{1,2,3}{1/2,2/3}
+    | \causet{1,3,2}{1/2,1/3} | \causet{2,1,3}{2/3,1/3} | \causet{3,1,2}{1/2} | \causet{3,2,1}{} ce qui donne que les ordre à
+    \(4\) éléments possédant un maximum sont:\[
+        \causet{1,2,3,4}{1/2,2/3,3/4}\quad\causet{1,4,3,2}{1/2,1/3,1/4}\quad
+        \causet{1,4,3,2}{1/2,1/4,2/3,4/3}\quad
+        \causet{1,4,7,2}{1/2,1/4,4/7} \text{ et le Y}
+    \]}
+\end{exo}
+
+\begin{exo}
+    Soit \(\left(A, \leq\right)\) un ensemble ordonné. Montrer que l'ordre \(\leq\)
+    si et seulement si \(\not\leq\) est une relation d'ordre strict.
+\end{exo}
+
+\begin{exo}
+    Soient \(\left(A,\leq_A\right)\) et \(\left(B,\leq_B\right)\) deux ensemble ordonnés.
+    \begin{q}{1}
+        Montrer que si \(\left(A,\leq\right)\) est totalement ordonné, toute injection
+        (bijection) croissante de \(\left(A,\leq\right)\) dans \(\left(B,\leq\right)\)
+        est un plongement d'ordre.
+        \boxans{Par définition d'une fonction croissante, l'implication est immédiate.
+        Soient \(f\) un plongement d'ordreet \(x,y\) vérifiant \(f(x)\leq f(y)\), si
+        \(x=y\) c'est bon, sinon si \(x\geq y\) la fonction n'est pas croissante, c'est absurde,
+        donc \(x\leq y\).}
+    \end{q}
+    \begin{q}{2}
+        Montrer que l'on peut trouver \(\left(B,\leq_B\right)\) tel que la propriété
+        ci-dessus est fausse dès que \(\left(A,\leq\right)\) n'est pas totalement
+        ordonné.
+        \boxans{Soit \(\left(A,\leq\right)\) qui n'est pas totalement ordonné, on cherche
+        à créer une injection croissante qui n'est pas un plongement. Soient \(x,y\)
+        des éléments non comparables de \(A\). On pose l'injection identité modifiée
+        en ce que \(f(x)=y\) et \(f(y)=x\). C'est bien une injection croissante}
+    \end{q}
+    \begin{q}{3}
+        Montrer que le théorème de \textsc{Cantor-Schröder-Bernstein} pour les ordres
+        totaux est faux: Il existe deux ordres totaux \(\left(A,\leq_A\right)\) et
+        \(\left(B,\leq_B\right)\) tels que \(A\) se plonge dans \(B\), \(B\) se plonge
+        dans \(A\) mais \(A\) et \(B\) ne sont pas isomorphes.
+        \boxans{}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient deux ensembles ordonnés \(\left(A,\leq_A\right)\) et \(\left(B,\leq_B\right)\)
+    supposés disjoints, il existe plusieurs façons de définit un ordre sur \(A\cup B\)
+    la réunion disjointe de \(A\) et \(B\), la plus simple étant de prendre
+    la réunion des deux relations d'ordres qui est encore un ordre.
+
+    La somme linéaire \(\left(A,\leq_A\right)\oplus\left(B,\leq_B\right)\) et l'ensemble
+    prdonné \(\left(A\cup B,\leq_{A\cup B}\right)\) qui prolonge les deux ordres sur \(A\)
+    et sur \(B\) et place tous les éléments de \(B\) après ceux de \(A\).
+    \[x\leq_{A\cup B} y \Leftrightarrow \left(x\in A\land y\in B\right)
+    \lor\left(x\in A\land y\in A\land x\leq_A y\right)\lor
+    \left(x\in B\land y\in B\land x\leq_B y\right)\]
+    \begin{q}{1}
+        Montrer que si \(A\) et \(B\) sont totalement ordonnés, leur somme l'est aussi.
+        \boxans{Soient \(x,y\in A\cup B\), si les deux sont dans \(A\) (respectivement \(B\)) alors
+        ils sont comparables par hypothèse, sinon, l'un est dans \(A\) et l'autre dans \(B\),
+        ils sont alors bien comparables d'après le premier cas de la définition de \(\leq_{A\cup B}\).}
+    \end{q}
+    \begin{q}{2}
+        Montrer que si \(A\) et \(B\) sont bien ordonnés, la somme aussi.
+        \boxans{Soit \(X\) une partie non vide de \(A\cup B\) alors le minimum
+        de \(X\cap A\) convient si cet ensemble est non vide, s'il l'est on prend
+        le minimum de \(X\cap B = X\)}
+    \end{q}
+\end{exo}
+\end{document}
