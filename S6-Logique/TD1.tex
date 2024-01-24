@@ -64,14 +64,18 @@
         \boxans{Soit \(\left(A,\leq\right)\) qui n'est pas totalement ordonné, on cherche
         à créer une injection croissante qui n'est pas un plongement. Soient \(x,y\)
         des éléments non comparables de \(A\). On pose l'injection identité modifiée
-        en ce que \(f(x)=y\) et \(f(y)=x\). C'est bien une injection croissante}
+        en ce que \(f(x) \geq f(y)\) dans \(B\). On remarque bien qu'on rajoute aussi
+        \(\forall z\mid y\geq z, x\geq z\) et l'autre sens pour la clôture transitive.}
     \end{q}
     \begin{q}{3}
         Montrer que le théorème de \textsc{Cantor-Schröder-Bernstein} pour les ordres
         totaux est faux: Il existe deux ordres totaux \(\left(A,\leq_A\right)\) et
         \(\left(B,\leq_B\right)\) tels que \(A\) se plonge dans \(B\), \(B\) se plonge
         dans \(A\) mais \(A\) et \(B\) ne sont pas isomorphes.
-        \boxans{}
+        \boxans{On considère \(\left(A,\leq_A\right)=\left(\N,\leq\right)\),
+        \(\left(B, \leq_B\right)=\left(\R_+,\preceq\right)\), \(\varphi\colon\N\to\R=\id\) et
+        \(\psi\colon\R\to\N\colon x\mapsto \lfloor x\rfloor\) avec \(x\preceq y\Leftrightarrow (\lfloor x\rfloor=\lfloor y\rfloor)\lor(x\leq y)\). On a deux ensembles non
+        isomorhes pourtant on a des prolongement d'ordre valides dans les deux sens.}
     \end{q}
 \end{exo}
 
@@ -98,6 +102,98 @@
         \boxans{Soit \(X\) une partie non vide de \(A\cup B\) alors le minimum
         de \(X\cap A\) convient si cet ensemble est non vide, s'il l'est on prend
         le minimum de \(X\cap B = X\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(\left(A_1,\leq_1\right),\left(A_2,\leq_2\right),\left(A_3,\leq_3\right),
+    \left(A_4,\leq_4\right)\) des ordres que l'on suppose distincts.
+    \begin{q}{1}
+        Montrer que si \(\left(A_1,\leq_1\right)\) est ordre-isomorphe à
+        \(\left(A_3,\leq_3\right)\) et \(\left(A_2,\leq_2\right)\) est ordre-
+        isomorphe à \(\left(A_4,\leq_4\right)\) alors \(\left(A_1,\leq_1\right)\oplus
+        \left(A_2,\leq_2\right)=\left(A_3,\leq_3\right)\oplus\left(A_4,\leq_4\right)\).
+        \boxans{Avec les présupposition précédentes on cherche à créer un isomophisme
+        d'ordre. On considère \(\varphi_{1,3}\) et \(\varphi_{2,4}\) les isomorphismes
+        existants. On pose \(\varphi\colon
+        \begin{cases}
+            \varphi_{1,3}(x)&\text{si }x\in A_1\\
+            \varphi_{2,4}(x)&\text{si }
+            x\in A_2
+        \end{cases}\) qui convient.}
+    \end{q}
+    \begin{q}{2}
+        Donner un exemple de deux ordres totaux \(\left(A_1,\leq_1\right)\)
+        et \(\left(A_2,\leq_2\right)\) tels que
+        \begin{q}{a}
+            \(\left(A_1,\leq_1\right)\oplus\left(A_2,\leq_2\right)\) et
+            \(\left(A_2,\leq_2\right)\) sont ordre-isomorphes.
+            \boxans{En prenant \(A_1=\{0\}\) et \(A_2=\Z_+^*\) on a le résultat voulu.}
+        \end{q}
+        \begin{q}{b}
+            \(\left(A_1,\leq_1\right)\oplus\left(A_2,\leq_2\right)\) et
+            \(\left(A_1,\leq_1\right)\) sont ordre-isomorphes.
+            \boxans{En prenant \(A_1=\Z_-^*\) et \(A_2=\{0\}\) on a le résultat voulu.}
+        \end{q}
+        \begin{q}{c}
+            \(\left(A_1,\leq_1\right)\oplus\left(A_2,\leq_2\right)\) et
+            \(\left(A_2,\leq_2\right)\oplus\left(A_1,\leq_1\right)\) ne sont pas
+            ordre-isomorphes
+            \boxans{En prenant \(A_1=\Z\) et \(A_2=\N\) on a un minimum
+            que d'un côté donc pas d'isomorphisme d'ordre. Pour la culture on aurait
+            aussi pu prendre \(\Z_-^*\) et \(\Z_+^*\).}
+        \end{q}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Il existe de même plusieurs façons de définit un ordre sur le produit cartésien
+    de deux ensembles ordonnés \(\left(A,\leq_A\right)\) et \(\left(B,\leq_B\right)\).
+    L'ordre \textit{lexicographique} sur le produit \(\left(A,\leq_A\right)\circ
+    \left(B,\leq_B\right)\) est l'ordre \(\left(A\times B,\leq_{A\times B}\right)\) défini:
+    \[(x,y)\leq_{A\times B}(x',y')\Leftrightarrow x<_Ax'\lor\left(x=x'\land y\leq_B y'\right)\]
+    \begin{q}{1}
+        Montrer que si \(A\) et \(B\) sont totalement ordonnés l'odre lexicographique
+        sur le produit l'est également.
+    \end{q}
+    \begin{q}{2}
+        Montrer que si \(A\) et \(B\) sont bien ordonnés l'ordre lexicographique
+        sur le produit l'est également.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(\left(A_1,\leq_1\right),\left(A_2,\leq_2\right),\left(A_3,\leq_3\right),
+    \left(A_4,\leq_4\right)\) des ordres.
+    \begin{q}{1}
+        Avec les conditions de l'exercice 6 alors
+        \(\left(A_1,\leq_1\right)\circ\left(A_2,\leq_2\right)\) est ordre-isomorphe
+        à \(\left(A_3,\leq_3\right)\circ\left(A_4,\leq_4\right)\)
+    \end{q}
+    \begin{q}{2}
+        Donner un exemple de deux ordres totaux \(\left(A_1,\leq_1\right)\)
+        et \(\left(A_2,\leq_2\right)\) tels que
+        \begin{q}{a}
+            \(\left(A_1,\leq_1\right)\circ\left(A_2,\leq_2\right)\) et
+            \(\left(A_2,\leq_2\right)\) sont ordre-isomorphes.
+            \boxans{En prenant \(A_1\) un singleton on a un ordre qui convient.}
+        \end{q}
+        \begin{q}{b}
+            \(\left(A_1,\leq_1\right)\circ\left(A_2,\leq_2\right)\) et
+            \(\left(A_1,\leq_1\right)\) sont ordre-isomorphes.
+            \boxans{En prenant \(A_2\) un singleton on a un ordre qui convient.}
+        \end{q}
+        \begin{q}{c}
+            \(\left(A_1,\leq_1\right)\circ\left(A_2,\leq_2\right)\) et
+            \(\left(A_2,\leq_2\right)\circ\left(A_1,\leq_1\right)\) ne sont pas
+            ordre-isomorphes
+        \end{q}
+    \end{q}
+    \begin{q}{3}
+        Supposons que \(\left(A_1,\leq_1\right)\) est un ordre total fini de cardinal
+        \(n\in\N\). Montrer que le produit lexicographique
+        \(\left(A_1,\leq_1\right)\circ\left(A_2,\leq_2\right)\) est ordre-isomorphe
+        à \(\bigoplus_{k=1}^n \left(A_2,\leq_2\right)\).
     \end{q}
 \end{exo}
 \end{document}

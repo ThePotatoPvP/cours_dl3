@@ -135,11 +135,25 @@
         Soit \(\mathcal{O}\) un ouvert. Montrer que \(\mathcal{O}=\bigcup_{(a,b)\in\Q^2
         \mid a<b\text{ et } (a,b)\subseteq\mathcal{O}} (a,b)\). En déduire que
         \(\bor = \CC_2\) puis que \(\bor=\CC_3\).
+        \boxans{Par densité de \(\Q\) dans \(\R\) on peut prendre, sans perte de généralité
+        \(a,b\in\Q\). Ainsi l'union contient un élément maximal, et le résultat est trivial.
+        Comme \(\Q\) est dénombrable, \(\mathcal{O}\) est une union dénombrable d'ouvert, ainsi
+        les engendreurs de \(\bor\) sont dans \(\CC_2\) donc \(\bor=\CC_2\). Par passage au
+        complémentaire, le même raisonnement donc \(\bor=\CC_3\).}
     \end{q}
     \begin{q}{4}
         Montrer que \(\bigcap_{n\geq1}(a-\frac{1}{n},a+\frac{1}{n}]=\{a\}=
         \bigcap_{n\geq1}[a-\frac{1}{n},a+\frac{1}{n})\) pour tout \(a\in\R\). En
         déduire que \(\bor=\CC_4\) et que \(\bor=\CC_5\).
+        \boxans{Tous les éléments des intersection contiennent \(a\), montrons qu'ils ne
+        contiennent rien d'autre. Soit \(b\in\R, b\neq a\) on note \(\eps = \lceil|b-a|^{-1}\rceil \)
+        et à partir de l'indice \(\eps\) l'élément \(b\) n'est plus dans les intersections,
+        qui valent donc \(\{a\}\). Ainsi \(\CC_4\) et \(\CC_5\) engendrent toute
+        partie dénombrable de \(\R\). On a \(\CC_4\subseteq\bor\) et \(\CC_5\subseteq\bor\)
+        trivialement car les engendreurs peuvent s'écrire comme union de deux segments, l'un
+        ouvert et l'autre fermés, qui sont dans \(\bor\) par définition Pour les inclusions
+        réciproque on peut modifier la formule de l'énoncé pour ne faire bouger qu'une borne
+        et ainsi engendrer les intervalles fermés, donc \(\CC_1=\bor\).}
     \end{q}
 \end{exo}
 
@@ -156,15 +170,31 @@
         prouver. Pour celles qui sont fausses, fournir un contre exemple.
         \begin{q}{a}
             \(f(A\cap B) = f(A)\cap f(B)\).
+            \boxans{Cette affirmation et fausse, supposons \(x,y\in A\times B\) avec
+            \(f(x)=f(y), \forall r\not\in\{x,y\}, f(r)\neq f(x)\) alors l'élément
+            \(f(x)\) est dans l'ensemble de droite mais pas celui de gauche.}
         \end{q}
         \begin{q}{b}
             \(f(A\cup B) = f(A)\cup f(B)\).
+            \boxans{Cette affirmation est vraie.
+            \(y\in f(A\cup B) \Leftrightarrow \exists x\in A\cup B\mid f(x)=y
+            \Leftrightarrow (\exists x\in A\mid f(x)=y)\lor(\exists x\in B\mid f(x)=y)
+            \Leftrightarrow (y\in f(A))\lor(y\in f(B))\Leftrightarrow y\in f(A)\cup f(B)\)}
         \end{q}
         \begin{q}{c}
             \(f^{-1}(E\cap F)=f^{-1}(E)\cap f^{-1}(F)\)
+            \boxans{Cette affirmation est vraie.
+            \(x\in f^{-1}(E\cap F)\Leftrightarrow f(x)\in E\cap F
+            \Leftrightarrow (f(x)\in E)\land (f(x)\in F)\Leftrightarrow
+            (x\in f^{-1}(E))\land(x\in f^{-1}(F))\Leftrightarrow x\in
+            f^{-1}(E)\cap f^{-1}(F)\)}
         \end{q}
         \begin{q}{d}
             \(f^{-1}(E\cup F)=f^{-1}(E)\cup f^{-1}(F)\)
+            \boxans{Cette affirmation est vraie.
+            \(x\in f^{-1}(E\cup F)\Leftrightarrow f(x)\in E\cup F
+            \Leftrightarrow (f(x)\in E)\lor (f(x)\in F)\Leftrightarrow x\in
+            f^{-1}(E)\cup f^{-1}(F)\)}
         \end{q}
     \end{q}
 \end{exo}
@@ -175,6 +205,10 @@
         Soient \(\left(F, \mathcal{B}\right)\) un espace mesurable et
         \(f\colon E\to F\) une application. Démontrer que \(f^{-1}(\mathcal{B})
         \colon\{f^{-1}(B)\mid B\in\mathcal{B}\}\) est une tribu sur \(E\).
+        \boxans{D'après l'exercice précédent, \(f^{-1}(\mathcal{B})\) est stable par
+        union et intersection, contient l'ensemble vide comme image réciproque de lui même.
+        L'image réciproque est un morphisme préservant aussi le passage au complémentaire,
+        donc c'est bien une tribu.}
     \end{q}
     \begin{q}{2}
         Déterminer toutes les tribus finies sur \(E\). Lesquelles ont
@@ -186,6 +220,75 @@
     Soient \(\mathcal{A}_1\) et \(\mathcal{A}_2\) deux tribus sur un ensemble \(E\).
     Montrer que la tribu engendrée par \(\mathcal{A}_1\cup\mathcal{A}_2\) coïncide
     avec la tribu engendrée par \(\{A_1\cap A_2\mid A_1\in\mathcal{A}_1, A_2\in\mathcal{A}_2\}\)
+\end{exo}
+
+\begin{exo}
+    On définit sur \(\N\), pour chaque \(n\geq 0\), la tribu \(\mathcal{F}_n=
+    \sigma\left(\{0\},\{1\},\dots,\{n\}\right)\).
+    \begin{q}{1}
+        Montrer que la suite de tribus \(\left(\mathcal{F}_n,n\in\N\right)\) est
+        croissante, mais que \(\bigcup \mathcal{F}_n\) n'est pas une tribu.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(\mathcal{S}\) l'ensemble des boréliens de \(\R\) symétrique par
+    rapport à \(0\), montrer que c'est une tribu. \[\mathcal{S}=\{A\in\bor\mid \forall x\in A, -x\in A\}\].
+\end{exo}
+
+\section*{Mesures}
+
+\begin{exo}
+    Soient \(\left(X,\mathcal{A},\mu\right)\) un espace mesuré et \(S\in \mathcal{A}\).
+    On définit une application \(\mu_{\mid S}\colon \mathcal{A}\to \R_+\colon A\mapsto \mu(S\cap A)\).
+    Montrer que c'est une mesure.
+\end{exo}
+
+\section*{Applications mesurables}
+
+\begin{exo}
+    Calculer toutes les applications mesurables de \(\left(E, \mathcal{A}\right)\)
+    ver \(\left(F, \mathcal{B}\right)\).
+    \begin{q}{1}
+        \(\mathcal{B} = \{\emptyset, F\}\)
+    \end{q}
+    \begin{q}{2}
+        \(\mathcal{A}=\pow[E]\)
+    \end{q}
+    \begin{q}{3}
+        \(\mathcal{A} = \{\emptyset, E\}\) et \(\mathcal{B}\) contient les singletons.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que l'application \(f\colon\R\to\R\) définie par
+    \(f(x)=\begin{cases}
+        x+1&\text{si }x\geq 0\\
+        -x&\text{sinon}
+    \end{cases}\) est borélienne.
+\end{exo}
+
+\begin{exo}
+    Soit \(f\colon\R\to\R\). Montrer que:
+    \begin{q}{1}
+        Si \(f\) est continue alors \(f\) est borélienne.
+    \end{q}
+    \begin{q}{2}
+        Si \(f\) = \(\ind_\Q\) alors:
+        \begin{q}{a}
+            \(f\) est borélienne
+        \end{q}
+        \begin{q}{b}
+            pour tout \(x\in\R\), \(f\) n'est pas continue en \(x\).
+        \end{q}
+    \end{q}
+    \begin{q}{3}
+        Si \(f\) est monotone alors \(f\) est borélienne.
+        \boxans{}
+    \end{q}
+    \begin{q}{4}
+        Si \(f\) est dérivable alors \(f'\) est borélienne.
+    \end{q}
 \end{exo}
 
 \end{document}

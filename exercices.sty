@@ -62,7 +62,7 @@
 \newcommand{\glnk}{\mathrm{GL}_n(\K)}
 
 %\newcommand{\bor}{\mathcal{B}}
-\newcommand{\pow}{\mathcal{P}}
+\newcommand{\pow}[1][\N]{\mathcal{P}(#1)}
 \newcommand{\bor}[1][\R]{\mathcal{B}(#1)}
 
 \newcommand{\D}{\mathop{}\!\mathrm{d}}
@@ -182,6 +182,62 @@
         ]
         \textbf{Définition: #1}\newline
         #2
+    \end{tcolorbox}
+}
+
+\newcommand{\btheo}[2]{
+    \begin{tcolorbox}[
+            breakable,
+            enhanced,
+            interior style      = {
+                left color      = main1white2!65!red!15,
+                middle color    = main1white2!50!red!15,
+                right color     = main1white2!35!red!10
+            },
+            %borderline north    = {.3pt}{0pt}{main1white!10},
+            borderline south    = {2pt}{0pt}{main1white!30!red!55},
+            frame hidden,
+            borderline west     = {2pt}{0pt}{main1white!30!red!45},
+            sharp corners       = downhill,
+            arc                 = 0 cm,
+            boxrule             = 0 cm,
+            %nobeforeafter,
+            %before={},
+            %nobeforeSTYLE,
+            %noafterSTYLE,
+            %after=\par\nointerlineskip
+            %source=remy
+        ]
+        \textbf{Théorème: #1}\newline
+        #2
+    \end{tcolorbox}
+}
+
+\newcommand{\bproof}[1]{
+    \begin{tcolorbox}[
+            breakable,
+            enhanced,
+            interior style      = {
+                left color      = white,
+                middle color    = white,
+                right color     = white
+            },
+            %borderline north    = {.3pt}{0pt}{main1white!10},
+            %borderline south    = {2pt}{0pt}{main1white!30},
+            frame hidden,
+            %borderline west     = {2pt}{0pt}{main1white!30},
+            sharp corners       = downhill,
+            arc                 = .4 cm,
+            boxrule             = 0 cm,
+            %nobeforeafter,
+            %before={},
+            %nobeforeSTYLE,
+            %noafterSTYLE,
+            %after=\par\nointerlineskip
+            %source=remy
+        ]
+        \textit{Démonstration}\newline
+        #1
     \end{tcolorbox}
 }
 

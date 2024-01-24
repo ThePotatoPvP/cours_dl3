@@ -89,7 +89,8 @@
 }
 \begin{examples}
     \((\N, \leq)\) admet un bon ordre,
-    \((\N, \leq)\) n'admet pas de bon ordre
+    \((\Z, \leq)\) n'admet pas de bon ordre,
+    \(([0,1],\leq)\) non plus.
 \end{examples}
 
 \begin{proposition}
@@ -114,6 +115,12 @@
     \end{q}
 \end{exo}
 
+\begin{exo}
+    Existe-t-il une suite infinie décroissante dans \(\pow\) ?
+    \boxans{Oui, en posant \(X_0=\N\) et \(X_{n+1}=X_n\backslash\{\min(X_n)\}\) on
+    construit une telle suite.}
+\end{exo}
+
 \begin{proposition}
     Un ensemble non vide avec un ordre total est bien ordonné si et seulement si il
     vérifie la propriété de récurrence bien fondée :
@@ -129,5 +136,92 @@
     dont tous les facteur croient de la même façon d'un élément à l'autre, l'ordre
     lexicographique y est donc total est bon.}
 \end{exo}
+
+\chapter{L'arithmétique}
+\setcounter{exo}{0}
+
+On veut une définition explicite des entiers, par exemple
+\(0=\emptyset, 1 =\ \mid, 2 =\ \mid\mid\dots\) ici l'opérateur successeur n'est
+autre que \(\text{succ}(x)=x\mid\). On cherche donc à passer par une définition
+implicite par une axiomatisation.
+
+\subsection*{Définition inductive}
+On se place dans un univers avec deux symboles primitifs : \(0\) et \(succ\).
+L'ensemble des entiers naturels est alors vu comme le plus petit ensemble (au
+sens de l'inclusion) \(\N\) qui contient \(0\) et est stable par \(succ\). C'est
+à dire, si \(x\in\N\) alors \(succ(x)\in\N\).
+
+
+Appelons \(\text{Cl}(A)\) la propriété :l'ensemble \(A\) est clos par successeur :
+\(0\in A\land \forall x\in A, s(x)\in A\). Si chacun des ensembles d'une familles \((A_i)\)
+vérifie la propriété \(\text{Cl}(A_i)\) alors leur intersection également. Ainsi
+\[\N = \bigcap_{\text{Cl}(A)=\top,A\in\textrm{Obj}(\textbf{Set})} A\]
+
+\subsection*{Axiomes de Peano}
+
+Les axiomes pour \(\left(\N, s, 0\right)\) sont :
+\begin{enumerate}
+    \itt \(\forall x\in\N, s(x)\neq 0\)
+    \itt \(\forall x,y\in\N, s(x)=s(y)\Rightarrow x=y\)
+    \itt Pour toute propriété \(P\) \textbf{bien définie} sur \(\N\) on a \(P(0)\land
+    \left(\forall y\in\N \left(P(y)\Rightarrow P(s(y))\right)\right)\Rightarrow\forall x\in\N,P(x)\)
+\end{enumerate}
+
+\brem{Toute propriété du premier ordre est \textbf{bien définie}}
+
+\begin{lemme}
+    Tout entier est soit \(0\) soit un successeur :
+    \(\forall x\in\N, x=0\lor (\exists y\in\N, x=s(y))\).
+\end{lemme}
+\begin{proof}
+    La propriété du lemme est du premier ordre, elle est vraie en \(0\), elle est
+    donc vraie.
+\end{proof}
+
+\begin{exo}
+    Montrer que les \(3\) axiomes de Peano sont indépendants. C'est-à-dire avec un
+    symbole \(0\) et une fonction \(s\) créer un ensemble respectant exactement
+    \(2\) axiomes
+    \boxans{
+        Avec \(N=\{0,s(0)\}\), \(\forall x\in N, s(x)=s(0)\) et la propriété
+        \(P(\cdot)=1s(0)\) on a bien exactement deux axiomes de vérifiés.}
+\end{exo}
+
+\subsection*{Définition par récurrence}
+
+On peut définit \(\leq\) par \textit{il existe une suite} \(x\prec x_1\prec\dots\prec x_n\)
+entre les éléments, ce n'est pas une défintition du premier ordre. On peu définit la
+somme de la façon suivante \(\forall a\in\N, (a+0\colon=a)\land(\forall b\in\N a+s(b)=s(a+b))\).
+
+\btheo{Dedekind}{
+    Soit \(E\) un ensemble (non vide), \(a\in E\) et une fonction \(h\colon E\to E\)
+    alors il existe une unique fonction \(f\colon\N\to E\) vérifiant \(f(0)=a\) et
+    \(f(s(x)) = h(f(x))\).
+
+    \bproof{
+        L'unicité se démontre par récurrence. Soit \(g\) une fonction vers les mêmes
+        équations, on a \(f(0)=a=g(0)\) et \(\forall x\in\N (f(x)=g(x))\Rightarrow
+        f(s(x))=g(s(x))\) donc \(g=f\) par récurrence.
+
+        Pour l'existence on a besoin d'une
+        propriété de clôture, de travail sur les relations entre éléments de \(\N\) et
+        de \(E\) c'est-à-dire des sous ensembles de \(E\times \N\). Cette propriété
+        est inspirée par la définition de \(f\) pour les sous-ensembles
+        \(R\subseteq \N\times E\). Cl\((R):=\left(0,a\right)\in R\land\left(
+        \forall n\in\N, \forall y\in E, (n,y)\in E\Rightarrow (s(n),h(y))\in R\right)\).
+        Si \(R\) est le graphe d'une application \(f\) on retrouve les équation du théorème.
+        L'ensemble des \(R \subseteq \N\times E\) vérifiant Cl\((R)\) est non vide car
+        \(\N\times E\) satisfait la propriété de clôture, donc on peut poser
+        \(G = \bigcap_{\text{Cl}(R)} R\). Il reste à montrer que \(G\) est le graphe
+        d'une application. On sait que Cl\((G)\) est vraie donc tout élément \(n\)
+        possède une image par la relation de \(G\) par récurrence. La minimalité de \(G\)
+        assure l'unicité de l'image.
+    }
+}
+
+Le théorème précédent nous permet par exemple de définir par récurrence la fonction
+\(f\colon\N\to\N\) donnée par \(f\colon x\mapsto 2x\) ainsi que plein de belles petites
+choses comme la famille des fonctions d'\textsc{Ackermann} par exemple.
+
 
 \end{document}
