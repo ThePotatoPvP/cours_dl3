@@ -7,4 +7,168 @@
     \huge{\textbf{S6- Maths Discrètes - TD1}}
 \end{center}
 
+\begin{exo}
+    Soit \(X\) un ensemble. Trouver toutes les relations sur \(X\)
+    qui sont à la fois des relations d'ordre et des relations d'équivalence.
+    \boxans{Une telle relation doit être symétrique et anti-symétrique, si deux éléments
+    sont comparables alors ils sont égaux, il n'existe donc que la relation qui lie chaque
+    élément à lui même.}
+\end{exo}
+
+\begin{exo}
+    Existe-t-il une partie stricte de \(\N\) en bijection avec \(\N\) ?
+    \boxans{Oui, \(2\N\) est en bijection triviale avec \(\N\).}
+\end{exo}
+
+\begin{exo} Sur les relations
+    \begin{q}{1}
+        Combien de relations y a-t-il sur un ensemble de cardinal \(n\) ?
+        \boxans{Chaque paire d'éléments peut être en relation où non, il y en a
+        \(2\) puissance le nombre de paires, soit \(2^{\frac{n(n-1)}{2}}\)}
+    \end{q}
+    \begin{q}{2}
+        Combien de relations d'équivalences y a-t-il sur un ensemble de cardinal \(5\) ?
+    \end{q}
+    \begin{q}{3}
+        Et de relations d'ordre sur un ensemble de cardinal \(4\) ?
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(X\) un ensemble fini. Montrer qu'une fonction de \(X\) dans \(X\) est
+    bijective si et seulement si elle est injective ou surjective.
+\end{exo}
+
+\begin{exo}
+    Soit \(n\in\N^*\) et \(A=\{1,\dots,n\}\). Déterminer le nombre de fonctions \(f\)
+    de \(A\to A\) telles que \(f(x)\leq x\) pour tout \(x\in A\). Combien sont injectives ?
+    \boxans{On a \(k\) choix pour \(f(k)\) donc en tout celà fait \(\prod_{1}^n k = n!\).
+    Si maintenant on veut que \(f\) soit injective, \(1\) ne peut en tous les cas qu'avoir
+    \(1\) en image, ainsi \(2\) pourrait avoir \(1\) ou \(2\) mais est contraint \(2\) lorsqu'on
+    force l'injectvité, par récurrence immédiate il n'y a que l'identité.}
+\end{exo}
+
+\begin{exo}
+    Un tournoi d'échecs comporte 1025 participants. À chaque tour, un tirage au sort
+    est organisé et les joueurs s'affrontent deux à deux; les perdants sont éliminés,
+    jusqu'à ce qu'il ne reste qu'un vaincoeur. Lorsqu'il y a un nombre impair de joueurs,
+    celui qui se retrouve tout seul est automatiquement qualifié, combien y a-t-il
+    de parties jouées au total ?
+    \boxans{Chaque partie élminie une personne, il doit rester 1 personne à la fin,
+    il faut en éliminer 1024 donc 1024 parties.}
+\end{exo}
+
+\begin{exo}
+    Soit \(X\) un ensemble à \(n\) éléments. Quel est le nombre de paires \(X_1,X_2\)
+    telles que \(X_1\subseteq X, X_2\subseteq X\) et \(X_1\cap X_2=\emptyset\).
+    \boxans{On raisonne de façon combinatoire, on a \(n+1\) choix pour le cardinal
+    de \(X_1\), noté \(x_1\), une fois cela fixé on choisit ces éléments de
+    \(\binom{n}{x_1}\) manières différentes. Une fois \(X_1\) fixé de cardinal \(x_1\),
+    \(X_2\) peut être n'importe quel sous ensemble de \(X\backslash X_1\) il y a donc
+    \(2^{n-x_1}\) possibilités. Finalement le nombre total de paires est
+    \(\sum_{x_1=0}^n \binom{n}{x_1} 2^{n-x_1}\) ce qui vaut \(3^n\) d'après la formule
+    du binôme de \textsc{Newton}. On aurait pu arriver à ce résultat plus facilement,
+    chacun des \(n\) éléments est soit dans \(X_1\) soit dans \(X_2\) soit aucun.}
+\end{exo}
+
+\begin{exo}
+    Montrer par une preuve de combinatoire que pour tout \(n\in\N^*\) :
+    \[\sum_{i=0}^n\binom{n}{i}^2 = \binom{2n}{n}\]
+    \boxans{Supposons une urne contenant \(2n\) boules, choisir \(n\) boules
+    dedans revient séparer en deux urnes de \(n\) boules, choisir \(i\) boules dans la
+    première puis \(n-i\) boules dans la seconde, ainsi par symmétrie des
+    coefficients binomiaux, on a la réponse attendue.}
+\end{exo}
+
+\begin{exo}
+    Supposons que dans un ensemble de \(x\) personnes, chacune parle soit le latin,
+    soit l'anglais, soit le toucan. En tout six personnes parlent l'anglais, six
+    le toucan et sept le latin. Quatre parlent l'anglais et le toucan, trois parlent
+    le toucan et le latin et deux parlent le latin et l'anglais. Une seule personne parle
+    toutes les langues, que vaut \(x\).
+    \boxans{On a un trilingue, 1 bilingue anglais-latin, 2 bilingues toucan-latin,
+    3 bilingues anglais-toucan, et quatres personnes culturellement fermées, \(x=10\).}
+\end{exo}
+
+\begin{exo}
+    Combien y a-t-il de nombres entre \(1\) et \(2012\) qui ne sont pas multiples de
+    \(2,3\) ou \(5\).
+    \boxans{Il y a \(1006\) nombre divisibles par \(2\), \(670\) divisibles par \(3\),
+    \(402\) divisibles par \(5\), \(335\) divisibles par \(6\), \(201\) divisibles par
+    \(10\), \(134\) divisibles par \(15\) et \(67\) divisibles par \(30\). Donc en utilisant le crible de
+    \textsc{Poincarré} on trouve notre réponse :\(2012-1006-670-402+335+201+134-67=537\).}
+\end{exo}
+
+\begin{exo}
+    Encore du binôme.
+    \begin{q}{1}
+        Montrer que  pour tout entier \(n\geq 1\), le nombre de sous-ensembles de
+        cardinal pair de tout ensemble à \(n\) éléments est \(2^{n-1}\).
+        \boxans{Dans le cas où \(n\) est impair, choisir un sous-ensemble
+        de cardinal pair est la même chose que choisir son complémentaire, qui est lui
+        de taille impaire, on a bien \(2^{n-1}\) sous-ensembles de cardinal pair.
+        Soit \(X\) à \(n\) éléments et \(x\not\in X\) les parties de \(X\cup\{x\}\)
+        sont les parties de \(X\) union les parties de \(X\cup \{x\}\) contenant \(x\).
+        Les sous-ensembles de \(X\) de cardinal pair sont dupliqués en sous-ensembles
+        de \(X\cup\{x\}\) contenant \(\{x\}\) de cardinal impair, la formule se déduit.}
+    \end{q}
+    \begin{q}{2}
+        En déduire un preuve de l'égalité \(\sum_{i=0}^n (-1)^{i}\binom{n}{i}=0\).
+        \boxans{On peut décomposer en : nombres de sous-ensembles de cardinal pair
+        moins nombre de sous-ensembles de cardinal impair, ce qui vaut \(0\) d'après
+        la question précédente.}
+    \end{q}
+    \begin{q}{3}
+        Connaissez (nb) vous une autre preuve ?
+        \boxans{On peut remarquer un binôme de \textsc{Newton} pour le calcul de
+        \((1-1)^n\) qui vaut bien 0.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(n,k\in\N^*\).
+    \begin{q}{1}
+        Combien y a-t-il d'uplets \(\left(x_1,\dots,x_n\right)\in\N^k\) tels que \(\sum x_i = n\)
+    \end{q}
+    \begin{q}{2}
+        Même question pour \(\N^*\) et \(\Z\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(n,k\in\N^*\). Combien y a-t-il d'uplets \(\left(x_1,\dots,x_n\right)\in\N^k\)
+    tels que \(1\leq x_1\leq\dots\leq x_k\leq n\).
+\end{exo}
+
+\begin{exo}
+    Combien y a-t-il d'anagrammes du mot \textsc{Locomotive} ne contenant pas
+    deux \textsc{O} consécutifs.
+\end{exo}
+
+\begin{exo}
+    Pour tout entier naturel \(n\geq 1\), soit \(a_n\) le nombre de manières de recouvrir
+    un damier de dimension \(2\times n\) avec des pièces de dimension \(1\times 2\).
+    Dire comment calculer récursivement \(a_n\).
+\end{exo}
+
+\begin{exo} Sur les sommes
+    \begin{q}{1}
+        Soit \(n,k\in\N\) tels que \(k\leq n\). Montrer par récurrence sur \(n\) la formule
+        \[\binom{k}{k}+\binom{k+1}{k}+\binom{k+2}{k}+\dots+\binom{n}{k}=\binom{n+1}{k+1}\]
+    \end{q}
+    \begin{q}{2}
+        En déduire la valeur de \(\sum_{i=0}^n i^2\) et \(\sum_{i=0}^n i^3\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Avec des quantificateurs qui fonctionnent, démontrer la formule suivante
+    \[\binom{n}{k_1,\dots,k_m}=\binom{n}{k_1-1,\dots,k_m}+\dots+\binom{n}{k_1,\dots,k_m-1}\]
+\end{exo}
+
+\begin{exo}
+    Soit \(n\in\N^*\). De combien de manière peut-on placer \(n\) tours sur un échiquier
+    de tailles \(n\times n\) de sorte que toute case vide se trouve sur la trajectoire
+    d'au moins une tour.
+\end{exo}
 \end{document}
