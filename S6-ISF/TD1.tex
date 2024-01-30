@@ -213,6 +213,8 @@
     \begin{q}{2}
         Déterminer toutes les tribus finies sur \(E\). Lesquelles ont
         \(0,1,2,\dots,8\) éléments ?
+        \boxans{D'après la question précédente, on peut associer toute tribu à l'ensemble
+        des parties de \(\llbracket1,n\rrbracket\) avec le bon \(n\).}
     \end{q}
 \end{exo}
 
@@ -220,6 +222,13 @@
     Soient \(\mathcal{A}_1\) et \(\mathcal{A}_2\) deux tribus sur un ensemble \(E\).
     Montrer que la tribu engendrée par \(\mathcal{A}_1\cup\mathcal{A}_2\) coïncide
     avec la tribu engendrée par \(\{A_1\cap A_2\mid A_1\in\mathcal{A}_1, A_2\in\mathcal{A}_2\}\)
+    \boxans{On note \(\CC\) la seconde tribu, on veut montrer
+    \(\CC=\sigma(\mathcal{A}_1\cup\mathcal{A}_2)=\CC'\). On commence par remarquer que
+    pour tout \(A_1\in\mathcal{A}_1,A_2\in\mathcal{A}_2\) on a \(A_1\cap A_2\in\CC'\)
+    par la stabilité de la tribu, donc \(\CC\subseteq\CC'\). Dans l'autre sens on a bien
+    \(\forall A_1\in\mathcal{A}_1,A_1=A_1\cap E\in \CC\) par symétrie on a ensuite
+    \(\mathcal{A}_1\cup\mathcal{A}_2\in\CC\) ce qui suffit.
+    }
 \end{exo}
 
 \begin{exo}
@@ -234,6 +243,8 @@
 \begin{exo}
     Soit \(\mathcal{S}\) l'ensemble des boréliens de \(\R\) symétrique par
     rapport à \(0\), montrer que c'est une tribu. \[\mathcal{S}=\{A\in\bor\mid \forall x\in A, -x\in A\}\].
+    \boxans{Cet ensemble contient clairement \(\emptyset\) et est clairement
+    stable par union dénombrable et passage au complémentaire, c'est donc une tribu.}
 \end{exo}
 
 \section*{Mesures}
