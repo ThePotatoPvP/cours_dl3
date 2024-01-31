@@ -181,9 +181,18 @@ let rec eten a e n = match a with
             Écrire une fonction \camlline{verif_arbre: string btree -> bool}, telle que
             \camlline{verif_tree a} renvoie \camlline{true} si et seulement si l'arbre
             vérifie la propriété \textbf{BE}. Par exemple \camlline{verif_artbre ab1}
-            renvoie \camlline{false} mais l'appel \camlline{verif_line ab2} renvoie
+            renvoie \camlline{false} mais l'appel \camlline{verif_arbre ab2} renvoie
             \camlline{true}, ainsi que l'appel de la fonction \camlline{verif_arbre} sur
             chaque sous-arbre de \camlline{ab2}.
+            \begin{lstlisting}
+let verif_arbre a = match a with
+    let rec _verif a e = match a with
+        | F r -> (e = r)
+        | I(r, g, d) -> (e=r)&&(_verif g "0"^r)&&(verif d "1"^r)
+    in match a with
+    | F _ -> true
+    | I(e, g, d) -> _verif I(e, g, d) e
+;;          \end{lstlisting}
         \end{q}
         \begin{q}{4.2}
             Écrire une fonction \camlline{cons_arbre_be: string -> int -> string btree},
@@ -191,6 +200,11 @@ let rec eten a e n = match a with
             vérifiant la propriété \textbf{BE} dont l'étiquette de sa racine est
             \camlline{e} et sa hauteur est \camlline{n}. Par exemple
             \camlline{cons_arbre_be "" 2} renvoie l'arbre \camlline{ab3}.
+            \begin{lstlisting}
+let rec cons_arbre_be e n = match n with
+    | 0 -> F e
+    | _ -> I(e, cons_arbre_be ("0"^e) (n-1), cons_arbre_be ("1"^e) (n-1))
+;;          \end{lstlisting}
         \end{q}
         \begin{q}{4.3}
             On cherche à écrire \camlline{eten_be_opt: string btree -> string -> int -> string btree}
@@ -205,6 +219,14 @@ let rec eten a e n = match a with
             \camlline{"0"} tandis que \camlline{eten_be_opt "01" 1} visite uniquement les noeuds
             étiquetés par \camlline{""}, \camlline{"1"} et \camlline{"01"} et ajoute deux
             feuilles, étiquetées respectivement par \camlline{"001"} et \camlline{"101"}.
+            \begin{lstlisting}
+let rec eten_be_opt a e n = match a with
+    | F e' when e' = e -> cons_arbre_be e n
+    | F e' -> F e'
+    | I(e', F g, d) when String.endswith g e -> I(e', eten_be_opt (F g) e n, d)
+    | I(e', I(g, g', d'), d) when String.endswith g e -> I(e', eten_be_opt (I(g,g',d')) e n, d)
+    | I(e', g, d) -> I(e', g, eten_be_opt d e n)
+;;          \end{lstlisting}
         \end{q}
     \end{q}
 \end{exo}
