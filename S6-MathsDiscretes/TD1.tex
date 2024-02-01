@@ -130,60 +130,70 @@
     Soient \(n,k\in\N^*\).
     \begin{q}{1}
         Combien y a-t-il d'uplets \(\left(x_1,\dots,x_k\right)\in\N^k\) tels que \(\sum x_i = n\).
-        \boxans{Notons \(B_{k,n}\) ce nombre, on remarque la formule de récurrence
-        \(B_{k,n} = \sum_{i=0}^n B_{k-1,i}\). On remarque ensuite que pour tout \(k\in\N\)
-        on a \(B_{k,0}=1\) et pour tout \(n\in\N,B_{1,n}=1\). On a aussi \(B_{k,1}=k\).
-        La formule \(B_{k,n}=\binom{n+k-1}{n}\) semble vraie.}
+        \boxans{Ce qu'on cherche revient à compter le nombre de façons de placer
+        \(k-1\) séparateurs sur une ligne de \(n\) boules, ce qui revient à dire qu'on
+        compte les façons de placer \(n\) boules parmi les \(n+k-1\) symboles,
+        \(B_{n,k}=\binom{n+k-1}{n}\).}
     \end{q}
     \begin{q}{2}
         Même question pour \(\N^*\) et \(\Z\).
         \boxans{Dans \(\Z\) on a trivialement un nombre infini d'uplets pour \(k\geq2\)
-        et sinon \(k\). Dans \(\N^*\) on modifie légèrement la formule de la
-        question précédente pour avoir \(B_{k,n}=\sum_{i=0}^{n-1} B_{k,i}\) et
-        les cas de base deviennent \(B_{k,0}=0\) et \(B_{1,n}=1\).}
+        et sinon \(k\). Pour \(\N^*\) celà revient à compter les façons de placer
+        \(k-1\) séparateurs parmi les \(n-1\) trous entre les boules, donc \(\binom{n-1}{k-1}\).}
     \end{q}
 \end{exo}
 
 \begin{exo}
     Soient \(n,k\in\N^*\). Combien y a-t-il d'uplets \(\left(x_1,\dots,x_k\right)\in\N^k\)
     tels que \(1\leq x_1\leq\dots\leq x_k\leq n\).
-    \boxans{Il y en a exactement que de sous parties de \(\llbracket1,n\rrbracket\)
-    à au plus \(k\) éléments donc \(\sum_{i=0}^k \binom{n}{k}\)}
+    \boxans{Celà revient à placer \(n-1\) séparateurs sur une ligne de \(k\) boules
+    donc parmi \(n+k-1\) symboles, finalement le résultat est \(\binom{n+k-1}{n-1}\)}
 \end{exo}
 
 \begin{exo}
     Combien y a-t-il d'anagrammes du mot \textsc{Locomotive} ne contenant pas
     deux \textsc{O} consécutifs.
+    \boxans{On retire les \textsc{O} pour avoir un mot de \(7\) lettres qui admet donc
+    \(7!\) permuttations, à se mot il y a \(\binom{8}{3}\) façon de placer des \textsc{O}
+    sans que deux \textsc{O} ne se touchent, la réponse est \(7!\binom{8}{3}\).}
 \end{exo}
 
 \begin{exo}
     Pour tout entier naturel \(n\geq 1\), soit \(a_n\) le nombre de manières de recouvrir
     un damier de dimension \(2\times n\) avec des pièces de dimension \(1\times 2\).
     Dire comment calculer récursivement \(a_n\).
-    \boxans{On a la formule suivante \(a_n = a_{n-1} + a_{n-2}\).
-    On retrouve \textsc{Fibonacci}.}
+    \boxans{On a la formule suivante \(a_n = a_{n-1} + a_{n-2}\). On retrouve \textsc{Fibonnacci}.}
 \end{exo}
 
 \begin{exo} Sur les sommes
     \begin{q}{1}
         Soit \(n,k\in\N\) tels que \(k\leq n\). Montrer par récurrence sur \(n\) la formule
         \[\binom{k}{k}+\binom{k+1}{k}+\binom{k+2}{k}+\dots+\binom{n}{k}=\binom{n+1}{k+1}\]
+        \boxans{En \(n=k\) l'initialisation est évidente \(1=1\). On procède ensuite par
+        récurrence immédiate avec la formule de \textsc{Pascal} :
+        \(\binom{n+2}{k+1}=\binom{n+1}{k+1}+\binom{n+1}{k}\) comme argument majoritaire.}
     \end{q}
     \begin{q}{2}
         En déduire la valeur de \(\sum_{i=0}^n i^2\) et \(\sum_{i=0}^n i^3\).
+        \boxans{On déduit de la question précédente les formules :
+        \[\sum_{i=0}^ni^2=\frac{n(n+1)(2n+1)}{6}\quad\textrm{et}\quad
+        \sum_{i=0}^ni^3=\left(\frac{n(n+1)}{2}\right)^2\]}
     \end{q}
 \end{exo}
 
 \begin{exo}
     Avec des quantificateurs qui fonctionnent, démontrer la formule suivante
     \[\binom{n}{k_1,\dots,k_m}=\binom{n}{k_1-1,\dots,k_m}+\dots+\binom{n}{k_1,\dots,k_m-1}\]
+    \boxans{En posant le calcul, on met tout au bon dénominateur, ça se simplifie bien.}
 \end{exo}
 
 \begin{exo}
     Soit \(n\in\N^*\). De combien de manière peut-on placer \(n\) tours sur un échiquier
-    de tailles \(n\times n\) de sorte que toute case vide se trouve sur la trajectoire
+    de taille \(n\times n\) de sorte que toute case vide se trouve sur la trajectoire
     d'au moins une tour.
+    \boxans{Chaque tour doit couvrir une colonne et une ligne à elle seule, en posant les
+    tours de la colonne de gauche vers celle de droite on à \(n\) choix de ligne pour la
+    première puis \(n-1\) pour la seconde et ainsi de suite, finalement on a \(n!\)
+    solutions au problème.}
 \end{exo}
 \end{document}
-
-% 6+6+6+6+1+3 -> 28
