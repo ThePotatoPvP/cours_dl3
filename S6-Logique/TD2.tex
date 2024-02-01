@@ -41,6 +41,8 @@
     h\colon (E\times A)\to E\) et \(\sigma\colon A\to A\). Montrer qu'alors il existe
     une unique fonction \(f\colon\left(\N\times A\right)\to E\) vérifiant:
     \[f(0,y)=g(y);\quad f(s(x),y) = h(f(x,\sigma(y)),y)\]
+    \boxans{Cette démonstration est presque celle dans le cours, on se passera de la
+    recopier ici.}
 \end{exo}
 
 \begin{exo}
@@ -62,12 +64,14 @@
     \end{q}
     \begin{q}{5}
         \(x\cdot(y+z)=x\cdot y+x\cdot z\)
+        \boxans{Par récurrence, \(x\cdot(y+s(z))=x\cdot s(y+z)=x\cdot(y+z)+x=x\cdot
+        y+x\cdot z+x=x\cdot y+x\cdot s(z)\)}
     \end{q}
     \begin{q}{6}
         \(x\cdot(y\cdot z)=(x\cdot y)\cdot z\)
     \end{q}
     \begin{q}{7}
-        \(0\cdot x=x\cdot0\)
+        \(0\cdot x=0\)
     \end{q}
     \begin{q}{8}
         \(s(x)\cdot y=x\cdot y+y\)
@@ -88,6 +92,7 @@
     \end{q}
     \begin{q}{3}
         \(x^1=x\)
+        \boxans{\(x^1 = x^0\cdot x = 1\cdot x =x\)}
     \end{q}
     \begin{q}{4}
         \(\left(x\cdot y\right)^z=x^z\cdot y^z\)
