@@ -15,3 +15,11 @@ foo
 S5-Système-d\'exploitation/Projet/AUTHORS.md
 
 *.txt
+
+_build/
+dune*
+*.cmi
+*.cmo
+lexeur1.ml
+
+main
