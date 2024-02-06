@@ -176,15 +176,17 @@
     \begin{q}{2}
         En déduire la valeur de \(\sum_{i=0}^n i^2\) et \(\sum_{i=0}^n i^3\).
         \boxans{On déduit de la question précédente les formules :
-        \[\sum_{i=0}^ni^2=\frac{n(n+1)(2n+1)}{6}\quad\textrm{et}\quad
-        \sum_{i=0}^ni^3=\left(\frac{n(n+1)}{2}\right)^2\]}
+        \[\sum_{i=0}^ni^2=2*\sum\binom{i}{2}+\sum i = \binom{n+1}{3}+\frac{n(n+1)}{2}=\frac{n(n+1)(2n+1)}{6}\]
+        \[\sum_{i=0}^ni^3=\left(\frac{n(n+1)}{2}\right)^2\]}
     \end{q}
 \end{exo}
 
 \begin{exo}
     Avec des quantificateurs qui fonctionnent, démontrer la formule suivante
-    \[\binom{n}{k_1,\dots,k_m}=\binom{n}{k_1-1,\dots,k_m}+\dots+\binom{n}{k_1,\dots,k_m-1}\]
-    \boxans{En posant le calcul, on met tout au bon dénominateur, ça se simplifie bien.}
+    \[\binom{n+1}{k_1,\dots,k_m}=\binom{n}{k_1-1,\dots,k_m}+\dots+\binom{n}{k_1,\dots,k_m-1}\]
+    \boxans{Comme \(n+1\) est la somme des \(k_i\) on a que la partie de droite peut
+    se réécrire comme \(\sum k_i \binom{n}{k_1,\dots,k_m}\) ce qui donne finalement
+    le membre de gauche de l'équation, c'est bueno.}
 \end{exo}
 
 \begin{exo}
