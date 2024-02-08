@@ -193,9 +193,51 @@
     Soit \(n\in\N^*\). De combien de manière peut-on placer \(n\) tours sur un échiquier
     de taille \(n\times n\) de sorte que toute case vide se trouve sur la trajectoire
     d'au moins une tour.
-    \boxans{Chaque tour doit couvrir une colonne et une ligne à elle seule, en posant les
-    tours de la colonne de gauche vers celle de droite on à \(n\) choix de ligne pour la
-    première puis \(n-1\) pour la seconde et ainsi de suite, finalement on a \(n!\)
-    solutions au problème.}
+    \boxans{On a \(n^n\) façons de mettre une tour par colonne, ce qui indirectement
+    couvre les lignes, pareil par symétrie axiale, et on a alors \(n!\) cas qui se répètent,
+    ceux où chaque ligne et chaque colonne ont une tour, finalement on a \(2n^n-n!\)
+    façons de le faire, tah \textsc{Poincarré}.}
+\end{exo}
+
+\begin{exo}
+    Soient \(n,k\in\N^*\).
+    \begin{q}{1}
+        Déterminer le nombre de permuttations de \(\llbracket1,n\rrbracket\) sans
+        points fixes.
+        \boxans{On a la formule de récurrence \(d_n = n(d_{n-1}+d_{n-2})\) %ce qui livre
+        %\(d_n = n! \sum\frac{(-1)^i}{i!}\) par récurrence immédiate.}
+        Si \(A_i\) est l'esemble des permuttations qui ont \(i\) comme point fixe,
+        \(|\cup A_i| = n! - (n-1)! + (n+2)! -\dots\) on retrouve \(\simeq n!(1-frac{1}{e})\).
+        donc le nombre qu'on cherche est \(n!\sum \frac{(-1)^n}{e}\).
+        }
+    \end{q}
+    \begin{q}{2}
+        Déterminer le nombre de permuttations de \(\llbracket1,n\rrbracket\) ayant
+        exactment \(k\) points fixes.
+        \boxans{On choisit les \(k\) points fixes et on permutte tous les autres éléments
+        de sorte à ne pas avoir de points fixes parmi eux.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Le but de cet exercice est de compter, pour \(n,k\in\N^*\) le nombre \(S(n,k)\)
+    de manières de partionner l'ensemble \(\llbracket1,n\rrbracket\) en \(k\) sous
+    ensembles non vides. En fait, on considère une variante du problème où les
+    sous-ensembles sont distingués, cela reivent à dire que l'on veut répartir les entiers
+    de \(1\) à \(n\) dans \(k\) boites numérotées de \(1\) à \(k\) en tenant compte
+    du numéro. On note \(B\) le nombre de manières de faire cette répartition.
+    \begin{q}{1}
+        Quel est le nombre total \(T\) de manières de répartir les entiers de \(1\) à \(n\)
+        dans \(k\) boites numérotées si l'on autorise les boites vides ?
+    \end{q}
+    \begin{q}{2}
+        Pour \(i\in\llbracket1,n\rrbracket\) soit \(M_i\) l'ensemble des répartitions
+        possibles des entiers de \(1\) à \(n\) dans \(k\) boites numérotées telles que
+        la boite numéro \(i\) soit vide. Exprimer \(B\) en fonction de \(T\)
+        et de \(\|\bigcup M_i\|\).
+    \end{q}
+    \begin{q}{3}
+        En déduire une expression de \(B\) et de \(S(n,k)\).
+    \end{q}
 \end{exo}
 \end{document}
