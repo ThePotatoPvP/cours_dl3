@@ -215,7 +215,8 @@
         Déterminer le nombre de permuttations de \(\llbracket1,n\rrbracket\) ayant
         exactment \(k\) points fixes.
         \boxans{On choisit les \(k\) points fixes et on permutte tous les autres éléments
-        de sorte à ne pas avoir de points fixes parmi eux.}
+        de sorte à ne pas avoir de points fixes parmi eux, on rajoute donc un facteur
+        \(\binom{n}{k}\) devant. On veut alors permutter que \(n-k\) éléments.}
     \end{q}
 \end{exo}
 
@@ -229,15 +230,20 @@
     \begin{q}{1}
         Quel est le nombre total \(T\) de manières de répartir les entiers de \(1\) à \(n\)
         dans \(k\) boites numérotées si l'on autorise les boites vides ?
+        \boxans{Pour chacune des \(n\) boules on a \(k\) choix possibles donc \(T=n^k\).}
     \end{q}
     \begin{q}{2}
         Pour \(i\in\llbracket1,n\rrbracket\) soit \(M_i\) l'ensemble des répartitions
         possibles des entiers de \(1\) à \(n\) dans \(k\) boites numérotées telles que
         la boite numéro \(i\) soit vide. Exprimer \(B\) en fonction de \(T\)
-        et de \(\|\bigcup M_i\|\).
+        et de \(|\bigcup M_i|\).
+        \boxans{\(B = T - |\bigcup M_i|\) vu qu'on veut aucune boite vide, on veut tout
+        sauf les cas avec au moins une boite vide.}
     \end{q}
     \begin{q}{3}
         En déduire une expression de \(B\) et de \(S(n,k)\).
+        \boxans{Le cardinal de l'union des \(M_i\) s'obtient par la formule du crible
+        de \textsc{Poincarré} : \(|\bigcup M_i | = \sum (-1)^{i+1} n^{k-i}\)}
     \end{q}
 \end{exo}
 \end{document}
