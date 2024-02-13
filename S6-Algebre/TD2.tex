@@ -1,0 +1,117 @@
+\documentclass[french]{report}
+\usepackage{../exercices}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{S6-Algebre - TD2}}
+\end{center}
+
+\section*{Extension de corps, éléments algébriques}
+
+\begin{exo}
+    Voici trois nombres : \(\sqrt{2}, \sqrt{4+2\sqrt{2}}, \sqrt[4]{2}\)
+    \begin{q}{1}
+        Montrer que ces nombres sont algébriques sur \(\Q(\sqrt{2})\) et donner leur
+        polynôme minimal.
+    \end{q}
+    \begin{q}{2}
+        Même question pour \(\Q\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Le corps des fractions \(\R(X)\) de \(\R[X]\) est une extension (infinie) de \(\Q\).
+    \begin{q}{1}
+        Donner un élément algébrique sur \(Q\) dans \(\R(X)\backslash\Q\)
+    \end{q}
+    \begin{q}{2}
+        Donner un élément non algébrique sur \(\Q\) de \(\R(X)\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Autour de la clotûre.
+    \begin{q}{1}
+        Le corps \(\C(X)\) est-il algébriquement clos ?
+    \end{q}
+    \begin{q}{2}
+        Un corps fini peut-il être algébriquement clos ?
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(\alpha\in\C\) un nombre algébrique et \(P\) son
+    minimal sur \(\Q\).
+    \begin{q}{1}
+        Montrer que \(\alpha\) est une racine simple de \(P\) dans \(\C\).
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(P\) n'a que des racines simples dans \(\C\).
+    \end{q}
+\end{exo}
+
+\begin{exo} On bosse un peu maintenant.
+    \begin{q}{1}
+        Montrer que \(\C\) est une clotûre algébrique de \(\R\).
+    \end{q}
+    \begin{q}{2}
+        Montrer que le corps \(\C\) n'a pas d'extension finie non triviale.
+    \end{q}
+    \begin{q}{3}
+        Montrer que les seules extensions finies du corps \(\R\) sont \(\R\) et \(\C\)*
+        à isomorphisme près.
+    \end{q}
+    \begin{q}{4}
+        Montrer que \(\C\) n'est pas une clotûre algébrique de \(\Q\).
+    \end{q}
+\end{exo}
+
+\section*{Corps de rupture, degrés d'extension, corps de décomposition}
+
+\begin{exo}
+    On considère \(K=\Q[X]/(P)\) où \(P=X^3+3X+3\), et on note \(\alpha\)
+    la classe de \(X\) dans \(K\).
+    \begin{q}{1}
+        Expliquer pourquoi \(K\) est un corps.
+    \end{q}
+    \begin{q}{2}
+        Déterminer \(k\) tel que \(\left(1,\alpha,\dots,\alpha^k\right)\) soit
+        une base de \(\Q\) espace vectoriel \(K\).
+    \end{q}
+    \begin{q}{3}
+        Exprimer \(a^{-1}\) dans cette base.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(P=\sum^n a_iX^i\), où \(a_n\neq0\), un polynôme irréductible sur un corps \(K\).
+    \begin{q}{1}
+        Montrer que \(Q = \sum a_{n-i}X^i\) est irréductible sur \(K\).
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(K[X]/(P)\) et \(K[X]/(Q)\) sont isomorphes.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que si \([L\colon K]\) est un nombre premier, alors la \(K\)-extension
+    \(L\) est de la forme \(K(\alpha)\).
+\end{exo}
+
+\begin{exo}
+    Soit \(L\) une extension d'un corps \(K\) et \(\alpha,\beta\in L\) deux éléments
+    algébriques sur \(K\).
+    \begin{q}{1}
+        Montrer que si les degrés d'extension \([K(\alpha)\colon K]\) et \([K(\beta)
+        \colon K]\) sont premiers entre eux, alors \([K(\alpha,\beta)\colon K]=
+        [K(\alpha)\colon K][K(\beta)\colon K]\)
+    \end{q}
+    \begin{q}{2}
+        A-t-on toujours \(K(\alpha\beta)=K(\alpha,\beta)\) lorque les degrés sont
+        premiers entre eux ?
+    \end{q}
+\end{exo}
+
+
+\end{document}
