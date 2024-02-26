@@ -14,19 +14,25 @@
     \begin{q}{1}
         Montrer que ces nombres sont algébriques sur \(\Q(\sqrt{2})\) et donner leur
         polynôme minimal.
+        \boxans{Les polynômes \(X-\sqrt{2},\ X^2-(4+2\sqrt{2})\) et \(X^2-\sqrt{2}\). admettent les nombres en racine et sont
+        irréductibles, ce sont donc leur minimaux sur \(\Q(\sqrt{2})\).}
     \end{q}
     \begin{q}{2}
         Même question pour \(\Q\).
+        \boxans{Les polynômes \(X^2-2,\ X^4-(4+2\sqrt{2})\) et \(X^4-2\). admettent les nombres en racine et sont
+        irréductibles, ce sont donc leur minimaux sur \(\Q(\sqrt{2})\).}
     \end{q}
 \end{exo}
 
 \begin{exo}
     Le corps des fractions \(\R(X)\) de \(\R[X]\) est une extension (infinie) de \(\Q\).
     \begin{q}{1}
-        Donner un élément algébrique sur \(Q\) dans \(\R(X)\backslash\Q\)
+        Donner un élément algébrique sur \(\Q\) dans \(\R(X)\backslash\Q\)
+        \boxans{L'élément \(\sqrt{2}\) fonctionne.}
     \end{q}
     \begin{q}{2}
         Donner un élément non algébrique sur \(\Q\) de \(\R(X)\).
+        \boxans{On choisit \(e\) qui est notre nombre transcendant préféré.}
     \end{q}
 \end{exo}
 
@@ -34,6 +40,9 @@
     Autour de la clotûre.
     \begin{q}{1}
         Le corps \(\C(X)\) est-il algébriquement clos ?
+        \boxans{Non, ce corps n'est pas algébriquement clos, soit \(P(Y)=Y^2-X\) à
+        coefficients dans \(\C(X)\) ses racines sont \(\pm\sqrt{X}\) qui ne sont pas
+        dans \(\C(X)\).}
     \end{q}
     \begin{q}{2}
         Un corps fini peut-il être algébriquement clos ?
@@ -114,4 +123,208 @@
 \end{exo}
 
 
+\begin{exo}
+    Atour des racines de \(2\).
+    \begin{q}{1}
+        Déterminer pour tout enter \(n\geq 2\) le polynôme minimal de \(\sqrt[n]{2}\)
+        sur \(\Q\) et le degré \([\Q(\sqrt[n]{2}):\Q]\).
+    \end{q}
+    \begin{q}{2}
+        En déduire pour tous \(k,n\geq 2\) entiers, que l'on a \(\sqrt[k]{2}\in\Q
+        (\sqrt[n]{2})\) si et seulement si \(k\) divise \(n\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(\alpha=\sqrt{2}+\sqrt{3}\).
+    \begin{q}{1}
+        Trouver une expression simple de \(\alpha+\alpha^{-1}\) et en déduire
+        que \(\Q(\sqrt{3})\subset\Q(\alpha)\).
+    \end{q}
+    \begin{q}{2}
+        Montrer par l'absure que \(\sqrt{2}\notin\Q(\sqrt{3})\) en supposant que l'on
+        peut écrire \(\sqrt{2}\) sous la forme \(a+b\sqrt{3}\) avec \(a,b\in\Q\).
+        En déduire le degré de l'extension \([\Q(\alpha):\Q(\sqrt{3})]\).
+    \end{q}
+    \begin{q}{3}
+        Déterminer \([Q(\alpha):\Q]\).
+    \end{q}
+    \begin{q}{4}
+        Trouver dans \(\Q[X]\) un polynôme unitaire de degré \(4\) ayant \(\alpha\)
+        comme racine et déduire de la question précédente qu'il s'agit nécessairement
+        d'un polynôme minimal de \(\alpha\) sur \(\Q\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Du fun avec les complexes.
+    \begin{q}{1}
+        On pose \(j=e^{2i\pi/3}\). En s'inspirant de l'exercice précédent déterminer
+        le degré des nombre algébriques suivants, sans chercher leur minimal sur \(\Q\):
+        \(j\sqrt{2}, i+\sqrt{2}, j+\sqrt{3}, i+j\).
+    \end{q}
+    \begin{q}{2}
+        Expliciter leur polynôme minimal sur \(\Q\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(K=\Q(\sqrt{3}, i)\) et \(\xi=e^{i\pi/6}\)
+    \begin{q}{1}
+        Calculer \([K:\Q]\).
+    \end{q}
+    \begin{q}{2}
+        Montrer que l'ensemble \(B=\{1,\sqrt{3}, i, i\sqrt{3}\}\) est une base de \(K\)
+        en tant que \(\Q\)-espace vectoriel.
+    \end{q}
+    \begin{q}{3}
+        Mettre \(\xi\) sous forme algébrique : \(\xi=a+ib\) avec \(a,b\in\R\), et conclure
+        que \(\xi\in\K\).
+    \end{q}
+    \begin{q}{4}
+        Montrer que \(K=\Q(\xi)\).
+    \end{q}
+    \begin{q}{5}
+        Montrer que \(\xi\notin\Q(i\sqrt{3})\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(\zeta=e^{2i\pi/7}\in\C\).
+    \begin{q}{1}
+        Montrer que \(\zeta\) est algébrique sur \(\Q\) et déterminer \([\Q(\zeta):\Q]\).
+    \end{q}
+    \begin{q}{2}
+        Déterminer le polynôme minimal de \(\zeta+\zeta^2+\zeta^4\).
+    \end{q}
+    \begin{q}{3}
+        Montrer que \(\Q(\zeta+\zeta^2+\zeta^4)=\Q(i\sqrt{7})\).
+    \end{q}
+    \begin{q}{4}
+        Déterminer le polynôme minimal de \(\zeta+\zeta^6\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Trouver un corps de rupture et un corps de décomposition de chacun des polynômes suivants.
+    \begin{q}{1}
+        \(X^2-3\in\Q[X]\)
+    \end{q}
+    \begin{q}{2}
+        \(X^3-2\in\Q[X]\)
+    \end{q}
+    \begin{q}{3}
+        \(X^4+X+1\in\mathbb{F}_2[X]\)
+    \end{q}
+    \begin{q}{4}
+        \(X^p-T\in\mathbb{F}_p(T)[X]\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(P(X)=X^4+2X^2-4, \alpha=\sqrt{\sqrt{5}-1}, \beta=\sqrt{\sqrt{5}+1}\).
+    On considère l'extension \(L=\Q(\alpha,\beta)\).
+    \begin{q}{1}
+        Donner les racines de \(P\) dans \(\C\) et montrer que \(L\) est un corps
+        de décomposition de \(P\) sur \(\Q\).
+    \end{q}
+    \begin{q}{2}
+        Calculer \(\alpha\beta\) et en déduire que \(L=\Q(\alpha, i)\).
+    \end{q}
+    \begin{q}{3}
+        Montrer que \(\Q(\sqrt{5})\subset\Q(\alpha)\).
+    \end{q}
+    \begin{q}{4}
+        Montrer par l'absurde que \(\alpha\notin\Q(\sqrt{5})\) en supposant que l'on
+        peut écrire \(\alpha\) sous la forme \(a+b\sqrt{5}\) avec \(a,b\in\Q\).
+    \end{q}
+    \begin{q}{5}
+        Déterminer le degré \([\Q(\alpha):\Q]\) et en déduirre que \(P\) est irréductible
+        sur \(\Q\).
+    \end{q}
+    \begin{q}{6}
+        Déterminer le degré \([L:\Q]\).
+    \end{q}
+\end{exo}
+
+\subsection*{"Casus irreductibilis" des équations cubiques}
+\begin{exo}
+    Convenons de dire qu'un réel \(r\) est \textit{exprimable par radicaux réels} lorsqu'il
+    existe une suite finie de sous corps de \(R:\Q=K_0\subset K_1\subset\dots \subset K_n
+    \subset \R\) tels que \(r\in K_n\) et tels que pour tout \(i<n, K_{i+1}=K_i(\sqrt[p](\alpha))\)
+    avec \(p\) premier et \(\alpha\in K_i\)...
+\end{exo}
+
+\subsection*{Construction à la règle et au compas}
+
+On assimile le plan euclidien à \(\C\), et pour tous \(z,z'\in\C\) distincts
+et tout \(r>0\) on note ...
+
+\begin{exo}
+    Autour de la construction de nombres.
+\end{exo}
+
+\begin{exo}
+    Quelques problèmes classiques.
+    \begin{q}{1}
+        \textit{Le problème déliaque} : à partir d'un temple de Delos de longueur 1,
+        il faut construire un temple semblable de volume doubme, et donc d'en construire
+        la longueur \(\sqrt[3]{2}\) à la règle et au compas. Montrer que c'est impossible.
+    \end{q}
+    \begin{q}{2}
+        \textit{L'ennéagone régulier et la trisection d'un angle} : Un ennéagone est un
+        polygone à \(9\) côtés. Justifier le fait que construire à la règle et au
+        compas un ennéagone régulier de centre \(0\) dont l'un des sommet est \(1\)
+        revient à construire \(z=e^{2i\pi/9}\). Montrer que c'est impossible. En
+        déduire qu'il n'existe pas de procédé général de trisection d'un angle à la règle
+        et au compas.
+    \end{q}
+    \begin{q}{3}
+        \textit{La quadrature du cercle} : Il s'agit de construire le coté
+        (\(c=\sqrt{\pi}\)) d'un carré dont l'aire égale celle du disque unité \(|z\leq 1\).
+        Montrer que àa n'est possible que si \([Q(\pi):\Q]\) est une puissance de \(2\).
+    \end{q}
+\end{exo}
+\subsection*{Polynômes symétriques et théorème de d'Alembert-Gauss}
+
+\begin{exo}
+    Soit \(A\) un anneau commutatif quelconque. On définit le degré \(\delta\) et le
+    poids \(\omega\) d'un polynôme ...
+\end{exo}
+
+\begin{exo}
+    Théorème fondamental de l'algèbre (\textsc{D'Alembert-Gauss}): \(\C\) est
+    algébriquement clos.
+    \begin{q}{1}
+        Montrer qu'il suffit de démontrer que tout polynôme de degré supérieur à \(1\)
+        à coefficients \(textit{réels}\) admet une racine dans \(\C\).
+    \end{q}
+\end{exo}
+
+\subsection*{Corps finis}
+
+\begin{exo}
+    Pour quelles valeurs de \(r\), \(\mathbb{F}_{p^r}\) est-il isomorphe à \(\Z/p^r\Z\).
+\end{exo}
+
+\begin{exo}
+    Soit \(K=\mathbb{F}_{p^r}\) un corps fini. Montrer que pour tout élément \(\beta\in K\),
+    il existe un unique élément \(\alpha\in K\) tel que \(\alpha^p=\beta\).
+\end{exo}
+
+\begin{exo}
+    Soit \(a\in\mathbb{F}_p\). En comptant \(\{x^2,x\in\mathbb{F}_p\}\) et
+    \(\{a-y^2,y\in\mathbb{F}_p\}\) montrer que l'on peur toujours écrire \(a\) comme
+    une somme de deux carrés dans \(\mathbb{F}_p\).
+\end{exo}
+
+\begin{exo}
+    On repasse en CP
+    \begin{q}{1}
+        Donner les tables d'addition et de multiplication de \(\mathbb{F}_4\).
+    \end{q}
+    \begin{q}{2}
+        Donner les tables d'addition et de multiplication de \(\mathbb{F}_9\).
+    \end{q}
+\end{exo}
 \end{document}
