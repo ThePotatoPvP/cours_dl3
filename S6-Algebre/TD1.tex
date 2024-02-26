@@ -215,15 +215,39 @@
 
 \begin{exo}
     Trouver les polynômes \(P\in\R[X]\) tels que \(\left(X+4\right)P(X)=XP(X+1)\).
+    \boxans{Supposons un  polynôme \(P\) vérifiant l'égalité, alors \(4\cdot P(0)=0\cdot P(1)\) donc
+    \(0\) est racine de \(P\) en évaluant ensuite en \(-1\) on a \(3\cdot P(-1) = -P(0)=0\)
+    donc \(-1\) est aussi racine de \(P\). On répète la procédure pour avoir que \(-2\)
+    et \(-3\) sont des racines de \(P\).
+    Supposons maintenant \(P\) de degré \(n\geq 1\) alors \(P\) peut s'écrire
+    \((aX+b)Q(X)\) or \((X+4)P(X)=XP(X+1)\) donc en développant on a le système
+    d'équation suivant en regardant des termes de degré bien choisit : \(4b = 0\),
+    \(4a+b=a+b\), duquel on tire \(b=0,a=0\) donc \(P\) est nul, on a une contradiction,
+    aucun polynôme de degré au moins \(1\) ne vérifie l'équation.
+    Pour conclure, soit \(P\) solution alors il admet au moins \(4\) racines or il est
+    constant donc \(P=0\).}
 \end{exo}
 
 \begin{exo}
     Soit \(P\in\C[X]\) vérifiant \(P(X^2) = P(X)P(X+1)\).
     \begin{q}{1}
         Montrer que les racines de \(P\) sont toutes égales à \(0\) ou \(1\).
+        \boxans{Si \(P\) est constant on à rien à démontrer, considérons ensuite
+        \(P\) non constant et \(x\) une de ses racines. Alors \(P(x^2)=0\times P(x+1)=0\)
+        donc \(x^2\) est aussi une racine de \(P\). Par finitude des racines, \(x=0\) ou
+        \(|x|=1\). De la même façon \((x-1)^2\) est racine et donc \(x=1\) ou \(|x-1|=1\).
+        Les racines potentielles de \(P\) sont à l'intersection des cercles et points
+        vérifiant ces conditions et donc dans \(\{0,1,e^{i\pi/3},e^{-i\pi/3}\}\).
+        Or les éléments \(e^{\pm i\pi/3}\) n'ont pas leur carré dans l'ensemble, on peut
+        les éliminer, les racines de \(P\) sont donc toutes \(0\) ou \(1\).}
     \end{q}
     \begin{q}{2}
         Montrer que \(P\) est une puissance de \(X(X-1)\).
+        \boxans{D'après la question précédente, il existe \((\lambda,n,m)\in\C\times\N
+        \times\N\) tel que \(P = \lambda X^n(X-1)^m\), on se souvient que
+        \(P(X^2) = P(X)P(X+1)\) d'où on tire directement \(\lambda=\lambda^2\) puis
+        on développe \(X^{2n}(X-1)^{2m}=X^n(X-1)^m(X-1)^nX^m\) donc \(n=m\) ainsi \(P\)
+        est nul ou une puissance de \(X(X-1)\).}
     \end{q}
 \end{exo}
 
