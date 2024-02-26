@@ -1,0 +1,77 @@
+\documentclass[french]{report}
+\usepackage{../exercices}
+
+\usepackage{causets}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{S6- Logique - TD3}}
+\end{center}
+
+\begin{exo}
+    Trouver à chaque fois une fonction bijective :
+    \begin{q}{1}
+        De \(\N\) dans \(\N^*\)
+    \end{q}
+    \begin{q}{2}
+        De \(\N\) dans \(2\N\) et de \(\Z\) dans \(\N\).
+    \end{q}
+    \begin{q}{3}
+        De \((-\frac\pi2,\frac\pi2)\) dans \(R\) puis de \((-1,1)\) dans \(\R\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Le but de cet exercice est de montrer que \(\R\) n'est pas dénombrable, sans utiliser
+    le théorème de \textsc{Cantor}.
+    \begin{q}{1}
+        Soit \(\textsc{Dec}:=\{0,1,\dots,9\}^\N\) l'ensemble de toutes les suites
+        de chiffres. Soit \(F:\textrm{Dec}\to\text{Dec}\), définie par \(F((a_n))=(b_n)\)
+        où \(b_n = 2 - \delta_{1,a_n}\).
+        Soit \(\mathcal{A}:=\{\bar{a}^k\}_{k\in\N}\subset\text{Dec},\bar{a}^k=
+        \left(a^{(k)}_n\right)\). Montrer que \(F((a^{(n)}_n)_{n\in\N})\notin\mathcal{A}\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que si \(E\) est infini et \(A\) est une partie finie ou dénombrable de \(E\)
+    telle que \(E\backslash A\) est infini alors \(E\) a le même cardinal
+    que \(E\backslash A\).
+\end{exo}
+
+\begin{exo}
+    Sur \(\pow\)
+    \begin{q}{1}
+        Rappeler pourquoi \(\pow\) et \(\{0,1\}^N\) ont le même cardinal
+        \boxans{La fonction \(\varphi : P\mapsto \ind_P\) forme une bijection entre
+        ces deux ensembles, qui sont donc de même cardinal d'après le théorème de
+        \textsc{Cantor-Bernstein}.}
+    \end{q}
+    \begin{q}{2}
+        Montrer que l'ensemble des parties finies de \(\N\) est dénombrable.
+        \boxans{Soit \(P\) une partie finie de \(\N\) de cardinal \(n\), soit
+        \(p\) le \(n\)-ième nombre premier. Il y a moins de \(\N^n\) ensembles de même
+        cardinal, ce qui est dénombrable, on note \(k\) l'indice maximum atteint par \(P\)
+        dans une suite croissante pour un ordre fixé, alors \(\varphi\colon P\mapsto p^k\)
+        forme une injection des parties finies de \(\N\) dans \(\N\) ce qui démontre le résultat.}
+    \end{q}
+    \begin{q}{3}
+        En déduire que l'ensemble des parties infinies de \(\N\) est de même cardinal
+        que \(\pow\).
+        \boxans{On se rapelle que \(\pow\) n'est pas dénombrable, donc en retirant
+        une quantité dénombrable d'éléments il en reste une quantité non dénombrable.}
+    \end{q}
+    \begin{q}{4}
+        En se servant de la numérotation binaire, établir une bijection entre \([0,1)\)
+        et l'ensemble des parties infinies de \(\N\).
+        \boxans{On peut prendre la concaténation des écritures en base \(9\) de chaque
+        nombre de l'ensemble, séparés par un \(9\) pour avoir une injection des
+        parties infinies de \(\pow\) dans \([0,1)\)}
+    \end{q}
+    \begin{q}{5}
+        En déduire que \(\pow\) et \(\R\) ont le même cardinal.
+    \end{q}
+\end{exo}
+
+\end{document}
