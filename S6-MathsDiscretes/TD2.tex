@@ -1,0 +1,79 @@
+\documentclass[french]{report}
+\usepackage{../exercices}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{S6- Maths Discrètes - TD2}}
+\end{center}
+
+\begin{exo}
+    Pour chacune des affirmations suivantes, dire si elle est vraie ou fausse
+    et justifier la réponse.
+    \begin{q}{1}
+        \(G\) et \(H\) sont isomorphes ssi pour toute application \(f:V(G)\to V(H)\)
+        et pour tous les sommets \(u,v\in V(G)\), on a \(\{u,v\}\in E(G)
+        \Leftrightarrow\{f(u),f(v)\}\in E(H)\)
+    \end{q}
+    \begin{q}{2}
+        \(G\) et \(H\) sont isomorphes ssi il existe une bijection \(f:E(G)\to E(H)\).
+    \end{q}
+    \begin{q}{3}
+        S'il existe une bijection \(f:V(G)\to V(H)\) telle que tout sommet \(u\in V(G)\)
+        a le même degré que \(f(u)\) alors \(G\) et \(H\) sont isomorphes
+    \end{q}
+    \begin{q}{4}
+        Si \(G\) et \(H\) sont isomorphes, alors il existe une bijection \(f:V(G)\to V(H)\)
+        telle que tout sommet \(u\in V(G)\) a le même degré que \(f(u)\).
+    \end{q}
+    \begin{q}{5}
+    \end{q}
+    \begin{q}{6}
+    \end{q}
+    \begin{q}{7}
+        Tout graphe sur \(n\) sommets est isomorphes à un graphe dont l'ensemble des
+        sommets est l'ensemble \(\llbracket 1,n\rrbracket\).
+    \end{q}
+    \begin{q}{8}
+        Tout graphe sur \(n\geq 1\) sommets est isomorphe à une infinité de graphes.
+        \boxans{Oui, on peut \(\alpha\)-renommer le sommet autant de fois qu'on le souhaite.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(G=(V,E)\) un graphe, on note \(\bar{G}\) son complémentaire.
+    \begin{q}{1}
+        Montrer que si \(G\) est non connexe alors \(\bar{G}\) est connexe.
+        \boxans{Supposons \(G_1,G_2\) deux parties connexes de \(G\) distinctes
+        alors tous les sommets de \(G_1\) sont reliés à chacun des sommets de \(G_2\)
+        ainsi les deux ensembles de points sont reliés l'un à l'autre et \(\bar{G}\) contient
+        un graphe biparti avec un couplage couvrant assurant que les points de \(G_1\)
+        et ceux de \(G_2\) forment une seule partie connexe dans \(\bar{G}\), ce qui
+        suffit à la démonstration.}
+    \end{q}
+    \begin{q}{2}
+        Peut-on montrer la réciproque ?
+        \boxans{Non, il est possible que \(G\) et \(\bar{G}\) soient connexes, on peut
+        par exemple prendre \(G\) à \(4\) sommets de la forme \(\bigsqcup\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que si \(G\) est un graphe dont tous les sommets sont de degré supérieur
+    à \(d\in\N\) alors \(G\) contient un chemin élémentaire de longueur \(d\).
+\end{exo}
+
+\begin{exo}
+    Soit \(G=(V,E)\) un graphe et \(|V|=n\). Soit \(A_G\) sa matrice d'adjacence.
+    \begin{q}{1}
+        Donner un exemple de graphe tel que, poru tout \(k\geq 1\), certains
+        coefficients de \(A_G^k\) sont nuls.
+        \boxans{On peut prendre n'importe quel graphe avec \(E=\emptyset\).}
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(G\) est connexe si et seulement si tous les coefficients
+        de la matrice \(\left(I_n+A_G\right)^{n-1}\) sont non nuls.
+    \end{q}
+\end{exo}
+
+\end{document}

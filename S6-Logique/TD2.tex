@@ -1,0 +1,120 @@
+\documentclass[french]{report}
+\usepackage{../exercices}
+
+\usepackage{causets}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{S6- Logique - TD2}}
+\end{center}
+
+\begin{exo}
+    Montrer que les trois axiomes de \textsc{Peano} sont indépendants : pour cela il
+    faut construire pour chacun des axiomes un \textit{contre-modèle}, c'est à dire
+    un ensemble \(\eta\) conetnant un élément distingué, appelé \(0\), et sur lequel
+    on défini une fonction \(s:\eta\to\eta\) de façon que pour \(\left(\eta,0,s\right)\),
+    l'axiome dont on veut montrer qu'il est indépendant n'est pas vérifié, mais les
+    deux autres le sont.
+    \boxans{On procède en trois cas
+    \begin{enumerate}
+        \itt En prenant \(s\) le prédécesseur sur tout autre que \(0\) on a l'indépendance
+        du premier axiome.
+        \itt En prenant \(s\) constante on a l'indépendance du deuxième axiome.
+        \itt En prenant \(s: x\mapsto 2+x\) et \(P:\) "est pair" on a
+        l'indépendance du troisième axiome.
+    \end{enumerate}}
+\end{exo}
+
+\begin{exo}
+    Démontrer que chacun des deux axiomes, le successeur d'un entier est non nul, et
+    l'injectivité du successeur, sont bien nécessaires pour montrer l'existence de
+    la fonction définie par rédcurrence (\textit{Indication: utilisez les contre-modèles
+    de l'exercice 1}).
+    \boxans{Si on reprend les contre-modèles au dessus, pour le coup du successeur non
+    nul, ça revient par l'absurde à forcer \(h^n(a)=a\) pour un \(n\) dépendant du modèle.
+    Pour le coup de l'injectivité ça force \(h\) a ne pas être injective non plus, ou à boucler.}
+\end{exo}
+
+\begin{exo}
+    Soit \(A\) un ensemble, \(E\) un ensemble non vide, trois fonctions \(g\colon A\to E,
+    h\colon (E\times A)\to E\) et \(\sigma\colon A\to A\). Montrer qu'alors il existe
+    une unique fonction \(f\colon\left(\N\times A\right)\to E\) vérifiant:
+    \[f(0,y)=g(y);\quad f(s(x),y) = h(f(x,\sigma(y)),y)\]
+    \boxans{Cette démonstration est presque celle dans le cours, on se passera de la
+    recopier ici.}
+\end{exo}
+
+\begin{exo}
+    Démontrer ces propriétés par récurrence :
+    \begin{q}{1}
+        \(x+(y+z)=(x+y)+z\)
+        \boxans{Par récurrence sur \(z\), on initialise, on a d'un côté \(x+(y+0)=x+y=
+        (x+y)+0\). Pour la récurence, \(x+(y+s(z))=x+s(y+z)=s(x+y+z)=(x+y)+s(z)\).}
+    \end{q}
+    \begin{q}{2}
+        \(0+x=x\)
+        \boxans{Par récurrence immédiate avec \(0+s(x)=s(0+x)=s(x)\) par hypothèse.}
+    \end{q}
+    \begin{q}{3}
+        \(s(x)+y=s(x+y)\)
+    \end{q}
+    \begin{q}{4}
+        \(x+y=y+x\)
+    \end{q}
+    \begin{q}{5}
+        \(x\cdot(y+z)=x\cdot y+x\cdot z\)
+        \boxans{Par récurrence, \(x\cdot(y+s(z))=x\cdot s(y+z)=x\cdot(y+z)+x=x\cdot
+        y+x\cdot z+x=x\cdot y+x\cdot s(z)\)}
+    \end{q}
+    \begin{q}{6}
+        \(x\cdot(y\cdot z)=(x\cdot y)\cdot z\)
+    \end{q}
+    \begin{q}{7}
+        \(0\cdot x=0\)
+    \end{q}
+    \begin{q}{8}
+        \(s(x)\cdot y=x\cdot y+y\)
+    \end{q}
+    \begin{q}{9}
+        \(x\cdot y=y\cdot x\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer les propriétés usuelles suivantes de la fonction puissance pour tous les
+    entiers naturels \(x,y\) et \(z\) :
+    \begin{q}{1}
+        \(0^{x+1}=0\)
+    \end{q}
+    \begin{q}{2}
+        \(1^x=1\)
+    \end{q}
+    \begin{q}{3}
+        \(x^1=x\)
+        \boxans{\(x^1 = x^0\cdot x = 1\cdot x =x\)}
+    \end{q}
+    \begin{q}{4}
+        \(\left(x\cdot y\right)^z=x^z\cdot y^z\)
+    \end{q}
+    \begin{q}{5}
+        \(x^{y+z}=x^y\cdot x^z\)
+    \end{q}
+    \begin{q}{6}
+        \(\left(x^y\right)^z=x^{y\cdot z}\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer, à partir des axiomes de Peano ou des propriétés déjà démontrés, la
+    régularité de l'addition, à savoir que pour tous les entiers naturels \(x,z,z'\):
+    \[z+x=z'+x\Rightarrow z=z'\quad x+z=x+z'\Rightarrow z=z'\]
+\end{exo}
+
+\begin{exo}
+    Montrer, à partir des axiomes de Peano ou des propriétés déjà démontrés,
+    que pour tous les entiers naturels \(x,y\) :
+    \[x+y=0\Rightarrow\left(x=0\land y=0\right)\quad x\cdot
+    y=0\Rightarrow\left(x=0\lor y=0\right)\]
+\end{exo}
+\end{document}

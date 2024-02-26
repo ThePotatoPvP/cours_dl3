@@ -121,7 +121,7 @@
         et \(\langle X\rangle\). Supposons par l'absurde qu'il soit principal, engendré par
         un polynôme \(P\). Alors il existe \(Q\in\Z[X]\) tel que \(PQ=2\) donc \(P\) est de
         degré nul. de la même façon il existe \(R\in\Z[X]\) tel que \(PR=X\) donc \(P\)
-        est de contenu unitaire, finalement \(P=1\), qui n'est pas dans \(I\), on a une
+        est de contenu unitaire, finalement \(P=\pm1\), qui n'est pas dans \(I\), on a une
         contradiction.}
     \end{q}
     \begin{q}{3}
@@ -311,8 +311,163 @@
 \begin{exo}
     Soit \(A\) un anneau principal, \(P\in A[X]\) et \(a\in A\).
     \begin{q}{1}
-        Montrer que \(P\) es tirréductible si le poly
+        Montrer que \(P\) est irréductible si et seulement si le polynôme \(P(X=a)\)
+        est irréductible.
     \end{q}
+    \begin{q}{2}
+        Donner un exemple d'un polynôme \(P\) qui est irréductible et tel que le
+        polynôme \(P(X^2)\) ne l'est pas.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Des polynômes et des modulos.
+    \begin{q}{1}
+        Montrer que l'application de réduction modulo \(\varphi:\Z[X]\to\Z/p\Z[X]\)
+        est un morphisme d'anneau.
+    \end{q}
+    \begin{q}{2}
+        Soit \(P\) de contenu multiplicativement neutre et \(p\) un nombre premier ne
+        divisant pas le coefficient dominant de \(P\). On suppose que la réduction modulo
+        \(p\) de \(P\) est un irréductible de \(\Z/p\Z[X]\). Montrer que \(P\) est irréductible
+        dans \(\Z[X]\).
+    \end{q}
+    \begin{q}{3}
+        Qu'en est-il de la réciproque ? Que se passe-t-il si on ne fait pas d'hypothèse
+        sur le contenu ?
+    \end{q}
+    \begin{q}{4}
+        Montrer que \(X^4+10X^3+7\) est irréductible dans \(\Z[X]\).
+        \boxans{On évalue le polynôme en \(20\) pour obtenir \(240007\) qui est premier,
+        le critère de \textsc{Cohn} permet donc de conclure que le polynôme est irréductible
+        dans \(\Z[X]\).}
+    \end{q}
+    \begin{q}{5}
+        Montrer que \(X^4+1\) est irréductible dans \(\Z[X]\), mais que sa réduction
+        modulo \(p\) est réductible dans \(\Z/p\Z[X]\) pour tout \(p\) premier.
+        \boxans{C'est un cas d'école, c'est le \(8\)-ième polynôme cyclotomique.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que les polynômes suivants sont irréductibles sur \(\Z\).
+    \begin{q}{1}
+        \(X^4+X+1\)
+    \end{q}
+    \begin{q}{2}
+        \(X^4-X^3+2X+1\)
+    \end{q}
+    \begin{q}{3}
+        \(X^6+X^2+1\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que les polynômes suivants sont irréductibles sur \(\Q\).
+    \begin{q}{1}
+        \(2X^7+15X^2-45\)
+        \boxans{On remarque que le polynôme est \(5\)-\textsc{Eisenstein}}
+    \end{q}
+    \begin{q}{2}
+        \(\frac29X^5+\frac53X^4+X^3+\frac13\)
+        \boxans{On nonuple et on a un polynôme \(3\)-\textsc{Eisenstein}}
+    \end{q}
+    \begin{q}{3}
+        \(X^n-p\) avec \(p\) premier.
+        \boxans{Le polynôme est \(p\)-\textsc{Eisenstein}}
+    \end{q}
+    \begin{q}{4}
+        \(X^{p-1}+\dots+X+1\) avec \(p\) premier.
+    \end{q}
+    \begin{q}{5}
+        Facotriser \(P=6X^5+30X^2+12X-12\).
+        \boxans{On a \(3\cdot 2\cdot (X+1)\cdot (X^4-X^3+X^2+4X-2)\) dont le dernier
+        facteur est irréductible d'après le critère de \textsc{Cohn} avec \(5\) par exemple.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(P(X)=X^3+3X+3\in\Z[x]\) les polynômes suivants sont-ils irrécutibles ?
+    \begin{q}{1}
+        \(P\) dans \(\Q[X]\)
+    \end{q}
+    \begin{q}{2}
+        \(P\) dans \(\R[X]\)
+    \end{q}
+    \begin{q}{3}
+        \(P\) dans \(Z/3\Z[X]\)
+    \end{q}
+    \begin{q}{4}
+        \(P\) dans \(Z/2\Z[X]\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Parmi les anneaux suivants, lesquels sont des corps ?
+    \begin{q}{1}
+        \(\Z[X]/(2X+2)\)
+        \boxans{N'est pas un corps car l'idéal n'est pas premier}
+    \end{q}
+    \begin{q}{2}
+        \(\Q[X]/(2X+2)\)
+    \end{q}
+    \begin{q}{3}
+        \(\R[X]/(X^4+X^3+2X^2+7)\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que sur \(\mathbb{F}_p\) (\(p\) premier) il y a exactement \(\frac{p^2-p}{2}\)
+    polynômes unitaires irrécutibles de degré \(2\) et \(\frac{p^3-p}{3}\) unitaires
+    irréductibles de degré \(3\).
+\end{exo}
+
+\begin{exo}
+    On considère l'application \(\phi\colon\C[X,Y]\to\C[T]\) qui à un polynôme
+    \(P(X,Y)\) associe \(P(T^3,T^2)\).
+    \begin{q}{1}
+        Indiquer birèvement pourquoi \(\phi\) est un morphisme d'anneau.
+    \end{q}
+    \begin{q}{2}
+        Montrer que pour tout \(P\in\C[X,Y]\) il existe \(\Q\in\C[X,Y],R_1,R_0\in\C[Y]\)
+        tels que \[P(X,Y)=Q(X,Y)(X^2-Y^3)+R_1(Y)X+R_0(Y)\] et en déduire que \(\ker(\phi)\)
+        est l'idéal engendré par le polynôme \(X^2-Y^3\)
+    \end{q}
+    \begin{q}{3}
+        Montrer que \(\Im(\phi)=\{P\in\C[T],P=T^2Q+c,Q\in\C[T],c\in\C\}\) et que \(T^2\)
+        et \(T^3\) sont irréductibles dans \(\Im(\phi)\)
+    \end{q}
+    \begin{q}{4}
+        En déduire que l'anneau qotient \(\C[X,Y]/\ker(\phi)\) n'est pas factoriel.
+    \end{q}
+\end{exo}
+
+\section*{Fractions rationnelles}
+
+\begin{exo}
+    Décomposer en éléments simples les fractions rationelles suivantes de \(\R[X]\)
+    \begin{q}{1}
+        \(\frac{X}{X^2-4}\)
+    \end{q}
+    \begin{q}{2}
+        \(\frac{X^3-3X^2+X-4}{X-1}\)
+    \end{q}
+    \begin{q}{3}
+        \(\frac{2X^3+X^2-X+1}{X^2-2X+1}\)
+    \end{q}
+    \begin{q}{4}
+        \(\frac{X+1}{X^4+1}\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Existe-t-il une fraction rationelle \(F\in\C(X)\) telle que
+    \(F(X)^2=\left(X^2+1\right)^3\)
+\end{exo}
+
+\begin{exo}
+    Soient \(K\) un corps commutatif, \(E\) un \(K\)-espace vectoriel et \(u\) un
+    endomorphisme de \(E\). On note \(u^n\) la composée \(n\)-ième de \(u\).
 \end{exo}
 
 \end{document}

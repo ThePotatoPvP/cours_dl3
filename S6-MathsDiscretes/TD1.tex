@@ -28,6 +28,7 @@
     \end{q}
     \begin{q}{2}
         Combien de relations d'équivalences y a-t-il sur un ensemble de cardinal \(5\) ?
+        \boxans{Il y en a exactement le \(5\)-ième nombre de Bell, soit 52.}
     \end{q}
     \begin{q}{3}
         Et de relations d'ordre sur un ensemble de cardinal \(4\) ?
@@ -87,7 +88,7 @@
     le toucan et le latin et deux parlent le latin et l'anglais. Une seule personne parle
     toutes les langues, que vaut \(x\).
     \boxans{On a un trilingue, 1 bilingue anglais-latin, 2 bilingues toucan-latin,
-    3 bilingues anglais-toucan, et quatres personnes culturellement fermées, \(x=10\).}
+    3 bilingues anglais-toucan, et cinq personnes culturellement fermées, \(x=11\).}
 \end{exo}
 
 \begin{exo}
@@ -128,47 +129,121 @@
 \begin{exo}
     Soient \(n,k\in\N^*\).
     \begin{q}{1}
-        Combien y a-t-il d'uplets \(\left(x_1,\dots,x_n\right)\in\N^k\) tels que \(\sum x_i = n\)
+        Combien y a-t-il d'uplets \(\left(x_1,\dots,x_k\right)\in\N^k\) tels que \(\sum x_i = n\).
+        \boxans{Ce qu'on cherche revient à compter le nombre de façons de placer
+        \(k-1\) séparateurs sur une ligne de \(n\) boules, ce qui revient à dire qu'on
+        compte les façons de placer \(n\) boules parmi les \(n+k-1\) symboles,
+        \(B_{n,k}=\binom{n+k-1}{n}\).}
     \end{q}
     \begin{q}{2}
         Même question pour \(\N^*\) et \(\Z\).
+        \boxans{Dans \(\Z\) on a trivialement un nombre infini d'uplets pour \(k\geq2\)
+        et sinon \(k\). Pour \(\N^*\) celà revient à compter les façons de placer
+        \(k-1\) séparateurs parmi les \(n-1\) trous entre les boules, donc \(\binom{n-1}{k-1}\).}
     \end{q}
 \end{exo}
 
 \begin{exo}
-    Soient \(n,k\in\N^*\). Combien y a-t-il d'uplets \(\left(x_1,\dots,x_n\right)\in\N^k\)
+    Soient \(n,k\in\N^*\). Combien y a-t-il d'uplets \(\left(x_1,\dots,x_k\right)\in\N^k\)
     tels que \(1\leq x_1\leq\dots\leq x_k\leq n\).
+    \boxans{Celà revient à placer \(n-1\) séparateurs sur une ligne de \(k\) boules
+    donc parmi \(n+k-1\) symboles, finalement le résultat est \(\binom{n+k-1}{n-1}\)}
 \end{exo}
 
 \begin{exo}
     Combien y a-t-il d'anagrammes du mot \textsc{Locomotive} ne contenant pas
     deux \textsc{O} consécutifs.
+    \boxans{On retire les \textsc{O} pour avoir un mot de \(7\) lettres qui admet donc
+    \(7!\) permuttations, à se mot il y a \(\binom{8}{3}\) façon de placer des \textsc{O}
+    sans que deux \textsc{O} ne se touchent, la réponse est \(7!\binom{8}{3}\).}
 \end{exo}
 
 \begin{exo}
     Pour tout entier naturel \(n\geq 1\), soit \(a_n\) le nombre de manières de recouvrir
     un damier de dimension \(2\times n\) avec des pièces de dimension \(1\times 2\).
     Dire comment calculer récursivement \(a_n\).
+    \boxans{On a la formule suivante \(a_n = a_{n-1} + a_{n-2}\). On retrouve \textsc{Fibonnacci}.}
 \end{exo}
 
 \begin{exo} Sur les sommes
     \begin{q}{1}
         Soit \(n,k\in\N\) tels que \(k\leq n\). Montrer par récurrence sur \(n\) la formule
         \[\binom{k}{k}+\binom{k+1}{k}+\binom{k+2}{k}+\dots+\binom{n}{k}=\binom{n+1}{k+1}\]
+        \boxans{En \(n=k\) l'initialisation est évidente \(1=1\). On procède ensuite par
+        récurrence immédiate avec la formule de \textsc{Pascal} :
+        \(\binom{n+2}{k+1}=\binom{n+1}{k+1}+\binom{n+1}{k}\) comme argument majoritaire.}
     \end{q}
     \begin{q}{2}
         En déduire la valeur de \(\sum_{i=0}^n i^2\) et \(\sum_{i=0}^n i^3\).
+        \boxans{On déduit de la question précédente les formules :
+        \[\sum_{i=0}^ni^2=2*\sum\binom{i}{2}+\sum i = \binom{n+1}{3}+\frac{n(n+1)}{2}=\frac{n(n+1)(2n+1)}{6}\]
+        \[\sum_{i=0}^ni^3=\left(\frac{n(n+1)}{2}\right)^2\]}
     \end{q}
 \end{exo}
 
 \begin{exo}
     Avec des quantificateurs qui fonctionnent, démontrer la formule suivante
-    \[\binom{n}{k_1,\dots,k_m}=\binom{n}{k_1-1,\dots,k_m}+\dots+\binom{n}{k_1,\dots,k_m-1}\]
+    \[\binom{n+1}{k_1,\dots,k_m}=\binom{n}{k_1-1,\dots,k_m}+\dots+\binom{n}{k_1,\dots,k_m-1}\]
+    \boxans{Comme \(n+1\) est la somme des \(k_i\) on a que la partie de droite peut
+    se réécrire comme \(\sum k_i \binom{n}{k_1,\dots,k_m}\) ce qui donne finalement
+    le membre de gauche de l'équation, c'est bueno.}
 \end{exo}
 
 \begin{exo}
     Soit \(n\in\N^*\). De combien de manière peut-on placer \(n\) tours sur un échiquier
-    de tailles \(n\times n\) de sorte que toute case vide se trouve sur la trajectoire
+    de taille \(n\times n\) de sorte que toute case vide se trouve sur la trajectoire
     d'au moins une tour.
+    \boxans{On a \(n^n\) façons de mettre une tour par colonne, ce qui indirectement
+    couvre les lignes, pareil par symétrie axiale, et on a alors \(n!\) cas qui se répètent,
+    ceux où chaque ligne et chaque colonne ont une tour, finalement on a \(2n^n-n!\)
+    façons de le faire, tah \textsc{Poincarré}.}
+\end{exo}
+
+\begin{exo}
+    Soient \(n,k\in\N^*\).
+    \begin{q}{1}
+        Déterminer le nombre de permuttations de \(\llbracket1,n\rrbracket\) sans
+        points fixes.
+        \boxans{On a la formule de récurrence \(d_n = n(d_{n-1}+d_{n-2})\) %ce qui livre
+        %\(d_n = n! \sum\frac{(-1)^i}{i!}\) par récurrence immédiate.}
+        Si \(A_i\) est l'esemble des permuttations qui ont \(i\) comme point fixe,
+        \(|\cup A_i| = n! - (n-1)! + (n+2)! -\dots\) on retrouve \(\simeq n!(1-frac{1}{e})\).
+        donc le nombre qu'on cherche est \(n!\sum \frac{(-1)^n}{e}\).
+        }
+    \end{q}
+    \begin{q}{2}
+        Déterminer le nombre de permuttations de \(\llbracket1,n\rrbracket\) ayant
+        exactment \(k\) points fixes.
+        \boxans{On choisit les \(k\) points fixes et on permutte tous les autres éléments
+        de sorte à ne pas avoir de points fixes parmi eux, on rajoute donc un facteur
+        \(\binom{n}{k}\) devant. On veut alors permutter que \(n-k\) éléments.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Le but de cet exercice est de compter, pour \(n,k\in\N^*\) le nombre \(S(n,k)\)
+    de manières de partionner l'ensemble \(\llbracket1,n\rrbracket\) en \(k\) sous
+    ensembles non vides. En fait, on considère une variante du problème où les
+    sous-ensembles sont distingués, cela reivent à dire que l'on veut répartir les entiers
+    de \(1\) à \(n\) dans \(k\) boites numérotées de \(1\) à \(k\) en tenant compte
+    du numéro. On note \(B\) le nombre de manières de faire cette répartition.
+    \begin{q}{1}
+        Quel est le nombre total \(T\) de manières de répartir les entiers de \(1\) à \(n\)
+        dans \(k\) boites numérotées si l'on autorise les boites vides ?
+        \boxans{Pour chacune des \(n\) boules on a \(k\) choix possibles donc \(T=n^k\).}
+    \end{q}
+    \begin{q}{2}
+        Pour \(i\in\llbracket1,n\rrbracket\) soit \(M_i\) l'ensemble des répartitions
+        possibles des entiers de \(1\) à \(n\) dans \(k\) boites numérotées telles que
+        la boite numéro \(i\) soit vide. Exprimer \(B\) en fonction de \(T\)
+        et de \(|\bigcup M_i|\).
+        \boxans{\(B = T - |\bigcup M_i|\) vu qu'on veut aucune boite vide, on veut tout
+        sauf les cas avec au moins une boite vide.}
+    \end{q}
+    \begin{q}{3}
+        En déduire une expression de \(B\) et de \(S(n,k)\).
+        \boxans{Le cardinal de l'union des \(M_i\) s'obtient par la formule du crible
+        de \textsc{Poincarré} : \(|\bigcup M_i | = \sum (-1)^{i+1} n^{k-i}\)}
+    \end{q}
 \end{exo}
 \end{document}

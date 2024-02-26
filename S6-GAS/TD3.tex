@@ -1,0 +1,84 @@
+\documentclass[french]{article}
+\usepackage{../exercices}
+\usetikzlibrary{arrows,automata, positioning}
+\begin{document}
+
+% jeremy.ledent@irif.fr
+\begin{center}
+    \huge{\textbf{S6- Langages et expressions rationnelles}}
+\end{center}
+
+\begin{exo}
+    Soit G la grammaire donnée par les règles suivantes, où les capitales sont des
+    non-terminaux, les autres caractères sont des terminaux, et S est l'axiome de G.
+    \[S\to F\quad S\to(F+S)\quad F\to a\]
+    \begin{q}{1}
+        Donner une dérivation gauche pour les mots \((a+a)\) et \((a+(a+a))\).
+        Donner une dérivation droite pour le mot \((a+a)\).
+    \end{q}
+    \begin{q}{2}
+        Les mots \((a+a))\) et \(((a+a)+a)\) sont-ils dans le langage engendré pa
+        \(G\) ?
+    \end{q}
+    \begin{q}{3}
+        Donner les arbres de dérivation des mots que la question 1.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Décrire les langages engendrés par les grammaires suivantes :
+    \begin{q}{1}
+        \(S\to\eps|aSa|bSb|a|b\)
+        \boxans{Tous les palindromes sur l'alphabet \(\{a,b\}\).}
+    \end{q}
+    \begin{q}{2}
+        \(S\to\eps|[S]S\)
+        \boxans{Tous les mots bien parenthésées sur l'alphabet \(\{[,]\}\)}
+    \end{q}
+    \begin{q}{3}
+        \(S\to\eps|(S| (S)S\)
+        \boxans{Tous les mots bien prenthésés, avec potentiellement des ouvrantes en trop.}
+    \end{q}
+    Ces grammaires sont-elles ambigües ?
+\end{exo}
+
+\begin{exo}
+    Montrer que les langages suivants sont algébrique en donnant une grammaire
+    qui les engendre.
+    \begin{q}{1}
+        \(L_1=\{a^nb^n|n\in\N\}\)
+    \end{q}
+    \begin{q}{2}
+        \(L_2=\{a^nb^m\mid m\geq n\geq 0\}\)
+    \end{q}
+    \begin{q}{3}
+        \((*)L_3=\{a^nb^*c^n\mid n\in\N\}\)
+    \end{q}
+    \begin{q}{4}
+        \(L_4=\{a^nb^mc^k\mid n=m+k\}\)
+    \end{q}
+    \begin{q}{5}
+        \(L_5=\{a^nb^mc^md^n\mid n,m\in\N\}\)
+    \end{q}
+    \begin{q}{6}
+        \(L_6=\{\omega\in\{a,b\}^*\mid \textrm{pas un palindrome}\}\)
+    \end{q}
+    L'un d'entre eux est-il rationnel ?
+\end{exo}
+
+\begin{exo}
+    La grammaire suivante engendre le langage \(\{a^nb^nc^m\mid n,m\in\N\}\cup
+    \{a^mb^nc^n\mid m,n\in\N\}\).
+    \[S\to UV|XY \quad U\to\eps|aUb\quad V\to\eps|cV\quad X\to\eps|aX\quad Y\to\eps|bYc\]
+    Montrer que cette grammaire est ambigüe.
+    \boxans{La règle S sépare les deux ensembles comme s'ils étaient distincts, ils ne
+    le sont pas, en effet si \(m=n\) alors on a clairement deux arbres de dérivation.}
+\end{exo}
+
+\begin{exo}
+    On considère la grammaire suivante qui engendre les expressions polnaises inverses:
+    \[S\to E\quad E\to EE+|EE*|EE-|EE/|v|i\]
+    Donner une dérivation gauche, une dérivation droite et un arbre de dérivation
+    pour l'expression : \(iv+i*\).
+\end{exo}
+\end{document}

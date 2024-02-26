@@ -213,6 +213,8 @@
     \begin{q}{2}
         Déterminer toutes les tribus finies sur \(E\). Lesquelles ont
         \(0,1,2,\dots,8\) éléments ?
+        \boxans{D'après la question précédente, on peut associer toute tribu à l'ensemble
+        des parties de \(\llbracket1,n\rrbracket\) avec le bon \(n\).}
     \end{q}
 \end{exo}
 
@@ -220,6 +222,13 @@
     Soient \(\mathcal{A}_1\) et \(\mathcal{A}_2\) deux tribus sur un ensemble \(E\).
     Montrer que la tribu engendrée par \(\mathcal{A}_1\cup\mathcal{A}_2\) coïncide
     avec la tribu engendrée par \(\{A_1\cap A_2\mid A_1\in\mathcal{A}_1, A_2\in\mathcal{A}_2\}\)
+    \boxans{On note \(\CC\) la seconde tribu, on veut montrer
+    \(\CC=\sigma(\mathcal{A}_1\cup\mathcal{A}_2)=\CC'\). On commence par remarquer que
+    pour tout \(A_1\in\mathcal{A}_1,A_2\in\mathcal{A}_2\) on a \(A_1\cap A_2\in\CC'\)
+    par la stabilité de la tribu, donc \(\CC\subseteq\CC'\). Dans l'autre sens on a bien
+    \(\forall A_1\in\mathcal{A}_1,A_1=A_1\cap E\in \CC\) par symétrie on a ensuite
+    \(\mathcal{A}_1\cup\mathcal{A}_2\in\CC\) ce qui suffit.
+    }
 \end{exo}
 
 \begin{exo}
@@ -234,6 +243,8 @@
 \begin{exo}
     Soit \(\mathcal{S}\) l'ensemble des boréliens de \(\R\) symétrique par
     rapport à \(0\), montrer que c'est une tribu. \[\mathcal{S}=\{A\in\bor\mid \forall x\in A, -x\in A\}\].
+    \boxans{Cet ensemble contient clairement \(\emptyset\) et est clairement
+    stable par union dénombrable et passage au complémentaire, c'est donc une tribu.}
 \end{exo}
 
 \section*{Mesures}
@@ -284,11 +295,55 @@
     \end{q}
     \begin{q}{3}
         Si \(f\) est monotone alors \(f\) est borélienne.
-        \boxans{}
     \end{q}
     \begin{q}{4}
         Si \(f\) est dérivable alors \(f'\) est borélienne.
     \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(\left(E,\mathcal{A}\right),(F,\mathcal{B})\) deux espaces mesurables.
+    On note \(A\otimes B\) la tribu produit, celle sur \(E\times F\) engendrée par
+    \(\{A\times B, A\in\mathcal{A},B\in\mathcal{B}\}\). Soient \(p_E\) et \(p_F\)
+    les projections canoniques.
+    \begin{q}{1}
+        Montrer que \(p_E\) et \(p_F\) sont mesurables.
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(A\otimes B\) est la plus petite tribu pour laquelle
+        \(p_E\) et \(p_F\) sont mesurables.
+    \end{q}
+    \begin{q}{3}
+        Démontrer que \(\bor[\R^2] = \bor\otimes\bor\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(\left(E,\mathcal{A}\right)\) un espace mesurable, \(F\) un ensemble
+    et \(f\colon E\to F\) une application. On note
+    \(\mathcal{B}=\{B\in\pow[F]|f^{-1}(B)\in\mathcal{A}\}\)
+\end{exo}
+
+\section*{Classes monotones}
+
+\begin{exo}
+    Soit \(E\) un ensemble et \(\CC\in\pow[E]\), calculer la classe monotone
+    engendrée par \(\CC\) lorsque :
+    \begin{q}{1}
+        \(\CC=\{A\}\) où \(A\subseteq E\).
+    \end{q}
+    \begin{q}{2}
+        \(\CC=\{A,B\}\) où \(A,B\subseteq E\).
+    \end{q}
+    \begin{q}{3}
+        \(\CC=\{B\subseteq E\mid A\subseteq B\}\) où \(A\subseteq E\).
+    \end{q}
+    Donner un exemple de classe monotone qui n'est pas une tribu.
+\end{exo}
+
+\begin{exo}
+    Montrer que la fonction de répartition caractérise la loi d'une variable aléatoire
+    réelle.
 \end{exo}
 
 \end{document}
