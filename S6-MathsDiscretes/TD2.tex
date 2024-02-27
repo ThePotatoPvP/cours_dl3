@@ -14,25 +14,42 @@
         \(G\) et \(H\) sont isomorphes ssi pour toute application \(f:V(G)\to V(H)\)
         et pour tous les sommets \(u,v\in V(G)\), on a \(\{u,v\}\in E(G)
         \Leftrightarrow\{f(u),f(v)\}\in E(H)\)
+        \boxans{Soit \(G\) et \(H\) isomorphes, on peut toujours prendre une application
+        qui renvoie tous les sommets de \(G\) sur un même sommet de \(H\) ainsi si \(G\)
+        a une arête l'implication est fausse.}
     \end{q}
     \begin{q}{2}
         \(G\) et \(H\) sont isomorphes ssi il existe une bijection \(f:E(G)\to E(H)\).
+        \boxans{Soit \(f\) une telle bijection, alors les deux graphes ont le même
+        nombre d'arêtes mais rien de plus, ce n'est pas assez pour conclure à l'isomorphisme.}
     \end{q}
     \begin{q}{3}
         S'il existe une bijection \(f:V(G)\to V(H)\) telle que tout sommet \(u\in V(G)\)
         a le même degré que \(f(u)\) alors \(G\) et \(H\) sont isomorphes
+        \boxans{C'est faux, voir dessin. Avec \(6\) sommets, deux triangles et un héxagone par exemple.}
     \end{q}
     \begin{q}{4}
         Si \(G\) et \(H\) sont isomorphes, alors il existe une bijection \(f:V(G)\to V(H)\)
         telle que tout sommet \(u\in V(G)\) a le même degré que \(f(u)\).
+        \boxans{Si \(G\) et \(H\) sont isomorphe, par définition il y a autant d'arêtes
+        de la forme \(\{u,x\}\) dans \(G\) que d'arêtes \(\{f(u),y\}\) dans \(H\) donc oui.}
     \end{q}
     \begin{q}{5}
+        Si \(G\) et \(H\) sont isomorphes, alors il existe une bijection \(f:E(G)\to E(H)\).
+        \boxans{Oui, d'après la définition d'isomorphisme de graphe \(G\) et \(H\)
+        doivent avoir le même nombre d'arêtes, ce qui suffit.}
     \end{q}
     \begin{q}{6}
+        Deux graphes \(G\) et \(H\) sont isomorphes ss'il existe une application \(f:V(G)\to V(H)\)
+        telle que pour tous sommets \(u,v\in V(G)\) on a \(\{u,v\}\in E(G)\Leftrightarrow
+        \{f(u),f(v)\}\in E(H)\).
+        \boxans{La réciproque est fausse, tous les graphes sans arêtes ne sont pas
+        isomorphes au graphe à \(1\) sommet.}
     \end{q}
     \begin{q}{7}
-        Tout graphe sur \(n\) sommets est isomorphes à un graphe dont l'ensemble des
-        sommets est l'ensemble \(\llbracket 1,n\rrbracket\).
+        Tout graphe sur \(n\) sommets est isomorphe à un graphe dont l'ensemble des
+        sommets est \(\llbracket 1,n\rrbracket\).
+        \boxans{Oui, c'est le concept d'\(\alpha\)-renommage.}
     \end{q}
     \begin{q}{8}
         Tout graphe sur \(n\geq 1\) sommets est isomorphe à une infinité de graphes.
@@ -61,18 +78,157 @@
 \begin{exo}
     Montrer que si \(G\) est un graphe dont tous les sommets sont de degré supérieur
     à \(d\in\N\) alors \(G\) contient un chemin élémentaire de longueur \(d\).
+    \boxans{Soit \(s\) un sommet de \(G\), par hypothèse il est de degré au moins
+    \(d\), on part le long d'une arrête pour arriver sur un sommet dont au moins \(d-1\)
+    arrêtes sont disponibles pour repartir, on en choisit une et on arrive sur un sommet
+    duquel on peut prendre au moins \(d-2\) sommets pour repartir et de proche
+    en proche on construit un chemin de longueur \(d\).}
 \end{exo}
 
 \begin{exo}
     Soit \(G=(V,E)\) un graphe et \(|V|=n\). Soit \(A_G\) sa matrice d'adjacence.
     \begin{q}{1}
-        Donner un exemple de graphe tel que, poru tout \(k\geq 1\), certains
+        Donner un exemple de graphe connexe tel que, pour tout \(k\geq 1\), certains
         coefficients de \(A_G^k\) sont nuls.
-        \boxans{On peut prendre n'importe quel graphe avec \(E=\emptyset\).}
+        \boxans{On peut prendre la droite, chaque sommet relié au suivant, ainsi \(A_G\)
+        est le nilpotent cyclique usuel, le triangle du bas reste nul.}
     \end{q}
     \begin{q}{2}
         Montrer que \(G\) est connexe si et seulement si tous les coefficients
         de la matrice \(\left(I_n+A_G\right)^{n-1}\) sont non nuls.
+        \boxans{Cette matrice représente le nombre de chemins distincts entre deux sommets, \(0\) s'il
+        n'existe pas de chemin. On ajoute l'identité pour s'autoriser à boucler au cas
+        où on a un chemin plus court que \(n\). Si \(G\) est connexe alors les \(n\) sommets
+        sont reliés par des chemins d'au plus \(n-1\) arêtes et inversement.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Un graphe est dit \textit{asymétrique} si son seul automorphisme est l'identité.
+    \begin{q}{1}
+        Donner un exemple d'un graphe asymétrique ayant au moins 2 sommets.
+    \end{q}
+    \begin{q}{2}
+        Montrer qu'un graphe asymétrique doit avoir au moins \(6\) sommets.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que deux graphes \(G\) et \(G'\) sont isomorphes s'il existe une
+    matrice de permutation \(P\) telle que \(A_{G'}=PA_GP^t\)
+\end{exo}
+
+\begin{exo}
+    Soit \(G=\left(V_G,E_G\right)\) et \(H=\left(V_H,E_H\right)\) deux graphes.
+    Un homomorphisme de \(G\) dans \(H\) est une application \(f:V_G\to V_H\)
+    telle que pour toute arête \({u,v}\) dans \(E_G\), l'arête \(\{f(u),f(v)\}\)
+    appartient à \(E_H\).
+    \begin{q}{1}
+        Quelle est la différence avec la définition de \(G\) isomorphe à \(H\).
+        \boxans{Ici \(f\) n'a besoin d'être ni monomorphe ni épi, on a donc pas de réciproque.}
+    \end{q}
+    \begin{q}{2}
+        Caractériser les graphes \(G\) tels qu'il existe un homomorphime de \(G\)
+        dans \(K_1\) puis \(K_2\) et \(K_3\).
+        \boxans{\(G\) doit avoir chacune de ses parties connexes isomorphe à un sous
+        grahe du \(k\) en question.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Quel est le nombre maximum d'arêtes (exprimé en fonction du nombre \(n\) de sommets)
+    \begin{q}{1}
+        d'un graphe ?
+    \end{q}
+    \begin{q}{2}
+        d'un graphe avec \(k\leq n\) composantes connexes.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Décrire l'ensemble des couples \(\left(n,k\right)\) tels qu'il existe un graphe
+    à \(n\) sommets dont tous sont de degré \(k\) (un tel graphe est dit \(k\)-régulier).
+\end{exo}
+
+\begin{exo}
+    Donner un exemple de graphe \(3\)-régulier asymétrique.
+\end{exo}
+
+\begin{exo}
+    On appelle \textit{promenade} dans un graphe \(G\) une suite \(u_0, e_1, u_1,\dots
+    e_n,u_n\) où les \(u_i\) sont des sommets de \(G\) et les \(e_i\) des arêtes et
+    pour tout \(i\in\llbracket1,n\rrbracket e_i=\{u_{i-1},u_i\}\). Caractériser les
+    graphes possédant une promenade passant exactement une fois par chaque arête et
+    au moins une fois par chaque sommet.
+\end{exo}
+
+\begin{exo}
+    Soit \(G\) un graphe à \(n\) sommets, chacun étant de degré au moins
+    \(\left(n-1\right)/2\). Montrer que \(G\) est connexe.
+\end{exo}
+
+
+\begin{exo}
+    On rapelle qu'un cycle hamiltonien dans un graphe est un cycle passant exactement
+    une fois par chaque sommet du graphe. Soit \(G\) un graphe a \(n\) sommets. On
+    considère l'opération suivante : pour deux sommets non reliés \(u\) et \(v\) tels
+    que la somme des degrés soit au moins \(n\), ajouter l'arête \(\{u,v\}\). Soit
+    \(G'\) le graphe obtenu après cette opération.
+    \begin{q}{1}
+        Montrer que si \(G\) a un cycle hamiltonien alors \(G'\) aussi.
+    \end{q}
+    \begin{q}{2}
+        Montrer la réciproque, c'est-à-dire que si \(G'\) a un cycle hamiltonien
+        alors \(G\) en avait un aussi.
+    \end{q}
+    Soit \(G\) un graphe, on répète l'opération d'ajout d'arêtes décrite en début
+    d'exercice tant que c'est possible. Soit \([G]\) le graphe obtenu.
+    \begin{q}{3}
+        À chaque étape, il pourrait y avoir plusieurs choix possibles de couples
+        de sommets \(u,v\) satisfaisant les conditions. Montrer que le graphe
+        obtenu à la fin ne dépend pas de l'ordre.
+    \end{q}
+    \begin{q}{4}
+        Montrer que \(G\) a un cycle hamiltonien ssi \([G]\) en a un.
+    \end{q}
+    \begin{q}{5}
+        Soit \(G\) un graphe à \(n\) sommets, chacun de degré au moins \(n/2\). Montrer
+        que \(G\) a un cycle hamiltonien.
+    \end{q}
+    \begin{q}{6}
+        Soit \(G\) un graphe à \(n\) sommets et ayant au moins \(\frac12(n-1)(n-2)+2\)
+        arêts. Montrer que \(G\) a un cycle hamiltonien.
+    \end{q}
+    \begin{q}{7}
+        Donner un graphe à \(6\) sommets avec le plus petit nombre possible d'arêts tel
+        que \([G]\) soit le graphe comple \(K_6\). Pouvez vous montrer que c'est le plus
+        petit nombre d'arêtes possible ?
+    \end{q}
+    \begin{q}{8}
+        Le fait que \(G\) ait un cycle hamiltoien ssi \([G]\) en a un permet-il
+        d'obtenir un algorithme efficace pour déterminer si un graphe donné a un
+        cycle hamiltonien ?
+        \boxans{Bah non, c'est NP-complet.}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On définit le \textit{graphe triangulaire} \(T_n\) comme étant le graphe \(G\)
+    dont l'ensemble des sommets \(V(G)\) est \(\binom{\llbracket1,n\rrbracket}{2}\)
+    c'est à dire l'ensemble des sous-ensembles de \(\llbracket1,n\rrbracket\) à \(2\)
+    éléments, et dont l'ensemble des arêtes \(E(G)\) est \(\{\{X,Y\}\mid|X\cap Y|=1\}\),
+    c'est à dire qu'il y a une arête entre \(X\) et \(Y\) ssi ces deux sous-ensembles
+    de \(\llbracket1,n\rrbracket\) ont exactement un élément en commun.
+    \begin{q}{1}
+        Dessiner les graphes \(T_3, T_4,T-5\).
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(T_n\) est \(T_{2n-4}\)-régulier.
+    \end{q}
+    \begin{q}{3}
+        Soit \(X,Y\) deux sommets de \(T_n\) tels que \(\{X,Y\}\in E(T_n)\). Montrer
+        que le nombre de sommets de \(T_n\) reliés à la fois à \(X\) et \(Y\) vaut
+        \(n-2\).
     \end{q}
 \end{exo}
 
