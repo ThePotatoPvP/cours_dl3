@@ -1,0 +1,154 @@
+\documentclass[french]{report}
+\usepackage{../exercices}
+
+\usepackage{causets}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{S6- Logique - TD5}}
+\end{center}
+
+\begin{exo}
+    Le jeu du Sudoku consiste à compléter une grille \(9\times 9\) partiellement remplie
+    par des chiffres de \(1\) à \(9\) avec les contraintes qui suivent.
+    \begin{q}{1}
+        Chaque case contient un et un seul chiffre.
+    \end{q}
+    \begin{q}{2}
+        Les chiffres de \(1\) à \(9\) apparaissent sur chacune des lignes. Autrement
+        dit aucune ligne ne contient deux fois le même chiffre.
+    \end{q}
+    \begin{q}{3}
+        Les chiffres de \(1\) à \(9\) apparaissent sur chacune des colonnes. Autrement
+        dit aucune colonne ne contient deux fois le même chiffre.
+    \end{q}
+    \begin{q}{4}
+        Les chiffres de \(1\) à \(9\) apparaissent dans chacun des sous-carrés \(3\times 3\)
+        qui subdivisent la grille. Autrement dit, auncun de ces carrés ne contient
+        deux fois le même chiffre.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Déterminer la table de vérité de la formule suivante
+    \[\left(\left(\lnot p\lor q\lor r\right)\rightarrow\left(p\land\lnot q\land
+    r\right)\right)\] Trouver une formule à \(2\) variables équivalente à
+    la précédente.
+\end{exo}
+
+\begin{exo}
+    Et maintenant on s'amuse
+    \begin{q}{1}
+        Combien y a-t-il de valuations sur \(n\) variables propositionelles ?
+        Combien de tables de vérité ?
+    \end{q}
+    \begin{q}{2}
+        Trouver une formule à une variable correspondant à chaque table de vérité
+        en utilisant \(\lor,\land,\lnot\).
+        \boxans{On prend par exemple \(p\land\lnot p\) et \(p\lor\lnot p\).}
+    \end{q}
+    \begin{q}{3}
+        Trouver pour chaque valuation \(v\) une formule propositionelle \(F\)
+        à deux variables n'utilisant que les connecteurs \(\land,\lnot\) et telle
+        que \(v\) soit la seule valuation vérifiant \(v(F)=1\). Même question avec
+        les connecteurs \(\land,\lnot\) et la valuation \(v(F)=0\).
+    \end{q}
+    \begin{q}{4}
+        Trouver une formule à deux variables correspondant à chaque table de
+        vérité à deux variables et n'utilisant que les connecteurs \(\land,\lor,\lnot\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit une formule \(F\) ayant pour seul connecteur \(\leftrightarrow\) et où
+    chaque variable propositionelle n'a au plus qu'une occurrence. Soit
+    \(\{p_1\dots p_n\}\) l'ensemble de toutes les variables propositionelles qui
+    apparaissent effectivement dans \(F\).
+    \begin{q}{1}
+        Montrer que pour toute valuation \(v\), \(v(F)=1\) si et seulement si
+        le nombre des \(p_i\) tels que \(v(p_i)=0\) est pair.
+    \end{q}
+    \begin{q}{2}
+        Conclure que la valeur logique d'une telle proposition est indépendante
+        du parenthésage et de l'ordre des variables. C'est-à-dire l'associativité
+        et la commutativité à l'équivalence logique près.
+    \end{q}
+    \begin{q}{3}
+        Que se passe t-il à la première question si l'on autorise des répétitions ?
+        \boxans{Le résultat se transforme pour devenir : il y a un nombre pair d'occurrences
+        des \(p_i\) vérifiant \(v(p_i)=0\).}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On rapelle que toute formule du calcul propositionel est équivalente à une formule
+    n'utilisant que les connecteurs \(\{\land,\lor,\lnot\}\). On dit alors que l'on a
+    un système complet de connecteurs. On note \(\blacktriangle\) et \(\blacktriangledown\)
+    les connecteurs définie par \(p\blacktriangle q=\lnot(p\land q)\) et
+    \(p\blacktriangledown q=\lnot(p\lor q)\)
+    \begin{q}{1}
+        Exprimer les connecteurs \(\land, \lor, \lnot\) à l'aide du seul connecteur
+        \(\blacktriangle\) et en déduire qu'il forme un système complet.
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(\blacktriangledown\) est un système complet de connecteurs.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que \(\{\}\) n'est pas un sustème complet de connecteurs. On peut
+    par exemple montrer que toute formule \(F\) construite sur ces seuls connecteurs
+    vérifie \(v_1(F)=1\) où \(v_1\) est la valuation constante égale à \(1\).
+    \boxans{On procèdera par induction structurelle immédiate.}
+\end{exo}
+
+\begin{exo}
+    Montrer qu'il n'y a que les connecteurs de l'exercices \(5\) qui fournissent
+    des systèmes complets constitués d'un seul connecteur binaire.
+\end{exo}
+
+\begin{exo}
+    Soit \(P\) un ensemble de variables propositionelles, \(\mathfrak{F}_P\) l'ensemble
+    des formules du calcul propositionel sur \(P\). On définit deux relations sur
+    \(\mathfrak{F}_P\) :\smallskip\\
+    \(A\vdash B\) signifie que : pour toute valuation \(v\in P^{\{0,1\}}\) si
+    \(v(A)=1\) alors \(v(B)=1\).\\
+    \(A\equiv B\) signifie que : pour toute valuation \(v\in P^{\{0,1\}}\) \(v(A)=v(B)\).
+    \begin{q}{1}
+        Vérifier que \(\vdash A\) signifie que \(A\) est une tautologie, que \(A\vdash B\)
+        ssi \(\vdash A\rightarrow B\) et que \(A\equiv B\) ssi \(\vdash A\leftrightarrow B\).
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(\vdash\) est une relation de préordre, \(\equiv\) une relation
+        d'équivalence avec laquelle \(\vdash\) est compatible, et que \(\vdash\)
+        induit sur \(\mathfrak{F}_P/\equiv\) une relation d'ordre que l'on notera \(\leq\).
+    \end{q} 
+\end{exo}
+
+\begin{exo}
+    Une fonction booléenne à \(n\) arguments est une fonction définie de \(\{0,1\}^n\)
+    dans \(\{0,1\}\), elle est polynomiale si elle s'exprime comme un polynôme à \(n\)
+    variables sur le corps à \(2\) éléments \(\Z/2\Z\).
+    \begin{q}{1}
+        Donner les représentations polynomiales des fonction correspondans aux connecteurs usuels.
+    \end{q}
+    \begin{q}{2}
+        Montrer que toute fonction polynomiale à \(n\) arguments et une somme de monômes
+        où chaque variable apparait avec un exposant \(0\) ou \(1\).
+    \end{q}
+    \begin{q}{3}
+        Montrer que toute donction booléenne est polynomiale.
+    \end{q}
+    \begin{q}{4}
+        Montrer que toute fonction booléenne s'écrit de façon unique comme une somme
+        de monômes où chaque variable apparaît avec un exposant \(0\) ou \(1\), c'est
+        à dire qu'une fonction booléenne est caractérisée de façon unique par une suite
+        \(\left(\xi_I\right)_{I\in\pow[\llbracket1,n\rrbracket]}\) à valeur dans
+        \(\{0,1\}\), vérifiant pour tous \((x_1,\dots,x_n)\in \{0,1\}^n\)
+        \[f(x_1,\dots,x_n)=\sum _{I\subset\llbracket1,n\rrbracket}\xi_I\prod_{i\in I}x_i\]
+    \end{q}
+\end{exo}
+
+
+\end{document}

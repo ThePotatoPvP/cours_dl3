@@ -1,6 +1,9 @@
 \documentclass[french]{report}
 \usepackage{../exercices}
 
+
+\usepackage{causets}
+
 \begin{document}
 
 \begin{center}
@@ -107,9 +110,16 @@
     Un graphe est dit \textit{asymétrique} si son seul automorphisme est l'identité.
     \begin{q}{1}
         Donner un exemple d'un graphe asymétrique ayant au moins 2 sommets.
+        \boxans{Le graphe à 6 sommets représentant une maison avec une barre horizontale
+        qui sort du toit vers le côté semble convenir.
+        \[\causet{2,1,5,4,3,6}{1/3,2/4,1/2,3/4,3/6,4/6,4/5}\]}
     \end{q}
     \begin{q}{2}
         Montrer qu'un graphe asymétrique doit avoir au moins \(6\) sommets.
+        \boxans{On peut procéder au case pas cas en remarquant qu'un graphe est asymétrique
+        si et seulement si toutes ses parties connexes le sont (l'image d'une partie
+        connexe par un automorphisme étant une partie connexe) pour éliminer beaucoup de cas
+        à traiter.}
     \end{q}
 \end{exo}
 
@@ -125,7 +135,8 @@
     appartient à \(E_H\).
     \begin{q}{1}
         Quelle est la différence avec la définition de \(G\) isomorphe à \(H\).
-        \boxans{Ici \(f\) n'a besoin d'être ni monomorphe ni épi, on a donc pas de réciproque.}
+        \boxans{Ici \(f\) n'a besoin d'être ni monomorphe ni épi, on ne peut donc
+        pas espérer de réciproque.}
     \end{q}
     \begin{q}{2}
         Caractériser les graphes \(G\) tels qu'il existe un homomorphime de \(G\)
@@ -139,15 +150,26 @@
     Quel est le nombre maximum d'arêtes (exprimé en fonction du nombre \(n\) de sommets)
     \begin{q}{1}
         d'un graphe ?
+        \boxans{La borne est \(\binom{n}{2}\) c'est le cas d'un graphe complet.}
     \end{q}
     \begin{q}{2}
         d'un graphe avec \(k\leq n\) composantes connexes.
+        \boxans{Si on regarde le triangle de \textsc{Pascal} on observe qu'il vaut
+        mieux avoir une grande partie connexe que plusieurs petites, donc la borne
+        est \(\binom{n-k+1}{2}\)}
     \end{q}
 \end{exo}
 
 \begin{exo}
     Décrire l'ensemble des couples \(\left(n,k\right)\) tels qu'il existe un graphe
     à \(n\) sommets dont tous sont de degré \(k\) (un tel graphe est dit \(k\)-régulier).
+    \boxans{Un graphe \(k\) régulier à \(n\) sommets possède \(k\times n\) extrémités
+    d'arêtes, il faut donc que \(k\times n\) soit pair. Aussi \(k\) est compris
+    entre \(0\) et \(n-1\) parce qu'on se restreint aux graphes \textit{toddler friendly}
+    Ces conditions sont nécessires et suffisantes, pour tous les \(k\) pairs, on peut les
+    atteindre en faisant des cycles partiels pour monter de \(2\) en \(2\). Sinon, si \(k\)
+    est impair, alors \(n\) est pair, on relie les sommets par paire pour les avoir de
+    degré \(1\) puis on monte de \(2\) en \(2\) avec des sous-cycles.}
 \end{exo}
 
 \begin{exo}

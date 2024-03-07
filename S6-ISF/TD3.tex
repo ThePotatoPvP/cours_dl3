@@ -1,0 +1,75 @@
+\documentclass[french]{report}
+\usepackage{../exercices}
+
+\begin{document}
+% augeri@lpsm.paris
+\begin{center}
+    \huge{\textbf{S6- ISF - TD3}}
+\end{center}
+
+
+\begin{exo}
+    On rappelle que la mesure de \textsc{Lebesgue} de \(\R^2\) est la mesure
+    produit, notée aussi \(\D x\D y\).
+    \begin{q}{1}
+        Montrer que les segments et les droites de \(\R^2\) sont des boréliens.
+    \end{q}
+    \begin{q}{2}
+        Montrer que toute droite de \(\R^2\) est de mesure de \textsc{Lebesgue} nulle.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    TODO
+\end{exo}
+
+\begin{exo}
+    Soit \(f\colon\R\to\R\) borélienne.
+    \begin{q}{1}
+        Montrer que le graphe \(Gr(f)=\{(x,f(x))\colon x\in\R\}\) de \(f\) est un borélien
+        de \(\R^2\)
+        \boxans{Le graphe peut être vu comme \(F^{-1}(\{0\})\) où \(F(x,y)=f(x)-y\).
+        Comme \(\{0\}\) est un borélien et que \(F\) est borélienne
+        comme composée de projections (boréliennes) et autres applications
+        boréliennes. Finalement \(Gr(f)\) est un borélien.}
+    \end{q}
+    \begin{q}{2}
+        Montrer que \(\lambda^2(Gr(f))=0\).
+        \boxans{On choisit d'intégrer par tranches verticales, \(\lambda^2(Gr(f))=
+        \int \lambda(Gr(f)_x)\D \lambda(x)\). Chaque tranche est un singleton, de mesure
+        de \textsc{Lebesgue} nulle, ainsi \(\lambda^2(Gr(f))=\int 0 = 0\)}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On considère \(f:(0,1)\times(0,1)\to \R\) tel que \(f:(x,y)\mapsto
+    \frac{x^2-y^2}{(x^2+y^2)^2}\)
+    \begin{q}{1}
+        Calculer \(I:=\iint f(x,y)\D x\D y\) et \(J:=\iint f(x,y)\D y\D x\).
+    \end{q}
+    \begin{q}{2}
+        Que peut-on en conclure ?
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    TODO
+\end{exo}
+
+\begin{exo}
+    Calculer les intégrales suivantes :
+    \begin{q}{1}
+        \(\ds\int_{\R_+}\frac{1}{y}\sin(y)^2e^{-y}\D y\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(f:\R\to\R\) une application borélienne.\\
+    Montrer que pour presque tout \(y\in\R\) on a
+    \(\lambda\left(\{x\in\R\mid f(x)=y\}\right)=0\)
+    \boxans{On a que \(\{x\in\R\mid f(x)=y\}=f^{-1}(\{y\})\) est bien un borélien
+    qui s'exprime aussi comme \(Gr(f)^y\). Or d'après l'exercice \(3\),
+    \(\lambda^2(Gr(f))=\int \lambda\left(Gr(f)^y\right)\D y = 0\) ainsi \(Gr(f)^y\) est de mesure
+    nulle pour presque tout \(y\) par absurde imémdiat.}
+\end{exo}
+\end{document}
