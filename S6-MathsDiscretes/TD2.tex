@@ -198,10 +198,18 @@
     \(G'\) le graphe obtenu après cette opération.
     \begin{q}{1}
         Montrer que si \(G\) a un cycle hamiltonien alors \(G'\) aussi.
+        \boxans{\(G\) étant un sous graphe couvrant de \(G'\) (par bon sens) tout cycle hamiltonien
+        de \(G\) est aussi un cycle hamiltonien de \(G'\).}
     \end{q}
     \begin{q}{2}
         Montrer la réciproque, c'est-à-dire que si \(G'\) a un cycle hamiltonien
         alors \(G\) en avait un aussi.
+        \boxans{Supposons \(G'\) hamiltonien, on exhibe \(C\) un cycle hamiltonien de \(G'\),
+        si \(\{u,v\}\notin C\) alors on a rien à faire. Dans le cas contraire, de par les
+        degrés on sait que \(u\) et \(v\) ont au moins deux voisins communs, notés \(w\)
+        et \(\omega\) et qu'au moins \(n/2\) sommet sont reliés soit à \(u\) soit à \(v\). Ainsi
+        quelque soit le cycle, on aura toujorus dedans deux sommet qui se suivent, l'un relié à \(u\)
+        et l'autre à \(v\), donc tavu ça passe.}
     \end{q}
     Soit \(G\) un graphe, on répète l'opération d'ajout d'arêtes décrite en début
     d'exercice tant que c'est possible. Soit \([G]\) le graphe obtenu.
@@ -209,25 +217,43 @@
         À chaque étape, il pourrait y avoir plusieurs choix possibles de couples
         de sommets \(u,v\) satisfaisant les conditions. Montrer que le graphe
         obtenu à la fin ne dépend pas de l'ordre.
+        \boxans{Quelque soit l'ordre dans lequel on s'y prend, les degré de paires ne peuvent
+        qu'augmenter et donc condire à plus d'arêtes, on ne diminue jamais les possibilités
+        de rajouter des arêtes, donc pas de raison que ça bloque.}
     \end{q}
     \begin{q}{4}
         Montrer que \(G\) a un cycle hamiltonien ssi \([G]\) en a un.
+        \boxans{On a démontrer dans les deux premières question que chaque étape de la
+        transformation de \(G\) préserve le caractère hamiltonien, on a bien
+        l'équivalence.}
     \end{q}
     \begin{q}{5}
         Soit \(G\) un graphe à \(n\) sommets, chacun de degré au moins \(n/2\). Montrer
         que \(G\) a un cycle hamiltonien.
+        \boxans{Si chacun des sommets est de degré au moins \(n/2\) alors pour toute paire
+        de sommet le degré est supérieur à \(n\) et donc \([G]\) est le graphe complet, qui
+        a bien un cycle hamiltonien, d'après la question précédente, \(G\) en a alors un aussi.}
     \end{q}
     \begin{q}{6}
         Soit \(G\) un graphe à \(n\) sommets et ayant au moins \(\frac12(n-1)(n-2)+2\)
-        arêts. Montrer que \(G\) a un cycle hamiltonien.
+        arêtes. Montrer que \(G\) a un cycle hamiltonien.
+        \boxans{Ce graphe est à \(n-3\) arêtes près d'être le graphe complet. Donc tout
+        sommet est au moins de degré \(2\). Le degré d'une paire est au moins \(2(n-1) - (n-3 - 1) = n\)
+        donc les sommet sont reliés dans \([G]\) qui est donc complet. Par le même raisonnement
+        qu'au dessus, \(G\) a un cycle hamiltonien.}
     \end{q}
     \begin{q}{7}
         Donner un graphe à \(6\) sommets avec le plus petit nombre possible d'arêts tel
-        que \([G]\) soit le graphe comple \(K_6\). Pouvez vous montrer que c'est le plus
+        que \([G]\) soit le graphe complet \(K_6\). Pouvez vous montrer que c'est le plus
         petit nombre d'arêtes possible ?
+        \boxans{D'après la question précédente c'est possible avec \(12\) peu importe
+        comment on les place, si on opti avec \(8\) c'est possible. Avec \(7\) c'est impossible,
+        \(6\) arêtes au minium sont prises dans le but de faire un grpahe connexe, en plaçant
+        la dernière on a deux sommet de degré \(3\) reliés entre eux, le reste de degré \(2\) donc
+        on peut pas démarrer, c'est ded.}
     \end{q}
     \begin{q}{8}
-        Le fait que \(G\) ait un cycle hamiltoien ssi \([G]\) en a un permet-il
+        Le fait que \(G\) ait un cycle hamiltonien ssi \([G]\) en a un permet-il
         d'obtenir un algorithme efficace pour déterminer si un graphe donné a un
         cycle hamiltonien ?
         \boxans{Bah non, c'est NP-complet.}
