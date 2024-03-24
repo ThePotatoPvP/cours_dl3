@@ -1,0 +1,76 @@
+\documentclass[french]{article}
+\usepackage{../exercices}
+\usetikzlibrary{arrows,automata, positioning}
+\begin{document}
+
+% jeremy.ledent@irif.fr
+\begin{center}
+    \huge{\textbf{S6- Langages et expressions rationnelles}}
+\end{center}
+
+Dans tous les exercices de cette page (sauf les deux premiers), les minuscules sont les terminaux,
+les majuscules sont les non-terminaux, et \(Z\) est l'axiome. Le \(\$\) correspondra à la fin
+de fichier. SI votre grammaire n'a pas un axiome avec une unique production du genre \(Z\to S\$\),
+il faut l'ajouter.
+
+\begin{exo}
+    Montrer que chacun des langages ci-dessous est algébrique.
+    \begin{q}{1}
+        \(L_1=\{a^nb^m|n=2m\}\)
+    \end{q}
+    \begin{q}{2}
+        \(L_2=\{a^nb^m|n\neq 2m\}\)
+    \end{q}
+    \begin{q}{3}
+        \(L_3=\{a^nb^m|n\leq m+3\}\)
+    \end{q}
+    \begin{q}{4}
+        \(L_4=a^nb^m|n\neq m-1\)
+    \end{q}
+    \begin{q}{5}
+        \(L_5=\{a^nb^m| \frac{n}{2}\leq m\leq \frac{3n}{2}\}\)
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Pour chaque grammaire suivante trouvez la grammaire réduite correspondante. On rappelle
+    que dans une grammaire réduite tous les non-terminaux sont accessibles et productifs.
+    \begin{q}{1}
+    \end{q}
+    \begin{q}{2}
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit la grammaire suivante, définie sur le vocabulaire terminal \(\{b,e,i,;,\$\}\):
+    \begin{q}{1}
+        \(Z\to S\$\quad S\to bT\quad T\to i;T|e\) cette grammaire est-elle LL(1) ? Quel
+        langage génère-t-elle ?
+    \end{q}
+    \begin{q}{2}
+        On ajoute la règle \(T\to ST\). La grammaire obtenue est-elle LL(1) ? Donner une dérivation
+        de \("bi;bi;i;ebei;i;e\$"\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit la grammaire suivante, définie sur le vocabulaire terminal \(\{:,=,i,e,;\}\)
+    \[Z\to S\$\quad S\to V:=e|LS L\to i:\quad V\to i\]
+    Cette grammaire est-elle LL(1) ? Pourquoi ? Sinon proposez une grammaire LL(1) qui
+    engendre le même langage.
+\end{exo}
+
+\begin{exo}
+    Soit la grammaire suivante, définie sur le vocabulaire terminal \(\{\$,a,b,c,d\}\) :
+    \[Z\to S\$\quad S\to X|Yc\quad X\to Xa|\eps\quad Y\to Yb|d\]
+    Décrivez le langage engendré par cette grammaire. Cette est-elle LL(1) ? Sinon proposez une
+    grammaire LL(1) qui engendre le même langage. (On raplle qu'avec les définitions actuelles, on
+    cherchera d'abord à se débarasser de \(\eps\))
+\end{exo}
+
+\begin{exo}
+    Donner les ensembles FIRST\(_1\) des membres droits de chacune des règles ci-dessous.
+    \[Z\to S\$\]
+\end{exo}
+
+\end{document}

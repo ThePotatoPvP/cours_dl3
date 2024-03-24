@@ -47,23 +47,31 @@
     qui les engendre.
     \begin{q}{1}
         \(L_1=\{a^nb^n|n\in\N\}\)
+        \boxans{\(S\to \eps|aSb\) génère le langage.}
     \end{q}
     \begin{q}{2}
         \(L_2=\{a^nb^m\mid m\geq n\geq 0\}\)
+        \boxans{\(S\to\eps|aS|aSb\) génère le langage}
     \end{q}
     \begin{q}{3}
         \((*)L_3=\{a^nb^*c^n\mid n\in\N\}\)
+        \boxans{\(S\to\eps|aSc|R \quad R\to \eps|bR\) génère le langage}
     \end{q}
     \begin{q}{4}
         \(L_4=\{a^nb^mc^k\mid n=m+k\}\)
+        \boxans{\(S\to \eps|aSc|R\quad R\to aRb\to\eps\) génère le langage.}
     \end{q}
     \begin{q}{5}
         \(L_5=\{a^nb^mc^md^n\mid n,m\in\N\}\)
+        \boxans{\(S\to R|aSd\quad R\to\eps|bcb\) génère le langage.}
     \end{q}
     \begin{q}{6}
         \(L_6=\{\omega\in\{a,b\}^*\mid \textrm{pas un palindrome}\}\)
+        \boxans{\(S\to aSa|bSb|aRb|bRa\quad R\to aRa|bRb|aRb|bRa|b|a|\eps\) génère le langage.}
     \end{q}
     L'un d'entre eux est-il rationnel ?
+    \boxans{Non, soit par besoin d'un compteur (donc facilement démontrable par le lemme de
+    l'étoile) soit comme contre langage d'un classique de la non rationalité.}
 \end{exo}
 
 \begin{exo}

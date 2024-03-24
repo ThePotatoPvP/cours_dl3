@@ -209,15 +209,27 @@
     Trouver un corps de rupture et un corps de décomposition de chacun des polynômes suivants.
     \begin{q}{1}
         \(X^2-3\in\Q[X]\)
+        \boxans{Les racines sont \(\pm\sqrt{3}\) donc \(\Q(\sqrt{3})\) est un corps
+        de rupture et de décomposition du polynôme.}
     \end{q}
     \begin{q}{2}
         \(X^3-2\in\Q[X]\)
+        \boxans{Les racines sont \(\sqrt[3]{2}j^i\) donc \(\Q(\sqrt[3]{2})\) est un
+        corps de rupture, \(\Q(j,\sqrt[3]{2})\) est un corps de décomposition.}
     \end{q}
     \begin{q}{3}
         \(X^4+X+1\in\mathbb{F}_2[X]\)
+        \boxans{Après évalutation en \(0\) et \(1\) et tentative de décomposition comme
+        produit de deux polynômes de degré \(2\), on trouvr que le polynôme
+        est irréductible sur \(\mathbb{F}_2\). Comme \(P\) est irréductible, \(\mathbb{F}_2/P\)
+        est un corps de décomposition et de rupture.}
     \end{q}
     \begin{q}{4}
         \(X^p-T\in\mathbb{F}_p(T)[X]\)
+        \boxans{\(T\) est premier car il n'était pas dans \(\mathbb{F}_p\) donc \(P\)
+        est \(T\)-\textsc{Eisenstein}. La notation \(\sqrt[p]{T}\) a du sens d'après le petit
+        théorème de \textsc{Fermat} car on travaille modulo \(p\). C'est l'unique racine,
+        ce qui suffit à conclure.}
     \end{q}
 \end{exo}
 
@@ -239,8 +251,10 @@
         peut écrire \(\alpha\) sous la forme \(a+b\sqrt{5}\) avec \(a,b\in\Q\).
     \end{q}
     \begin{q}{5}
-        Déterminer le degré \([\Q(\alpha):\Q]\) et en déduirre que \(P\) est irréductible
+        Déterminer le degré \([\Q(\alpha):\Q]\) et en déduire que \(P\) est irréductible
         sur \(\Q\).
+        \boxans{On a \([\Q(\alpha):\Q(\sqrt{5})] = [\Q(\sqrt{5}):\Q] = 2\) donc
+        \([\Q(\alpha):\Q] = 4\) ce qui est le degré de \(P\) qui est donc irréductible.}
     \end{q}
     \begin{q}{6}
         Déterminer le degré \([L:\Q]\).
@@ -297,7 +311,7 @@ et tout \(r>0\) on note ...
     algébriquement clos.
     \begin{q}{1}
         Montrer qu'il suffit de démontrer que tout polynôme de degré supérieur à \(1\)
-        à coefficients \(textit{réels}\) admet une racine dans \(\C\).
+        à coefficients \textit{réels} admet une racine dans \(\C\).
     \end{q}
 \end{exo}
 
@@ -310,11 +324,15 @@ et tout \(r>0\) on note ...
 \begin{exo}
     Soit \(K=\mathbb{F}_{p^r}\) un corps fini. Montrer que pour tout élément \(\beta\in K\),
     il existe un unique élément \(\alpha\in K\) tel que \(\alpha^p=\beta\).
+    \boxans{On pose le morphisme (de \textsc{Frobenius})\(\varphi:x\mapsto x^p\). Il suffit alors de montrer
+    que \(\varphi\) est bijective. \(K\) est un corps, donc est intégre, ainsi
+    \(\Ker(\varphi) = \{0\}\), ce qui démontre l'injectivité, le principe de
+    \textsc{Dirichlet} suffit alors à conclure à la surjectivité, puis à la bijcetivité.}
 \end{exo}
 
 \begin{exo}
     Soit \(a\in\mathbb{F}_p\). En comptant \(\{x^2,x\in\mathbb{F}_p\}\) et
-    \(\{a-y^2,y\in\mathbb{F}_p\}\) montrer que l'on peur toujours écrire \(a\) comme
+    \(\{a-y^2,y\in\mathbb{F}_p\}\) montrer que l'on peut toujours écrire \(a\) comme
     une somme de deux carrés dans \(\mathbb{F}_p\).
 \end{exo}
 
@@ -327,4 +345,95 @@ et tout \(r>0\) on note ...
         Donner les tables d'addition et de multiplication de \(\mathbb{F}_9\).
     \end{q}
 \end{exo}
+
+\begin{exo}
+    Encore une liste
+    \begin{q}{1}
+        Donner tous les polynômes irréductibles de \(\mathbb{F}_2[X]\) de degré
+        au plus \(4\).
+        \boxans{\(X,X+1,X^2+X+1, X^3+X^2+1, X^3+X+1, X^4+X+1,X^4+X^3+1,X^4+X^3+X^2+X+1\)}
+    \end{q}
+    \begin{q}{2}
+        Donner tous les polynômes irréductibles de \(\mathbb{F}_3[X]\) de degré
+        au plus \(3\).
+    \end{q}
+    \begin{q}{3}
+        Factoriser sur \(\mathbb{F}_2\) les polynômes :\(X^5+X^3+X+1\), \(X^{10}+X^2+1\).
+    \end{q}
+    \begin{q}{4}
+        Factoriser sur \(\mathbb{F}_3\) les polynômes :\(X^3+X-2\), \(X^5-X^4+5X^3+X+1\).
+    \end{q}
+    \begin{q}{5}
+        Montrer que les polynômes \(X^5+4X^3-7X^2+9\) et \(9X^4+10X^3+2X^2+17X+15\)
+        sont irréductibles sur \(\Z\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soient \(p\) premier et \(m\) un entier non multiple de \(p\). Le but de cet exercice
+    est d'établir que le polynôme \(P=X^p-X+m\) est irréductible sur \(\Q\).
+    \begin{q}{1}
+        Montrer que \(P\) n'a pas de racine dans \(\mathbb{F}_p\).
+    \end{q}
+    \begin{q}{2}
+        Soit \(\alpha\) une racine de \(P\) dans une clôture algébrique de
+        \(\mathbb{F}_p\).
+        \begin{q}{a}
+            Montrer que pour tout \(k\in\mathbb{F}_p, \alpha+k\) est une racine de \(P\).
+        \end{q}
+        \begin{q}{b}
+            En déduire que \(L=\mathbb{F}_p(\alpha)\) est un corps de décomposition
+            de \(P\).
+        \end{q}
+        \begin{q}{c}
+            Montrer que \(P\) est irréductible sur \(\mathbb{F}_p\)
+        \end{q}
+    \end{q}
+    \begin{q}{3}
+        Conclure.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Dans cet exercice on va étudier le corps \(\mathbb{F}_{16}\) explicitement.
+    \begin{q}{1}
+        Montrer que \(f=X^4+X+1\in\mathbb{F}_2[X]\) est un polynôme irréductible.
+        En déduire que \(K=\mathbb{F}_2[X]/(f)\) est une extension de degré \(4\) de
+        \(\mathbb{F}_2\). \(K^*\) est alors un groupe abélien d'ordre \(15\), vérifier
+        que la classe de \(X\) dans \(K\), notée par \(\alpha\) est un générateur
+        du groupe \(K^*\). Donner une base de \(K\) vu comme un espace vectoriel
+        sur \(\mathbb{F}_2\). Exprimer \(\alpha^8\) comme combinaison linéaire de
+        cette base.
+    \end{q}
+    \begin{q}{2}
+        Soit \(\phi\) un automorphisme de \(K\). Vérifier que \(\phi_{\mid\mathbb{F}_2}
+        =\id_{\mathbb{F}_2}\), que \(\phi\) est une bijection \(\mathbb{F}_2\) linéaire, et
+        que \(\phi\) induit un automorphisme du groupe \(K^*\). Montrer que \(\phi\) est
+        déterminé par l'image de \(\alpha\) et que \(\phi\) est de la forme \(x\mapsto x^s\)
+        pour un certain \(s\)
+    \end{q}
+    \begin{q}{3}
+        Montrer que \(\phi(\alpha)\in K\) est une racine de \(f\). En déduire que
+        \(\alpha,\alpha^2,\alpha^4,\alpha^4\) sont les quatres racines distinctes.
+    \end{q}
+    \begin{q}{4}
+        Montrer que \(g=X^4+X^3+1\in\mathbb{F}_2[X]\) est aussi irréductible. Noter
+        par \(\beta\) la classe de \(X\) dans \(L=\mathbb{F}_2[X]/(g)\), montrer que
+        \(\beta^{-1}\in L\) est une racine de \(f\). Expliciter un isomorphisme
+        \(\psi\) de \(K=\mathbb{F}_2(\alpha)\) vers \(L\).
+    \end{q}
+    \begin{q}{5}
+        Montrer que \(h=X^4+X^3+X^2+X+1\in\mathbb{F}_2[X]\) est aussi irréductible.
+        Noter par \(\gamma\) la classe de \(X\) dans \(M=\mathbb{F}_2[X]/(h)\).
+        Est-ce que \(\gamma\) est un générateur du groupe cyclique \(M^*\) ? Calculer
+        l'ordre de \(\gamma\in M^*\). Montrer que \(\gamma\mapsto \alpha^3\) induit
+        un morphisme de corps \(M\to K\), montrer que c'est un isomorphisme.
+    \end{q}
+    \begin{q}{6}
+        Trouver tous les polynômes irréductibles unitaires de degré \(4\) dans
+        \(\mathbb{F}_2[X]\). En déduire que tout corps fini ayant \(16\) éléments est
+        isomorphe à \(K\).
+    \end{q}
+\end{exo}
+
 \end{document}
