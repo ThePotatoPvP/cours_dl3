@@ -1,0 +1,82 @@
+\documentclass[french]{report}
+\usepackage{../exercices}
+
+
+\usepackage{causets}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{S6- Maths Discrètes - TD3}}
+\end{center}
+
+\begin{exo}
+    Le graphe \(k\)-parti complet \(K_{n_1,\dots,n_k}\) est le graphe dont l'ensemble
+    des sommets de \(V\) est partitionné en ensembles \(V_1,\dots,V_k\) de sorte que
+    \(|V_i|=n_i\) et tout sommet de \(V_i\) est connecté à tous les sommets
+    de \(V_j\) pour tout \(j\neq i\). Déterminer l'ensemble des uples d'entiers
+    pour lequels \(K_{n_1,\dots,n_k}\) est planaire.
+\end{exo}
+
+\begin{exo}
+    Considérer un dessin de \(K_n\) dans le plan, montrer qu'au moins
+    \(\frac15\binom{n}{4}\) paires d'arêts doivent se croiser.
+\end{exo}
+
+\begin{exo}
+    Des bornes ...
+    \begin{q}{1}
+        Un graphe planaire est maximal si l'ajout d'une arête ne parmet plus de le
+        dessiner sans croisements. On admettra ici que dans un graphe planaire maximal
+        avec au moins 3 sommets toutes les régions sont délimitées par exactement 3
+        arêtes. Montrer que dans un tel graphe \(G=(V,E)\) on a \(|E|=3|V|-6\).
+        En déduire que dans un graphe planaire on a \(|E|\leq 3|V|-6\).
+    \end{q}
+    \begin{q}{2}
+        Pour les graphes planaires sans triangles on peut montrer que \(|E|\leq 2|V|-4\).
+        Montrer que cette borne est la meilleure possible.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On dit qu'un graphe est planaire extérieur si on peut le déssiner de sorte qu'il
+    existe une face dont la frontière contient tous les sommets du graphe. Montrer qu'un
+    graphe planaire extérieur est toujours \(3\)-coloriable.
+\end{exo}
+
+\begin{exo}
+    Soit \(G\) un graphe planaire dont tous le sommets sont de degré pair. Montrer que
+    la carte obtenue à partir d'un dessin planaire de \(G\) est \(2\)-coloriable.
+\end{exo}
+
+\begin{exo}
+    Montrer qu'un graphe planaire où chaque sommet est de degré au moins \(5\) doit avoir
+    au moins \(12\) sommets.
+\end{exo}
+
+\begin{exo}
+    Encore des bornes youpi
+    \begin{q}{1}
+        Montrer qu'un graphe planaire à \(n\) sommets a au plus \(2n-4\) faces.
+    \end{q}
+    \begin{q}{2}
+        Montrer qu'un graphe planaire sans triangle à \(n\) sommets a au plus \(n-2\)
+        faces
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    On pousse un peu cette fois.
+    \begin{q}{1}
+        Donner un exemple de graphe planaire dont tous les sommets sont de degré \(4\)
+    \end{q}
+    \begin{q}{2}
+        Dessiner le graphe suivant de manière planaire (sans arêtes qui se croisent).
+    \end{q}
+    \begin{q}{3}
+        Rappeler la formule d'\textsc{Euler} reliant le nombre de sommets, d'arêtes
+        et de face d'un graphe topologique planaire connexe.
+    \end{q}
+\end{exo}
+
+\end{document}

@@ -1,0 +1,156 @@
+\documentclass[french]{report}
+\usepackage{../exercices}
+
+
+\usepackage{causets}
+
+\begin{document}
+
+\begin{center}
+    \huge{\textbf{S6- Maths Discrètes - TD3}}
+\end{center}
+
+\begin{exo}
+    Pour chaque description ci-dessous, dessiner un graphe satisfaisant les conditions
+    ou montrer qu'il n'en existe pas :
+    ...
+\end{exo}
+
+\begin{exo}
+    Montrer qu'un arbre ayant un sommet de degré \(k\) contient au moins \(k\)
+    feuilles.
+    \boxans{\emph{On procèdera par induction structurelle}}
+\end{exo}
+
+\begin{exo}
+    TODO
+\end{exo}
+
+\begin{exo}
+    Montrer qu'un graphe ayant \(n\geq 3\) sommets est un arbre si et seulement
+    si il n'est pas isomorphe à \(K_n\) et si l'ajout d'une arête crée toujours
+    exactement un cycle.
+\end{exo}
+
+\begin{exo}
+    Un graphe connexe est appelé \emph{unicyclique} s'il contient exactement
+    un cycle. Montrer que pour tout graphe \(G\) les propriétés suivantes
+    sont équivalentes:
+    \begin{enumerate}
+        \item \(G\) est unicyclique
+        \item Il existe une arête \(e\) de \(G-e\) soit un arbre
+        \item \(G\) est connexe et a autant de sommets que d'arêtes
+        \item \(G\) est connexe et l'ensemble de toutes les arêtes qui ne sont pas
+        des isthmes constitue un cycle.
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+    Quel est le nombre d'arbres couvrants du graphe suivant ?
+\end{exo}
+
+\begin{exo}
+    Montrer que si \(T\) est un arbre couvrant d'un graphe \(G\) alors pour toute
+    arête \(e\in E(G)\backslash E(T)\) il existe une arête \(e'\in E(T)\) telle que
+    \(T+e-e'\) est aussi un arbre couvrant de \(G\).
+\end{exo}
+
+\begin{exo}
+    foo
+    \begin{q}{1}
+        Soit \(G\) un graphe connexe et \(e\) une arête de \(G\). Existe-t-il toujours
+        un arbre couvrant de \(G\) contenant l'arête \(e\) ?
+    \end{q}
+    \begin{q}{2}
+        Soit \(G\) un graphe connexe. Caractériser les sous-ensembles \(F\) des arêtes
+        de \(G\) tels qu'il existe un arbre couvrant de \(G\) contenant \(F\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    TODO
+\end{exo}
+
+\begin{exo}
+    Soit \(G\) un graphe, avec \(n\) sommets et \(p\) composantes connexes, et \(D\)
+    la matrixe d'incidence de \(G\). Montrer que le rang de \(D\) est \(n-p\).
+\end{exo}
+
+\begin{exo}
+    Un couplage parfait dans un graphe \(G\) est un sous-ensemble \(C\) des arêtes
+    de \(G\) tel que tout sommet de \(G\) appartient a exactement à une arête de \(C\).
+    \begin{q}{1}
+        Quel est le nombre de couplages parfaits de \(K_n\)
+    \end{q}
+    \begin{q}{2}
+        Soit \(C\) un couplage parfait de \(K_n\) combient y a-t-il d'arbres couvrants
+        de \(K_n\) contenant \(C\).
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Soit \(G\) un graphe et \(k\geq 1\) un entier, on définit le graphe \(G^{(k)}\)
+    ayant les sommets de \(G\) et tels que deux sommets sont connectés si et seulement
+    si leur distance dans \(G\) est au plus \(k\).
+    \begin{q}{1}
+        Montrer que pour tout arbre \(T\) ayant au moins \(3\) sommets, le
+        graphe \(T^{(3)}\) a un cycle hamiltonien.
+    \end{q}
+    \begin{q}{2}
+        Montrer que pour tout graphe connexe \(G\) ayant au moins \(3\) sommets,
+        \(G^{(3)}\) a un cycle hamiltonien.
+    \end{q}
+    \begin{q}{3}
+        Trouver un graphe connexe \(G\) avec au moins \(3\) sommets tel que
+        \(G^{(2)}\) n'a pas de cycle hamiltonien.
+    \end{q}
+\end{exo}
+
+\begin{exo}
+    Montrer que le nombre d'arbres couvrants du graphe complet \(K_n\) est \(n^{n-2}\).
+\end{exo}
+
+\begin{exo}
+    Montrer que le nombre d'arbes couvrants du graphe biparti complet \(K_{n,m}\) est
+    \(m^{n-1}n^{m-1}\).
+\end{exo}
+
+\begin{exo}[]
+    Soit \(e\) une arête de \(K_n\), le graphe complet à \(n\) sommets. Calculer
+    le nombre d'arbres couvrants de \(K_n-e\).
+    \boxans{Tout arbre couvrant contenant \(e\) peut être découpé en un sous arbre
+    couvrant un sous graphe d'un côté de \(e\) et un autre de l'autre, ainsi on a
+    \(\sum_{k=1}^{n-1}\binom{n-2}{k-1} k^{k-2} (n-k)^{n-k-2}\) arbres couvrants de \(K_n\) qui contiennent
+    \(e\) et donc \(n^{n-2}\) moins ce nombre qui sont valides pour \(K_n-e\).}
+\end{exo}
+
+\begin{exo}
+    Soit \(G\) un graphe non orienté, on définit \(\lambda(G)=\min\{|F|
+    \mid F\subseteq E(G) \textrm{et (V, E-F) pas connexe}\}\)
+    \begin{q}{1}
+        Calculer \(\lambda(G)\) pour les graphes usuels, \(P_n, C_n, K_n\).
+        \boxans{On a \(\lambda(P_n)=1, \lambda(C_n)=2\) et \(\lambda(K_n)=(n-1)\)}
+    \end{q}
+    \begin{q}{2}
+        Donner un graphe \(G\), sans sommet de degré \(1\) tel que
+        \(\lambda(G)=1\).
+        \boxans{En reliant deux \(K_3\) par une arête on obtient un graphe qui convient.}
+    \end{q}
+    \begin{q}{3}
+        Soit \(n\geq 2\), quel est le nombre maximum d'arêtes que \(G\)
+        à \(n\) sommets peut avoir tel que \(\lambda(G)=1\).
+        \boxans{On peut avoir un graphe complet à \(n-1\) arêtes et un sommet relié
+        pas une arête au graphe complet, ce qui donne \(1 +\binom{n-1}{2}\). On comprend
+        à la construction que c'est le maximum.}
+    \end{q}
+    \begin{q}{3}
+        Montrer que si \(G\) contient 2 arbres couvrants \(T_1=(V_1,E_1)\) et
+        \(T_2=(V_2,E_2)\) tels que \(E_1\cap E_2 = \emptyset\) alors \(\lambda(G)\geq 2\).
+        \boxans{Entre toute paire de sommets, on a au moins deux chemins différents, un en
+        suivant chaque arbre. Et pour que le graphe ne soit plus connexe il faut qu'il
+        existe une paire de sommets sans chemin, donc briser deux chemins, donc briser une arête
+        le long de chacun, soit au moins \(2\) arêtes.}
+    \end{q}
+\end{exo}
+
+\end{document}
