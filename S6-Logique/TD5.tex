@@ -111,6 +111,9 @@
 \begin{exo}
     Montrer qu'il n'y a que les connecteurs de l'exercices \(5\) qui fournissent
     des systèmes complets constitués d'un seul connecteur binaire.
+    \boxans{On montre assez simplement par induction structurelle que toute formule
+    se ramène à un arbre de profondeur 1, il est alors évident que l'on ne peut pas
+    atteindre toutes les valeurs de vérités après les deux litéraux fixés.}
 \end{exo}
 
 \begin{exo}
@@ -128,7 +131,7 @@
         Montrer que \(\vdash\) est une relation de préordre, \(\equiv\) une relation
         d'équivalence avec laquelle \(\vdash\) est compatible, et que \(\vdash\)
         induit sur \(\mathfrak{F}_P/\equiv\) une relation d'ordre que l'on notera \(\leq\).
-    \end{q} 
+    \end{q}
 \end{exo}
 
 \begin{exo}
@@ -137,6 +140,8 @@
     variables sur le corps à \(2\) éléments \(\Z/2\Z\).
     \begin{q}{1}
         Donner les représentations polynomiales des fonction correspondans aux connecteurs usuels.
+        \boxans{Le non est \(X\mapsto 1-X\), le ou est \(X,Y\mapsto X+Y-X*Y\), le et est
+        \(X*Y\)}
     \end{q}
     \begin{q}{2}
         Montrer que toute fonction polynomiale à \(n\) arguments et une somme de monômes
